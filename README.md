@@ -46,7 +46,7 @@ Next, crack open your Apache vhosts `conf` file and add something like:
 <VirtualHost *:80>
 	DocumentRoot "/Users/mhulse/Sites/freshops"
 	ServerName freshops.local
-	ServerAlias www.freshops.local 
+	ServerAlias www.freshops.local
 	ErrorLog "logs/freshops.local-error.log"
 	CustomLog "logs/freshops.local-access.log" combined
 	DirectoryIndex index.php index.html
@@ -134,3 +134,5 @@ $ tail -f content/debug.log
 ```
 
 I like to keep one Terminal tab open just to watch for errors/warnings.
+
+:octocat: :+1:
