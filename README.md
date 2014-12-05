@@ -70,4 +70,18 @@ You should see your site load with this theme showing.
 
 Now, it’s just a matter of editing your theme. Push changes to GitHub and then pull them to production when you’re ready.
 
-More on that coming later.
+More on that coming soon …
+
+## Tips
+
+Useful bits to know …
+
+### Tail the log
+
+To see php errors and warnings, `ssh` to the server, and:
+
+```bash
+$ tail -f content/debug.log
+```
+
+I like to keep one Terminal tab open just to watch for errors/warnings.
