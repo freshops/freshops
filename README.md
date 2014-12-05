@@ -88,7 +88,7 @@ Setting up repo on production machine …
 
 ### Folder hierarchy
 
-I like to use a setup [similar to this](https://github.com/mhulse/bueller)); here’s a visual:
+I like to use a setup ([similar to this](https://github.com/mhulse/bueller)); here’s a visual:
 
 ![screen shot 2014-12-04 at 11 50 29 pm](https://cloud.githubusercontent.com/assets/218624/5312526/5dd83be4-7c10-11e4-8f04-4e3135f6fa76.png)
 
