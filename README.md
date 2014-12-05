@@ -8,7 +8,7 @@ The following is just an outline of how one might go about developing WordPress 
 
 ### Download and setup WP
 
-Get a local copy of WordPress installed. Put it wherever you want (your `~/Sites` folder is a good spot).
+Get a local copy of WordPress installed. Put it wherever you want (your `~/Sites` directory is a good spot).
 
 ### Clone this repo
 
@@ -16,7 +16,7 @@ Next, clone this repo. I use [GitHub for Mac](https://mac.github.com/) and I put
 
 ### Symlink this repo
 
-Navigate to your WordPress’ `wp-content/themes` folder and run (modify path to match your setup):
+Navigate to your WordPress’ `wp-content/themes` directory and run (modify path to match your setup):
 
 ```bash
 $ ln -s ~/github/freshops/freshops
@@ -68,9 +68,58 @@ You should see your site load with this theme showing.
 
 ### What next?
 
-Now, it’s just a matter of editing your theme. Push changes to GitHub and then pull them to production when you’re ready.
+Now, it’s just a matter of editing your theme.
 
-More on that coming soon …
+### GitHub
+
+I like to use [GitHub for Mac](https://mac.github.com/).
+
+When you’re ready, push changes to GitHub and then skip to **[updating repo](#updating-repo)**.
+
+I reccomend one follows the workflow of:
+
+1. Via the repo’s issue tracker, create an issue for every problem you need to solve.
+1. Locally, make commits and [close said issues via commit messages](https://help.github.com/articles/closing-issues-via-commit-messages/).
+1. When you’re day is done (or it feels right), sync your changes.
+
+## Production machine
+
+Setting up repo on production machine …
+
+### Folder hierarchy
+
+I like to use a setup [similar to this](https://github.com/mhulse/bueller)); here’s a visual:
+
+![screen shot 2014-12-04 at 11 50 29 pm](https://cloud.githubusercontent.com/assets/218624/5312526/5dd83be4-7c10-11e4-8f04-4e3135f6fa76.png)
+
+### Clone
+
+Navigate to the `content/themes/` directory and:
+
+```bash
+$ git clone https://github.com/freshops/freshops.git
+```
+
+The above command will clone the `freshops` repo into a `themes/freshops` directory.
+
+**Read:** [Which remote URL should I use?](https://help.github.com/articles/which-remote-url-should-i-use/)
+
+### Updating repo
+
+When you’re ready to update the live theme repository, do this:
+
+```bash
+$ cd content/themes/freshops/
+$ git remote update && git status
+```
+
+If everything from above command looks good, then run:
+
+```bash
+$ git pull
+```
+
+Next, check the live site to make sure nothing broke. :laughing:
 
 ## Tips
 
