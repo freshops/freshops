@@ -1,0 +1,7 @@
+@charset "UTF-8";
+#order ul,
+ul#menu li ul,
+ul#menu li ol,
+.ui-tabs-hide {
+  display: none;
+}

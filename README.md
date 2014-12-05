@@ -1,4 +1,3 @@
-freshops
-========
+# Freshops
 
 Coming soon.

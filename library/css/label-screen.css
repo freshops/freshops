@@ -1,0 +1,103 @@
+@charset "UTF-8";
+/* CSS Document */
+.ui-menu .ui-menu-item {
+  list-style: none outside;
+}
+#input-box {
+  background: #c9de96;
+  /* old browsers */
+  background: -moz-linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%);
+  /* firefox */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c9de96), color-stop(44%, #8ab66b), color-stop(100%, #398235));
+  /* webkit */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c9de96', endColorstr='#398235', GradientType=0);
+  /* ie */
+  text-align: left;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 10px;
+}
+#variety {
+  display: inline;
+  text-align: left;
+}
+#weight {
+  display: inline;
+  text-align: left;
+}
+/* Output styles */
+#preview-box {
+  border: .015in solid #000;
+  display: block;
+  margin-top: 5px;
+  width: 2.5in;
+  height: 4in;
+  background: #ffffff url(/assets/v1/images/labels/labeller-bg.png) scroll top;
+  overflow: hidden;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+#instructions {
+  display: block;
+  text-align: left;
+  background: #B2C3BF;
+  margin-left: 2.6in;
+  -moz-border-radius: 12px;
+  /* FF1+ */
+  -webkit-border-radius: 12px;
+  /* Saf3-4 */
+  border-radius: 12px;
+  /* Opera 10.5, IE 9, Saf5, Chrome */
+  -moz-box-shadow: 0px 0px 4px #ffffff;
+  /* FF3.5+ */
+  -webkit-box-shadow: 0px 0px 4px #ffffff;
+  /* Saf3.0+, Chrome */
+  box-shadow: 0px 0px 4px #ffffff;
+  /* Opera 10.5, IE 9 */
+  background-color: #c9d9af;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #c9d9af), color-stop(1, #99cc66));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#c9d9af', EndColorStr='#99CC66');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#c9d9af', EndColorStr='#99CC66')";
+  padding: 5px 10px 200px 10px;
+  margin-top: 5px;
+}
+/* Output styles */
+#variety-output {
+  text-align: center;
+  margin-top: 2.1in;
+  font-size: 210%;
+  font-weight: bold;
+  line-height: 0.85em;
+}
+#description {
+  position: relative;
+  display: block;
+  font-size: 8pt;
+  line-height: 1.20em;
+  width: 2.3in;
+  height: 0.7in;
+  margin: 0px;
+  padding: .05in .1in 0 .1in;
+  overflow: hidden;
+  text-align: left;
+  vertical-align: baseline;
+}
+#alpha {
+  position: absolute;
+  left: 0.75in;
+  margin: 0;
+  padding: 0;
+}
+#weight-output {
+  position: absolute;
+  left: 1.725in;
+  text-align: center;
+  margin-right: .05in;
+}
+#weight-output,
+#alpha {
+  font-size: 1.5em;
+  top: 3.55in;
+}

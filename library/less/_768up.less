@@ -1,0 +1,487 @@
+/******************************************************************
+Site Name: Freshops.com
+Author: Ben Beekman
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+******************************************************************/
+#main header, #main article {
+	display:block;
+}
+
+#content a:link, a:visited{
+	text-decoration: none;
+}
+
+h1.page-title {
+	line-height: 1;
+	padding: 15px 0 10px;
+	// width:100%;
+	font-size: 1.4rem;
+	display:inline;
+}
+
+
+#hops { position: relative; }
+
+#hops div {
+	background: url('../images/template/hop-graphic.png') no-repeat scroll 0% 0% transparent;
+	clear:both;
+	width: 301px;
+	height: 644px;
+	position: absolute;
+	z-index: 200;
+	top: 0;
+	left: 0;
+}
+
+
+
+div#inner-footer.wrap {
+	color: lighten(@gray, 15%);
+	line-height: 0.5;
+
+}
+
+html > body #hops div { background: url(../images/template/hop-graphic.png) no-repeat; }
+* html #hops div { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/template/hop-graphic.png', sizingMethod='scale'); }
+
+header.header {
+	background: @black;
+	display: inline-block;
+	float: left;
+	width: 250px;
+	#inner-header {}
+}
+
+header nav {
+	background: @black url(../images/template/border-02.png) repeat-x left bottom;
+	margin-left: 0;
+	margin-top:0;
+	display: block;
+	width: 250px;
+	height: 100%;
+	.nav {
+		li {
+			a{}
+		}
+	}
+}
+
+#order {
+	padding: 0 0 10px;
+	background: #1a1a1a;
+}
+#order div {
+	background: url(../images/template/order-button.png) no-repeat center top;
+	height: 50px;
+}
+#order div a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+#order ul {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+#order ul li {
+	list-style-type: none;
+	background: #0f0f0f;
+	border: 2px solid @semi-black;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	margin: 3px 25px;
+	line-height: normal;
+}
+#order ul li a {
+	font-size: 93%;
+	text-decoration: none;
+	display: block;
+	padding: 5px;
+	color: #719b37;
+}
+#order ul li a:visited { color: #719b37; }
+#order ul li a:visited:hover,
+#order ul li a:focus,
+#order ul li a:focus:hover,
+#order ul li a:hover,
+#order ul li a:active {
+	color: #bbb749;
+	text-decoration: none;
+}
+
+#content {   margin-left: 260px;
+	margin-top: 0;
+padding: 0;} //#primary from old design
+
+#main{  //#main from old design
+	background: url("../images/template/grunge-03.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	// padding: 40px 50px 0;
+
+	article:first-of-type{
+		&:before {
+			content: url("../images/template/badge.png");
+			float:left;
+			height: 79px;
+			left: 10px;
+			position: absolute;
+			top: 5px;
+			width: 79px;
+			z-index: 100;
+		}
+		.article-header{min-height: 90px;
+			// background: url("../images/template/grunge-01.png") no-repeat scroll left bottom rgba(0, 0, 0, 0);
+		}
+		.entry-content {background-image: url("../images/template/grunge-01.png") no-repeat scroll left top rgba(0, 0, 0, 0);}
+
+		.entry-content, .search, .article-footer {padding: 40px 50px 0px;}
+	}
+
+}
+#inner-content {background: url("../images/template/shadow-02.png") repeat-y scroll 0 0 #E8EFDC;
+display: inline;
+float: left;
+width: 100%;
+}
+
+
+
+
+#sitelogo, #sitelogo a, #sitelogo h1 a{
+	height: 247px;
+	width: 250px;
+	margin-top: 0px;
+}
+#sitelogo a:hover, #sitelogo a:active {
+	background-image: url("../images/template/freshops-logo.png");
+	background-position: 0 0;
+	height: 247px;
+	width: 250px;
+
+}
+#sitelogo a{
+	background-image: url("../images/template/freshops-logo.png");
+	background-position: 0 -247px;
+	background-repeat: no-repeat;
+	display: block;
+	text-indent: -999em;
+	&:hover, &:active {
+		background-image: url("../images/template/freshops-logo.png");
+		background-position: 0 0;
+	}
+	&::after{clear:both;}
+}
+div.product_grid_display{
+	div.product_grid_item {
+		float:	left;
+		padding: 1rem;
+	}
+}
+.home {
+	.wpsc_page_numbers_top {
+		display:none;
+	}
+	#shoppingcart {display: none;}
+	.wpsc_category_details {
+		display: none;
+	}
+}
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body {background: url('../images/template/bg.png') repeat-y scroll 0% 0% #C9D9AF;}
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+// .wrap {
+// 	max-width: 1140px;
+// }
+
+/*********************
+HEADER STYLES
+*********************/
+
+.header {}
+
+#logo {}
+h1.image-replacement {
+	font-size: 0;
+	line-height: 0;
+}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+header .nav {        //header-only styles
+	ul {
+		li{
+			a {width: 100%;
+				&:link, &:visited {@color: @offwhite}
+				&:hover, &:focus, &:active {
+					background-color: @green-light;
+					color: @gray-dark;
+				}
+			}
+		}
+	}
+}
+
+.nav {
+	background: transparent;
+	border: 0;
+	ul {
+		margin-top:0;
+	}
+	li {
+		position: relative;
+
+		a {
+			border-bottom: 0;
+			/*
+			you can use hover styles here even though this size
+			has the possibility of being a mobile device.
+			*/
+			&:link, &:visited {color: @olive;}
+			&:hover, &:focus, &:active {
+				color: @hops-green;
+			}
+		}
+
+		&:first-child {}
+		&:last-child {}
+
+		/*
+		plan your menus and drop-downs wisely.
+		*/
+		ul.sub-menu,
+		ul.children {
+			// margin-top: 0;
+			// border: 1px solid #ccc;
+			// border-top: 0;
+			// position: absolute;
+			// overflow: hidden;
+			// visibility: hidden;
+			// z-index: 8999;
+
+			li {
+
+				a {
+					// background-color: #FFFFFF;
+					// border-bottom: 1px solid #CCCCCC;
+					// border-right: 0 none;
+					// display: block;
+					// padding-left: 1rem;
+					// white-space: nowrap;
+					// width: 25rem;
+
+					&:hover,
+					&:focus {
+						background: @green-x-light;
+						color: @gray-dark;
+					}
+
+					&:link {}
+				}
+
+				&:first-child {}
+
+				&:last-child {
+
+					a {
+						border-bottom: 0;
+					}
+				}
+
+				/*
+				if you need to go deeper, go nuts
+				just remember deeper menus suck
+				for usability. k, bai.
+				*/
+				ul {}
+			}
+
+			/* highlight sub-menu current page */
+			li.current-menu-item,
+			li.current_page_item,
+			li.current_page_ancestor {
+				a {}
+			}
+		}
+
+		/* showing sub-menus */
+		&:hover ul {
+			// top: auto;
+			// overflow: visible;
+			// visibility:visible;
+		}
+
+		} /* end .menu ul li */
+
+		/* highlight current page */
+		li.current-menu-item,
+		li.current_page_item,
+		li.current_page_ancestor
+		{
+			a {}
+	}  /* end current highlighters */
+
+} /* end .nav */
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+.sidebar {
+	// margin-top: 2.2em;
+}
+
+.widgettitle {
+	border-bottom: 2px solid #444;
+	margin-bottom: 0.75em;
+}
+
+.widget {
+	padding: 0 10px;
+	margin: 2.2em 0;
+
+	ul {
+		li {
+			margin-bottom: 0.75em;
+
+			&:first-child {}
+			&:last-child {}
+			a {}
+			/* deep nesting */
+
+			ul {
+				margin-top: 0.75em;
+				padding-left: 1em;
+			}
+		}
+	}
+}
+
+
+/* links widget */
+.widget_links {}
+.widget_links ul {}
+.widget_links ul li {}
+.widget_links ul li a {}
+
+/* meta widget */
+.widget_meta {}
+.widget_meta ul {}
+.widget_meta ul li {}
+.widget_meta ul li a {}
+
+/* pages widget */
+.widget_pages {}
+.widget_pages ul {}
+.widget_pages ul li {}
+.widget_pages ul li a {}
+
+/* recent-posts widget */
+.widget_recent_entries {}
+.widget_recent_entries ul {}
+.widget_recent_entries ul li {}
+.widget_recent_entries ul li a {}
+
+/* archives widget */
+.widget_archive {}
+.widget_archive ul {}
+.widget_archive ul li {}
+.widget_archive ul li a {}
+.widget_archive select {}
+.widget_archive option {}
+
+/* tag-cloud widget */
+.widget_links {}
+.widget_links li:after {}
+.widget_links li:before {}
+.widget_tag_cloud {}
+.widget_tag_cloud a {}
+.widget_tag_cloud a:after {}
+.widget_tag_cloud a:before {}
+
+/* calendar widget */
+.widget_calendar {}
+#calendar_wrap {}
+#calendar_wrap th {}
+#calendar_wrap td {}
+#wp-calendar tr td {}
+#wp-calendar caption {}
+#wp-calendar a {}
+#wp-calendar #today {}
+#wp-calendar #prev {}
+#wp-calendar #next {}
+#wp-calendar #next a {}
+#wp-calendar #prev a {}
+
+/* category widget */
+.widget_categories {}
+.widget_categories ul {}
+.widget_categories ul li {}
+.widget_categories ul ul.children {}
+.widget_categories a {}
+.widget_categories select{}
+.widget_categories select#cat {}
+.widget_categories select.postform {}
+.widget_categories option {}
+.widget_categories .level-0 {}
+.widget_categories .level-1 {}
+.widget_categories .level-2 {}
+.widget_categories .level-3 {}
+
+/* recent-comments widget */
+.recentcomments {}
+#recentcomments {}
+#recentcomments li {}
+#recentcomments li a {}
+.widget_recent_comments {}
+
+/* search widget */
+#searchform {}
+.widget_search {}
+.screen-reader-text {}
+
+/* text widget */
+.textwidget {}
+.widget_text {}
+.textwidget p {}
+
+
+/*********************
+FOOTER STYLES
+*********************/
+
+/*
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
+*/
+.footer {
+	margin-left: 320px;
+}
+.footer-links {
+	ul {
+		li {
+			a {
+				&:hover {}
+			}
+			/*
+			be careful with the depth of your menus.
+			it's very rare to have multi-depth menus in
+			the footer.
+			*/
+			ul {}
+		}
+	}
+}
+/* end .footer-links */
+
