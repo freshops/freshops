@@ -10,7 +10,7 @@ global $wp_query;
 	// $image_height = get_option( 'single_view_image_height' );
 ?>
 
-<!-- <div id="single_product_page_container"> -->
+<div id="single_product_page_container">
 
 	<?php
 		// Breadcrumbs
@@ -298,4 +298,4 @@ if(get_field('usda_hops_info')) { ?>
 } //endwhile;
 do_action( 'wpsc_theme_footer' ); 
 ?>
-<!-- </div> --><!--close single_product_page_container-->
+ </div><!--close single_product_page_container
