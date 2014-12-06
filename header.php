@@ -64,7 +64,7 @@
 					</div>
 					<?php
 					// order_nav();
-					 bones_main_nav(); ?>
+					 freshops_main_nav(); ?>
 					<div id="hops"> <div></div>
 					</div>
 					</nav>

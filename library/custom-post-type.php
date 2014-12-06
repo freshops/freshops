@@ -15,10 +15,10 @@ URL: http://themble.com/bones/
 */
 
 // Flush rewrite rules for custom post types
-add_action( 'after_switch_theme', 'bones_flush_rewrite_rules' );
+add_action( 'after_switch_theme', 'freshops_flush_rewrite_rules' );
 
 // Flush your rewrite rules
-function bones_flush_rewrite_rules() {
+function freshops_flush_rewrite_rules() {
 	flush_rewrite_rules();
 }
 /*------------------------------------------------------------------------------------------------
@@ -31,23 +31,23 @@ function bones_flush_rewrite_rules() {
 function bgb_cpt_testimonials() {
 
 	$labels = array(
-		'name'                => _x( 'Testimonials', 'Post Type General Name', 'bones_theme' ),
-		'singular_name'       => _x( 'Testimonial', 'Post Type Singular Name', 'bones_theme' ),
-		'menu_name'           => __( 'Testimonials', 'bones_theme' ),
-		'parent_item_colon'   => __( 'Parent Item:', 'bones_theme' ),
-		'all_items'           => __( 'All Testimonials', 'bones_theme' ),
-		'view_item'           => __( 'View Testimonial', 'bones_theme' ),
-		'add_new_item'        => __( 'Add New Testimonial', 'bones_theme' ),
-		'add_new'             => __( 'Add New Testimonial', 'bones_theme' ),
-		'edit_item'           => __( 'Edit Testimonial', 'bones_theme' ),
-		'update_item'         => __( 'Update Testimonial', 'bones_theme' ),
-		'search_items'        => __( 'Search Testimonials', 'bones_theme' ),
-		'not_found'           => __( 'Testimonial Not Found', 'bones_theme' ),
-		'not_found_in_trash'  => __( 'Testimonial Not Found in Trash', 'bones_theme' ),
+		'name'                => _x( 'Testimonials', 'Post Type General Name', 'freshopstheme' ),
+		'singular_name'       => _x( 'Testimonial', 'Post Type Singular Name', 'freshopstheme' ),
+		'menu_name'           => __( 'Testimonials', 'freshopstheme' ),
+		'parent_item_colon'   => __( 'Parent Item:', 'freshopstheme' ),
+		'all_items'           => __( 'All Testimonials', 'freshopstheme' ),
+		'view_item'           => __( 'View Testimonial', 'freshopstheme' ),
+		'add_new_item'        => __( 'Add New Testimonial', 'freshopstheme' ),
+		'add_new'             => __( 'Add New Testimonial', 'freshopstheme' ),
+		'edit_item'           => __( 'Edit Testimonial', 'freshopstheme' ),
+		'update_item'         => __( 'Update Testimonial', 'freshopstheme' ),
+		'search_items'        => __( 'Search Testimonials', 'freshopstheme' ),
+		'not_found'           => __( 'Testimonial Not Found', 'freshopstheme' ),
+		'not_found_in_trash'  => __( 'Testimonial Not Found in Trash', 'freshopstheme' ),
 	);
 	$args = array(
-		'label'               => __( 'bgb_cpt_testimonials', 'bones_theme' ),
-		'description'         => __( 'Client Testimonials', 'bones_theme' ),
+		'label'               => __( 'bgb_cpt_testimonials', 'freshopstheme' ),
+		'description'         => __( 'Client Testimonials', 'freshopstheme' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'custom-fields', 'post-formats', ),
 		'taxonomies'          => array( 'category', 'post_tag' ),

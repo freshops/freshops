@@ -21,7 +21,7 @@
 								</section>
 
 								<footer class="article-footer">
-									<p class="tags"><?php the_tags( '<span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '' ); ?></p>
+									<p class="tags"><?php the_tags( '<span class="tags-title">' . __( 'Tags:', 'freshopstheme' ) . '</span> ', ', ', '' ); ?></p>
 
 								</footer>
 
@@ -31,13 +31,13 @@
 
 							<?php endwhile; ?>
 
-									<?php if ( function_exists( 'bones_page_navi' ) ) { ?>
-											<?php bones_page_navi(); ?>
+									<?php if ( function_exists( 'freshops_page_navi' ) ) { ?>
+											<?php freshops_page_navi(); ?>
 									<?php } else { ?>
 											<nav class="wp-prev-next">
 													<ul class="clearfix">
-														<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'bonestheme' )) ?></li>
-														<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'bonestheme' )) ?></li>
+														<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'freshopstheme' )) ?></li>
+														<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'freshopstheme' )) ?></li>
 													</ul>
 											</nav>
 									<?php } ?>
@@ -46,13 +46,13 @@
 
 									<article id="post-not-found" class="hentry clearfix">
 											<header class="article-header">
-												<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+												<h1><?php _e( 'Oops, Post Not Found!', 'freshopstheme' ); ?></h1>
 										</header>
 											<section class="entry-content">
-												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'freshopstheme' ); ?></p>
 										</section>
 										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the index.php template.', 'bonestheme' ); ?></p>
+												<p><?php _e( 'This is the error message in the index.php template.', 'freshopstheme' ); ?></p>
 										</footer>
 									</article>
 

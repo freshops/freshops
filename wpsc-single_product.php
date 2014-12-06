@@ -277,7 +277,7 @@ if(get_field('storage')) { ?>
 </dl>
 <?php
 }
-if(get_field('possible_substitutions')) { ?>
+if(get_field('possible_substitutions')) {: ?>
 <dl><dt>Possible Substitutions</dt>
 	<dd> <?php echo get_field('possible_substitutions');?></dd>
 </dl>

@@ -10,13 +10,13 @@
 
 							<header class="article-header">
 
-								<h1 class="page-title"><?php _e( 'Sorry, Page not Found', 'bonestheme' ); ?></h1>
+								<h1 class="page-title"><?php _e( 'Sorry, Page not Found', 'freshopstheme' ); ?></h1>
 
 							</header>
 
 							<section class="entry-content">
 
-								<p><?php _e( 'The page you were looking for was not found at that address and returned a 404 error. Try using the navigation or the search bar below to find what you seek.', 'bonestheme' ); ?></p>
+								<p><?php _e( 'The page you were looking for was not found at that address and returned a 404 error. Try using the navigation or the search bar below to find what you seek.', 'freshopstheme' ); ?></p>
 
 							</section>
 
@@ -28,7 +28,7 @@
 
 							<footer class="article-footer">
 
-									<p><?php _e( 'This is the 404.php template.', 'bonestheme' ); ?></p>
+									<p><?php _e( 'This is the 404.php template.', 'freshopstheme' ); ?></p>
 
 							</footer>
 

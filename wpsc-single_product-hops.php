@@ -18,7 +18,7 @@ single-bookmarks.php
 
 	<div id="inner-content" class="wrap clearfix">
 
-		<div id="main" class="twelvecol first clearfix" role="main">
+		<div id="main" class="eightcol first clearfix" role="main">
 
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -123,7 +123,7 @@ single-bookmarks.php
 	</section>
 
 	<footer class="article-footer">
-		<p class="tags"><?php echo get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">' . __( 'Tagged with:', 'bonestheme' ) . '</span> ', ', ' ) ?></p>
+		<p class="tags"><?php echo get_the_term_list( get_the_ID(), 'custom_tag', '<span class="tags-title">' . __( 'Tagged with:', 'freshopstheme' ) . '</span> ', ', ' ) ?></p>
 
 	</footer>
 
@@ -135,13 +135,13 @@ single-bookmarks.php
 
 	<article id="post-not-found" class="hentry clearfix">
 		<header class="article-header">
-			<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+			<h1><?php _e( 'Oops, Post Not Found!', 'freshopstheme' ); ?></h1>
 		</header>
 		<section class="entry-content">
-			<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+			<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'freshopstheme' ); ?></p>
 		</section>
 		<footer class="article-footer">
-			<p><?php _e( 'This is the error message in the single-custom_type.php template.', 'bonestheme' ); ?></p>
+			<p><?php _e( 'This is the error message in the single-custom_type.php template.', 'freshopstheme' ); ?></p>
 		</footer>
 	</article>
 

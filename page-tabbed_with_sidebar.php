@@ -55,7 +55,7 @@ Template Name: Tabbed Content with Sidebar
 			</section>
 
 			<footer class="article-footer">
-				<p class="clearfix"><?php the_tags( '<span class="tags">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '' ); ?></p>
+				<p class="clearfix"><?php the_tags( '<span class="tags">' . __( 'Tags:', 'freshopstheme' ) . '</span> ', ', ', '' ); ?></p>
 
 			</footer>
 
@@ -67,13 +67,13 @@ Template Name: Tabbed Content with Sidebar
 
 	<article id="post-not-found" class="hentry clearfix">
 		<header class="article-header">
-			<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+			<h1><?php _e( 'Oops, Post Not Found!', 'freshopstheme' ); ?></h1>
 		</header>
 		<section class="entry-content">
-			<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+			<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'freshopstheme' ); ?></p>
 		</section>
 		<footer class="article-footer">
-			<p><?php _e( 'This is the error message in the page-custom.php template.', 'bonestheme' ); ?></p>
+			<p><?php _e( 'This is the error message in the page-custom.php template.', 'freshopstheme' ); ?></p>
 		</footer>
 	</article>
 
