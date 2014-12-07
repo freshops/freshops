@@ -88,7 +88,7 @@ Setting up repo on production machine …
 
 ### Folder hierarchy
 
-I like to use a setup ([similar to this](https://github.com/mhulse/bueller)); here’s a visual:
+I like to use a setup [similar to this](https://github.com/mhulse/bueller); here’s a visual:
 
 ![screen shot 2014-12-04 at 11 50 29 pm](https://cloud.githubusercontent.com/assets/218624/5312526/5dd83be4-7c10-11e4-8f04-4e3135f6fa76.png)
 
@@ -127,12 +127,14 @@ Useful bits to know …
 
 ### Tail the log
 
-To see php errors and warnings, `ssh` to the server, and:
+To see php errors and warnings, 
+
+`ssh freshops@web400.webfaction.com`
+
+then
 
 ```bash
-$ tail -f content/debug.log
+$ tail -f webapps/beta2/content/debug.log
 ```
 
 I like to keep one Terminal tab open just to watch for errors/warnings.
-
-:octocat: :+1:
