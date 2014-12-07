@@ -36,15 +36,17 @@ column-gap:1rem;
 	&:before {content: "&#126;"} //tilde before author's name
 }
 
+.home p.demo_store {
+	top: 88%;
+}
+
+
 #order ul, ul#menu li ul, ul#menu li ol, .ui-tabs-hide, #menu-main-nav-order ul, ul#menu-main-nav-main-nav li ul, ul#menu-main-nav-main-nav li ol { display: none; }
 article {display:inline;}
 #location {
 	background: url('../images/template/border-01.png') repeat-x scroll left bottom #FAFCF8;
 }
 
-.home p.demo_store {
-	top: 88%;
-}
 
 
 #sitelogo, #sitelogo a, #sitelogo h1 a{
@@ -194,64 +196,6 @@ style a page via class
 		display: block !important;  /* Make sure our element is a block-level element */
 		clear: both !important;     /* Make sure it clears on both sides */
 	}
-
-	#container {}
-
-/*********************
-04. LINK STYLES
-*********************/
-
-a, a:visited {
-	color: @link-color;
-
-	/* on hover */
-	&:hover, &:focus {
-		color: @link-hover;
-	}
-
-	/* on click */
-	&:active {
-
-	}
-
-	/* mobile tap color */
-	&:link {
-		/*
-		this highlights links on iPhones/iPads.
-		so it basically works like the :hover selector
-		for mobile devices.
-		*/
-		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
-	}
-}
-
-/******************************************************************
-05. H1, H2, H3, H4, H5 STYLES
-******************************************************************/
-h1.page-title {
-	margin: 0 0 0 95px;
-	padding: 10px 0 15px;
-	color: @hops-green-x-dark;
-	text-transform: uppercase;
-	letter-spacing: .05em;
-	font-size: 167%;
-	line-height: 1;
-}
-
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-	font-family: @sans-serif;
-	text-rendering: optimizelegibility;
-	font-weight: 400;
-	/*
-	if you're going to use webfonts, be sure to check your weights
-	http://css-tricks.com/watch-your-font-weight/
-	*/
-
-	/* removing text decoration from all headline links */
-	a {
-		text-decoration: none;
-	}
-}
 
 
 
