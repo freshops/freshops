@@ -186,24 +186,6 @@ them in here, they won't work.
 /*********************
 NAVIGATION STYLES
 *********************/
-/* .menu is clearfixed inside mixins.scss */
-.menu {
-  /* end .menu ul */ }
-  .menu ul {
-    /* end .menu ul li */
-    /* highlight current page */
-    /* end current highlighters */ }
-    .menu ul li {
-      /*
-      plan your menus and drop-downs wisely.
-      */ }
-      .menu ul li a {
-        /*
-        you can use hover styles here even though this size
-        has the possibility of being a mobile device.
-        */ }
-
-/* end .menu */
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -222,7 +204,8 @@ POSTS & CONTENT STYLES
     margin-right: auto;
     margin-left: auto;
     display: block;
-    clear: both; }
+    clear: both;
+    text-align: center; }
 
 /* end .entry-content */
 /*********************
@@ -282,9 +265,6 @@ NAVIGATION STYLES
       you can use hover styles here even though this size
       has the possibility of being a mobile device.
       */ }
-      .nav li a:hover, .nav li a:focus {
-        color: white;
-        text-decoration: underline; }
     .nav li ul.sub-menu,
     .nav li ul.children {
       margin-top: 0;
