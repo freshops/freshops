@@ -1,0 +1,244 @@
+#container {
+	
+	position: relative;
+	
+	&::after {
+		
+		@media all and (min-width: 640px) {
+			
+			content: "";
+			display: table;
+			clear: both;
+			
+		}
+		
+	}
+	
+}
+
+#flag {
+	
+	width: 143px;
+	height: 36px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 5px;
+	left: 10px;
+	z-index: 10;
+	
+	a {
+		
+		text-indent: -999em;
+		background: {
+			image: url(../images/rhizome/freshops-logo-small.png);
+			repeat: no-repeat;
+			size: cover;
+		}
+		width: 100%;
+		height: 100%;
+		display: block;
+		
+		.no-touch &:hover { background-position: 0 0; }
+		&:active,
+		&:focus { outline: none; }
+		
+		@media all and (min-width: 640px) {
+			
+			background: {
+				image: url(../images/rhizome/freshops-logo.png);
+				position: 0 -247px;
+			}
+			
+		}
+		
+	}
+	
+	@media all and (min-width: 640px) {
+		
+		width: 250px;
+		height: 247px;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		top: 0;
+		left: 0;
+		
+	}
+	
+}
+
+#secondary {
+	
+	display: none;
+	
+	@media all and (min-width: 640px) {
+		
+		padding-top: 247px; // Matches `#flag` height.
+		width: 250px;
+		float: left;
+		display: inline;
+		
+		* html & { margin-right: 7px; }
+		
+	}
+	
+}
+
+#hops {
+	
+	@media all and (min-width: 640px) {
+		
+		position: relative;
+		
+		div {
+			background: url(../images/rhizome/hop-graphic.png) no-repeat;
+			width: 301px;
+			height: 644px;
+			position: absolute;
+			z-index: 200;
+			top: 0;
+			left: 0;
+		}
+		
+	}
+	
+}
+
+#primary {
+	
+	@media all and (min-width: 640px) {
+		
+		margin-left: 260px;
+		
+		// Clear `#wrap`:
+		&::after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		
+	}
+	
+}
+
+#wrap {
+	
+	// For `#badge`:
+	position: relative;
+	background: #e8efdc;
+	
+	@media all and (min-width: 640px) {
+		
+		width: 100%;
+		float: left;
+		display: inline;
+		background: {
+			image: url(../images/rhizome/shadow-02.png);
+			repeat: repeat-y;
+		}
+		
+	}
+	
+}
+
+#badge {
+	
+	display: none;
+	
+	@media all and (min-width: 960px) {
+		
+		background: url(../images/rhizome/badge.png) no-repeat;
+		width: 79px;
+		height: 79px;
+		display: block;
+		position: absolute;
+		z-index: 100;
+		top: 5px;
+		left: 10px;
+		
+	}
+	
+}
+
+#location {
+	
+	background: #fafcf8 url(../images/rhizome/border-01.png) repeat-x left bottom;
+	
+	div {
+		
+		background: url(../images/rhizome/grunge-01.png) no-repeat left bottom;
+		
+		h1 {
+			
+			font-size: 22px;
+			text-transform: uppercase;
+			line-height: 1;
+			letter-spacing: .03em;
+			color: #3a770c;
+			margin: 0 0 0 20px;
+			padding: 10px 0;
+			
+			@media all and (min-width: 960px) {
+				
+				margin-left: 95px;
+				
+			}
+			
+		}
+	
+	}
+	
+}
+
+#content {
+	
+	background: url(../images/rhizome/grunge-03.png) no-repeat;
+	padding: 10px 20px;
+	min-height: 600px; // Just looks better.
+	
+	@media all and (min-width: 640px) {
+		
+		padding: 25px 50px;
+		
+	}
+	
+}
+
+#footer {
+	
+	font-size: smaller;
+	line-height: 1.5;
+	background: #c9d9af url(../images/rhizome/border-03.png) repeat-x;
+	height: 359px;
+	
+	div {
+		
+		height: 359px;
+		padding: 10px 20px;
+		background: url(../images/rhizome/grunge-04.png) no-repeat;
+		
+		p {
+			color: #394e1c;
+			margin: 0;
+			padding: 0;
+		}
+		
+		@media all and (min-width: 640px) {
+			
+			padding: 25px 50px;
+			
+		}
+		
+	}
+	
+	a {
+		
+		text-decoration: none;
+		color: #2d3e16;
+		
+		.no-touch &:hover { text-decoration: underline; }
+		
+	}
+	
+}

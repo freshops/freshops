@@ -1,0 +1,64 @@
+.nav {
+	
+	background: #c9d9af url(../images/rhizome/border-02.png) repeat-x left bottom;
+	
+	div { background: url(../images/rhizome/grunge-02.png) no-repeat left bottom; }
+	
+	ul {
+		
+		margin: 0 0 0 10px;
+		padding: 0;
+		
+		// Clear list items:
+		&::after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		
+		li {
+			
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			float: left;
+			display: inline;
+			
+			a {
+				
+				font-size: 100%;
+				font-weight: bold;
+				text-decoration: none;
+				color: #59694a;
+				padding: .5em;
+				display: block;
+				cursor: pointer;
+				
+				&:visited { color: #6c6e73; }
+				.no-touch &:visited:hover,
+				&:focus,
+				.no-touch &:focus:hover,
+				.no-touch &:hover,
+				&:active,
+				.ui-tabs-selected & {
+					color: #fff;
+					text-decoration: none;
+					background: #96b477 url(../images/rhizome/border-04.png) repeat-x left bottom;
+				}
+				
+				&:active,
+				&:focus { outline: 0; }
+				
+			}
+			
+		}
+		
+		@media all and (min-width: 960px) {
+			
+			margin-left: 95px;
+			
+		}
+		
+	}
+	
+}
