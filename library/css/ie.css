@@ -250,6 +250,72 @@ HEADER STYLES
 /*********************
 NAVIGATION STYLES
 *********************/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/github\/freshops\/library\/scss\/breakpoints\/_768up\.scss}line{font-family:\0000342}}
+.nav {
+  border: 0;
+  /* end .menu ul li */
+  /* highlight current page */
+  /* end current highlighters */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/github\/freshops\/library\/scss\/breakpoints\/_768up\.scss}line{font-family:\0000344}}
+  .nav ul {
+    background: #323944;
+    margin-top: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/github\/freshops\/library\/scss\/breakpoints\/_768up\.scss}line{font-family:\0000348}}
+  .nav li {
+    float: left;
+    position: relative;
+    /*
+    plan your menus and drop-downs wisely.
+    */
+    /* showing sub-menus */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/github\/freshops\/library\/scss\/breakpoints\/_768up\.scss}line{font-family:\0000352}}
+    .nav li a {
+      border-bottom: 0;
+      /*
+      you can use hover styles here even though this size
+      has the possibility of being a mobile device.
+      */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/github\/freshops\/library\/scss\/breakpoints\/_768up\.scss}line{font-family:\0000371}}
+    .nav li ul.sub-menu,
+    .nav li ul.children {
+      margin-top: 0;
+      border: 1px solid #ccc;
+      border-top: 0;
+      position: absolute;
+      visibility: hidden;
+      z-index: 8999;
+      /* highlight sub-menu current page */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/github\/freshops\/library\/scss\/breakpoints\/_768up\.scss}line{font-family:\0000379}}
+      .nav li ul.sub-menu li,
+      .nav li ul.children li {
+        /*
+        if you need to go deeper, go nuts
+        just remember deeper menus suck
+        for usability. k, bai.
+        */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/github\/freshops\/library\/scss\/breakpoints\/_768up\.scss}line{font-family:\0000381}}
+        .nav li ul.sub-menu li a,
+        .nav li ul.children li a {
+          padding-left: 10px;
+          border-right: 0;
+          display: block;
+          width: 180px;
+          border-bottom: 1px solid #ccc; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/github\/freshops\/library\/scss\/breakpoints\/_768up\.scss}line{font-family:\0000398}}
+        .nav li ul.sub-menu li:last-child a,
+        .nav li ul.children li:last-child a {
+          border-bottom: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/github\/freshops\/library\/scss\/breakpoints\/_768up\.scss}line{font-family:\00003108}}
+        .nav li ul.sub-menu li ul,
+        .nav li ul.children li ul {
+          top: 0;
+          left: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/djbeeker\/github\/freshops\/library\/scss\/breakpoints\/_768up\.scss}line{font-family:\00003123}}
+    .nav li:hover > ul {
+      top: auto;
+      visibility: visible; }
+
+/* end .nav */
 /*********************
 SIDEBARS & ASIDES
 *********************/
