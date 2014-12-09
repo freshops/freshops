@@ -240,52 +240,50 @@ function print_menu_shortcode($atts, $content = null) {
 	add_shortcode('menu', 'print_menu_shortcode');
 }
 
-function enqueue_scripts() {
-	if (!is_admin()) {
-		$rhizcss = get_bloginfo( 'stylesheet_directory' ) . '/library/css/rhizome/';
+//--------------------------------------------------------------------
+
+function fh_wp_enqueue_styles() {
+	
+	if ( ! is_admin()) {
 		
-		// wp_register_style( 'superfish', get_bloginfo( 'stylesheet_directory' ) . '/library/css/superfish.css', false, 0.2 );
-		// wp_register_style( 'superfish-vertical', get_bloginfo( 'stylesheet_directory' ) . '/library/css/superfish-vertical.css', false, 0.4 );
-		wp_register_style( 'meanmenu', $rhizcss . 'meanmenu.css', false, 0.1 );
-		wp_register_style( 'fastclick', $rhizcss . 'meanmenu.css', false, 0.1 );
-
-		wp_enqueue_style ('fastclick');  // https://github.com/ftlabs/fastclick
-		wp_enqueue_style ('meanmenu');
-
-		wp_enqueue_script('jquery');
-		$script_path = get_template_directory_uri() . '/library/js/';
-		$rhizjs = $script_path . 'rhizome/';
-
-		wp_register_script('meanmenu', $rhizjs . 'jquery.meanmenu.min.js', array('jquery'), 0.1, false );
-		wp_register_script('nutshell', $rhizjs . 'jquery.nutshell.js', array('jquery'), 0.1, false );
-		wp_register_script('cookie', $rhizjs . 'jquery.cookie.js', array('jquery'), 0.1, false );
-		wp_register_script('dcjqaccordion', $rhizjs . 'jquery.dcjqaccordion.2.7.js', array('jquery'), 0.1, false );
-		wp_register_script('fastclick', $rhizjs . 'fastclick.js', array('jquery'), 0.1, false );
+		//$rhizcss = get_bloginfo('stylesheet_directory') . '/library/css/rhizome/';
 		
-
+		//wp_register_style('meanmenu', $rhizcss . 'meanmenu.css', false, 0.1);
+		//wp_register_style('fastclick', $rhizcss . 'meanmenu.css', false, 0.1);
 		
-		wp_enqueue_script('jquery');
-		wp_enqueue_script('meanmenu');
-		wp_enqueue_script('nutshell');      // https://github.com/mhulse/jquery-nutshell
-		wp_enqueue_script('cookie');        // https://github.com/carhartl/jquery-cookie
-		wp_enqueue_script('dcjqaccordion'); // https://github.com/albertedevigo/dcjqaccordion
-		wp_enqueue_script('fastclick');
-		wp_enqueue_script('rhizome');
-		// wp_register_script('superfish', $script_path . 'libs/superfish.min.js', array('jquery'), 11111, false );
-		// wp_register_script('jquery-cookie', $script_path . 'libs/jquery.cookie-r6165.min.js', array('jquery'), 678786786, false );
-		// wp_register_script('freshops_custom', $script_path . 'freshops.js', array('jquery'), 41212312142, false );
-		// wp_enqueue_script('jquery');
-		// wp_enqueue_script('jquery-ui-accordion');
-		// wp_enqueue_script ('jquery-ui-tabs');
-		// wp_enqueue_script('hoverIntent');
-		// wp_enqueue_script('meanmenu');
-		// wp_enqueue_script('superfish');
-		// wp_enqueue_script('jquery-cookie');
-		// wp_enqueue_script('freshops_custom');
+		//wp_enqueue_style ('fastclick');
+		//wp_enqueue_style ('meanmenu');
+		
 	}
+	
 }
 
-add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
+add_action('wp_enqueue_styles', 'fh_wp_enqueue_styles');
 
-// don't remove this bracket!
-?>
+//--------------------------------------------------------------------
+
+function fh_wp_enqueue_scripts() {
+	
+	if ( ! is_admin()) {
+		
+		$script_path = get_template_directory_uri() . '/library/js/rhizome/';
+		
+		wp_register_script('meanmenu',      $script_path . 'jquery.meanmenu.js',          array('jquery'), 1, FALSE);
+		wp_register_script('nutshell',      $script_path . 'jquery.nutshell.js',          array('jquery'), 1, FALSE);
+		wp_register_script('cookie',        $script_path . 'jquery.cookie.js',            array('jquery'), 1, FALSE);
+		wp_register_script('dcjqaccordion', $script_path . 'jquery.dcjqaccordion.2.7.js', array('jquery'), 1, FALSE);
+		wp_register_script('fastclick',     $script_path . 'fastclick.js',                array('jquery'), 1, FALSE);
+		wp_register_script('rhizome',       $script_path . 'rhizome.js',                  array('jquery'), 1, FALSE);
+		
+		wp_enqueue_script('meanmenu');
+		wp_enqueue_script('nutshell');
+		wp_enqueue_script('cookie');
+		wp_enqueue_script('dcjqaccordion');
+		wp_enqueue_script('fastclick');
+		wp_enqueue_script('rhizome');
+		
+	}
+	
+}
+
+add_action('wp_enqueue_scripts', 'fh_wp_enqueue_scripts');
