@@ -50,15 +50,16 @@ Template Name: Hop Alpha Values
 // The Query
 								$query = new WP_Query( $args );
 
-
 // The Loop
 								if ( $query->have_posts() ) {
 									while ( $query->have_posts() ) {
 										$query->the_post();
 										?>
 										<tr>
-											<td><?php the_title(); ?></td>
-											<td><?php if(get_field('alpha')){ echo get_field('alpha');} ?>&#37;</td>
+											<td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+											</td>
+											<td><?php if(get_field('alpha')) { 
+												echo get_field('alpha');} ?>&#37;</td>
 										</tr>
 										<?php
 									}
@@ -68,46 +69,18 @@ Template Name: Hop Alpha Values
 
 // Restore original Post Data
 								wp_reset_postdata();
-
 								?>
 							</table>
 						</div>
+<?php the_content(); ?>
 
-						<div id="ordering_instructions">
-							<section class="entry-content clearfix" itemprop="articleBody">
-								<div class="clear">
-									<div class="sixcol first">
-										<div class="sixcol last">
-										<h2>Ordering Instructions</h2>
+							</div>
+						</div>
+					</div>
+				</div>
 
-
-														<h2>Ordering Options</h2>
-
-														<ol>
-															<li>Online
-															<!-- PayPal Logo --><table border="0" cellpadding="10" cellspacing="0" align="center"><tr><td align="center"></td></tr><tr><td align="center"><a href="https://www.paypal.com/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo-center/Security_Banner_234x60_4a.gif" border="0" alt="PayPal Logo"></a></td></tr></table><!-- PayPal Logo -->
-															<img src="https://www.paypal.com/en_US/i/logo/PayPal_mark_60x38.gif" alt="Paypal acceptance mark" /></a><img src="/images/visa_mc.gif" alt="Visa and Mastercard accepted" width="127" height="37" /></li>
-
-															<li>Call 1-800 460-6925</li>
-
-															<li>Send check or money order to:<br>
-																Freshops<br>
-																36180 Kings Valley Hwy.<br>
-																Philomath, OR 97370</li>
-
-																<li>Fax your order to (541) 929-2702</li>
-																</ol>
-															</div>
-														</div>
-
-
-													</div>
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
+			</div>
+		</div>
 </p>
 </p>
 </p>
