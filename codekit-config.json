@@ -14,16 +14,14 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/library\/images\/template\/border-02.png" : {
+    "\/compatibility.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/images\/template\/border-02.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/images\/template\/border-02.png",
-      "initialSize" : 238,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/compatibility.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/library\/less\/labeler\/label-screen.less" : {
       "ieCompatibility" : 1,
@@ -72,15 +70,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/library\/images\/rhizome\/bg.png" : {
+    "\/library\/images\/template\/border-02.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/images\/rhizome\/bg.png",
+      "inputAbbreviatedPath" : "\/library\/images\/template\/border-02.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/images\/rhizome\/bg.png",
-      "initialSize" : 25761,
+      "outputAbbreviatedPath" : "\/library\/images\/template\/border-02.png",
+      "initialSize" : 238,
       "fileType" : 8192
     },
     "\/wpsc-account-downloads.php" : {
@@ -109,26 +107,6 @@
       "inputAbbreviatedPath" : "\/wpsc-category-list.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
-    },
-    "\/compatibility.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/compatibility.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
-    "\/library\/images\/rhizome\/grunge-03.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/images\/rhizome\/grunge-03.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/images\/rhizome\/grunge-03.png",
-      "initialSize" : 5965,
-      "fileType" : 8192
     },
     "\/index.php" : {
       "ignoreWasSetByUser" : 0,
@@ -166,17 +144,6 @@
       "outputStyle" : 0,
       "fileType" : 1,
       "debugStyle" : 3
-    },
-    "\/library\/images\/rhizome\/hop-graphic.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/images\/rhizome\/hop-graphic.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/images\/rhizome\/hop-graphic.png",
-      "initialSize" : 260816,
-      "fileType" : 8192
     },
     "\/library\/scss\/login.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -274,29 +241,6 @@
       "outputAbbreviatedPath" : "\/library\/css\/removed\/ui-lightness\/images\/ui-bg_glass_100_fdf5ce_1x400.png",
       "initialSize" : 125,
       "fileType" : 8192
-    },
-    "\/library\/images\/rhizome\/border-03.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/images\/rhizome\/border-03.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/images\/rhizome\/border-03.png",
-      "initialSize" : 242,
-      "fileType" : 8192
-    },
-    "\/library\/scss\/rhizome\/_layout.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/scss\/rhizome\/_layout.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/library\/scss\/css\/_layout.css",
-      "fileType" : 4,
-      "debugStyle" : 0
     },
     "\/library\/css\/removed\/ui-lightness\/images\/ui-bg_flat_10_000000_40x100.png" : {
       "ignoreWasSetByUser" : 0,
@@ -411,17 +355,6 @@
       "outputAbbreviatedPath" : "\/library\/js\/removed\/scripts-ck.min.js",
       "fileType" : 64
     },
-    "\/library\/js\/rhizome\/jquery.cookie.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/js\/rhizome\/jquery.cookie.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/library\/js\/rhizome\/jquery.cookie.min.js",
-      "fileType" : 64
-    },
     "\/sidebar.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -441,17 +374,6 @@
       "outputAbbreviatedPath" : "\/library\/css\/removed\/ui-lightness\/images\/ui-icons_222222_256x240.png",
       "initialSize" : 4369,
       "fileType" : 8192
-    },
-    "\/library\/js\/rhizome\/rhizome.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/js\/rhizome\/rhizome.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/library\/js\/rhizome\/rhizome.min.js",
-      "fileType" : 64
     },
     "\/library\/admin.php" : {
       "ignoreWasSetByUser" : 0,
@@ -473,15 +395,15 @@
       "initialSize" : 4369,
       "fileType" : 8192
     },
-    "\/library\/images\/template\/grunge-04.png" : {
+    "\/library\/images\/template\/grunge-01.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/images\/template\/grunge-04.png",
+      "inputAbbreviatedPath" : "\/library\/images\/template\/grunge-01.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/images\/template\/grunge-04.png",
-      "initialSize" : 6428,
+      "outputAbbreviatedPath" : "\/library\/images\/template\/grunge-01.png",
+      "initialSize" : 8600,
       "fileType" : 8192
     },
     "\/library\/scss\/partials\/_variables.scss" : {
@@ -505,15 +427,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/library\/images\/template\/grunge-01.png" : {
+    "\/library\/images\/template\/grunge-04.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/images\/template\/grunge-01.png",
+      "inputAbbreviatedPath" : "\/library\/images\/template\/grunge-04.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/images\/template\/grunge-01.png",
-      "initialSize" : 8600,
+      "outputAbbreviatedPath" : "\/library\/images\/template\/grunge-04.png",
+      "initialSize" : 6428,
       "fileType" : 8192
     },
     "\/library\/images\/template\/freshops-logo.png" : {
@@ -573,17 +495,6 @@
       "initialSize" : 1740,
       "fileType" : 8192
     },
-    "\/library\/images\/rhizome\/freshops-logo.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/images\/rhizome\/freshops-logo.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/images\/rhizome\/freshops-logo.png",
-      "initialSize" : 72697,
-      "fileType" : 8192
-    },
     "\/wpsc-images\/sale.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -641,17 +552,6 @@
       "fileType" : 1,
       "debugStyle" : 3
     },
-    "\/library\/images\/rhizome\/freshops-logo-small.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/images\/rhizome\/freshops-logo-small.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/images\/rhizome\/freshops-logo-small.png",
-      "initialSize" : 4274,
-      "fileType" : 8192
-    },
     "\/library\/js\/libs\/modernizr.custom.min.min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -672,16 +572,16 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/library\/js\/rhizome\/fastclick.js" : {
+    "\/library\/css\/removed\/ui-lightness\/images\/ui-icons_228ef1_256x240.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/js\/rhizome\/fastclick.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/library\/js\/rhizome\/fastclick.min.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/library\/css\/removed\/ui-lightness\/images\/ui-icons_228ef1_256x240.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/library\/css\/removed\/ui-lightness\/images\/ui-icons_228ef1_256x240.png",
+      "initialSize" : 4369,
+      "fileType" : 8192
     },
     "\/wpsc-images\/page.php" : {
       "ignoreWasSetByUser" : 0,
@@ -691,18 +591,6 @@
       "inputAbbreviatedPath" : "\/wpsc-images\/page.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
-    },
-    "\/library\/scss\/rhizome\/_tabs.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/scss\/rhizome\/_tabs.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/library\/scss\/css\/_tabs.css",
-      "fileType" : 4,
-      "debugStyle" : 0
     },
     "\/library\/scss\/breakpoints\/_1030up.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -715,18 +603,6 @@
       "outputAbbreviatedPath" : "\/library\/scss\/css\/_1030up.css",
       "fileType" : 4,
       "debugStyle" : 0
-    },
-    "\/library\/scss\/ie.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/scss\/ie.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/library\/css\/ie.css",
-      "fileType" : 4,
-      "debugStyle" : 2
     },
     "\/library\/less\/_normalize.less" : {
       "ieCompatibility" : 1,
@@ -745,16 +621,17 @@
       "fileType" : 1,
       "debugStyle" : 3
     },
-    "\/library\/css\/removed\/ui-lightness\/images\/ui-icons_228ef1_256x240.png" : {
+    "\/library\/scss\/ie.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/css\/removed\/ui-lightness\/images\/ui-icons_228ef1_256x240.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/css\/removed\/ui-lightness\/images\/ui-icons_228ef1_256x240.png",
-      "initialSize" : 4369,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/library\/scss\/ie.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/library\/css\/ie.css",
+      "fileType" : 4,
+      "debugStyle" : 2
     },
     "\/library\/images\/template\/badge.png" : {
       "ignoreWasSetByUser" : 0,
@@ -779,17 +656,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/library\/images\/rhizome\/grunge-02.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/images\/rhizome\/grunge-02.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/images\/rhizome\/grunge-02.png",
-      "initialSize" : 7657,
-      "fileType" : 8192
-    },
     "\/library\/images\/template\/order-button.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -809,17 +675,6 @@
       "inputAbbreviatedPath" : "\/taxonomy-custom_cat.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
-    },
-    "\/library\/js\/rhizome\/jquery.meanmenu.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/js\/rhizome\/jquery.meanmenu.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/library\/js\/rhizome\/jquery.meanmenu.min.js",
-      "fileType" : 64
     },
     "\/library\/css\/removed\/ui-lightness\/images\/ui-bg_gloss-wave_35_f6a828_500x100.png" : {
       "ignoreWasSetByUser" : 0,
@@ -853,15 +708,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/404.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/404.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/library\/images\/template\/border-03.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -872,6 +718,15 @@
       "outputAbbreviatedPath" : "\/library\/images\/template\/border-03.png",
       "initialSize" : 241,
       "fileType" : 8192
+    },
+    "\/404.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/404.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/library\/js\/libs\/jquery.meanmenu.js" : {
       "ignoreWasSetByUser" : 0,
@@ -953,28 +808,6 @@
       "fileType" : 1,
       "debugStyle" : 3
     },
-    "\/library\/images\/rhizome\/border-02.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/images\/rhizome\/border-02.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/images\/rhizome\/border-02.png",
-      "initialSize" : 238,
-      "fileType" : 8192
-    },
-    "\/library\/images\/template\/shadow-01.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/images\/template\/shadow-01.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/images\/template\/shadow-01.png",
-      "initialSize" : 1747,
-      "fileType" : 8192
-    },
     "\/library\/scss\/breakpoints\/_base.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -987,6 +820,17 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
+    "\/library\/images\/template\/shadow-01.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/library\/images\/template\/shadow-01.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/library\/images\/template\/shadow-01.png",
+      "initialSize" : 1747,
+      "fileType" : 8192
+    },
     "\/library\/js\/libs\/modernizr.custom.min-ck.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -997,18 +841,6 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/library\/js\/libs\/modernizr.custom.min-ck.min.js",
       "fileType" : 64
-    },
-    "\/library\/scss\/rhizome\/_tab.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/scss\/rhizome\/_tab.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/library\/scss\/css\/_tab.css",
-      "fileType" : 4,
-      "debugStyle" : 0
     },
     "\/library\/less\/pending.less" : {
       "ieCompatibility" : 1,
@@ -1075,17 +907,6 @@
       "inputAbbreviatedPath" : "\/library\/css\/login.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
-    },
-    "\/library\/images\/rhizome\/badge.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/images\/rhizome\/badge.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/images\/rhizome\/badge.png",
-      "initialSize" : 3713,
-      "fileType" : 8192
     },
     "\/library\/js\/libs\/jquery-ui-1.7.1.custom.min.js" : {
       "ignoreWasSetByUser" : 0,
@@ -1214,17 +1035,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/library\/js\/rhizome\/jquery.nutshell.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/js\/rhizome\/jquery.nutshell.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/library\/js\/rhizome\/jquery.nutshell.min.js",
-      "fileType" : 64
-    },
     "\/library\/js\/libs\/jquery-ui-1.10.4.custom.min.min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1235,29 +1045,6 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/library\/js\/libs\/jquery-ui-1.10.4.custom.min.min.min.js",
       "fileType" : 64
-    },
-    "\/library\/images\/rhizome\/grunge-01.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/images\/rhizome\/grunge-01.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/images\/rhizome\/grunge-01.png",
-      "initialSize" : 8600,
-      "fileType" : 8192
-    },
-    "\/library\/scss\/rhizome\/_meanmenu.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/scss\/rhizome\/_meanmenu.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/library\/scss\/css\/_meanmenu.css",
-      "fileType" : 4,
-      "debugStyle" : 0
     },
     "\/library\/js\/libs\/supersubs.min.js" : {
       "ignoreWasSetByUser" : 0,
@@ -1438,29 +1225,6 @@
       "outputAbbreviatedPath" : "\/library\/js\/libs\/hoverIntent.min.min.js",
       "fileType" : 64
     },
-    "\/library\/images\/rhizome\/border-01.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/images\/rhizome\/border-01.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/images\/rhizome\/border-01.png",
-      "initialSize" : 632,
-      "fileType" : 8192
-    },
-    "\/library\/scss\/rhizome\/_accordion.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/scss\/rhizome\/_accordion.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/library\/scss\/css\/_accordion.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/library\/less\/labeler\/label-all.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/library\/less\/labeler\/label-all.less",
@@ -1507,17 +1271,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/library\/images\/rhizome\/order-button.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/images\/rhizome\/order-button.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/images\/rhizome\/order-button.png",
-      "initialSize" : 4665,
-      "fileType" : 8192
-    },
     "\/library\/js\/libs\/jquery-ui-1.7.1.custom.min.min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1562,6 +1315,17 @@
       "initialSize" : 292,
       "fileType" : 8192
     },
+    "\/library\/js\/libs\/superfish.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/library\/js\/libs\/superfish.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/library\/js\/libs\/superfish.min.min.js",
+      "fileType" : 64
+    },
     "\/library\/css\/removed\/ui-lightness\/images\/ui-bg_highlight-soft_100_eeeeee_1x100.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1584,6 +1348,15 @@
       "outputAbbreviatedPath" : "\/library\/js\/freshops.recent.min.min.js",
       "fileType" : 64
     },
+    "\/page-tabbed_with_sidebar.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/page-tabbed_with_sidebar.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/wpsc-images\/delete.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1595,26 +1368,6 @@
       "initialSize" : 207,
       "fileType" : 8192
     },
-    "\/page-tabbed_with_sidebar.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/page-tabbed_with_sidebar.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/library\/js\/libs\/superfish.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/js\/libs\/superfish.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/library\/js\/libs\/superfish.min.min.js",
-      "fileType" : 64
-    },
     "\/wpsc-transaction_results.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1623,17 +1376,6 @@
       "inputAbbreviatedPath" : "\/wpsc-transaction_results.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
-    },
-    "\/library\/js\/rhizome\/jquery.dcjqaccordion.2.7.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/js\/rhizome\/jquery.dcjqaccordion.2.7.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/library\/js\/rhizome\/jquery.dcjqaccordion.2.7.min.js",
-      "fileType" : 64
     },
     "\/wpsc-account-edit-profile.php" : {
       "ignoreWasSetByUser" : 0,
@@ -1655,17 +1397,6 @@
       "initialSize" : 1318,
       "fileType" : 8192
     },
-    "\/library\/images\/rhizome\/shadow-02.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/images\/rhizome\/shadow-02.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/images\/rhizome\/shadow-02.png",
-      "initialSize" : 1323,
-      "fileType" : 8192
-    },
     "\/library\/js\/scripts.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1685,17 +1416,6 @@
       "inputAbbreviatedPath" : "\/header.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
-    },
-    "\/library\/js\/rhizome\/rhizome.min.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/js\/rhizome\/rhizome.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/library\/js\/rhizome\/rhizome.min.min.js",
-      "fileType" : 64
     },
     "\/archive-testimonial.php" : {
       "ignoreWasSetByUser" : 0,
@@ -1771,17 +1491,6 @@
       "outputStyle" : 0,
       "fileType" : 1,
       "debugStyle" : 3
-    },
-    "\/library\/images\/rhizome\/grunge-04.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/images\/rhizome\/grunge-04.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/images\/rhizome\/grunge-04.png",
-      "initialSize" : 6428,
-      "fileType" : 8192
     },
     "\/library\/images\/win8-tile-icon.png" : {
       "ignoreWasSetByUser" : 0,
@@ -1896,17 +1605,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/library\/images\/rhizome\/border-04.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/images\/rhizome\/border-04.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/library\/images\/rhizome\/border-04.png",
-      "initialSize" : 292,
-      "fileType" : 8192
-    },
     "\/library\/less\/login.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/library\/less\/login.less",
@@ -2001,14 +1699,16 @@
       "outputAbbreviatedPath" : "\/library\/js\/libs\/jquery.cookie-r6165.min.min.min.js",
       "fileType" : 64
     },
-    "\/wpsc-single_product-hops.php" : {
+    "\/library\/js\/removed\/freshops.new.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/wpsc-single_product-hops.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/library\/js\/removed\/freshops.new.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/library\/js\/removed\/freshops.new.min.js",
+      "fileType" : 64
     },
     "\/library\/js\/libs\/hoverIntent.js" : {
       "ignoreWasSetByUser" : 0,
@@ -2044,6 +1744,15 @@
       "outputAbbreviatedPath" : "\/library\/js\/libs\/supersubs.min.js",
       "fileType" : 64
     },
+    "\/wpsc-single_product-hops.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/wpsc-single_product-hops.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/library\/css\/removed\/ui-lightness\/images\/ui-bg_highlight-soft_75_ffe45c_1x100.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -2054,17 +1763,6 @@
       "outputAbbreviatedPath" : "\/library\/css\/removed\/ui-lightness\/images\/ui-bg_highlight-soft_75_ffe45c_1x100.png",
       "initialSize" : 129,
       "fileType" : 8192
-    },
-    "\/library\/js\/removed\/freshops.new.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/js\/removed\/freshops.new.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/library\/js\/removed\/freshops.new.min.js",
-      "fileType" : 64
     },
     "\/library\/scss\/breakpoints\/_2x.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -2097,18 +1795,6 @@
       "outputAbbreviatedPath" : "\/library\/images\/template\/hop-graphic.png",
       "initialSize" : 261260,
       "fileType" : 8192
-    },
-    "\/library\/scss\/rhizome\/_base.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/library\/scss\/rhizome\/_base.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/library\/scss\/css\/_base.css",
-      "fileType" : 4,
-      "debugStyle" : 0
     },
     "\/library\/css\/meanmenu.css" : {
       "ignoreWasSetByUser" : 0,
