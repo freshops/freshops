@@ -88,14 +88,14 @@ Template Name: Hop Alpha Values
 															<!-- PayPal Logo --><table border="0" cellpadding="10" cellspacing="0" align="center"><tr><td align="center"></td></tr><tr><td align="center"><a href="https://www.paypal.com/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo-center/Security_Banner_234x60_4a.gif" border="0" alt="PayPal Logo"></a></td></tr></table><!-- PayPal Logo -->
 															<img src="https://www.paypal.com/en_US/i/logo/PayPal_mark_60x38.gif" alt="Paypal acceptance mark" /></a><img src="/images/visa_mc.gif" alt="Visa and Mastercard accepted" width="127" height="37" /></li>
 
-																<li>Call 1-800 460-6925</li>
+															<li>Call 1-800 460-6925</li>
 
-																<li>Send check or money order to:<br>
-																	Freshops<br>
-																	36180 Kings Valley Hwy.<br>
-																	Philomath, OR 97370</li>
+															<li>Send check or money order to:<br>
+																Freshops<br>
+																36180 Kings Valley Hwy.<br>
+																Philomath, OR 97370</li>
 
-																	<li>Fax your order to (541) 929-2702</li>
+																<li>Fax your order to (541) 929-2702</li>
 																</ol>
 															</div>
 														</div>
