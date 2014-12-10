@@ -138,3 +138,12 @@ $ tail -f webapps/beta2/content/debug.log
 ```
 
 I like to keep one Terminal tab open just to watch for errors/warnings.
+
+### Change permissions
+
+```bash
+# Files:
+$ find freshops/ -type f -print0 | xargs -0 chmod 644
+# Folders:
+$ find freshops/ -type d -print0 | xargs -0 chmod 755
+```
