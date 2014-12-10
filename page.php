@@ -47,9 +47,24 @@
 			
 			<section id="content" itemprop="articleBody">
 				
-				<?php if (is_page('alpha-acid-percentages')): ?>
+				<?php
 					
-					<?php get_template_part('includes/partials/content', 'hop_alpha_values'); ?>
+					global $post;
+					
+					$name = $post->post_name;
+					
+					# Add special partial template names here:
+					$special = array(
+						'alpha-acid-percentages',
+						'hops-rhizome-information',
+						'hop-variety-descriptions',
+					);
+					
+				?>
+				
+				<?php if ((is_single() || is_page()) && in_array($name, $special)): ?>
+					
+					<?php get_template_part('includes/partials/content', $name); ?>
 					
 				<?php else: ?>
 					
@@ -65,21 +80,7 @@
 	
 <?php else: ?>
 	
-	<article id="post-not-found" class="hentry clearfix">
-		
-		<header class="article-header">
-			<h1><?php _e( 'Oops, Post Not Found!', 'freshopstheme' ); ?></h1>
-		</header>
-		
-		<section class="entry-content">
-			<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'freshopstheme' ); ?></p>
-		</section>
-		
-		<footer class="article-footer">
-			<p><?php _e( 'This is the error message in the page.php template.', 'freshopstheme' ); ?></p>
-		</footer>
-		
-	</article>
+	<?php get_template_part('includes/partials/content', 'none'); ?>
 	
 <?php endif; ?>
 
