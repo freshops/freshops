@@ -57,8 +57,6 @@
 	
 <?php else: ?>
 	
-	<?php # Move to include file: ?>
-	
 	<article id="post-not-found" class="hentry clearfix">
 		
 		<header class="article-header">

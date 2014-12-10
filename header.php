@@ -47,7 +47,7 @@
 					
 				</div> <!-- /#order -->
 				
-				<nav id="menu">
+				<nav id="menu" role="navigtion">
 					
 					<?php freshops_main_nav(); ?>
 					
@@ -59,7 +59,7 @@
 			
 		</div> <!-- /#secondary -->
 		
-		<main id="primary">
+		<main id="primary" role="main">
 			
 			<div id="wrap">
 				
