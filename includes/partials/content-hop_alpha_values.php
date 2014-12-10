@@ -1,3 +1,9 @@
+<?php
+/**
+* The content loop for the alpha value page.
+ */
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 	<header class="article-header">

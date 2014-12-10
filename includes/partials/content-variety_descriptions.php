@@ -1,7 +1,7 @@
 <?php
-/*
-Template Name: Hop Variety Descriptions
-*/
+/**
+* The content loop for the Hop Variety Descriptions page.
+ */
 ?>
 
 <?php get_header(); ?>

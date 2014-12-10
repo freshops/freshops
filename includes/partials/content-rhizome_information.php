@@ -1,5 +1,7 @@
 <?php
-
+/**
+* The content loop for the rhizome information page.
+ */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
