@@ -12,19 +12,11 @@ Template Name: Hop Alpha Values
 
 		<div id="main" class="twelvecol first clearfix" role="main">
 
+			<?php get_template_part( 'includes/partials/content', 'alpha_values' ); ?>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-
-						<header class="article-header">
-
-							<h1 class="page-title" itemprop="headline"><?php echo date('Y'); ?> <?php the_title(); ?>
-							</h1> 
-						</header>
-
-					get_template_part( 'includes/partials/content', 'alpha_values' );
-
-					</div> //alpha_values
-				</div> //.tabs
+					</div> <!-- alpha_values -->
+					
+				</div>  <!-- .tabs -->
 
 			<?php the_content(); ?>
 
