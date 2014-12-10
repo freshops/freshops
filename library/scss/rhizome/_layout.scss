@@ -1,10 +1,10 @@
 #container {
 	
-	position: relative;
-	
-	&::after {
+	@media all and (min-width: 640px) {
 		
-		@media all and (min-width: 640px) {
+		position: relative;
+		
+		&::after {
 			
 			content: "";
 			display: table;
@@ -23,9 +23,9 @@
 	margin: 0;
 	padding: 0;
 	position: absolute;
-	top: 5px;
+	top: 3px;
 	left: 10px;
-	z-index: 10;
+	z-index: 20; // Put it above mean menu.
 	
 	a {
 		
