@@ -59,7 +59,7 @@
 			
 		</div> <!-- /#secondary -->
 		
-		<div id="primary">
+		<main id="primary">
 			
 			<div id="wrap">
 				
