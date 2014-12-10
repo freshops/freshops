@@ -14,7 +14,7 @@
 				
 				<?php if (have_rows('tab_panels')): ?>
 					
-					<div id="submenu" class="tabs">
+					<div id="submenu" class="deck tabs">
 						
 						<div>
 							
