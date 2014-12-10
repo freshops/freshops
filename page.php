@@ -68,7 +68,7 @@
 					
 				<?php else: ?>
 					
-					<?php the_content(); ?>
+					<?php get_template_part('includes/partials/content'); ?>
 					
 				<?php endif; ?>
 				
