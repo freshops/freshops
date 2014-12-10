@@ -47,7 +47,15 @@
 			
 			<section id="content" itemprop="articleBody">
 				
-				<?php the_content(); ?>
+				<?php if (is_page('alpha-acid-percentages')): ?>
+					
+					<?php get_template_part('includes/partials/content', 'hop_alpha_values'); ?>
+					
+				<?php else: ?>
+					
+					<?php the_content(); ?>
+					
+				<?php endif; ?>
 				
 			</section> <!-- /#content -->
 			
