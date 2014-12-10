@@ -17,6 +17,7 @@
 					<div id="submenu" class="tabs">
 						
 						<div>
+							
 							<ul>
 								<?php while (have_rows('tab_panels')): ?>
 									
@@ -38,7 +39,7 @@
 					
 				<?php elseif (has_deck()): ?>
 					
-					<h2 class="sh4"><?php echo get_deck(); ?></h2>
+					<div id="subhead" class="deck"><div><h2><?php echo get_deck(); ?></h2></div></div>
 					
 				<?php endif; ?>
 				

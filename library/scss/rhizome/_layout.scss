@@ -165,28 +165,48 @@
 	
 	background: #fafcf8 url(../images/rhizome/border-01.png) repeat-x left bottom;
 	
-	div {
+	div { background: url(../images/rhizome/grunge-01.png) no-repeat left bottom; }
+	
+	h1 {
 		
-		background: url(../images/rhizome/grunge-01.png) no-repeat left bottom;
+		font-size: 22px;
+		text-transform: uppercase;
+		line-height: 1;
+		letter-spacing: .03em;
+		color: #3a770c;
+		margin: 0 0 0 20px;
+		padding: 10px 0;
 		
-		h1 {
+		@media all and (min-width: 960px) {
 			
-			font-size: 22px;
-			text-transform: uppercase;
-			line-height: 1;
-			letter-spacing: .03em;
-			color: #3a770c;
-			margin: 0 0 0 20px;
-			padding: 10px 0;
-			
-			@media all and (min-width: 960px) {
-				
-				margin-left: 95px;
-				
-			}
+			margin-left: 95px;
 			
 		}
+		
+	}
 	
+}
+
+.deck {
+	
+	background: #c9d9af url(../images/rhizome/border-02.png) repeat-x left bottom;
+	
+	div { background: url(../images/rhizome/grunge-02.png) no-repeat left bottom; }
+	
+	h2 {
+		
+		font-size: 18px;
+		line-height: 1;
+		color: #061c06;
+		margin: 0 0 0 20px;
+		padding: 10px 0;
+		
+		@media all and (min-width: 960px) {
+			
+			margin-left: 95px;
+			
+		}
+		
 	}
 	
 }
