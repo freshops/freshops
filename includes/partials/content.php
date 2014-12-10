@@ -12,8 +12,6 @@
 			<?php the_sub_field('section_content'); ?>
 		</div>
 		
-		<div class="clear"></div>
-		
 	<?php endwhile; ?>
 	
 <?php endif; ?>
