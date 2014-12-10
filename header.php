@@ -26,9 +26,9 @@
 </head>
 <body <?php body_class(); ?>>
 	
-	<h6 id="flag"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h6>
-	
 	<div id="container">
+		
+		<h6 id="flag"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h6>
 		
 		<div id="secondary">
 			
