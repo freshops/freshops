@@ -8,18 +8,11 @@ f<?php get_header(); ?>
 
 			<h1 class="archive-title h2"><?php post_type_archive_title(); ?></h1>
 
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-				<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
-					<section class="entry-content clearfix">
-						<?php the_content(); ?>
-					</section>
-						<footer class="article-footer testimonial_attribution"><?php the_title(); ?>
-						</footer>
-
-					</article>
-
-				<?php endwhile; ?>
-
+			<?php if (have_posts()) {
+				while (have_posts()) {
+					the_post();
+						get_template_part('includes/partials/content', 'testimonial'); ?>
+				<?php } //endwhile; ?>
 				<?php if ( function_exists( 'freshops_page_navi' ) ) { ?>
 				<?php freshops_page_navi(); ?>
 				<?php } else { ?>
@@ -29,9 +22,10 @@ f<?php get_header(); ?>
 						<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'freshopstheme' )) ?></li>
 					</ul>
 				</nav>
-				<?php } ?>
+				
 
-			<?php else : ?>
+			<?php } //else {};
+		?>
 
 				<article id="post-not-found" class="hentry clearfix">
 					<header class="article-header">
@@ -45,7 +39,7 @@ f<?php get_header(); ?>
 					</footer>
 				</article>
 
-			<?php endif; ?>
+			<?php } //endif; ?>
 
 		</div>
 
