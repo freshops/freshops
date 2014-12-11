@@ -2,9 +2,9 @@ f<?php get_header(); ?>
 
 <div id="content">
 
-	<div id="inner-content" class="wrap clearfix">
+	<div id="inner-content" class="wrap cf">
 
-		<div id="main" class="twelvecol first clearfix" role="main">
+		<div id="main" class="m-all t-all d-all cf" role="main">
 
 			<h1 class="archive-title h2"><?php post_type_archive_title(); ?></h1>
 
