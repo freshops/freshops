@@ -58,6 +58,7 @@
 						'alpha-acid-percentages',
 						'hops-rhizome-information',
 						'hop-variety-descriptions',
+						'testimonials',
 					);
 					
 				?>
