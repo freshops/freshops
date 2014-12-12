@@ -1663,7 +1663,8 @@ be set to display none.
   nav {
     display: none; } }
 /*********************
-SHELL
+RHIZOME SKIN
+https://github.com/freshops/rhizome
 *********************/
 a.meanmenu-reveal {
   display: none; }
@@ -1776,8 +1777,7 @@ a.meanmenu-reveal {
         list-style-type: none;
         background: #0f0f0f;
         border: 2px solid #242424;
-        -moz-border-radius: 10px;
-        -webkit-border-radius: 10px;
+        border-radius: 5px;
         margin: 3px 25px;
         line-height: normal; }
         #order ul li a {
@@ -2037,7 +2037,7 @@ a, a:visited {
     .no-touch #footer a:hover {
       text-decoration: underline; }
 
-.ui-tabs-hide {
+.js .panel {
   display: none; }
 
 #submenu ul {
@@ -2063,7 +2063,7 @@ a, a:visited {
       cursor: pointer; }
       #submenu ul li a:visited {
         color: #6c6e73; }
-      .no-touch #submenu ul li a:visited:hover, #submenu ul li a:focus, .no-touch #submenu ul li a:focus:hover, .no-touch #submenu ul li a:hover, #submenu ul li a:active, .ui-tabs-selected #submenu ul li a {
+      .no-touch #submenu ul li a:visited:hover, #submenu ul li a:focus, .no-touch #submenu ul li a:focus:hover, .no-touch #submenu ul li a:hover, #submenu ul li a:active, #submenu ul li a.nutshell-selected {
         color: #fff;
         text-decoration: none;
         background: #96b477 url(../images/rhizome/border-04.png) repeat-x left bottom; }
@@ -2072,3 +2072,46 @@ a, a:visited {
   @media all and (min-width: 960px) {
     #submenu ul {
       margin-left: 95px; } }
+
+.fix {
+  *zoom: 1; }
+  .fix:before, .fix:after {
+    content: " ";
+    display: table; }
+  .fix:after {
+    clear: both; }
+
+.gone {
+  display: none !important;
+  visibility: hidden; }
+
+.off {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+.ghost {
+  visibility: hidden; }
+
+.nix, .nix:focus, .no-touch .nix:hover, .nix:active {
+  color: transparent;
+  text-decoration: none;
+  outline: 0;
+  border: 0; }
+
+.force {
+  margin-top: -1px;
+  margin-bottom: -1px;
+  padding: 1px 0; }
+
+.nono {
+  word-wrap: break-word;
+  overflow-wrap: break-word; }
+
+.none {
+  max-width: none; }

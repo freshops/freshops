@@ -147,10 +147,7 @@ be set to display none.
 }
 
 /*********************
-SHELL
+RHIZOME SKIN
+https://github.com/freshops/rhizome
 *********************/
-@import "rhizome/meanmenu",
-        "rhizome/accordion",
-        "rhizome/base",
-        "rhizome/layout",
-        "rhizome/tab";
+@import "rhizome";

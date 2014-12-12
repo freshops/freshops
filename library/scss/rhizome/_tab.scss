@@ -1,4 +1,4 @@
-.ui-tabs-hide { display: none; }
+.js .panel { display: none; }
 
 #submenu {
 	
@@ -38,7 +38,7 @@
 				.no-touch &:focus:hover,
 				.no-touch &:hover,
 				&:active,
-				.ui-tabs-selected & {
+				&.nutshell-selected {
 					color: #fff;
 					text-decoration: none;
 					background: #96b477 url(../images/rhizome/border-04.png) repeat-x left bottom;
