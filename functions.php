@@ -242,27 +242,9 @@ function print_menu_shortcode($atts, $content = null) {
 
 //--------------------------------------------------------------------
 
-function fh_wp_enqueue_styles() {
+function freshops_wp_enqueue_rhizome_scripts() {
 	
-	if ( ! is_admin()) {
-		
-		//$rhizcss = get_bloginfo('stylesheet_directory') . '/library/css/rhizome/';
-		
-		//wp_register_style('meanmenu', $rhizcss . 'meanmenu.css', false, 0.1);
-		//wp_register_style('fastclick', $rhizcss . 'meanmenu.css', false, 0.1);
-		
-		//wp_enqueue_style ('fastclick');
-		//wp_enqueue_style ('meanmenu');
-		
-	}
-	
-}
-
-add_action('wp_enqueue_styles', 'fh_wp_enqueue_styles');
-
-//--------------------------------------------------------------------
-
-function fh_wp_enqueue_scripts() {
+	# See also: `freshops_scripts_and_styles` in `library/freshops.php`.
 	
 	if ( ! is_admin()) {
 		
@@ -286,4 +268,4 @@ function fh_wp_enqueue_scripts() {
 	
 }
 
-add_action('wp_enqueue_scripts', 'fh_wp_enqueue_scripts');
+add_action('wp_enqueue_scripts', 'freshops_wp_enqueue_rhizome_scripts');
