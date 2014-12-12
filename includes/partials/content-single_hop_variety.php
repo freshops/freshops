@@ -1,6 +1,6 @@
 <?php
 /*
-Single post template
+Single hop variety template for use in WP E-commerce single hop pages
 */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
