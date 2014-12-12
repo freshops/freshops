@@ -27,11 +27,6 @@
 		 */
 
 		while ( wpsc_have_products() ) : wpsc_the_product(); ?>
-		
-		<!-- add custom fields for hops via include, TODO: test to see if it's a hop -->
-			<?php get_template_part('content', 'single_hop_variety' ); ?>
-			
-			
 					<div class="imagecol">
 						<?php if ( wpsc_the_product_thumbnail() ) : ?>
 								<a rel="<?php echo wpsc_the_product_title(); ?>" class="<?php echo wpsc_the_product_image_link_classes(); ?>" href="<?php echo esc_url( wpsc_the_product_image() ); ?>">
