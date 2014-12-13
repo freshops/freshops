@@ -127,14 +127,11 @@ Useful bits to know …
 
 ### Tail the log
 
-To see php errors and warnings, 
-
-`ssh freshops@web400.webfaction.com`
-
-then
+To see php errors and warnings, ssh to server and then:
 
 ```bash
-$ tail -f webapps/beta2/content/debug.log
+$ cd path/to/content
+$ tail -f debug.log
 ```
 
 I like to keep one Terminal tab open just to watch for errors/warnings.
