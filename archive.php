@@ -1,108 +1,51 @@
-<?php get_header(); ?>
+<?=get_header()?>
 
-			<div id="content">
+<section>
+	
+	<header>
+		
+		<?=get_template_part('includes/partials/content', 'header')?>
+		
+	</header>
+	
+	<div id="content" class="fix">
+		
+		<div id="mainbar" class="m-all t-2of3 d-5of7">
+			
+			<?php if (have_posts()): ?>
+				
+				<?php while (have_posts()): ?>
+					
+					<?=the_post()?>
+					
+					<article id="post-<?=the_ID()?>" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+						
+						<section itemprop="articleBody">
+							
+							<?=get_template_part('includes/partials/content', 'index')?>
+							
+						</section> <!-- /#content -->
+						
+					</article>
+					
+				<?php endwhile; ?>
+				
+			<?php else: ?>
+				
+				<?=get_template_part('includes/partials/content', 'none')?>
+				
+			<?php endif; ?>
+			
+		</div> <!-- /#mainbar -->
+		
+		<div id="sidebar" class="sidebar m-all t-1of3 d-2of7 last-col" role="complementary">
+			
+			<?=get_sidebar()?>
+			
+		</div> <!-- /#sidebar -->
+		
+	</div> <!-- /.fix -->
+	
+</section>
 
-				<div id="inner-content" class="wrap clearfix">
-
-						<div id="main" class="m-all t-2of3 d-5of7 cf" role="main">
-
-							<?php if (is_category()) { ?>
-								<h1 class="archive-title h2">
-									<span><?php _e( 'Posts Categorized:', 'freshopstheme' ); ?></span> <?php single_cat_title(); ?>
-								</h1>
-
-							<?php } elseif (is_tag()) { ?>
-								<h1 class="archive-title h2">
-									<span><?php _e( 'Posts Tagged:', 'freshopstheme' ); ?></span> <?php single_tag_title(); ?>
-								</h1>
-
-							<?php } elseif (is_author()) {
-								global $post;
-								$author_id = $post->post_author;
-							?>
-								<h1 class="archive-title h2">
-
-									<span><?php _e( 'Posts By:', 'freshopstheme' ); ?></span> <?php the_author_meta('display_name', $author_id); ?>
-
-								</h1>
-							<?php } elseif (is_day()) { ?>
-								<h1 class="archive-title h2">
-									<span><?php _e( 'Daily Archives:', 'freshopstheme' ); ?></span> <?php the_time('l, F j, Y'); ?>
-								</h1>
-
-							<?php } elseif (is_month()) { ?>
-									<h1 class="archive-title h2">
-										<span><?php _e( 'Monthly Archives:', 'freshopstheme' ); ?></span> <?php the_time('F Y'); ?>
-									</h1>
-
-							<?php } elseif (is_year()) { ?>
-									<h1 class="archive-title h2">
-										<span><?php _e( 'Yearly Archives:', 'freshopstheme' ); ?></span> <?php the_time('Y'); ?>
-									</h1>
-							<?php } ?>
-
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
-
-								<header class="article-header">
-
-									<h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-									<p class="byline vcard"><?php
-										printf(__( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&</span> filed under %4$s.', 'freshopstheme' ), get_the_time('Y-m-j'), get_the_time(__( 'F jS, Y', 'freshopstheme' )), freshops_get_the_author_posts_link(), get_the_category_list(', '));
-									?></p>
-
-								</header>
-
-								<section class="entry-content clearfix">
-
-									<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
-
-									<?php the_excerpt(); ?>
-
-								</section>
-
-								<footer class="article-footer">
-
-								</footer>
-
-							</article>
-
-							<?php endwhile; ?>
-
-									<?php if ( function_exists( 'freshops_page_navi' ) ) { ?>
-										<?php freshops_page_navi(); ?>
-									<?php } else { ?>
-										<nav class="wp-prev-next">
-											<ul class="clearfix">
-												<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'freshopstheme' )) ?></li>
-												<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'freshopstheme' )) ?></li>
-											</ul>
-										</nav>
-									<?php } ?>
-
-							<?php else : ?>
-
-									<article id="post-not-found" class="hentry clearfix">
-										<header class="article-header">
-											<h1><?php _e( 'Oops, Post Not Found!', 'freshopstheme' ); ?></h1>
-										</header>
-										<section class="entry-content">
-											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'freshopstheme' ); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the archive.php template.', 'freshopstheme' ); ?></p>
-										</footer>
-									</article>
-
-							<?php endif; ?>
-
-						</div>
-
-						<?php get_sidebar(); ?>
-
-								</div>
-
-			</div>
-
-<?php get_footer(); ?>
+<?=get_footer()?>

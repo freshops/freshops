@@ -1,32 +1,17 @@
-<?php
-/*
-Single post template
-*/
-?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+<?php # Single post template. ?>
 
-	<header class="article-header">
-
-		<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
-		<p class="byline vcard"><?php
-			printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&amp;</span> filed under %4$s.', 'freshopstheme' ), get_the_time( 'Y-m-j' ), get_the_time( get_option('date_format')), freshops_get_the_author_posts_link(), get_the_category_list(', ') );
-			?>
-		</p>
-
-	</header>
-
-	<section class="entry-content clearfix" itemprop="articleBody">
+<p class="byline vcard">
 	
-		<?php the_content(); ?>
-		
-	</section>
-
-	<footer class="article-footer">
+	<?=printf(__('Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&amp;</span> filed under %4$s.', 'freshopstheme'), get_the_time('Y-m-j'), get_the_time( get_option('date_format')), freshops_get_the_author_posts_link(), get_the_category_list(', '))?>
 	
-		<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'freshopstheme' ) . '</span> ', ', ', '</p>' ); ?>
+</p>
 
-	</footer>
+<?=the_content()?>
 
-	<?php comments_template(); ?>
+<footer class="article-footer">
+	
+	<?=the_tags('<p class="tags"><span class="tags-title">' . __('Tags:', 'freshopstheme') . '</span> ', ', ', '</p>')?>
+	
+</footer>
 
-</article>
+<?=comments_template()?>

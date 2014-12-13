@@ -1,69 +1,51 @@
-<?php get_header(); ?>
+<?=get_header()?>
 
-			<div id="content">
+<section>
+	
+	<header>
+		
+		<?=get_template_part('includes/partials/content', 'header')?>
+		
+	</header>
+	
+	<div id="content" class="fix">
+		
+		<div id="mainbar" class="m-all t-2of3 d-5of7">
+			
+			<?php if (have_posts()): ?>
+				
+				<?php while (have_posts()): ?>
+					
+					<?=the_post()?>
+					
+					<article id="post-<?=the_ID()?>" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+						
+						<section itemprop="articleBody">
+							
+							<?=get_template_part('includes/partials/content', 'index')?>
+							
+						</section> <!-- /#content -->
+						
+					</article>
+					
+				<?php endwhile; ?>
+				
+			<?php else: ?>
+				
+				<?=get_template_part('includes/partials/content', 'none')?>
+				
+			<?php endif; ?>
+			
+		</div> <!-- /#mainbar -->
+		
+		<div id="sidebar" class="sidebar m-all t-1of3 d-2of7 last-col" role="complementary">
+			
+			<?=get_sidebar()?>
+			
+		</div> <!-- /#sidebar -->
+		
+	</div> <!-- /.fix -->
+	
+</section>
 
-				<div id="inner-content" class="wrap clearfix">
-
-						<div id="main" class="m-all t-2of3 d-5of7 cf" role="main">
-
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
-
-								<header class="article-header">
-
-									<h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-
-								</header>
-
-								<section class="entry-content clearfix">
-									<?php the_content(); ?>
-								</section>
-
-								<footer class="article-footer">
-									<p class="tags"><?php the_tags( '<span class="tags-title">' . __( 'Tags:', 'freshopstheme' ) . '</span> ', ', ', '' ); ?></p>
-
-								</footer>
-
-								<?php // comments_template(); // uncomment if you want to use them ?>
-
-							</article>
-
-							<?php endwhile; ?>
-
-									<?php if ( function_exists( 'freshops_page_navi' ) ) { ?>
-											<?php freshops_page_navi(); ?>
-									<?php } else { ?>
-											<nav class="wp-prev-next">
-													<ul class="clearfix">
-														<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'freshopstheme' )) ?></li>
-														<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'freshopstheme' )) ?></li>
-													</ul>
-											</nav>
-									<?php } ?>
-
-							<?php else : ?>
-
-									<article id="post-not-found" class="hentry clearfix">
-											<header class="article-header">
-												<h1><?php _e( 'Oops, Post Not Found!', 'freshopstheme' ); ?></h1>
-										</header>
-											<section class="entry-content">
-												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'freshopstheme' ); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the index.php template.', 'freshopstheme' ); ?></p>
-										</footer>
-									</article>
-
-							<?php endif; ?>
-
-						</div>
-
-						<?php get_sidebar(); ?>
-
-				</div>
-
-			</div>
-
-<?php get_footer(); ?>
+<?=get_footer()?>

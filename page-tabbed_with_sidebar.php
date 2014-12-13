@@ -82,7 +82,9 @@ Template Name: Tabbed Content with Sidebar
 </div>
 
 </div>
+<div id="sidebar1" class="sidebar m-all t-1of3 d-2of7 last-col cf" role="complementary">
 <?php get_sidebar(); ?>
+</div>
 </div>
 
 <?php get_footer(); ?>

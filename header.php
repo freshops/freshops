@@ -12,7 +12,7 @@
 	<script>/*! no-touch uglified | https://gist.github.com/mhulse/4704893 */!function(o,n,c){("ontouchstart"in o||o.DocumentTouch&&n instanceof DocumentTouch||c.MaxTouchPoints>0||c.msMaxTouchPoints>0)&&(n.documentElement.className=n.documentElement.className.replace(/\bno-touch\b/,"touch"))}(window,document,navigator);</script>
 	<script>/*! no-js uglified | https://gist.github.com/mhulse/4704893 */!function(e){e.documentElement.className=e.documentElement.className.replace(/\bno-js\b/,"js")}(document);</script>
 	
-	<title><?php wp_title(''); ?></title>
+	<title><?=wp_title('')?></title>
 	
 	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-touch.png">
 	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
@@ -21,14 +21,14 @@
 	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 	
-	<?php wp_head(); ?>
+	<?=wp_head()?>
 	
 </head>
-<body <?php body_class(); ?>>
+<body <?=body_class()?>>
 	
 	<div id="container">
 		
-		<h6 id="flag"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h6>
+		<h6 id="flag"><a href="<?=home_url()?>"><?=bloginfo('name')?></a></h6>
 		
 		<div id="secondary">
 			
@@ -49,7 +49,7 @@
 				
 				<nav id="menu" role="navigtion">
 					
-					<?php freshops_main_nav(); ?>
+					<?=freshops_main_nav()?>
 					
 				</nav>
 				

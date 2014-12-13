@@ -1,39 +1,47 @@
-<?php get_header(); ?>
+<?=get_header()?>
 
-			<div id="content">
+<?php if (have_posts()): ?>
+	
+	<?php while (have_posts()): ?>
+		
+		<?=the_post()?>
+		
+		<article id="post-<?=the_ID()?>" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+			
+			<header>
+				
+				<?=get_template_part('includes/partials/content', 'header')?>
+				
+			</header>
+			
+			<section id="content" itemprop="articleBody">
+				
+				<div class="fix">
+					
+					<div id="mainbar" class="m-all t-2of3 d-5of7">
+						
+						<?=get_template_part('includes/partials/content', 'single')?>
+						
+					</div> <!-- /#mainbar -->
+					
+					<div id="sidebar" class="sidebar m-all t-1of3 d-2of7 last-col" role="complementary">
+						
+						<?=get_sidebar()?>
+						
+					</div> <!-- /#sidebar -->
+					
+				</div> <!-- /.fix -->
+				
+			</section> <!-- /#content -->
+			
+		</article>
+		
+	<?php endwhile; ?>
+	
+<?php else: ?>
+	
+	<?=get_template_part('includes/partials/content', 'none')?>
+	
+<?php endif; ?>
 
-				<div id="inner-content" class="wrap clearfix">
-
-					<div id="main" class="m-all t-2of3 d-5of7 cf" role="main">
-
-						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-							
-							<?php get_template_part('includes/partials/content-single', $name); ?>
-
-						<?php endwhile; ?>
-
-						<?php else : ?>
-
-							<article id="post-not-found" class="hentry clearfix">
-									<header class="article-header">
-										<h1><?php _e( 'Oops, Post Not Found!', 'freshopstheme' ); ?></h1>
-									</header>
-									<section class="entry-content">
-										<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'freshopstheme' ); ?></p>
-									</section>
-									<footer class="article-footer">
-											<p><?php _e( 'This is the error message in the single.php template.', 'freshopstheme' ); ?></p>
-									</footer>
-							</article>
-
-						<?php endif; ?>
-
-					</div>
-
-					<?php get_sidebar(); ?>
-
-				</div>
-
-			</div>
-
-<?php get_footer(); ?>
+<?=get_footer()?>
