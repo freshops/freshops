@@ -153,6 +153,6 @@ Assuming WordPress is installed, and [Rhizome](https://github.com/freshops/rhizo
 1. Open <http://git.local/freshops/rhizome/> ([theme skeleton/kit](https://github.com/freshops/rhizome)) and <http://freshops.local/> (local WordPress install).
 1. Terminal tab: `$ cd rhizome/` and run `$ bundle exec sass --watch assets/scss:assets/css --sourcemap=none --trace` (for more details, see [build instructions here](https://github.com/freshops/rhizome#development-commands)).
 1. Next: `$ cd freshops/library/scss` and run `$ sass --watch style.scss:../css/style.css --sourcemap=none` …
-1 Finally, tail error log: `$ cd freshops/content/` and run `$ tail -f debug.log`.
+1. Finally, tail error log: `$ cd freshops/content/` and run `$ tail -f debug.log`.
 
 **Tip:** Use <kbd>CMD</kbd> + <kbd>I</kbd> to label your terminal window tabs (helps to keep things organized).
