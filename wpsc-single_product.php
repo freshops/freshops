@@ -33,12 +33,13 @@
 		<?php while (wpsc_have_products()): ?>
 			
 			<?php wpsc_the_product(); ?>
+
+			<?php # include the standard product view elements (@todo: test to see if it's a "hop"). ?>
+			<?php include(locate_template('includes/cart/single_product.php')); ?>
 			
 			<?php # Add custom fields for hops via include (@todo: test to see if it's a "hop"). ?>
-			<?php //get_template_part('includes/partials/content', 'single_product'); ?>
-			<?php include(locate_template('includes/cart/single_product.php')); ?>
-			<?php  //get_template_part('includes/partials/content', 'single_hop_variety'); ?>
 			<?php include(locate_template('includes/cart/single_hop_variety.php')); ?>
+			
 		<?php endwhile; ?>
 		
 	</div> <!-- /.single_product_display -->
