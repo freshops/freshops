@@ -1,7 +1,7 @@
 <?php
 /*
-Author: Eddie Machado
-URL: htp://themble.com/bones/
+Author: Ben Beekman and Michael Hulse
+URL: http://benbeekman.com
 
 This is where you can drop your custom functions or
 just edit things like thumbnail sizes, header images,
@@ -11,7 +11,7 @@ sidebars, comments, ect.
 /************* INCLUDE NEEDED FILES ***************/
 
 /*
-1. library/bones.php
+1. library/freshops.php
 	- head cleanup (remove rsd, uri links, junk css, ect)
 	- enqueueing scripts & styles
 	- theme support functions
@@ -23,14 +23,14 @@ sidebars, comments, ect.
 	- custom google+ integration
 	- adding custom fields to user profiles
 */
-require_once( 'library/freshops.php' ); // if you remove this, bones will break
+require_once( 'library/freshops.php' ); // if you remove this, freshops will break
 /*
 2. library/custom-post-type.php
 	- an example custom post type
 	- example custom taxonomy (like categories)
 	- example custom taxonomy (like tags)
 */
-require_once( 'library/custom-post-type.php' ); // you can disable this if you like
+//require_once( 'library/custom-post-type.php' ); // you can disable this if you like
 /*
 3. library/admin.php
 	- removing some default WordPress dashboard widgets
@@ -69,9 +69,9 @@ inside the thumbnail function.
 
 For example, to call the 300 x 300 sized image,
 we would use the function:
-<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
+<?php the_post_thumbnail( 'freshops-thumb-300' ); ?>
 for the 600 x 100 image:
-<?php the_post_thumbnail( 'bones-thumb-600' ); ?>
+<?php the_post_thumbnail( 'freshops-thumb-600' ); ?>
 
 You can change the names and dimensions to whatever
 you like. Enjoy!
@@ -81,8 +81,8 @@ add_filter( 'image_size_names_choose', 'freshops_custom_image_sizes' );
 
 function freshops_custom_image_sizes( $sizes ) {
 	return array_merge( $sizes, array(
-	                   'bones-thumb-600' => __('600px by 150px'),
-	                   'bones-thumb-300' => __('300px by 100px'),
+	                   'freshops-thumb-600' => __('600px by 150px'),
+	                   'freshops-thumb-300' => __('300px by 100px'),
 	                   'portrait-600' => __('600px by 1000px'),
 	                   'portrait-300' => __('300px by 500px'),
 	                   'portrait-150' => __('150px by 250px')
