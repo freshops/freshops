@@ -1,6 +1,6 @@
 /*
  * Bones Scripts File
- * Author: Eddie Machado
+ * Author: Ben Beekman and Michael Hulse
  *
  * This file should contain any js scripts you want to add to the site.
  * Instead of calling it in the header or throwing it inside wp_head()
@@ -91,13 +91,13 @@ var timeToWaitForLast = 100;
  * then we can swap out those images since they are located in a data attribute.
 */
 function loadGravatars() {
-  // set the viewport using the function above
-  viewport = updateViewportDimensions();
-  // if the viewport is tablet or larger, we load in the gravatars
-  if (viewport.width >= 768) {
-  jQuery('.comment img[data-gravatar]').each(function(){
-    jQuery(this).attr('src',jQuery(this).attr('data-gravatar'));
-  });
+	// set the viewport using the function above
+	viewport = updateViewportDimensions();
+	// if the viewport is tablet or larger, we load in the gravatars
+	if (viewport.width >= 768) {
+	jQuery('.comment img[data-gravatar]').each(function(){
+		jQuery(this).attr('src',jQuery(this).attr('data-gravatar'));
+	});
 	}
 } // end function
 
@@ -107,11 +107,11 @@ function loadGravatars() {
 */
 jQuery(document).ready(function($) {
 
-  /*
-   * Let's fire off the gravatar function
-   * You can remove this if you don't need it
-  */
-  loadGravatars();
+	/*
+	 * Let's fire off the gravatar function
+	 * You can remove this if you don't need it
+	*/
+	loadGravatars();
 
 
 }); /* end of as page load scripts */

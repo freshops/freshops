@@ -20,7 +20,7 @@
 					'style'             => 'div',
 					'short_ping'        => true,
 					'avatar_size'       => 40,
-					'callback'          => 'bones_comments',
+					'callback'          => 'freshops_comments',
 					'type'              => 'all',
 					'reply_text'        => 'Reply',
 					'page'              => '',

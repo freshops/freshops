@@ -1,10 +1,8 @@
 <?php
-/* Welcome to Bones :)
-Thanks to the fantastic work by Bones users, we've now
-the ability to translate Bones into different languages.
+/* Welcome to Freshops :)
 
-Developed by: Eddie Machado
-URL: http://themble.com/bones/
+Developed by: Ben Beekman and Michael Hulse
+URL: http://beekmedia.com/
 */
 
 

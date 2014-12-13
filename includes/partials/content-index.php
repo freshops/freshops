@@ -24,7 +24,7 @@
 
 <section class="entry-content cf">
 	
-	<?=the_post_thumbnail( 'bones-thumb-300' )?>
+	<?=the_post_thumbnail( 'portrait-300' )?>
 	
 	<?=the_excerpt()?>
 	
