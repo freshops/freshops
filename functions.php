@@ -1,7 +1,7 @@
 <?php
 /*
 Author: Ben Beekman and Michael Hulse
-URL: http://benbeekman.com
+URL: http://beekmedia.com
 
 This is where you can drop your custom functions or
 just edit things like thumbnail sizes, header images,
@@ -49,11 +49,9 @@ require_once( 'library/admin.php' ); // this comes turned off by default
 
 // Thumbnail sizes
 //
-	// add_image_size( 'small', 150, 150, true );
-	// add_image_size( 'medium', 300, 300, true );
-	// add_image_size( 'large', 600, 600, true );
-
-
+	add_image_size( 'small', 150, 150, true );
+	add_image_size( 'medium', 300, 300, true );
+	add_image_size( 'large', 600, 600, true );
 	add_image_size( 'portrait-600', 600, 1000, true );
 	add_image_size( 'portrait-300', 300, 500, true );
 	add_image_size( 'portrait-150', 150, 250, true );
