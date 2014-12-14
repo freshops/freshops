@@ -4,12 +4,14 @@ Single hop variety template for use in WP E-commerce single hop pages
 */
 ?>
 <h4>Hop Qualities</h4>
-<?php if(get_field('alpha')) { ?>
+<?php if(get_field('alpha-min')) { ?>
 <dl>
 	<dt>Acid Range (Alpha &#37;):</dt>
-	<dd> <?php echo get_field('alpha'); ?></dd>
+	<dd><?php echo get_field('alpha-min'); ?>&endash;<?php echo get_field('alpha-max'); ?>
+	</dd>
 </dl>
 <?php } ?>
+
 
 <?php if(get_field('flavor')){ ?>
 <dl>

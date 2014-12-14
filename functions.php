@@ -126,9 +126,9 @@ function order_nav() {
 // Sidebars & Widgetizes Areas
 function freshops_register_sidebars() {
 	register_sidebar(array(
-	                 'id'            => 'sidebar1',
-	                 'name'          => __( 'Sidebar 1', 'freshopstheme' ),
-	                 'description'   => __( 'The first (primary) sidebar.', 'freshopstheme' ),
+	                 'id'            => 'blog_sidebar',
+	                 'name'          => __( 'Blog Sidebar', 'freshopstheme' ),
+	                 'description'   => __( 'The standard blog sidebar.', 'freshopstheme' ),
 	                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	                 'after_widget'  => '</div>',
 	                 'before_title'  => '<h4 class="widgettitle">',
@@ -136,7 +136,7 @@ function freshops_register_sidebars() {
 	                 ));
 	register_sidebar(array(
 	                 'id'            => 'shop_nav',
-	                 'name'          => __( 'Shopping Navigation', 'freshopstheme' ),
+	                 'name'          => __( 'Shop Navigation', 'freshopstheme' ),
 	                 'description'   => __( 'A sidebar nav area for shopping cart, account login, and other nav elements, placed near the top on every page.', 'freshopstheme' ),
 	                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	                 'after_widget'  => '</div>',
@@ -145,7 +145,7 @@ function freshops_register_sidebars() {
 	                 ));
 	register_sidebar(array(
 	                 'id'            => 'shop_sidebar',
-	                 'name'          => __( 'Shopping Sidebar', 'freshopstheme' ),
+	                 'name'          => __( 'Shop Sidebar', 'freshopstheme' ),
 	                 'description'   => __( 'A sidebar area that replaces the standard sidebar on product, product category, and other product-related pages.', 'freshopstheme' ),
 	                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	                 'after_widget'  => '</div>',
@@ -175,6 +175,7 @@ function freshops_register_sidebars() {
 	the sidebar.php file and rename it to your sidebar's name.
 	So using the above example, it would be:
 	sidebar-sidebar2.php
+	
 
 	*/
 } // don't remove this bracket!

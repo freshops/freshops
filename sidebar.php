@@ -1,15 +1,21 @@
-<?php if (is_active_sidebar('sidebar1')): ?>
-	
-	<?php dynamic_sidebar('sidebar1'); ?>
-	
+<?php if ( is_home() || is_archive() || is_singular( 'post' ) || is_category() || is_tag() || is_tax()) : ?>
+	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Blog Sidebar") ) : ?>
+		<?php dynamic_sidebar('blog_sidebar'); ?>
+	<?php else: ?>
+		<?php # This content shows up if there are no widgets defined in the backend. ?>
+		<div class="no-widgets">
+			<p><?=_e('This is a widget ready area that appears on all blog-related pages. Add some widgets and they will appear here.', 'freshopstheme')?></p>
+		</div>
+	<?php endif; ?>
+<?php elseif ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Shop Sidebar") ) : ?>
+	<?php dynamic_sidebar('shop_sidebar'); ?>
 <?php else: ?>
-	
+
 	<?php # This content shows up if there are no widgets defined in the backend. ?>
-	
+
 	<div class="no-widgets">
-		
-		<p><?=_e('This is a widget ready area. Add some and they will appear here.', 'freshopstheme')?></p>
-		
+
+		<p><?=_e('This is a widget ready area that appears on most shopping-related pages. Add some widgets and they will appear here.', 'freshopstheme')?></p>
+
 	</div>
-	
 <?php endif; ?>
