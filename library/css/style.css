@@ -1,6 +1,5 @@
-/*! Made with Bones: http://themble.com/bones :) */
 /******************************************************************
-Site Name:
+Site Name: Freshops WP Theme
 Author:
 
 Stylesheet: Main Stylesheet
@@ -2009,8 +2008,7 @@ a, a:visited {
 
 #content {
   background: url(../images/rhizome/grunge-03.png) no-repeat;
-  padding: 10px 20px;
-  min-height: 600px; }
+  padding: 10px 20px; }
   @media all and (min-width: 640px) {
     #content {
       padding: 25px 50px; } }
