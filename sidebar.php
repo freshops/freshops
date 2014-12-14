@@ -6,12 +6,13 @@
 		<div class="no-widgets">
 			<p><?=_e('This is a widget ready area that appears on all blog-related pages. Add some widgets and they will appear here.', 'freshopstheme')?></p>
 		</div>
-	<?php endif; ?>
+	<?php endif; ?> 	<!-- end blog sidebar -->
 
+<!-- if it's not a blog page, assume it's a shopping page -->
 <?php elseif ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Shop Sidebar") ) : ?>
-	<?php dynamic_sidebar('shop_sidebar'); ?>
-<?php else: ?>
-	<div class="no-widgets">
-		<p><?=_e('This is a widget ready area that appears on most shopping-related pages. Add some widgets and they will appear here.', 'freshopstheme')?></p>
-	</div>
+		<?php dynamic_sidebar('shop_sidebar'); ?>
+	<?php else: ?>
+		<div class="no-widgets">
+			<p><?=_e('This is a widget ready area that appears on most shopping-related pages. Add some widgets and they will appear here.', 'freshopstheme')?></p>
+		</div>
 <?php endif; ?>
