@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
 		var $order = $('#order');
 		if ($order.length) {
 			
-			$order.click(function($e) {
+			$order.children('#cta').click(function($e) {
 				
 				$e.preventDefault();
 				
