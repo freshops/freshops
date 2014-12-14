@@ -3,6 +3,7 @@
 Single hop variety template for use in WP E-commerce single hop pages
 */
 ?>
+<h4>Hop Qualities</h4>
 <?php if(get_field('alpha')) { ?>
 <dl>
 	<dt>Acid Range (Alpha &#37;):</dt>

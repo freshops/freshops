@@ -37,8 +37,6 @@
 			<?php # include the standard product view elements (@todo: test to see if it's a "hop"). ?>
 			<?php include(locate_template('includes/cart/single_product.php')); ?>
 			
-			<?php # Add custom fields for hops via include (@todo: test to see if it's a "hop"). ?>
-			<?php include(locate_template('includes/cart/single_hop_variety.php')); ?>
 			
 		<?php endwhile; ?>
 		
