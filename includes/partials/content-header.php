@@ -4,7 +4,7 @@
 		
 		<h1>
 		
-			<?php if (is_single() || is_page()): ?> 
+			<?php if (is_single() || is_page()): ?>
 				
 				<?php # Single posts or pages: ?>
 				
