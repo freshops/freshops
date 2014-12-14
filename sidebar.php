@@ -7,15 +7,11 @@
 			<p><?=_e('This is a widget ready area that appears on all blog-related pages. Add some widgets and they will appear here.', 'freshopstheme')?></p>
 		</div>
 	<?php endif; ?>
+
 <?php elseif ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Shop Sidebar") ) : ?>
 	<?php dynamic_sidebar('shop_sidebar'); ?>
 <?php else: ?>
-
-	<?php # This content shows up if there are no widgets defined in the backend. ?>
-
 	<div class="no-widgets">
-
 		<p><?=_e('This is a widget ready area that appears on most shopping-related pages. Add some widgets and they will appear here.', 'freshopstheme')?></p>
-
 	</div>
 <?php endif; ?>
