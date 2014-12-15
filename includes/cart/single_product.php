@@ -1,7 +1,9 @@
 <?ohp ?>
 	<article id="post-<?=the_ID()?>" role="article" itemscope itemtype="http://schema.org/Product">
 		<section itemprop="articleBody">
-		
+
+
+
 		<div class="imagecol">
 
 			<?php if (wpsc_the_product_thumbnail()): ?>
@@ -64,7 +66,10 @@
 
 			<? //Category-specific options here. (i.e. hop template, etc.) ?>
 			<?php # Add custom fields for hops via include (@todo: test to see if it's a "hop"). ?>
-			
+
+
+
+
 			<?php include(locate_template('includes/cart/single_hop_variety.php')); ?>
 
 

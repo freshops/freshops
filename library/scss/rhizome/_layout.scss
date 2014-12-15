@@ -1,23 +1,38 @@
 #container {
-	
+
+
 	@media all and (min-width: 640px) {
-		
+
+
+
 		position: relative;
-		
+
+
+
 		&::after {
-			
+
+
+
+
 			content: "";
 			display: table;
 			clear: both;
-			
+
+
+
+
 		}
-		
+
+
+
 	}
-	
+
+
 }
 
 #flag {
-	
+
+
 	width: 143px;
 	height: 36px;
 	margin: 0;
@@ -26,9 +41,12 @@
 	top: 3px;
 	left: 10px;
 	z-index: 20; // Put it above mean menu.
-	
+
+
 	a {
-		
+
+
+
 		text-indent: -999em;
 		background: {
 			image: url(../images/rhizome/freshops-logo-small.png);
@@ -38,24 +56,39 @@
 		width: 100%;
 		height: 100%;
 		display: block;
-		
+
+
+
 		.no-touch &:hover { background-position: 0 0; }
 		&:active,
 		&:focus { outline: none; }
-		
+
+
+
 		@media all and (min-width: 640px) {
-			
+
+
+
+
 			background: {
 				image: url(../images/rhizome/freshops-logo.png);
 				position: 0 -247px;
 			}
-			
+
+
+
+
 		}
-		
+
+
+
 	}
-	
+
+
 	@media all and (min-width: 640px) {
-		
+
+
+
 		width: 250px;
 		height: 247px;
 		margin: 0;
@@ -63,34 +96,51 @@
 		overflow: hidden;
 		top: 0;
 		left: 0;
-		
+
+
+
 	}
-	
+
+
 }
 
 #secondary {
-	
+
+
 	display: none;
-	
+
+
 	@media all and (min-width: 640px) {
-		
+
+
+
 		padding-top: 247px; // Matches `#flag` height.
 		width: 250px;
 		float: left;
 		display: inline;
-		
+
+
+
 		* html & { margin-right: 7px; }
-		
+
+
+
 	}
-	
+
+
 }
 
 #hops {
-	
+
+
 	@media all and (min-width: 640px) {
-		
+
+
+
 		position: relative;
-		
+
+
+
 		div {
 			background: url(../images/rhizome/hop-graphic.png) no-repeat;
 			width: 301px;
@@ -100,36 +150,51 @@
 			top: 0;
 			left: 0;
 		}
-		
+
+
+
 	}
-	
+
+
 }
 
 #primary {
-	
+
+
 	@media all and (min-width: 640px) {
-		
+
+
+
 		margin-left: 260px;
-		
+
+
+
 		// Clear `#wrap`:
 		&::after {
 			content: "";
 			display: table;
 			clear: both;
 		}
-		
+
+
+
 	}
-	
+
+
 }
 
 #wrap {
-	
+
+
 	// For `#badge`:
 	position: relative;
 	background: #e8efdc;
-	
+
+
 	@media all and (min-width: 640px) {
-		
+
+
+
 		width: 100%;
 		float: left;
 		display: inline;
@@ -137,17 +202,24 @@
 			image: url(../images/rhizome/shadow-02.png);
 			repeat: repeat-y;
 		}
-		
+
+
+
 	}
-	
+
+
 }
 
 #badge {
-	
+
+
 	display: none;
-	
+
+
 	@media all and (min-width: 960px) {
-		
+
+
+
 		background: url(../images/rhizome/badge.png) no-repeat;
 		width: 79px;
 		height: 79px;
@@ -156,19 +228,27 @@
 		z-index: 100;
 		top: 5px;
 		left: 10px;
-		
+
+
+
 	}
-	
+
+
 }
 
 #location {
-	
+
+
 	background: #fafcf8 url(../images/rhizome/border-01.png) repeat-x left bottom;
-	
+
+
 	div { background: url(../images/rhizome/grunge-01.png) no-repeat left bottom; }
-	
+
+
 	h1 {
-		
+
+
+
 		font-size: 22px;
 		text-transform: uppercase;
 		line-height: 1;
@@ -176,89 +256,147 @@
 		color: #3a770c;
 		margin: 0 0 0 20px;
 		padding: 10px 0;
-		
+
+
+
 		@media all and (min-width: 960px) {
-			
+
+
+
+
 			margin-left: 95px;
-			
+
+
+
+
 		}
-		
+
+
+
 	}
-	
+
+
 }
 
 .deck {
-	
+
+
 	background: #c9d9af url(../images/rhizome/border-02.png) repeat-x left bottom;
-	
+
+
 	div { background: url(../images/rhizome/grunge-02.png) no-repeat left bottom; }
-	
+
+
 	h2 {
-		
+
+
+
 		font-size: 18px;
 		line-height: 1;
 		color: #061c06;
 		margin: 0 0 0 20px;
 		padding: 10px 0;
-		
+
+
+
 		@media all and (min-width: 960px) {
-			
+
+
+
+
 			margin-left: 95px;
-			
+
+
+
+
 		}
-		
+
+
+
 	}
-	
+
+
 }
 
 #content {
-	
+
+
 	background: url(../images/rhizome/grunge-03.png) no-repeat;
 	padding: 10px 20px;
 	//min-height: 600px; // Just looks better.
-	
+
+
 	@media all and (min-width: 640px) {
-		
+
+
+
 		padding: 25px 50px;
-		
+
+
+
 	}
-	
+
+
 }
 
 #footer {
-	
+
+
 	font-size: smaller;
 	line-height: 1.5;
 	background: #c9d9af url(../images/rhizome/border-03.png) repeat-x;
 	height: 359px;
-	
+
+
 	div {
-		
+
+
+
 		height: 359px;
 		padding: 10px 20px;
 		background: url(../images/rhizome/grunge-04.png) no-repeat;
-		
+
+
+
 		p {
 			color: #394e1c;
 			margin: 0;
 			padding: 0;
 		}
-		
+
+
+
 		@media all and (min-width: 640px) {
-			
+
+
+
+
 			padding: 25px 50px;
-			
+
+
+
+
 		}
-		
+
+
+
 	}
-	
+
+
 	a {
-		
+
+
+
 		text-decoration: none;
 		color: #2d3e16;
-		
+
+
+
 		.no-touch &:hover { text-decoration: underline; }
-		
+
+
+
 	}
-	
+
+
 }

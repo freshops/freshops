@@ -1,5 +1,6 @@
 * {
-	
+
+
 	&,
 	&::before,
 	&::after {
@@ -7,30 +8,39 @@
 		   -moz-box-sizing: border-box;
 		        box-sizing: border-box;
 	}
-	
+
+
 }
 
 html {
-	
+
+
 	font: 14px/1.5 Arial, sans-serif;
 	height: auto !important;
 	height: 100%;
 	min-height: 100%;
 	background-color: #c9d9af;
-	
+
+
 	@media all and (min-width: 640px) {
-		
+
+
+
 		background: {
 			image: url(../images/rhizome/bg.png);
 			repeat: repeat-y;
 		}
-		
+
+
+
 	}
-	
+
+
 }
 
 a {
-	
+
+
 	&,
 	&:visited {
 		color: #057db9;
@@ -44,5 +54,6 @@ a {
 		color: #057db9;
 		text-decoration: underline;
 	}
-	
+
+
 }

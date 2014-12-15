@@ -1,29 +1,46 @@
 .js .panel { display: none; }
 
 #submenu {
-	
+
+
 	ul {
-		
+
+
+
 		margin: 0 0 0 10px;
 		padding: 0;
-		
+
+
+
 		// Clear list items:
 		&::after {
 			content: "";
 			display: table;
 			clear: both;
 		}
-		
+
+
+
 		li {
-			
+
+
+
+
 			list-style-type: none;
 			margin: 0;
 			padding: 0;
 			float: left;
 			display: inline;
-			
+
+
+
+
 			a {
-				
+
+
+
+
+
 				font-size: 100%;
 				font-weight: bold;
 				text-decoration: none;
@@ -31,7 +48,11 @@
 				padding: .5em;
 				display: block;
 				cursor: pointer;
-				
+
+
+
+
+
 				&:visited { color: #6c6e73; }
 				.no-touch &:visited:hover,
 				&:focus,
@@ -43,20 +64,42 @@
 					text-decoration: none;
 					background: #96b477 url(../images/rhizome/border-04.png) repeat-x left bottom;
 				}
-				
+
+
+
+
+
 				&:active,
 				&:focus { outline: 0; }
-				
+
+
+
+
+
 			}
-			
+
+
+
+
 		}
-		
+
+
+
 		@media all and (min-width: 960px) {
-			
+
+
+
+
 			margin-left: 95px;
-			
+
+
+
+
 		}
-		
+
+
+
 	}
-	
+
+
 }

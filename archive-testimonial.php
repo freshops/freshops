@@ -22,7 +22,11 @@ f<?php get_header(); ?>
 						<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'freshopstheme' )) ?></li>
 					</ul>
 				</nav>
-				
+
+
+
+
+
 
 			<?php } //else {};
 		?>

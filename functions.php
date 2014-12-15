@@ -175,7 +175,8 @@ function freshops_register_sidebars() {
 	the sidebar.php file and rename it to your sidebar's name.
 	So using the above example, it would be:
 	sidebar-sidebar2.php
-	
+
+
 
 	*/
 } // don't remove this bracket!
@@ -242,29 +243,40 @@ function print_menu_shortcode($atts, $content = null) {
 //--------------------------------------------------------------------
 
 function freshops_wp_enqueue_rhizome_scripts() {
-	
+
+
 	# See also: `freshops_scripts_and_styles` in `library/freshops.php`.
-	
+
+
 	if ( ! is_admin()) {
-		
+
+
+
 		$script_path = get_template_directory_uri() . '/library/js/rhizome/';
-		
+
+
+
 		wp_register_script('meanmenu',      $script_path . 'jquery.meanmenu.js',          array('jquery'), 1, FALSE);
 		wp_register_script('nutshell',      $script_path . 'jquery.nutshell.js',          array('jquery'), 1, FALSE);
 		wp_register_script('cookie',        $script_path . 'jquery.cookie.js',            array('jquery'), 1, FALSE);
 		wp_register_script('dcjqaccordion', $script_path . 'jquery.dcjqaccordion.2.7.js', array('jquery'), 1, FALSE);
 		wp_register_script('fastclick',     $script_path . 'fastclick.js',                array('jquery'), 1, FALSE);
 		wp_register_script('rhizome',       $script_path . 'rhizome.js',                  array('jquery'), 1, FALSE);
-		
+
+
+
 		wp_enqueue_script('meanmenu');
 		wp_enqueue_script('nutshell');
 		wp_enqueue_script('cookie');
 		wp_enqueue_script('dcjqaccordion');
 		wp_enqueue_script('fastclick');
 		wp_enqueue_script('rhizome');
-		
+
+
+
 	}
-	
+
+
 }
 
 add_action('wp_enqueue_scripts', 'freshops_wp_enqueue_rhizome_scripts');
