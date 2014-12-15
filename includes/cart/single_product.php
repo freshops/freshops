@@ -1,9 +1,6 @@
 <?php ?>
 	<article id="post-<?=the_ID()?>" role="article" itemscope itemtype="http://schema.org/Product">
 		<section itemprop="articleBody">
-
-
-
 		<div class="imagecol">
 
 			<?php if (wpsc_the_product_thumbnail()): ?>
@@ -31,7 +28,7 @@
 					id="product_image_<?php echo wpsc_the_product_id(); ?>"
 					alt="No Image"
 					title="<?php echo wpsc_the_product_title(); ?>"
-					src="<?php get_template_directory_uri(); ?>wpsc-images/noimage.png" 
+					src="<?php get_template_directory_uri(); ?>wpsc-images/noimage.png"
 					width="<?php echo get_option('product_image_width'); ?>"
 					height="<?php echo get_option('product_image_height'); ?>"
 					>
@@ -66,7 +63,8 @@
 <?php # if(has_term('category-slug', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) : ?>
 <?php# else: ?>
 <?php #endif; ?>
-		
+
+
 <!-- If we're on a rhizome single product page, then include the rhizome-specific partial -->
 <?php if(has_term('hops', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) : ?>
 	<?php include(locate_template('includes/cart/single_hop_variety.php')); ?>
@@ -98,9 +96,11 @@
 			)
 		)
 ); ?>
-	
 
-			
+
+
+
+
 
 
 			<?php do_action('wpsc_product_addon_after_descr', wpsc_the_product_id()); ?>
@@ -393,8 +393,7 @@
 
 </div> <!-- /.productcol -->
 
-<form
-onsubmit="submitform(this); return false;"
+<form onsubmit="submitform(this); return false;"
 action="<?php echo esc_url(wpsc_this_page_url()); ?>"
 method="post"
 name="product_<?php echo wpsc_the_product_id(); ?>"
@@ -405,5 +404,8 @@ id="product_extra_<?php echo wpsc_the_product_id(); ?>"
 <input type="hidden" value="<?php echo wpsc_the_product_id(); ?>" name="item">
 
 </form>
-
+</section>
+<section>
 <?php echo wpsc_product_comments(); ?>
+</section>
+</article>

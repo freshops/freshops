@@ -7,24 +7,29 @@ Single hop variety template for use in WP E-commerce single hop pages
 
 <?php if(get_field('alpha-min')) : ?> <!-- Show alpha range if both min and max have values, otherwise show min value. -->
 
-
 	<dl>
 
 		<dt>Acid Range (Alpha &#37;):</dt>
-		
+	
+
 		<dd>
 
 			<?php echo get_field('alpha-min'); ?>
-			
+		
+
 			<?php if (get_field('alpha-max')) : ?>
-				
-				<?php echo get_field('alpha-max'); ?>
-				
-			<?php endif; ?>
 			
+
+				<?php echo get_field('alpha-max'); ?>
+			
+
+			<?php endif; ?>
+		
+
 			&#37;  <!-- Percent symbol (%)-->
 		</dd>
-		
+	
+
 	</dl>
 <?php endif; ?>
 
