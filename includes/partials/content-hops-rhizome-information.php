@@ -12,7 +12,9 @@
 				'field' => 'slug',
 				'terms' => 'rhizomes'
 			)
-		)
+		),
+		'order'                  => 'DESC',
+		'orderby'                => 'title',
 	);
 
 

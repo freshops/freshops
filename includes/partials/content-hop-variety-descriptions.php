@@ -12,7 +12,9 @@
 				'field' => 'slug',
 				'terms' => 'hop'
 			)
-		)
+		),
+		'order'                  => 'DESC',
+		'orderby'                => 'title',
 	);
 
 

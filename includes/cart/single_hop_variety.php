@@ -3,15 +3,30 @@
 Single hop variety template for use in WP E-commerce single hop pages
 */
 ?>
-
-<?php if(get_field('alpha-min')) { ?>
 <h4>Hop Qualities</h4>
-<dl>
-	<dt>Acid Range (Alpha &#37;):</dt>
-	<dd><?php echo get_field('alpha-min'); ?>&endash;<?php echo get_field('alpha-max'); ?>
-	</dd>
-</dl>
-<?php } ?>
+
+<?php if(get_field('alpha-min')) : ?> <!-- Show alpha range if both min and max have values, otherwise show min value. -->
+
+
+	<dl>
+
+		<dt>Acid Range (Alpha &#37;):</dt>
+		
+		<dd>
+
+			<?php echo get_field('alpha-min'); ?>
+			
+			<?php if (get_field('alpha-max')) : ?>
+				
+				<?php echo get_field('alpha-max'); ?>
+				
+			<?php endif; ?>
+			
+			&#37;  <!-- Percent symbol (%)-->
+		</dd>
+		
+	</dl>
+<?php endif; ?>
 
 
 <?php if(get_field('flavor')){ ?>
@@ -29,15 +44,24 @@ if(get_field('example')){ ?>
 </dl>
 <?php
 }
-if(get_field('beta')){ ?>
-<dl>
-	<dt>Beta Range (&#37; of alpha acids)</dt>
-	<dd> <?php echo get_field('beta');?></dd>
-</dl>
-<?php
-}
 
-if(get_field('cohumulone')){ ?>
+if(get_field('beta-min')) : ?> <!-- Show beta range if both min and max have values, otherwise show min value. -->
+	<dt>Beta Range (&#37; of alpha acids)</dt>
+
+	<dd>
+		<?php echo get_field('beta-min'); ?>
+
+		<?php if (get_field('beta-max')) : ?>
+
+			<?php echo get_field('beta-max'); ?>
+
+		<?php endif; ?>&#37;  <!-- Percent symbol (%)-->
+	</dd>
+
+
+<?php endif; ?>
+
+<?php if(get_field('cohumulone')){ ?>
 <dl>
 	<dt>Cohumulone (&#37; of alpha acids)</dt>
 	<dd> <?php echo get_field('cohumulone');?></dd>
@@ -73,7 +97,7 @@ if(get_field('humulene')){ ?>
 }
 if(get_field('farnesene')){ ?>
 <dl>
-	<dt>Humulene (as &#37; of total oils)</dt>
+	<dt>Farnesene (as &#37; of total oils)</dt>
 	<dd> <?php echo get_field('farnesene');?></dd>
 </dl>
 <?php
