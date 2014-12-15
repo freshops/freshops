@@ -1,4 +1,4 @@
-<?ohp ?>
+<?php ?>
 	<article id="post-<?=the_ID()?>" role="article" itemscope itemtype="http://schema.org/Product">
 		<section itemprop="articleBody">
 
@@ -63,14 +63,44 @@
 
 			<?php endif; ?>
 
+<?php # if(has_term('category-slug', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) : ?>
+<?php# else: ?>
+<?php #endif; ?>
+		
+<!-- If we're on a rhizome single product page, then include the rhizome-specific partial -->
+<?php if(has_term('hops', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) : ?>
+	<?php include(locate_template('includes/cart/single_hop_variety.php')); ?>
+<!-- If we're on a rhizome single product page, then include the rhizome-specific partial -->
+<?php elseif(has_term('hops', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) : ?>
+	<?php include(locate_template('includes/cart/single_hop_variety.php')); ?>
+	<?php #else: ?>
+<?php endif; ?>
 
-			<? //Category-specific options here. (i.e. hop template, etc.) ?>
-			<?php # Add custom fields for hops via include (@todo: test to see if it's a "hop"). ?>
 
 
+<?php	$rhiz = array(
+		'post_type' => 'wpsc-product',
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'wpsc_product_category',
+				'field' => 'slug',
+				'terms' => 'rhizomes'
+			)
+		)
+); ?>
+<?php	$hops = array(
+		'post_type' => 'wpsc-product',
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'wpsc_product_category',
+				'field' => 'slug',
+				'terms' => 'hops'
+			)
+		)
+); ?>
+	
 
-
-			<?php include(locate_template('includes/cart/single_hop_variety.php')); ?>
+			
 
 
 			<?php do_action('wpsc_product_addon_after_descr', wpsc_the_product_id()); ?>
