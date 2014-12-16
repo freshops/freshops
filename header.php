@@ -130,6 +130,6 @@
 
 
 
-
+<a id="view-cart" href="#cart">View cart</a>
 
 				<div id="badge"><div></div></div>

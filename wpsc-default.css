@@ -317,7 +317,7 @@ Author URI: http://instinct.co.nz
 
 .single_product_display form.product_form .wpsc_buy_button_container,
 #content .single_product_display form.product_form .wpsc_buy_button_container{
-	text-align: right;
+	xtext-align: right;
 }
 
 .default_product_display .wpsc_buy_button_container{
@@ -436,11 +436,14 @@ table.list_productdisplay p.soldout {
 }
 
 .imagecol {
-	margin-right:5px;
+	xmargin-right:5px;
 /* 	width:25%; */
-	float:left;
+	xfloat:right;
 	position:relative;
+	xwidth: 150px;
 }
+
+.imagecol img { width: 100%; }
 
 .single_product_display .imagecol img.product_image {
 	background-color:#efefef;
@@ -1117,3 +1120,41 @@ background-color: #f5f5f5;
 	color:red;
 	font-weight:bold;
 }
+
+
+
+
+
+
+
+.productcol {
+	padding: 10px 20px;
+	font-size: 16px;
+	background: rgba(255, 255, 255, .5);
+}
+.productcol > :first-child { margin-top: 0; }
+.productcol > :last-child { margin-bottom: 0; }
+
+@media all and (min-width: 960px) {
+	
+	.product-secondary {
+		float: left;
+		width: 150px;
+	}
+	.product-primary {
+		margin-left: 170px;
+		xmax-width: 500px;
+	}
+	
+}
+
+.wpsc_quantity_update input[type="text"] { width: 5em; }
+
+
+.product_form {
+	border-top: 3px solid rgba(0, 0, 0, .1);
+	padding: 10px 0 0;
+	vertical-align: top;
+}
+
+.product_form > * { display: inline-block; }

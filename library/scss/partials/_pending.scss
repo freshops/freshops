@@ -1,0 +1,103 @@
+h1, h2, h3, h4, h5, h6 {
+	
+	font: {
+		family: Arial, sans-serif;
+		weight: bold;
+	}
+	line-height: 1.25;
+	word: {
+		spacing: .12em;
+		wrap: break-word;
+	}
+	color: #000;
+	overflow-wrap: break-word;
+	margin: {
+		top: 0;
+		bottom: 25px;
+	}
+	padding: 0;
+	
+	& + & {
+		margin-top: -20px;
+	}
+	
+}
+
+.sh1, .sh2, .sh3, .sh4, .sh5, .sh6 {
+	font-style: normal;
+}
+
+h1, .h1, .sh1 {
+	font-size: 30px;
+	letter-spacing: .025em;
+}
+
+h2, .h2, .sh2 {
+	font-size: 28px;
+	letter-spacing: .03em
+}
+
+h3, .h3, .sh3 {
+	font-size: 26px;
+	letter-spacing: .035em;
+}
+
+h4, .h4, .sh4 {
+	font-size: 22px;
+	letter-spacing: .04em;
+}
+
+h5, .h5, .sh5 {
+	font-size: 20px;
+	letter-spacing: .045em;
+}
+
+h6, .h6, .sh6 {
+	font-size: 18px;
+	letter-spacing: .05em;
+}
+
+h1:empty { display: none; }
+
+fieldset {
+	
+	padding: 0;
+	border: 0;
+	
+	legend {
+		font-weight: bold;
+	}
+	
+}
+
+
+#view-cart {
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 22px;
+	padding: 10px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+dl {
+	
+	dt {
+		font-weight: bold;
+		//text-transform: uppercase;
+		//letter-spacing: .05em;
+		//word-spacing: .15em;
+		line-height: 20px;
+		margin: 0 0 5px;
+	}
+	
+	dd {
+		line-height: 18px;
+		margin: 0 0 10px;
+	}
+	
+	> :first-child { margin-top: 0 !important; }
+	> :last-child { margin-bottom: 0 !important; }
+	
+}

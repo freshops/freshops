@@ -1,6 +1,43 @@
 <?php ?>
 	<article id="post-<?=the_ID()?>" role="article" itemscope itemtype="http://schema.org/Product">
+
 		<section itemprop="articleBody">
+
+
+
+
+
+				<div class="fix">
+
+
+
+
+
+
+					<div id="mainbar" class="m-all t-all d-5of7">
+
+
+
+
+
+				<div class="fix">
+
+
+
+
+
+
+					<div class="product-secondary">
+					
+					
+					
+					
+					
+					
+					
+					
+					
+
 		<div class="imagecol">
 
 			<?php if (wpsc_the_product_thumbnail()): ?>
@@ -38,6 +75,16 @@
 
 		</div><!-- /.imagecol -->
 
+					</div> <!-- /.product-secondary -->
+
+
+
+
+
+
+					<div class="product-primary" role="complementary">
+
+
 		<div class="productcol">
 
 			<?php do_action('wpsc_product_before_description', wpsc_the_product_id(), $wp_query->post); ?>
@@ -66,36 +113,16 @@
 
 
 <!-- If we're on a rhizome single product page, then include the rhizome-specific partial -->
-<?php if(has_term('hops', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) : ?>
+<?php if(has_term('hop', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) : ?>
 	<?php include(locate_template('includes/cart/single_hop_variety.php')); ?>
 <!-- If we're on a rhizome single product page, then include the rhizome-specific partial -->
-<?php elseif(has_term('hops', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) : ?>
+<?php elseif(has_term('hop', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) : ?>
 	<?php include(locate_template('includes/cart/single_hop_variety.php')); ?>
 	<?php #else: ?>
 <?php endif; ?>
 
 
 
-<?php	$rhiz = array(
-		'post_type' => 'wpsc-product',
-		'tax_query' => array(
-			array(
-				'taxonomy' => 'wpsc_product_category',
-				'field' => 'slug',
-				'terms' => 'rhizomes'
-			)
-		)
-); ?>
-<?php	$hops = array(
-		'post_type' => 'wpsc-product',
-		'tax_query' => array(
-			array(
-				'taxonomy' => 'wpsc_product_category',
-				'field' => 'slug',
-				'terms' => 'hops'
-			)
-		)
-); ?>
 
 
 
@@ -392,6 +419,43 @@
 	<?php endif; ?>
 
 </div> <!-- /.productcol -->
+
+
+					</div> <!-- /.product-primary -->
+
+
+
+
+
+
+				</div> <!-- /.fix -->
+
+
+					</div> <!-- /#mainbar -->
+
+
+
+
+
+
+					<div id="sidebar" class="sidebar m-all t-all d-2of7 last-col" role="complementary">
+
+
+<div id="cart">
+<?php if ( ! function_exists('dynamic_sidebar') || ( ! dynamic_sidebar('Shop Navigation'))): ?>
+    <?=dynamic_sidebar('shop_nav')?>
+<?php endif; ?>
+</div>
+
+
+					</div> <!-- /#sidebar -->
+
+
+
+
+
+
+				</div> <!-- /.fix -->
 
 <form onsubmit="submitform(this); return false;"
 action="<?php echo esc_url(wpsc_this_page_url()); ?>"
