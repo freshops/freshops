@@ -1664,19 +1664,6 @@ be set to display none.
 /*********************
 PENDING
 *********************/
-.wpsc_page_numbers_top,
-.wpsc_page_numbers_bottom {
-  text-align: right; }
-
-.list_productdisplay {
-  width: 100%; }
-
-.quantity_container input {
-  width: auto;
-  padding: 5px;
-  margin: 0 5px;
-  display: block; }
-
 /*********************
 RHIZOME SKIN
 https://github.com/freshops/rhizome
