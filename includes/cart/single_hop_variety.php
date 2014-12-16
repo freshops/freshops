@@ -6,30 +6,48 @@ Single hop variety template for use in WP E-commerce single hop pages
 <h4>Hop Qualities</h4>
 
 <?php if(get_field('alpha-min')) : ?> <!-- Show alpha range if both min and max have values, otherwise show min value. -->
-
+	
+	<?php (float) $alphamin = get_field('alpha-min'); ?>
 	<dl>
 
 		<dt>Acid Range (Alpha &#37;):</dt>
 	
-
 		<dd>
-
-			<?php echo get_field('alpha-min'); ?>
 		
-
-			<?php if (get_field('alpha-max')) : ?>
-			
-
-				<?php echo get_field('alpha-max'); ?>
-			
-
-			<?php endif; ?>
+		<!-- if there's a max, there must be a min, so average the two to set alpha value for meter -->
+		<?php if(get_field('alpha-max')) : ?>
+			<?php (float) $alphamax = get_field('alpha-max'); ?>
+			<?php (float) $alphavalue = ($alphamax+$alphamin)/2; ?>
+			<? else: //otherwise alphamin is the alphavalue, so set it accordingly and reset min and max to null
+			$alphavalue = $alphamin;
+			unset ($alphamin); //reset alphamin
+			unset ($alphamax);
+			?>
+		<?php endif; ?>
+		<meter
+		min="0%" 
+		max="100%" 
 		
-
-			&#37;  <!-- Percent symbol (%)-->
+		<?php if (isset($alphamin))  : ?>
+			low="<?=$alphamin?>"
+		<?php endif; ?>
+		
+		<?php if (isset($alphamax))  : ?>
+			high="<?=$alphamax?>%"
+		<?php endif; ?>
+		value="<?=$alphavalue ?>%"
+		title="%">
+		<?php if (isset($alphamin))  : ?>
+			l<?=$alphamin?>"
+		<?php else : ?>
+			<?=$alphavalue;?>
+		<?php endif;?>
+			<?php if (isset($alphamax)) : ?> 
+				&endash;<?=get_field(‘alpha-max’)?>
+			<?php endif; ?>%
+		</meter>
 		</dd>
-	
-
+		<!-- meter begins here -->
 	</dl>
 <?php endif; ?>
 
