@@ -11,7 +11,9 @@ Single hop variety template for use in WP E-commerce single hop pages
 	<dl>
 
 		<dt>Acid Range (Alpha &#37;):</dt>
-	
+		<dd><?php  //print the min or only value, then if there's a max set, add an emdash and the max value.
+			if (isset($alphamin))  : ?><?=$alphamin?><?php else : ?><?=$alphavalue;?><?php endif;
+			if (isset($alphamax)) : ?>&endash;<?=$alphamax?><?php endif; ?>%</dd>
 		<dd>
 		
 		<!-- if there's a max, there must be a min, so average the two to set alpha value for meter -->
