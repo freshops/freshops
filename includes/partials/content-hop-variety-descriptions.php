@@ -56,7 +56,7 @@
 
 			<tr>
 				<td><a href='<?php the_permalink();?>'><?php the_title(); ?></a></td>
-				<td><?php if (get_field('alpha')) { echo get_field('alpha'); } ?>&#37;</td>
+				<td><?php if (get_field('alpha-min')): echo get_field('alpha-min');?><?php if (get_field('alpha-max')): echo '-' . get_field('alpha-max'); endif; ?>%<?php endif; ?></td>
 				<td><?php if (get_field('flavor')) { echo get_field('flavor'); } ?></td>
 				<td><?php if (get_field('example')) { echo get_field('example'); } ?></td>
 			</tr>
