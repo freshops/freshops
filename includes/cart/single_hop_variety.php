@@ -141,6 +141,6 @@ if(get_field('possible_substitutions')){ ?>
 if(get_field('usda_hops_info')){ ?>
 <dl>
 	<dt>USDA Hops Information</dt>
-	<dd> <?php echo get_field('possible_substitutions');?></dd>
+	<dd> <?php echo get_field('usda_hops_info');?></dd>
 </dl>
 <?php } ?>
