@@ -8,13 +8,11 @@ Single hop variety template for use in WP E-commerce single hop pages
 <?php if(get_field('alpha-min')) : ?> <!-- Show alpha range if both min and max have values, otherwise show min value. -->
 	
 	<?php (float) $alphamin = get_field('alpha-min'); ?>
+	
 	<dl>
 
 		<dt>Acid Range (Alpha &#37;):</dt>
-		<dd><?php  //print the min or only value, then if there's a max set, add an emdash and the max value.
-			if (isset($alphamin))  : ?><?=$alphamin?><?php else : ?><?=$alphavalue;?><?php endif;
-			if (isset($alphamax)) : ?>&endash;<?=$alphamax?><?php endif; ?>%</dd>
-		<dd>
+		<!-- End Display value -->
 		
 		<!-- if there's a max, there must be a min, so average the two to set alpha value for meter -->
 		<?php if(get_field('alpha-max')) : ?>
@@ -27,22 +25,29 @@ Single hop variety template for use in WP E-commerce single hop pages
 			?>
 		<?php endif; ?>
 		
-		<!-- meter begins here -->
-		<!-- set the low and high value only if alpha min and alpha max were both set. -->
-		<meter
-		<?php if (isset($alphamin))  :  ?>
-			low="<?=$alphamin?>"
-		<?php endif; ?>
+		<?php $alphapct = ( ( (float) $alphavalue) * 0.01); ?>
+
+		<dd class='meter'>
+			<!-- meter begins here -->
+			<!-- set the low and high values based on values for low-alpha and high-alpha hops. -->
+			<meter
+			min="0.03"
+			max="0.14"
+			low="0.07"
+			high="0.01"
+			
+			value="<?=$alphapct?>"
+			
+			title="%"><?php  //print the min or only value, then if there's a max set, add an emdash and the max value.
+				if (isset($alphamin))  : ?><?=$alphamin?><?php else : ?><?=$alphavalue;?><?php endif;
+				if (isset($alphamax)) : ?>&endash;<?=$alphamax?><?php endif; ?>%</meter>
+		</dd><!-- meter ends here -->
 		
-		<?php if (isset($alphamax))  : ?>
-		high="<?=$alphamax?>%"
-		<?php endif; ?>
-		value="<?=$alphavalue ?>%"
-		title="%"><?php  //print the min or only value, then if there's a max set, add an emdash and the max value.
+				<!-- Display value starts here -->
+		<?php  //print the min or only value, then if there's a max set, add an emdash and the max value.
 			if (isset($alphamin))  : ?><?=$alphamin?><?php else : ?><?=$alphavalue;?><?php endif;
 			if (isset($alphamax)) : ?>&endash;<?=$alphamax?><?php endif; ?>%
-		</meter>
-		</dd><!-- meter ends here -->
+		
 	</dl>
 <?php endif; ?>
 
