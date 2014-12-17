@@ -1348,6 +1348,13 @@ blockquote {
   border-left: 3px solid #2980b9;
   font-style: italic;
   color: #9fa6b4;
+  /* end .wp-caption */
+  /* image gallery styles */
+  /* end .gallery */
+  /* gallery caption styles */
+  /* end .freshops_page_navi */
+  /* fallback previous & next links */
+  /* end .wp-prev-next */
   /******************************************************************
   COMMENT STYLES
   ******************************************************************/
@@ -1385,6 +1392,64 @@ blockquote {
     /* Required to get rid of the default background property */
     background-color: whiteSmoke;
     box-shadow: 0 5px 5px -5px #333 inset; }
+  blockquote .wp-caption {
+    max-width: 100%;
+    background: #eee;
+    padding: 5px;
+    /* images inside wp-caption */ }
+    blockquote .wp-caption img {
+      max-width: 100%;
+      margin-bottom: 0;
+      width: 100%; }
+    blockquote .wp-caption p.wp-caption-text {
+      font-size: 0.85em;
+      margin: 4px 0 7px;
+      text-align: center; }
+  blockquote .tags {
+    margin: 0; }
+  blockquote .pagination,
+  blockquote .wp-prev-next {
+    margin: 1.5em 0; }
+  blockquote .pagination {
+    text-align: center; }
+    blockquote .pagination ul {
+      display: inline-block;
+      background-color: white;
+      white-space: nowrap;
+      padding: 0;
+      clear: both;
+      border-radius: 3px; }
+    blockquote .pagination li {
+      padding: 0;
+      margin: 0;
+      float: left;
+      display: inline;
+      overflow: hidden;
+      border-right: 1px solid #eaedf2; }
+    blockquote .pagination a, blockquote .pagination span {
+      margin: 0;
+      text-decoration: none;
+      padding: 0;
+      line-height: 1em;
+      font-size: 1em;
+      font-weight: normal;
+      padding: 0.75em;
+      min-width: 1em;
+      display: block;
+      color: #2980b9; }
+      blockquote .pagination a:hover, blockquote .pagination a:focus, blockquote .pagination span:hover, blockquote .pagination span:focus {
+        background-color: #2980b9;
+        color: white; }
+    blockquote .pagination .current {
+      cursor: default;
+      color: #5c6b80; }
+      blockquote .pagination .current:hover, blockquote .pagination .current:focus {
+        background-color: white;
+        color: #5c6b80; }
+  blockquote .wp-prev-next .prev-link {
+    float: left; }
+  blockquote .wp-prev-next .next-link {
+    float: right; }
   blockquote #comments-title {
     padding: 0.75em;
     margin: 0;

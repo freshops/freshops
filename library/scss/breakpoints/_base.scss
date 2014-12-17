@@ -145,16 +145,15 @@ POSTS & CONTENT STYLES
 
 // 		/* post meta */
 .byline {
-	// color: $meta-gray;
-	// font-style: italic;
-	// margin: 0;
 	time {}
 }
 
 .percentage-columns {
-	  -webkit-column-count: 2;
-     -moz-column-count: 2;
-          column-count: 2;
+	
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	
+	column-count: 2;
 }
 
 blockquote {
@@ -164,11 +163,10 @@ blockquote {
 	font-style: italic;
 	color: $meta-gray;
 
-// 				&:before {}
-
-// 			}
 
 
+
+// Styling for shopping cart single-product pages and other DL's/meters starts here
 dl { //avoid breaking mid-listing for DLs in multiple columns
 	-webkit-column-break-inside:avoid;
 	-moz-column-break-inside:avoid;
@@ -196,165 +194,141 @@ meter::-webkit-meter-bar {
   background-color: whiteSmoke;
   box-shadow: 0 5px 5px -5px #333 inset;
 }
-// 			img {
-// 				margin: 0 0 1.5em 0;
-// 				max-width: 100%;
-// 				height: auto;
-// 			}
 
-// 			/*
-// 			image alignment on a screen this size may be
-// 			a bit difficult. It's set to start aligning
-// 			and floating images at the next breakpoint,
-// 			but it's up to you. Feel free to change it up.
-// 			*/
-// 			.alignleft, img.alignleft {}
-// 			.alignright, img.alignright {}
-// 			.aligncenter, img.aligncenter {}
+.wp-caption {
+	max-width: 100%;
+	background: #eee;
+	padding: 5px;
 
-// 			.size-auto,
-// 			.size-full,
-// 			.size-large,
-// 			.size-medium,
-// 			.size-thumbnail {
-// 				max-width: 100%;
-// 				height: auto;
-// 			}
+			/* images inside wp-caption */
+			img {
+				max-width: 100%;
+				margin-bottom: 0;
+				width: 100%;
+			}
 
-// 			pre {
-// 				background: $black;
-// 				color: $light-gray;
-// 				font-size: 0.9em;
-// 				padding: 1.5em;
-// 				margin: 0 0 1.5em;
-// 				border-radius: 3px;
-// 			}
+			p.wp-caption-text {
+				font-size: 0.85em;
+				margin: 4px 0 7px;
+				text-align: center;
+			}
 
-// 		} /* end .entry-content */
+		} /* end .wp-caption */
 
-// 		.wp-caption {
-// 			max-width: 100%;
-// 			background: #eee;
-// 			padding: 5px;
+		/* image gallery styles */
+		.gallery {
 
-// 			/* images inside wp-caption */
-// 			img {
-// 				max-width: 100%;
-// 				margin-bottom: 0;
-// 				width: 100%;
-// 			}
+			dl {
 
-// 			p.wp-caption-text {
-// 				font-size: 0.85em;
-// 				margin: 4px 0 7px;
-// 				text-align: center;
-// 			}
+				a {}
 
-// 		} /* end .wp-caption */
+				img {}
 
-// 		/* image gallery styles */
-// 		.gallery {
+			}
 
-// 			dl {
+			dt {}
 
-// 				a {}
+			dd {}
 
-// 				img {}
+		} /* end .gallery */
 
-// 			}
+		/* gallery caption styles */
+		.gallery-caption {}
 
-// 			dt {}
+		.size-full {}
+		.size-large {}
+		.size-medium {}
+		.size-thumbnail {}
 
-// 			dd {}
-
-// 		} /* end .gallery */
-
-// 		/* gallery caption styles */
-// 		.gallery-caption {}
-
-// 		.size-full {}
-// 		.size-large {}
-// 		.size-medium {}
-// 		.size-thumbnail {}
-
-// 	// the tag output
-// 	.tags {
-// 		margin: 0;
-// 	}
+	// the tag output
+	.tags {
+		margin: 0;
+	}
 
 // /******************************************************************
 // PAGE NAVI STYLES
 // ******************************************************************/
 
-// .pagination,
-// .wp-prev-next {
-// 	margin: 1.5em 0;
-// }
-// 	.pagination{
-//     text-align: center;
+.pagination,
+.wp-prev-next {
+	margin: 1.5em 0;
+}
+.pagination{
+	text-align: center;
 
-//     ul {
-//       display: inline-block;
-//       background-color: $white;
-//       white-space: nowrap;
-//       padding: 0;
-//       clear: both;
-//       border-radius: 3px;
-//     }
+	ul {
+		display: inline-block;
+		background-color: $white;
+		white-space: nowrap;
+		padding: 0;
+		clear: both;
+		border-radius: 3px;
+	}
+	li {
+		padding: 0;
+		margin: 0;
+		float: left;
+		display: inline;
+		overflow: hidden;
+		border-right: 1px solid $gray;
+	}
 
-//     li {
-//       padding: 0;
-//       margin: 0;
-//       float: left;
-//       display: inline;
-//       overflow: hidden;
-//       border-right: 1px solid $gray;
-//     }
+	a, span {
+		
+		margin: 0;
+		
+		text-decoration: none;
+		
+		padding: 0;
+		
+		line-height: 1em;
+		
+		font-size: 1em;
+		
+		font-weight: normal;
+		
+		padding: 0.75em;
+		
+		min-width: 1em;
+		
+		display: block;
+		
+		color: $blue;
 
-//     a, span {
-//       margin: 0;
-//       text-decoration: none;
-//       padding: 0;
-//       line-height: 1em;
-//       font-size: 1em;
-//       font-weight: normal;
-//       padding: 0.75em;
-//       min-width: 1em;
-//       display: block;
-//       color: $blue;
+		
+		&:hover, &:focus {
+			background-color: $blue;
+			color: $white;
+			
+		}
+	}
 
-//       &:hover, &:focus {
-//       	background-color: $blue;
-//       	color: $white;
-//       }
-//     }
+	.current{
+		cursor: default;
+		color: $text-color;
 
-//     .current{
-//     	cursor: default;
-//     	color: $text-color;
+		&:hover, &:focus {
+			background-color: $white;
+			color: $text-color;
+		}
+	}
 
-//     	&:hover, &:focus {
-//     		background-color: $white;
-//     		color: $text-color;
-//     	}
-//     }
+  } /* end .freshops_page_navi */
 
-//   } /* end .freshops_page_navi */
+	/* fallback previous & next links */
+	.wp-prev-next {
 
-// 	/* fallback previous & next links */
-// 	.wp-prev-next {
+		ul {}
 
-// 		ul {}
+		.prev-link {
+			float: left;
+		}
 
-// 		.prev-link {
-// 			float: left;
-// 		}
+		.next-link {
+			float: right;
+		}
 
-// 		.next-link {
-// 			float: right;
-// 		}
-
-// 	} /* end .wp-prev-next */
+	} /* end .wp-prev-next */
 
 /******************************************************************
 COMMENT STYLES
@@ -395,7 +369,7 @@ COMMENT STYLES
 	.comment-author {
 		padding: 7px;
 		border: 0;
-}
+	}
 
 /* vcard */
 .vcard {
