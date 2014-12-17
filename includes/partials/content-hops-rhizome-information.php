@@ -11,8 +11,9 @@
 				'terms' => 'rhizomes'
 			)
 		),
-		'order'                  => 'DESC',
+		'order'                  => 'ASC',
 		'orderby'                => 'title',
+		'posts_per_page'         => '50',
 	);
 
 	# The Query:
@@ -36,8 +37,8 @@
 
 			<tr>
 				<td><?php the_title(); ?></td>
-				<td><?php if (get_field('alpha')) { echo get_field('alpha'); } ?>&#37;</td>
-				<td><?php if (get_field('flavor')) { echo get_field('flavor'); } ?></td>
+				<td><?php if (get_field('alpha')): echo get_field('alpha')?>%<?php endif; ?></td>
+				<td><?php if (get_field('flavor')): echo get_field('flavor'); endif; ?></td>
 				<td><?php if (get_field('example')) { echo get_field('example'); } ?></td>
 			</tr>
 
