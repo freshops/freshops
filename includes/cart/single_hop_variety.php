@@ -33,7 +33,7 @@ Single hop variety template for use in WP E-commerce single hop pages
 		<?php endif; ?>
 		
 		<?php if (isset($alphamax))  : ?>
-			high="<?=$alphamax?>%"
+		high="<?=$alphamax?>%"
 		<?php endif; ?>
 		value="<?=$alphavalue ?>%"
 		title="%">

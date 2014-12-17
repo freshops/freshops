@@ -1,7 +1,5 @@
 <?php # The content loop for the alpha value page. ?>
-
 <?php
-
 
 	# WP_Query arguments:
 	$args = array(
@@ -17,19 +15,13 @@
 		'orderby'                => 'title',
 	);
 
-
 	# The Query:
 	$query = new WP_Query($args);
 
-
 ?>
-
 <?php if ($query->have_posts()): ?>
 
-
 	<table class="table-01">
-
-
 
 		<thead>
 			<tr>
@@ -40,16 +32,10 @@
 			</tr>
 		</thead>
 
-
-
 		<?php while ($query->have_posts()): ?>
 
 
-
-
 			<?php $query->the_post(); ?>
-
-
 
 
 			<tr>
@@ -60,32 +46,21 @@
 			</tr>
 
 
-
-
 		<?php endwhile; ?>
-
-
 
 	</table>
 
-
 <?php else: ?>
-
 
 	<!-- If query is empty, put a "not found" message here. -->
 
-
 <?php endif; ?>
-
 <?php
-
 
 	# Restore original Post Data:
 	wp_reset_postdata();
 
-
 	# Display content of current post:
 	the_content();
-
 
 ?>
