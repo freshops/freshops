@@ -71,66 +71,63 @@ if(get_field('example')){ ?>
 }
 
 if(get_field('beta-min')) : ?> <!-- Show beta range if both min and max have values, otherwise show min value. -->
-	<dt>Beta Range (&#37; of alpha acids)</dt>
+	<dl>
+		<dt>Beta Range (&#37; of alpha acids)</dt>
 
-	<dd>
-		<?php echo get_field('beta-min'); ?>
-
-		<?php if (get_field('beta-max')) : ?>
-
-			<?php echo get_field('beta-max'); ?>
-
-		<?php endif; ?>&#37;  <!-- Percent symbol (%)-->
-	</dd>
-
-
+		<dd>
+			<?php echo get_field('beta-min'); 
+			?>–<?php if (get_field('beta-max')) :
+				echo get_field('beta-max');
+			endif; ?>%
+		</dd>
+	</dl>
 <?php endif; ?>
 
 <?php if(get_field('cohumulone')){ ?>
 <dl>
 	<dt>Cohumulone (&#37; of alpha acids)</dt>
-	<dd> <?php echo get_field('cohumulone');?></dd>
+	<dd> <?php echo get_field('cohumulone');?>%</dd>
 </dl>
 <?php
 }
 if(get_field('total_oils')){ ?>
 <dl>
 	<dt>Total Oils (Mls. per 100 grams dried hops)</dt>
-	<dd><?php echo get_field('cohumulone');?></dd></dl>
+	<dd><?php echo get_field('total_oils');?>%</dd></dl>
 	<?php
 }
 if(get_field('myrcene')){ ?>
 <dl>
-	<dt>Caryophyllene (as &#37; of total oils)</dt>
-	<dd> <?php echo get_field('caryophyllene');?></dd>
+	<dt>Myrcene (as % of total oils)</dt>
+	<dd> <?php echo get_field('myrcene');?>%</dd>
 </dl>
 <?php
 }
 if(get_field('caryophyllene')){ ?>
 <dl>
-	<dt>Caryophyllene (as &#37; of total oils)</dt>
-	<dd> <?php echo get_field('caryophyllene');?></dd>
+	<dt>Caryophyllene (as % of total oils)</dt>
+	<dd> <?php echo get_field('caryophyllene');?>%</dd>
 </dl>
 <?php
 }
 if(get_field('humulene')){ ?>
 <dl>
-	<dt>Humulene (as &#37; of total oils)</dt>
-	<dd> <?php echo get_field('humulene');?></dd>
+	<dt>Humulene (as % of total oils)</dt>
+	<dd> <?php echo get_field('humulene');?>%</dd>
 </dl>
 <?php
 }
 if(get_field('farnesene')){ ?>
 <dl>
-	<dt>Farnesene (as &#37; of total oils)</dt>
-	<dd> <?php echo get_field('farnesene');?></dd>
+	<dt>Farnesene (as % of total oils)</dt>
+	<dd> <?php echo get_field('farnesene');?>%</dd>
 </dl>
 <?php
 }
 if(get_field('storage')){ ?>
 <dl>
-	<dt>(as &#37; of alpha acids remaining after 6 months storage at 20&deg; C))</dt>
-	<dd> <?php echo get_field('storage');?></dd>
+	<dt>Storage (alpha acids remaining after 6 months storage at 20&deg; C))</dt>
+	<dd><?php echo get_field('storage');?></dd>
 </dl>
 <?php
 }
