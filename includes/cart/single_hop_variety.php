@@ -3,7 +3,7 @@
 Single hop variety template for use in WP E-commerce single hop pages
 */
 ?>
-<h4>Hop Qualities</h4>
+<h3 class="h2">Hop Qualities</h3>
 
 <?php if(get_field('flavor')): ?>
 	
@@ -37,7 +37,7 @@ Single hop variety template for use in WP E-commerce single hop pages
 		<?php (float) $alphamin = get_field('alpha-min'); ?>
 		
 		<dl>
-
+		
 			<dt>Acid Range (Alpha &#37;)</dt>
 			<!-- End Display value -->
 			
@@ -63,7 +63,7 @@ Single hop variety template for use in WP E-commerce single hop pages
 				min="0.03"
 				max="0.14"
 				low="0.07"
-				high="0.01"
+				high="0.1"
 				
 				value="<?=$alphapct?>"
 				
