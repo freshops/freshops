@@ -1366,6 +1366,11 @@ blockquote {
     margin-bottom: 1.5em; }
   blockquote dd.meter {
     width: 100%; }
+  blockquote meter::-webkit-meter-bar {
+    background: none;
+    /* Required to get rid of the default background property */
+    background-color: whiteSmoke;
+    box-shadow: 0 5px 5px -5px #333 inset; }
   blockquote #comments-title {
     padding: 0.75em;
     margin: 0;

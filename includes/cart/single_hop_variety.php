@@ -40,7 +40,7 @@ Single hop variety template for use in WP E-commerce single hop pages
 			
 			title="%"><?php  //print the min or only value, then if there's a max set, add an emdash and the max value.
 				if (isset($alphamin))  : ?><?=$alphamin?><?php else : ?><?=$alphavalue;?><?php endif;
-				if (isset($alphamax)) : ?>&endash;<?=$alphamax?><?php endif; ?>%</meter>
+				if (isset($alphamax)) : ?>—<?=$alphamax?><?php endif; ?>%</meter>
 		</dd><!-- meter ends here -->
 		
 				<!-- Display value starts here -->

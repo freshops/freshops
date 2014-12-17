@@ -175,8 +175,14 @@ dd {
 
 dd.meter {
 	width: 100%;
+	
 }
 
+meter::-webkit-meter-bar {
+  background: none; /* Required to get rid of the default background property */
+  background-color: whiteSmoke;
+  box-shadow: 0 5px 5px -5px #333 inset;
+}
 // 			img {
 // 				margin: 0 0 1.5em 0;
 // 				max-width: 100%;
