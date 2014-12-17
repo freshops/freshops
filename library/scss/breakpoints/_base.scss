@@ -15,14 +15,14 @@ and will be used across all viewports.
 GENERAL STYLES
 *********************/
 
-// body {
+body {
 // 	font-family: $lato;
 // 	font-size: 100%;
 // 	line-height: 1.5;
 // 	color: $text-color;
 // 	background-color: $gray;
-//   -webkit-font-smoothing: antialiased;
-// }
+-webkit-font-smoothing: antialiased;
+}
 
 /********************
 WORDPRESS BODY CLASSES
@@ -151,6 +151,12 @@ POSTS & CONTENT STYLES
 	time {}
 }
 
+.percentage-columns {
+	  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+}
+
 blockquote {
 	margin: 0 0 1.5em 0.75em;
 	padding: 0 0 0 0.75em;
@@ -162,7 +168,14 @@ blockquote {
 
 // 			}
 
-dl {}
+
+dl { //avoid breaking mid-listing for DLs in multiple columns
+	-webkit-column-break-inside:avoid;
+	-moz-column-break-inside:avoid;
+	-o-column-break-inside:avoid;
+	-ms-column-break-inside:avoid;
+	column-break-inside:avoid;
+}
 
 dt {}
 

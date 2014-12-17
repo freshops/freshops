@@ -1244,6 +1244,9 @@ and will be used across all viewports.
 /*********************
 GENERAL STYLES
 *********************/
+body {
+  -webkit-font-smoothing: antialiased; }
+
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -1334,6 +1337,11 @@ POSTS & CONTENT STYLES
 /* hentry class */
 /* style by category (i.e. category-videos) */
 /* style by tag (i.e. tag-news) */
+.percentage-columns {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2; }
+
 blockquote {
   margin: 0 0 1.5em 0.75em;
   padding: 0 0 0 0.75em;
@@ -1359,6 +1367,12 @@ blockquote {
   /*********************
   SIDEBARS & ASIDES
   *********************/ }
+  blockquote dl {
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    -o-column-break-inside: avoid;
+    -ms-column-break-inside: avoid;
+    column-break-inside: avoid; }
   blockquote dd {
     margin-left: 0;
     font-size: 0.9em;
