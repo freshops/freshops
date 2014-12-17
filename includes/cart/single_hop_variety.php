@@ -5,32 +5,34 @@ Single hop variety template for use in WP E-commerce single hop pages
 ?>
 <h3 class="h2">Hop Qualities</h3>
 
-<?php if(get_field('flavor')): ?>
-	
-	<dl>
-	
-		<dt><?php the_title(); ?> Flavor Perception:</dt>
-		
-		<dd> <?php echo get_field('flavor');?></dd>
-		
-	</dl>
-	
-<?php endif; ?>
 
-<?php if(get_field('example')): ?>
-	
-	<dl>
-	
-		<dt>Commercial Examples: </dt>
-		
-		<dd><?php echo get_field('example');?></dd>
-		
-	</dl>
-	
-<?php endif; ?>
 
+	<?php if(get_field('flavor')): ?>
+		
+		<dl>
+		
+			<dt><?php the_title(); ?> Flavor Perception:</dt>
+			
+			<dd> <?php echo get_field('flavor');?></dd>
+			
+		</dl>
+		
+	<?php endif; ?>
 <!-- Begin two-column percentages section -->
 <div class="percentage-columns">
+	<?php if(get_field('example')): ?>
+		
+		<dl>
+		
+			<dt>Commercial Examples: </dt>
+			
+			<dd><?php echo get_field('example');?></dd>
+			
+		</dl>
+		
+	<?php endif; ?>
+
+
 
 	<?php if(get_field('alpha-min')): ?> <!-- Show alpha range if both min and max have values, otherwise show min value. -->
 		
