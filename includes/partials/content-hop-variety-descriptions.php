@@ -55,7 +55,7 @@
 
 
 			<tr>
-				<td><?php the_title(); ?></td>
+				<td><a href='<?php the_permalink();?>'><?php the_title(); ?></a></td>
 				<td><?php if (get_field('alpha')) { echo get_field('alpha'); } ?>&#37;</td>
 				<td><?php if (get_field('flavor')) { echo get_field('flavor'); } ?></td>
 				<td><?php if (get_field('example')) { echo get_field('example'); } ?></td>

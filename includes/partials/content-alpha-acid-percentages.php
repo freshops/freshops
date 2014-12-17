@@ -11,8 +11,9 @@
 				'terms' => 'hop'
 			)
 		),
-		'order'                  => 'DESC',
+		'order'                  => 'ASC',
 		'orderby'                => 'title',
+		'posts_per_page'         => '50',
 	);
 
 	# The Query:
