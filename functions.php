@@ -280,3 +280,11 @@ function freshops_wp_enqueue_rhizome_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'freshops_wp_enqueue_rhizome_scripts');
+
+
+
+// Remove gold cart css
+function childtheme_deregister_styles() {
+	wp_deregister_style('wpsc-gold-cart');
+}
+add_action('wp_print_styles', 'childtheme_deregister_styles', 100);
