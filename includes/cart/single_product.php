@@ -1,4 +1,4 @@
-<?php ?>
+
 	<article id="post-<?=the_ID()?>" role="article" itemscope itemtype="http://schema.org/Product">
 
 		<section itemprop="articleBody">
@@ -108,7 +108,7 @@
 			<?php endif; ?>
 
 <?php # if(has_term('category-slug', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) : ?>
-<?php# else: ?>
+<?php # else: ?>
 <?php #endif; ?>
 
 

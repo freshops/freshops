@@ -101,3 +101,40 @@ dl {
 	> :last-child { margin-bottom: 0 !important; }
 	
 }
+
+.sidebar {
+	
+	margin-top: 20px;
+	
+	@media all and (min-width: 960px) {
+		
+		margin-top: 0;
+		
+	}
+	
+}
+
+.widget {
+	
+	margin: 20px 0;
+	padding: 0;
+	
+	.widgettitle {
+		color: darken(#719b37, 20%);
+		border-bottom: 2px solid #719b37;
+	}
+	
+}
+
+#cart {
+	
+	> :first-child { margin-top: 0 !important; }
+	> :last-child { margin-bottom: 0 !important; }
+	
+}
+
+.visitshop {
+	display: inline-block;
+	margin-top: 5px;
+	font-weight: bold;
+}
