@@ -23,13 +23,11 @@ Single hop variety template for use in WP E-commerce single hop pages
 	<dl>
 		<dt><?php the_title(); ?>Flavor Perception:</dt>
 		
-		<dd> <?php echo get_field('hgoa_description');?></dd>
-		
+		<dd><?php echo get_field('hgoa_description');?>(<a href="http://en.wikipedia.org/wiki/List_of_hop_varieties">Reference</a>)
+		</dd>
 	</dl>
 	
 <?php endif; ?>
-
-( <a href="http://en.wikipedia.org/wiki/List_of_hop_varieties">Reference</a> )
 
 
 <!-- Begin two-column percentages section -->
