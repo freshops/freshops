@@ -5,12 +5,10 @@ Single hop variety template for use in WP E-commerce single hop pages
 ?>
 <h3 class="h2">Hop Qualities</h3>
 
-
-
+<!-- Flavor perception starts here -->
 <?php if(get_field('flavor')): ?>
 	
 	<dl>
-		
 		<dt><?php the_title(); ?> Flavor Perception:</dt>
 		
 		<dd> <?php echo get_field('flavor');?></dd>
@@ -18,6 +16,22 @@ Single hop variety template for use in WP E-commerce single hop pages
 	</dl>
 	
 <?php endif; ?>
+
+<!-- HGOA description starts here -->
+<?php if(get_field('hgoa_description')): ?>
+	
+	<dl>
+		<dt><?php the_title(); ?>Flavor Perception:</dt>
+		
+		<dd> <?php echo get_field('hgoa_description');?></dd>
+		
+	</dl>
+	
+<?php endif; ?>
+
+( <a href="http://en.wikipedia.org/wiki/List_of_hop_varieties">Reference</a> )
+
+
 <!-- Begin two-column percentages section -->
 <div class="percentage-columns">
 	<?php if(get_field('example')): ?>
@@ -46,11 +60,6 @@ Single hop variety template for use in WP E-commerce single hop pages
 				<?php (float) $alphamax = get_field('alpha-max'); ?>
 				
 				<?php (float) $alphavalue = ( ( $alphamax+$alphamin)/2); ?> 
-				
-				<!--convert alphamin and alphamax to percentages-->
-				<?php $alphamin=$alphamin * 0.01; ?> 
-				
-				<?php $alphamax=$alphamax * 0.01; ?>
 				
 			<?php else: //otherwise alphamin is the alphavalue, so set it accordingly and unset min and max
 			
