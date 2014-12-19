@@ -16,11 +16,6 @@ GENERAL STYLES
 *********************/
 
 body {
-// 	font-family: $lato;
-// 	font-size: 100%;
-// 	line-height: 1.5;
-// 	color: $text-color;
-// 	background-color: $gray;
 -webkit-font-smoothing: antialiased;
 }
 
@@ -62,7 +57,7 @@ style a page via class
 	.page-child {}                  /* child page template */
 	.parent-pageid-1 {}             /* replace the number to the corresponding page number */
 .logged-in {}                     /* if user is logged in */
-.paged {}                         /* paged items like search results or archives */
+	.paged {}                         /* paged items like search results or archives */
 	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
 
 /*********************
@@ -164,9 +159,7 @@ blockquote {
 	color: $meta-gray;
 
 
-
-
-// Styling for shopping cart single-product pages and other DL's/meters starts here
+// Shopping cart single-product pages start here
 dl { //avoid breaking mid-listing for DLs in multiple columns
 	-webkit-column-break-inside:avoid;
 	-moz-column-break-inside:avoid;
@@ -178,10 +171,9 @@ dl { //avoid breaking mid-listing for DLs in multiple columns
 dt {}
 
 dd {
-	margin-left: 0;
+	margin: 0 0 1.5em 0;
 	font-size: 0.9em;
 	color: #787878;
-	margin-bottom: 1.5em;
 }
 
 dd.meter {
@@ -190,7 +182,7 @@ dd.meter {
 }
 
 meter::-webkit-meter-bar {
-  background: none; /* Required to get rid of the default background property */
+  background: none;  /* Required to get rid of the default background property */
   background-color: whiteSmoke;
   box-shadow: 0 5px 5px -5px #333 inset;
 }

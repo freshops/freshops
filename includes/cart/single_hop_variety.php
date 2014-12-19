@@ -23,42 +23,72 @@ Single hop variety template for use in WP E-commerce single hop pages
 	<dl>
 		<dt><?php the_title(); ?>Flavor Perception:</dt>
 		
-		<dd><?php echo get_field('hgoa_description');?>(<a href="http://en.wikipedia.org/wiki/List_of_hop_varieties">Reference</a>)
-		</dd>
+		<dd><?php echo get_field('hgoa_description');?>(<a href="http://en.wikipedia.org/wiki/List_of_hop_varieties">Reference</a>)</dd>
 	</dl>
 	
 <?php endif; ?>
 
+<?php if(get_field('alternate_form')): ?>
+	
+	<?php				/*
+					*  Loop through post objects (assuming this is a multi-select field) ( setup postdata )
+					*  Using this method, you can use all the normal WP functions as the $post object is temporarily initialized within the loop
+					*  Read more: http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
+					*/
+					?>
+					<dl>
+						<dt>
+							<?php 
+								$post_objects = get_field('alternate_form');
+								if( $post_objects ): 
+									foreach( $postal_objects as $post): 
+										setup_postdata($post); 
+							?>
+							
+								<a href="<?php the_permalink(); ?>">Buy<?php the_title(); ?> Now</a>
+									<?php endforeach; ?>
+									<?php wp_reset_postdata(); ?>
+						</dt>
+						
+						<dd> 
 
-<!-- Begin two-column percentages section -->
-<div class="percentage-columns">
-	<?php if(get_field('example')): ?>
-		
-		<dl>
-			
-			<dt>Commercial Examples: </dt>
-			
-			<dd><?php echo get_field('example');?></dd>
-			
+							
+							
+					// IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+				<?php endif; ?>
+			</dd>
 		</dl>
-		
-	<?php endif; ?>
+	<?php endif;?>
+
+	<!-- Begin two-column percentages section -->
+	<div class="percentage-columns">
+		<?php if(get_field('example')): ?>
+			
+			<dl>
+				
+				<dt>Commercial Examples: </dt>
+				
+				<dd><?php echo get_field('example');?></dd>
+				
+			</dl>
+			
+		<?php endif; ?>
 
 
 
-	<?php if(get_field('alpha-min')): ?> <!-- Show alpha range if both min and max have values, otherwise show min . -->
-		<dl>
-			
-			<dt>Acid Range (Alpha &#37;)</dt>
-			
-			<?php (float) $alphamin = get_field('alpha-min'); ?>
-			
-			<?php if(get_field('alpha-max')) : ?><!-- if there's a max, average it with the min to get meter value -->
+		<?php if(get_field('alpha-min')): ?> <!-- Show alpha range if both min and max have values, otherwise show min . -->
+			<dl>
 				
-				<?php (float) $alphamax = get_field('alpha-max'); ?>
+				<dt>Acid Range (Alpha &#37;)</dt>
 				
-				<?php (float) $alphavalue = ( ( $alphamax+$alphamin)/2); ?> 
+				<?php (float) $alphamin = get_field('alpha-min'); ?>
 				
+				<?php if(get_field('alpha-max')) : ?><!-- if there's a max, average it with the min to get meter value -->
+					
+					<?php (float) $alphamax = get_field('alpha-max'); ?>
+					
+					<?php (float) $alphavalue = ( ( $alphamax+$alphamin)/2); ?> 
+					
 			<?php else: //otherwise alphamin is the alphavalue, so set it accordingly and unset min and max
 			
 			$alphavalue = $alphamin;
@@ -196,26 +226,26 @@ Single hop variety template for use in WP E-commerce single hop pages
 					$post_objects = get_field('possible_substitutions');
 
 					if( $post_objects ): ?>
-						<ul>
-							<?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
-								<?php setup_postdata($post); ?>
-								<li>
-									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-								</li>
-							<?php endforeach; ?>
-						</ul>
+					<ul>
+						<?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+							<?php setup_postdata($post); ?>
+							<li>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+							</li>
+						<?php endforeach; ?>
+					</ul>
 					<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-					<?php endif;
+				<?php endif;
 
-					?>
-					</dl>
-					<?php endif;?>
+				?>
+			</dl>
+		<?php endif;?>
 
-</div><!-- end two-column percentage section -->
+	</div><!-- end two-column percentage section -->
 
-<?php if(get_field('usda_hops_info')): ?>
-	<dl>
-		<dt>USDA Hops Information</dt>
-		<dd> <?php echo get_field('usda_hops_info');?></dd>
-	</dl>
-<?php endif; ?>
+	<?php if(get_field('usda_hops_info')): ?>
+		<dl>
+			<dt>USDA Hops Information</dt>
+			<dd> <?php echo get_field('usda_hops_info');?></dd>
+		</dl>
+	<?php endif; ?>
