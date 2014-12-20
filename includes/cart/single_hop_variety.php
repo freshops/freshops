@@ -18,7 +18,7 @@ Single hop variety template for use in WP E-commerce single hop pages
 <?php endif; ?>
 
 <!-- HGOA description starts here -->
-<?php if(get_field('hgoa_description')): ?>
+<?php if(get_field('wiki_flavor')): ?>
 	
 	<dl>
 		<dt><?php the_title(); ?>Flavor Perception:</dt>
@@ -40,12 +40,11 @@ Single hop variety template for use in WP E-commerce single hop pages
 						<dt>
 							<?php 
 								$post_objects = get_field('alternate_form');
+								
 								if( $post_objects ): 
 									foreach( $postal_objects as $post): 
 										setup_postdata($post); 
-							?>
-							
-								<a href="<?php the_permalink(); ?>">Buy<?php the_title(); ?> Now</a>
+										?><a href="<?php the_permalink(); ?>">Buy<?php the_title(); ?> Now</a>
 									<?php endforeach; ?>
 									<?php wp_reset_postdata(); ?>
 						</dt>
@@ -203,14 +202,6 @@ Single hop variety template for use in WP E-commerce single hop pages
 		<?php endif; ?>
 
 
-
-		<?php if(get_field('storage')): ?>
-			<dl>
-				<dt>Storage (alpha acids remaining after 6 months storage at 20&deg; C))</dt>
-				<dd><?php echo get_field('storage');?></dd>
-			</dl>
-		<?php endif;?>
-
 		<?php if(get_field('possible_substitutions')): ?>
 			<dl>
 				<dt>Possible Substitutions</dt>
@@ -240,12 +231,14 @@ Single hop variety template for use in WP E-commerce single hop pages
 				?>
 			</dl>
 		<?php endif;?>
-
-	</div><!-- end two-column percentage section -->
-
-	<?php if(get_field('usda_hops_info')): ?>
-		<dl>
-			<dt>USDA Hops Information</dt>
-			<dd> <?php echo get_field('usda_hops_info');?></dd>
-		</dl>
-	<?php endif; ?>
+		
+		
+		<?php // If we're on a rhizome product page, then include the rhizome partial ?>
+		<?php if(has_term('rhizome', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) : ?>
+			<?php include(locate_template('includes/cart/single_rhizome_variety.php')); ?>
+			
+		<?php else: ?>
+			
+				</div><!-- end two-column percentage section -->
+				
+		<?php endif; ?>

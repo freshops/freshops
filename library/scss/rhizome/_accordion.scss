@@ -1,29 +1,14 @@
 #order {
-
-
 	@media all and (min-width: 640px) {
-
-
-
 
 		padding: 0 0 10px;
 		background: #1a1a1a;
-
-
-
 		#cta {
-
-
-
-
 			background: url(../images/rhizome/order-button.png) no-repeat center top;
 			height: 50px;
 			-webkit-touch-callout: none;
 			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 			-webkit-tap-highlight-color: transparent;
-
-
-
 
 			// Hide the extra characters:
 			span {
@@ -37,63 +22,25 @@
 				width: 1px;
 			}
 
-
-
-
 			a {
-
-
-
-
-
 				display: block;
 				width: 100%;
 				height: 100%;
 
-
-
-
-
 				&:active,
 				&:focus { outline: 0; }
-
-
-
-
-
 			}
-
-
-
-
 		}
-
-
-
+		
 		ul {
-
-
-
-
 			margin: 0;
 			padding: 0;
 			text-align: center;
 
-
-
-
 			// Hid when JS is available:
 			.js & { display: none; }
 
-
-
-
 			li {
-
-
-
-
-
 				list-style-type: none;
 				background: #0f0f0f;
 				border: 2px solid #242424;
@@ -101,26 +48,11 @@
 				margin: 3px 25px;
 				line-height: normal;
 
-
-
-
-
 				a {
-
-
-
-
-
-
 					font-size: 14px;
 					text-decoration: none;
 					display: block;
 					padding: 5px;
-
-
-
-
-
 
 					&,
 					&:visited { color: #719b37; }
@@ -132,43 +64,19 @@
 						color: #bbb749;
 						text-decoration: none;
 					}
-
-
-
-
-
-
 				}
-
-
-
-
 
 			}
 
-
-
-
 		}
-
-
-
 	}
-
-
 }
 
 #menu > ul {
-
-
+	
 	@media all and (min-width: 640px) {
-
-
-
 		line-height: 1;
 		background: #000;
-
-
 
 		&,
 		& * {
@@ -177,13 +85,7 @@
 			list-style: none;
 		}
 
-
-
 		a {
-
-
-
-
 			&,
 			&:visited { color: #f6f9f1; }
 			.no-touch &:visited:hover,
@@ -195,36 +97,15 @@
 				background: #a8b295;
 				text-decoration: none;
 			}
-
-
-
-
 			&:active,
 			&:focus { outline: 0; }
-
-
-
-
 		}
 
-
-
 		li {
-
-
-
-
+			
 			&.dcjq-parent-li {}
-
-
-
-
+			
 			a {
-
-
-
-
-
 				padding: 5px 10px;
 				font-size: 12px;
 				line-height: 1.3;
@@ -240,17 +121,7 @@
 				padding-right: 10px; // To account for +/- icon.
 				position: relative;
 
-
-
-
-
 				.dcjq-icon {
-
-
-
-
-
-
 					line-height: 0;
 					width: 8px;
 					height: 8px;
@@ -268,11 +139,6 @@
 					    -ms-transform: translateY(-50%);
 					     -o-transform: translateY(-50%);
 					        transform: translateY(-50%);
-
-
-
-
-
 
 				}
 
