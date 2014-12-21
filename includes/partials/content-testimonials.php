@@ -10,6 +10,4 @@
 	<footer class="article-footer testimonial_attribution"> <!-- The testimonial title serves as the testimonial attribution -->
 		<?php the_title(); ?>
 	</footer>
-
-
 </article>

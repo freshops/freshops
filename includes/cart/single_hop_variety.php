@@ -23,7 +23,7 @@ Single hop variety template for use in WP E-commerce single hop pages
 	<dl>
 		<dt><?php the_title(); ?>Flavor Perception:</dt>
 		
-		<dd><?php echo get_field('hgoa_description');?>(<a href="http://en.wikipedia.org/wiki/List_of_hop_varieties">Reference</a>)</dd>
+		<dd><?php echo get_field('wiki_flavor');?>(<a href="http://en.wikipedia.org/wiki/List_of_hop_varieties">Reference</a>)</dd>
 	</dl>
 	
 <?php endif; ?>
@@ -46,14 +46,11 @@ Single hop variety template for use in WP E-commerce single hop pages
 										setup_postdata($post); 
 										?><a href="<?php the_permalink(); ?>">Buy<?php the_title(); ?> Now</a>
 									<?php endforeach; ?>
-									<?php wp_reset_postdata(); ?>
+									<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 						</dt>
 						
 						<dd> 
-
-							
-							
-					// IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+					
 				<?php endif; ?>
 			</dd>
 		</dl>

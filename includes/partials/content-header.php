@@ -76,7 +76,7 @@
 					<?php
 						the_row();
 						$section_title = get_sub_field('section_title');
-						$section_slug = sanitize_title($section_title);
+						$section_slug = sanitize_title($section_title); //define tab names based on the "slugs" of the tab names.
 					?>
 
 					<li><a href="#<?php echo $section_slug; ?>"><?php echo $section_title; ?></a></li>
