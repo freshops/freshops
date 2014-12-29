@@ -10,6 +10,15 @@ class Meter
 	private $high = "11";
 
 // GETTERS AND SETTERS
+
+//MAGIC METHODS
+	private $properties = array();
+	function __get($property) {
+	return $this->properties[$property];
+	}
+	function __set($property, $value) {
+		$this->properties[$property]="AutoSet {$property} as: ".$value;
+	}
 	private function setMeasuredProperty($measured_property) {
 		$this->measured_property = $measured_property;
 	}

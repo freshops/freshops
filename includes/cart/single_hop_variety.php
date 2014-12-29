@@ -5,8 +5,21 @@ Single hop variety template for use in WP E-commerce single hop pages
 ?>
 <h3 class="h2">Hop Qualities</h3>
 
-<!-- Flavor perception starts here -->
+
+
+<!-- Flavor description starts here -->
 <?php if(get_field('flavor')): ?>
+	
+	<dl>
+		<dt><?php the_title(); ?>Flavor Perception:</dt>
+		
+		<dd><?php echo get_field('flavor');?>(<a href="http://en.wikipedia.org/wiki/List_of_hop_varieties">Reference</a>)</dd>
+	</dl>
+	
+<?php endif; ?>
+
+<!-- HGOA description starts here -->
+<?php if(get_field('hgoa_description')): ?>
 	
 	<dl>
 		<dt><?php the_title(); ?> Flavor Perception:</dt>
@@ -17,74 +30,56 @@ Single hop variety template for use in WP E-commerce single hop pages
 	
 <?php endif; ?>
 
-<!-- HGOA description starts here -->
-<?php if(get_field('wiki_flavor')): ?>
-	
-	<dl>
-		<dt><?php the_title(); ?>Flavor Perception:</dt>
-		
-		<dd><?php echo get_field('wiki_flavor');?>(<a href="http://en.wikipedia.org/wiki/List_of_hop_varieties">Reference</a>)</dd>
-	</dl>
-	
-<?php endif; ?>
-
 <?php if(get_field('alternate_form')): ?>
-	
-	<?php				/*
-					*  Loop through post objects (assuming this is a multi-select field) ( setup postdata )
-					*  Using this method, you can use all the normal WP functions as the $post object is temporarily initialized within the loop
-					*  Read more: http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
-					*/
-					?>
-					<dl>
-						<dt>
-							<?php 
-								$post_objects = get_field('alternate_form');
-								
-								if( $post_objects ): 
-									foreach( $postal_objects as $post): 
-										setup_postdata($post); 
-										?><a href="<?php the_permalink(); ?>">Buy<?php the_title(); ?> Now</a>
-									<?php endforeach; ?>
-									<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-						</dt>
-						
-						<dd> 
-					
-				<?php endif; ?>
-			</dd>
-		</dl>
-	<?php endif;?>
-
-	<!-- Begin two-column percentages section -->
-	<div class="percentage-columns">
-		<?php if(get_field('example')): ?>
+	<dl>
+		<dt>
+			<?php 
+			$post_objects = get_field('alternate_form');
 			
-			<dl>
-				
-				<dt>Commercial Examples: </dt>
-				
-				<dd><?php echo get_field('example');?></dd>
-				
-			</dl>
+			if( $post_objects ): 
+				foreach( $postal_objects as $post): 
+					
+					setup_postdata($post); 
+				?><a href="<?php the_permalink(); ?>">Buy<?php the_title(); ?> Now</a>
+			<?php endforeach; ?>
+			
+			<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 			
 		<?php endif; ?>
+	</dt>
+	
+</dl>
+<?php endif;?>
+
+<!-- Begin two-column percentages section -->
+<div class="percentage-columns">
+	<?php if(get_field('example')): ?>
+		
+		<dl>
+			
+			<dt>Commercial Examples: </dt>
+			
+			<dd><?php echo get_field('example');?></dd>
+			
+		</dl>
+		
+	<?php endif; ?>
 
 
 
-		<?php if(get_field('alpha-min')): ?> <!-- Show alpha range if both min and max have values, otherwise show min . -->
-			<dl>
+	<?php if(get_field('alpha-min')): ?> <!-- Show alpha range if both min and max have values, otherwise show min . -->
+		<dl>
+			
+			<dt>Acid Range (Alpha &#37;)</dt>
+			
+			<?php (float) $alphamin = get_field('alpha-min'); ?>
+			
+			<?php if(get_field('alpha-max')) : ?><!-- if there's a max, average it with the min to get meter value -->
 				
-				<dt>Acid Range (Alpha &#37;)</dt>
+				<?php (float) $alphamax = get_field('alpha-max'); ?>
 				
-				<?php (float) $alphamin = get_field('alpha-min'); ?>
+				<?php (float) $alphavalue = ( ( $alphamax+$alphamin)/2); ?> 
 				
-				<?php if(get_field('alpha-max')) : ?><!-- if there's a max, average it with the min to get meter value -->
-					
-					<?php (float) $alphamax = get_field('alpha-max'); ?>
-					
-					<?php (float) $alphavalue = ( ( $alphamax+$alphamin)/2); ?> 
-					
 			<?php else: //otherwise alphamin is the alphavalue, so set it accordingly and unset min and max
 			
 			$alphavalue = $alphamin;
@@ -236,6 +231,6 @@ Single hop variety template for use in WP E-commerce single hop pages
 			
 		<?php else: ?>
 			
-				</div><!-- end two-column percentage section -->
-				
-		<?php endif; ?>
+		</div><!-- end two-column percentage section -->
+		
+	<?php endif; ?>
