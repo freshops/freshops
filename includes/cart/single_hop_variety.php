@@ -1,46 +1,31 @@
 <?php
 /*
-Single hop variety template for use in WP E-commerce single hop pages
+Single hop variety template for use in WP E-commerce single hop and rhizome pages
 */
 ?>
 <h3 class="h2">Hop Qualities</h3>
 
-
-
-<!-- Flavor description starts here -->
 <?php if(get_field('flavor')): ?>
 	
-	<dl>
-		<dt><?php the_title(); ?>Flavor Perception:</dt>
+		<h4><?php the_title(); ?>Flavor</h4>
 		
-		<dd><?php echo get_field('flavor');?>(<a href="http://en.wikipedia.org/wiki/List_of_hop_varieties">Reference</a>)</dd>
-	</dl>
+		<blockquote>><?php echo get_field('flavor');?>(<a href="http://en.wikipedia.org/wiki/List_of_hop_varieties">Reference</a>)</blockquote>
 	
 <?php endif; ?>
 
-<!-- HGOA description starts here -->
-<?php if(get_field('hgoa_description')): ?>
-	
-	<dl>
-		<dt><?php the_title(); ?> Flavor Perception:</dt>
-		
-		<dd> <?php echo get_field('flavor');?></dd>
-		
-	</dl>
-	
-<?php endif; ?>
+
 
 <?php if(get_field('alternate_form')): ?>
 	<dl>
 		<dt>
-			<?php 
-			$post_objects = get_field('alternate_form');
+			<?php //Purchase link for the rhizome version of hops and vice versa
+				$post_objects = get_field('alternate_form');
 			
-			if( $post_objects ): 
-				foreach( $postal_objects as $post): 
+				if( $post_objects ): 
+				foreach( $post_objects as $post): 
 					
 					setup_postdata($post); 
-				?><a href="<?php the_permalink(); ?>">Buy<?php the_title(); ?> Now</a>
+				?><a href="<?php the_permalink(); ?>"><h3 class="h3">Order<?php the_title(); ?></h3></a>
 			<?php endforeach; ?>
 			
 			<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
@@ -49,9 +34,21 @@ Single hop variety template for use in WP E-commerce single hop pages
 	</dt>
 	
 </dl>
-<?php endif;?>
+<?php endif; ?>
 
-<!-- Begin two-column percentages section -->
+
+<h3 class="h2">Hop Growers of America Information</h3>
+
+<?php if(get_field('hgoa_description')): ?>
+	
+	<?php echo get_field('hgoa_description'); ?>
+
+<?php endif; ?>
+
+
+
+
+<!-- Begin two-column section -->
 <div class="percentage-columns">
 	<?php if(get_field('example')): ?>
 		
@@ -66,15 +63,15 @@ Single hop variety template for use in WP E-commerce single hop pages
 	<?php endif; ?>
 
 
-
-	<?php if(get_field('alpha-min')): ?> <!-- Show alpha range if both min and max have values, otherwise show min . -->
+	
+	<?php if(get_field('alpha-min')): //Show alpha range if both min and max have values, otherwise show min . ?>
 		<dl>
 			
 			<dt>Acid Range (Alpha &#37;)</dt>
 			
 			<?php (float) $alphamin = get_field('alpha-min'); ?>
 			
-			<?php if(get_field('alpha-max')) : ?><!-- if there's a max, average it with the min to get meter value -->
+			<?php if(get_field('alpha-max')) : //If there's a max, average it with the min to get meter value?>
 				
 				<?php (float) $alphamax = get_field('alpha-max'); ?>
 				
@@ -89,11 +86,9 @@ Single hop variety template for use in WP E-commerce single hop pages
 				unset ($alphamax);  //set to NULL
 				
 				endif;
-				
 				?>
 				
-				<!-- alphapct= alphavalue converted from a percentage to an integer  -->
-				<?php $alphapct = ( ( (float) $alphavalue) * 0.01); ?>
+				<?php $alphapct = ( ( (float) $alphavalue) * 0.01); //alphapct= alphavalue converted from a percentage to an integer ?>
 
 				<dd class='meter'>
 					<!-- meter begins here -->
@@ -118,119 +113,149 @@ Single hop variety template for use in WP E-commerce single hop pages
 			<!-- End Display value -->
 		</dl>
 	<?php endif; ?>
-
-	<!-- alpha section ends here -->
-
-
-	<!-- beta section starts here -->
-
+	
+	
+	
+	
 	<?php if(get_field('beta-min')) : ?> <!-- Show beta range if both min and max have values, otherwise show min. -->
 		<dl>
-			<dt>Beta Range (% of alpha acids)</dt>
+			<dt>Beta Range</dt>
 
 			<dd>
-				<?php echo get_field('beta-min'); ?>
+				<?php 
+					echo get_field('beta-min');
 				
-				<?php if (get_field('beta-max')) : 
-					//hyphen followed by max value (if one exists)
-				?>–<?php echo get_field('beta-max');
-				endif; ?>%
+					if (get_field('beta-max')) : //hyphen followed by max value
+						?>–<?php echo get_field('beta-max');
+					endif; 
+				?>%
 			</dd>
 		</dl>
 	<?php endif; ?>
 
-	<!-- cohumulone starts here -->
-	<?php if(get_field('cohumulone')): ?>
+	<?php if(get_field('cohumulone-min')): ?>
 		
 		<dl>
 			
 			<dt>Cohumulone (% of alpha acids)</dt>
 			
-			<dd> <?php echo get_field('cohumulone');?>%</dd>
+			<dd> <?php echo get_field('cohumulone-min');
+				if (get_field('cohumulone-max')) : //hyphen followed by max value
+						?>–<?php echo get_field('cohumulone-max');
+				endif;
+				
+				?>%
+			</dd>
 			
 		</dl>
 
 	<?php endif; ?>
 	
-	<!-- cohumulone ends here -->
 	
-	<!-- total oils start here-->
 	
-	<?php if(get_field('total_oils')): ?>
+	
+	
+	<?php if(get_field('total_oils-min')): ?>
 		<dl>
 			<dt>Total Oils (Mls. per 100 grams dried hops)</dt>
-			<dd><?php echo get_field('total_oils');?>%</dd></dl>
-		<?php endif; ?>
-		
-		<?php if(get_field('myrcene')): ?>
-			<dl>
-				<dt>Myrcene (as % of total oils)</dt>
-				<dd> <?php echo get_field('myrcene');?>%</dd>
-			</dl>
-		<?php endif; ?>
-		<?php if(get_field('caryophyllene')):?>
-			<dl>
-				<dt>Caryophyllene (as % of total oils)</dt>
-				<dd> <?php echo get_field('caryophyllene');?>%</dd>
-			</dl>
-			<?php
-			endif;
-			if(get_field('humulene')): ?>
-			<dl>
-				<dt>Humulene (as % of total oils)</dt>
-				<dd> <?php echo get_field('humulene');?>%</dd>
-			</dl>
-		<?php endif; ?>
-
-		<?php if(get_field('farnesene')): ?>
-
-			<dl>
-
-				<dt>Farnesene (as % of total oils)</dt>
-				
-				<dd> <?php echo get_field('farnesene');?>%</dd>
-				
-			</dl>
-		<?php endif; ?>
-
-
-		<?php if(get_field('possible_substitutions')): ?>
-			<dl>
-				<dt>Possible Substitutions</dt>
-				<dd> 
-					<?php
-
-					/*
-					*  Loop through post objects (assuming this is a multi-select field) ( setup postdata )
-					*  Using this method, you can use all the normal WP functions as the $post object is temporarily initialized within the loop
-					*  Read more: http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
-					*/
-
-					$post_objects = get_field('possible_substitutions');
-
-					if( $post_objects ): ?>
-					<ul>
-						<?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
-							<?php setup_postdata($post); ?>
-							<li>
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-							</li>
-						<?php endforeach; ?>
-					</ul>
-					<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-				<?php endif;
-
-				?>
-			</dl>
-		<?php endif;?>
-		
-		
-		<?php // If we're on a rhizome product page, then include the rhizome partial ?>
-		<?php if(has_term('rhizome', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) : ?>
-			<?php include(locate_template('includes/cart/single_rhizome_variety.php')); ?>
-			
-		<?php else: ?>
-			
-		</div><!-- end two-column percentage section -->
-		
+			<dd> <?php echo get_field('total_oils-min');
+				if (get_field('total_oils-max')) : //hyphen followed by max value
+						?>–<?php echo get_field('total_oils-max');
+				endif;
+				?> Mls.
+			</dd>
+		</dl>
 	<?php endif; ?>
+		
+	<?php if(get_field('myrcene-min')): ?>
+		<dl>
+			<dt>Myrcene (as % of total oils)</dt>
+			<dd>
+				<?php echo get_field('myrcene-min');
+				if (get_field('myrcene-max')) : //hyphen followed by max value
+						?>–<?php echo get_field('myrcene-max');
+				endif;
+				?>
+			</dd>
+		</dl>
+	<?php endif; ?>
+		
+	<?php if(get_field('caryophyllene-min')):?>
+		<dl>
+			<dt>Caryophyllene (as % of total oils)</dt>
+			<dd> <?php echo get_field('caryophyllene-min');
+				if (get_field('caryophyllene-max')) : //hyphen followed by max value
+						?>–<?php echo get_field('caryophyllene-max');
+				endif;
+				?>%
+			</dd>
+		</dl>
+	<?php endif; ?>
+		
+	<?php if(get_field('humulene-min')): ?>
+		<dl>
+			<dt>Humulene (as % of total oils)</dt>
+			<dd> <?php echo get_field('humulene-min');
+				if (get_field('humulene-max')) : //hyphen followed by max value
+						?>–<?php echo get_field('humulene-max');
+				endif;
+				?>%
+			</dd>
+		</dl>
+	<?php endif; ?>
+
+	<?php if(get_field('farnesene-min')): ?>
+
+		<dl>
+
+			<dt>Farnesene (as % of total oils)</dt>
+			
+			<dd> <?php echo get_field('farnesene-min');
+				if (get_field('farnesene-max')) : //hyphen followed by max value
+						?>–<?php echo get_field('farnesene-max');
+				endif;
+				?>%
+			</dd>
+			
+		</dl>
+	<?php endif; ?>
+
+
+	<?php if(get_field('possible_substitutions')): ?>
+		<dl>
+			<dt>Possible Substitutions</dt>
+			<dd> 
+				<?php
+
+				/*
+				*  Loop through multi-select field post objects( setup postdata ) 
+				*  */
+
+				$post_objects = get_field('possible_substitutions');
+
+				if( $post_objects ): ?>
+				<ul>
+					<?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+						<?php setup_postdata($post); ?>
+						<li>
+							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+				<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+			<?php endif;
+
+			?>
+		</dl>
+	<?php endif;?>
+	
+	
+	<?php // If we're on a rhizome product page, then include the rhizome partial ?>
+	
+	<?php if(has_term('rhizome', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) : ?>
+		<?php include(locate_template('includes/cart/single_rhizome_variety.php')); ?>
+	<?php else: ?>
+		
+</div><!-- end two-column percentage section for hops (not rhizomes)-->
+	
+<?php endif; //end rhizome conditional ?>
