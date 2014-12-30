@@ -1,13 +1,13 @@
 <?php
 /*
-Single hop variety template for use in WP E-commerce single hop and rhizome pages
+Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 */
 ?>
 <h3 class="h2">Hop Qualities</h3>
 
-<?php if(get_field('flavor')): ?>
+<?php if(get_field('flavor')): //Description from wikipedia?>
 	
-		<h4><?php the_title(); ?>Flavor</h4>
+		<h4><?php the_title(); ?> Flavor</h4>
 		
 		<blockquote>><?php echo get_field('flavor');?>(<a href="http://en.wikipedia.org/wiki/List_of_hop_varieties">Reference</a>)</blockquote>
 	
@@ -15,18 +15,16 @@ Single hop variety template for use in WP E-commerce single hop and rhizome page
 
 
 
-<?php if(get_field('alternate_form')): ?>
+<?php if(get_field('alternate_form')):  //Purchase link for the rhizome version of hops and vice versa ?>
 	<dl>
 		<dt>
-			<?php //Purchase link for the rhizome version of hops and vice versa
-				$post_objects = get_field('alternate_form');
-			
-				if( $post_objects ): 
-				foreach( $post_objects as $post): 
-					
-					setup_postdata($post); 
-				?><a href="<?php the_permalink(); ?>"><h3 class="h3">Order<?php the_title(); ?></h3></a>
-			<?php endforeach; ?>
+			<?php
+				$alt_objects = get_field('alternate_form');
+				if( $alt_objects ): 
+						// override $post
+					$post = $alt_objects;
+					setup_postdata( $post );
+					?><a href="<?php the_permalink(); ?>"><h3 class="h3">Order <?php the_title(); ?></h3></a>
 			
 			<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 			
@@ -37,9 +35,9 @@ Single hop variety template for use in WP E-commerce single hop and rhizome page
 <?php endif; ?>
 
 
-<h3 class="h2">Hop Growers of America Information</h3>
-
 <?php if(get_field('hgoa_description')): ?>
+	
+	<h3 class="h2">Hop Growers of America Information</h3>
 	
 	<?php echo get_field('hgoa_description'); ?>
 
@@ -117,7 +115,7 @@ Single hop variety template for use in WP E-commerce single hop and rhizome page
 	
 	
 	
-	<?php if(get_field('beta-min')) : ?> <!-- Show beta range if both min and max have values, otherwise show min. -->
+	<?php if(get_field('beta-min')) : //<!-- Show beta range if both min and max have values, otherwise show min. --> ?> 
 		<dl>
 			<dt>Beta Range</dt>
 
@@ -204,13 +202,13 @@ Single hop variety template for use in WP E-commerce single hop and rhizome page
 		</dl>
 	<?php endif; ?>
 
-	<?php if(get_field('farnesene-min')): ?>
+	<?php if(get_field('farnesene')): ?>
 
 		<dl>
 
 			<dt>Farnesene (as % of total oils)</dt>
 			
-			<dd> <?php echo get_field('farnesene-min');
+			<dd> <?php echo get_field('farnesene');
 				if (get_field('farnesene-max')) : //hyphen followed by max value
 						?>–<?php echo get_field('farnesene-max');
 				endif;
@@ -249,13 +247,9 @@ Single hop variety template for use in WP E-commerce single hop and rhizome page
 		</dl>
 	<?php endif;?>
 	
-	
 	<?php // If we're on a rhizome product page, then include the rhizome partial ?>
-	
-	<?php if(has_term('rhizome', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) : ?>
+	<?php if(has_term('rhizomes', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) : ?>
 		<?php include(locate_template('includes/cart/single_rhizome_variety.php')); ?>
 	<?php else: ?>
-		
-</div><!-- end two-column percentage section for hops (not rhizomes)-->
-	
-<?php endif; //end rhizome conditional ?>
+	</div><!-- end two-column percentage section for hops (not rhizomes)-->
+	<?php endif; //end rhizome conditional ?>

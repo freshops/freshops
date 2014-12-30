@@ -1,6 +1,6 @@
 <?php
 /*
-Single hop variety template for use in WP E-commerce single hop pages
+Single rhizome variety partial for use in WP E-commerce single hop pages
 */
 ?>
 
@@ -11,26 +11,25 @@ Single hop variety template for use in WP E-commerce single hop pages
 	</dl>
 <?php endif;?>
 
-</div><!-- end two-column percentage section (opened in single_hop_variety.php)-->
-
-
-<h3 class="h2">Hop Grower's of America Information</h3>
-</div><!-- end two-column percentage section -->
-
-<!-- HGOA description starts here -->
-<?php if(get_field('hgoa_description')): ?>
-	
+<?php if(get_field('yield_kilos_per_hectare')): ?>
 	<dl>
-		<dt><?php the_title(); ?>Flavor Perception:</dt>
-		
-		<dd><?php echo get_field('hgoa_description');?>(<a href="http://en.wikipedia.org/wiki/List_of_hop_varieties">Reference</a>)</dd>
+		<dt>Yield (kilos per hectare)</dt>
+		<dd> <?php echo get_field('yield_kilos_per_hectare'); ?></dd>
 	</dl>
-	
 <?php endif; ?>
 
-<?php if(get_field('usda_hops_info')): ?>
+<?php if(get_field('yield_lbs_per_acre')): ?>
 	<dl>
-		<dt>USDA Hops Information</dt>
-		<dd> <?php echo get_field('usda_hops_info');?></dd>
+		<dt>Yield (lbs. per acre)</dt>
+		<dd> <?php echo get_field('yield_lbs_per_acre'); ?></dd>
+	</dl>
+<?php endif; ?>
+
+</div><!-- end two-column percentage section (opened in single_hop_variety.php)-->
+
+<?php if(get_field('rhizome_growing_information')): ?>
+	<dl>
+		<dt>Rhizome Growing Information</dt>
+		<dd> <?php echo get_field('rhizome_growing_information'); ?></dd>
 	</dl>
 <?php endif; ?>

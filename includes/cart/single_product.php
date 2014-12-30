@@ -201,7 +201,13 @@
 
 								<div class="wpsc_quantity_update">
 
-									<input type="text" id="wpsc_quantity_update_<?php echo wpsc_the_product_id(); ?>" name="wpsc_quantity_update" size="2" value="1">
+									<input type="text" id="wpsc_quantity_update_<?php echo wpsc_the_product_id(); ?>" name="wpsc_quantity_update" size="2" value="1"> 
+									<?php //if it's a hops page, add "oz." after the quantity
+										if ( has_term('hop', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) :
+											echo "oz.";
+										endif;
+									?>
+									
 									<input type="hidden" name="key" value="<?php echo wpsc_the_cart_item_key(); ?>">
 									<input type="hidden" name="wpsc_update_quantity" value="true">
 									<input type='hidden' name='wpsc_ajax_action' value='wpsc_update_quantity'>
@@ -367,17 +373,19 @@
 					<?php endif; ?>
 					
 					<?php
-							// HOP AND RHIZOME CONDITIONALS
-							// If we're on a hop or rhizome product page, then include the single hop variety partial
-							?>
-							<?php if(has_term('hop', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) : ?>
-								
-								<?php include(locate_template('includes/cart/single_hop_variety.php')); ?>
-								
-							<?php elseif(has_term('rhizome', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) : ?>
-								<?php include(locate_template('includes/cart/single_hop_variety.php')); ?>
-							<?php endif; ?>
+						// HOP AND RHIZOME CONDITIONALS
+						// If we're on a hop or rhizome product page, then include the single hop variety partial
+						?>
+						<?php 
+							if 
+								( ( has_term('hop', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) || (has_term('rhizomes', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) )  : ?>
 							
+							<?php include(locate_template('includes/cart/single_hop_or_rhizome_variety.php')); ?>
+						
+						<?php endif; ?>
+							
+					?>
+					</div><!-- end two-column percentage section (opened in single_hop_variety.php)-->
 
 					</div> <!-- /.productcol -->
 
