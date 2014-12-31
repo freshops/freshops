@@ -142,12 +142,14 @@ POSTS & CONTENT STYLES
 .byline {
 	time {}
 }
+dl .percentage-columns {
+	margin: 0; 
+	padding: 0;
+}
 
 .percentage-columns {
-	
 	-webkit-column-count: 2;
 	-moz-column-count: 2;
-	
 	column-count: 2;
 }
 

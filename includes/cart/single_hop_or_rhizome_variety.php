@@ -7,26 +7,24 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 
 <?php if(get_field('flavor')): //Description from wikipedia?>
 	
-		<h4><?php the_title(); ?> Flavor</h4>
+		<h3 class="h4"><?php the_title(); ?> Flavor</h3>
 		
-		<blockquote>><?php echo get_field('flavor');?>(<a href="http://en.wikipedia.org/wiki/List_of_hop_varieties">Reference</a>)</blockquote>
+		<blockquote class="highlight"><?php echo get_field('flavor');?>(<a href="http://en.wikipedia.org/wiki/List_of_hop_varieties">Reference</a>)</blockquote>
 	
 <?php endif; ?>
 
-
-
 <?php if(get_field('alternate_form')):  //Purchase link for the rhizome version of hops and vice versa ?>
 	<dl>
-		<dt>
+		<dt class="aligncenter">
 			<?php
 				$alt_objects = get_field('alternate_form');
 				if( $alt_objects ): 
 						// override $post
 					$post = $alt_objects;
 					setup_postdata( $post );
-					?><a href="<?php the_permalink(); ?>"><h3 class="h3">Order <?php the_title(); ?></h3></a>
+					?><a href="<?php the_permalink(); ?>"><div class="green-btn">Order <?php the_title(); ?></div></a>
 			
-			<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+			<?php wp_reset_postdata(); //so the rest of the page works correctly ?>
 			
 		<?php endif; ?>
 	</dt>
@@ -131,73 +129,71 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 		</dl>
 	<?php endif; ?>
 
+
 	<?php if(get_field('cohumulone-min')): ?>
 		
 		<dl>
 			
-			<dt>Cohumulone (% of alpha acids)</dt>
+			<dt>Cohumulone</dt>
 			
 			<dd> <?php echo get_field('cohumulone-min');
 				if (get_field('cohumulone-max')) : //hyphen followed by max value
 						?>–<?php echo get_field('cohumulone-max');
 				endif;
 				
-				?>%
+				?>% of alpha acids
 			</dd>
 			
 		</dl>
 
 	<?php endif; ?>
-	
-	
-	
-	
-	
+
+
 	<?php if(get_field('total_oils-min')): ?>
 		<dl>
-			<dt>Total Oils (Mls. per 100 grams dried hops)</dt>
+			<dt>Total Oils</dt>
 			<dd> <?php echo get_field('total_oils-min');
 				if (get_field('total_oils-max')) : //hyphen followed by max value
 						?>–<?php echo get_field('total_oils-max');
 				endif;
-				?> Mls.
+				?> Mls. per 100 grams dried hops
 			</dd>
 		</dl>
 	<?php endif; ?>
 		
 	<?php if(get_field('myrcene-min')): ?>
 		<dl>
-			<dt>Myrcene (as % of total oils)</dt>
+			<dt>Myrcene</dt>
 			<dd>
 				<?php echo get_field('myrcene-min');
 				if (get_field('myrcene-max')) : //hyphen followed by max value
 						?>–<?php echo get_field('myrcene-max');
 				endif;
-				?>
+				?>% of total oils
 			</dd>
 		</dl>
 	<?php endif; ?>
 		
 	<?php if(get_field('caryophyllene-min')):?>
 		<dl>
-			<dt>Caryophyllene (as % of total oils)</dt>
+			<dt>Caryophyllene</dt>
 			<dd> <?php echo get_field('caryophyllene-min');
 				if (get_field('caryophyllene-max')) : //hyphen followed by max value
 						?>–<?php echo get_field('caryophyllene-max');
 				endif;
-				?>%
+				?>% of total oils
 			</dd>
 		</dl>
 	<?php endif; ?>
 		
 	<?php if(get_field('humulene-min')): ?>
 		<dl>
-			<dt>Humulene (as % of total oils)</dt>
+			<dt>Humulene</dt>
 			<dd> <?php echo get_field('humulene-min');
 				if (get_field('humulene-max')) : //hyphen followed by max value
 						?>–<?php echo get_field('humulene-max');
 				endif;
-				?>%
+				?>% of total oils
 			</dd>
 		</dl>
 	<?php endif; ?>
@@ -206,13 +202,13 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 
 		<dl>
 
-			<dt>Farnesene (as % of total oils)</dt>
+			<dt>Farnesene</dt>
 			
 			<dd> <?php echo get_field('farnesene');
 				if (get_field('farnesene-max')) : //hyphen followed by max value
 						?>–<?php echo get_field('farnesene-max');
 				endif;
-				?>%
+				?>% of total oils
 			</dd>
 			
 		</dl>
@@ -236,11 +232,12 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 					<?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
 						<?php setup_postdata($post); ?>
 						<li>
-							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('small' );
+							the_title(); ?></a>
 						</li>
 					<?php endforeach; ?>
 				</ul>
-				<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+				<?php wp_reset_postdata(); // so the rest of the page works correctly ?>
 			<?php endif;
 
 			?>

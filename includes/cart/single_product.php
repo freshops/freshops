@@ -383,9 +383,6 @@
 							<?php include(locate_template('includes/cart/single_hop_or_rhizome_variety.php')); ?>
 						
 						<?php endif; ?>
-							
-					?>
-					</div><!-- end two-column percentage section (opened in single_hop_variety.php)-->
 
 					</div> <!-- /.productcol -->
 

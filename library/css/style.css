@@ -903,11 +903,12 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.blue-btn, blockquote .comment-reply-link, blockquote #submit {
+.green-btn {
   display: inline-block;
   position: relative;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Georgia", Cambria, Times New Roman, Times, serif;
   text-decoration: none;
+  text-align: center;
   color: white;
   font-size: 0.9em;
   font-size: 34px;
@@ -919,10 +920,10 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   cursor: pointer;
   -webkit-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out; }
-  .blue-btn:hover, blockquote .comment-reply-link:hover, blockquote #submit:hover, .blue-btn:focus, blockquote .comment-reply-link:focus, blockquote #submit:focus {
+  .green-btn:hover, .green-btn:focus {
     color: white;
     text-decoration: none; }
-  .blue-btn:active, blockquote .comment-reply-link:active, blockquote #submit:active {
+  .green-btn:active {
     top: 1px; }
 
 /*
@@ -930,12 +931,33 @@ An example button.
 You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
 */
-.blue-btn, blockquote .comment-reply-link, blockquote #submit {
-  background-color: #2980b9; }
-  .blue-btn:hover, blockquote .comment-reply-link:hover, blockquote #submit:hover, .blue-btn:focus, blockquote .comment-reply-link:focus, blockquote #submit:focus {
-    background-color: #2574a8; }
-  .blue-btn:active, blockquote .comment-reply-link:active, blockquote #submit:active {
-    background-color: #2472a4; }
+.green-btn {
+  background-color: #4e9439;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#134514), to(#4e9439));
+  background-image: -webkit-linear-gradient(top, #134514, #4e9439);
+  background-image: -moz-linear-gradient(top, #134514, #4e9439);
+  background-image: -o-linear-gradient(top, #134514, #4e9439);
+  background-image: linear-gradient(to bottom, #134514, #4e9439);
+  border: 4px solid #bed8b1;
+  border-radius: 14px;
+  padding: 0.5rem 24px;
+  text-shadow: -1px -2px 5px #bed8b1;
+  margin-bottom: 0.5rem;
+  font-size: 28px; }
+  .green-btn:hover, .green-btn:focus {
+    background-color: #468533;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#0f350f), to(#468533));
+    background-image: -webkit-linear-gradient(top, #0f350f, #468533);
+    background-image: -moz-linear-gradient(top, #0f350f, #468533);
+    background-image: -o-linear-gradient(top, #0f350f, #468533);
+    background-image: linear-gradient(to bottom, #0f350f, #468533); }
+  .green-btn:active {
+    background-color: #448232;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#0d310e), to(#448232));
+    background-image: -webkit-linear-gradient(top, #0d310e, #448232);
+    background-image: -moz-linear-gradient(top, #0d310e, #448232);
+    background-image: -o-linear-gradient(top, #0d310e, #448232);
+    background-image: linear-gradient(to bottom, #0d310e, #448232); }
 
 /******************************************************************
 Site Name:
@@ -1334,6 +1356,10 @@ POSTS & CONTENT STYLES
 /* hentry class */
 /* style by category (i.e. category-videos) */
 /* style by tag (i.e. tag-news) */
+dl .percentage-columns {
+  margin: 0;
+  padding: 0; }
+
 .percentage-columns {
   -webkit-column-count: 2;
   -moz-column-count: 2;
