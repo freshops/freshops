@@ -231,9 +231,8 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 				<ul>
 					<?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
 						<?php setup_postdata($post); ?>
-						<li>
-							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('small' );
-							the_title(); ?></a>
+						<li class="cf">
+							<a href="<?php the_permalink(); ?>"><div class="alignleft"><?php the_post_thumbnail('small' );?></div><?php the_title(); ?></a>
 						</li>
 					<?php endforeach; ?>
 				</ul>
