@@ -5,7 +5,7 @@
 
 
 
-		<?php dynamic_sidebar('blog_sidebar'); ?>
+		<?php dynamic_sidebar('Blog Sidebar'); ?>
 
 
 
@@ -13,13 +13,17 @@
 
 
 
-		<div class="no-widgets"><p><?=_e('This is a widget ready area that appears on all blog-related pages. Add some widgets and they will appear here.', 'freshopstheme')?></p></div>
+		<div class="no-widgets"><p><?=_e('This is a widget ready area that appears on all pages with sidebars. Add some widgets and they will appear here.', 'freshopstheme')?></p></div>
 	<?php endif; ?> 	<!-- end blog sidebar -->
-<!-- if it's not a blog page, show the shopping cart sidebar -->
-<?php elseif ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Shop Sidebar") ) : ?>
+	
+	
+<?php elseif ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Shop Navigation") ) : 
+//if it's not a blog page, show the shopping cart sidebar ?>
 
+	<?php dynamic_sidebar('Shop Navigation'); ?>
 
-		<?php dynamic_sidebar('shop_sidebar'); ?>
 <?php else: ?>
+
 	<div class="no-widgets"><p><?=_e('This is a widget ready area that appears on most shopping-related pages. Add some widgets and they will appear here.', 'freshopstheme')?></p></div>
+
 <?php endif; ?>

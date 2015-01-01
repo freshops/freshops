@@ -36,7 +36,6 @@
 
 				<?php endwhile; ?>
 
-
 			<?php else: ?>
 
 				<?=get_template_part('includes/partials/content', 'none')?>
@@ -45,7 +44,7 @@
 
 		</div> <!-- /#mainbar -->
 		
-
+		
 		<div id="sidebar" class="sidebar m-all t-1of3 d-2of7 last-col" role="complementary">
 
 			<?=get_sidebar()?>

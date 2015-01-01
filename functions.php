@@ -48,13 +48,15 @@ require_once( 'library/admin.php' ); // this comes turned off by default
 	/************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-//
-	add_image_size( 'small', 150, 150, true );
-	add_image_size( 'medium', 300, 300, true );
-	add_image_size( 'large', 600, 600, true );
+	add_image_size( 'landscape-large', 600, 600, true );
+	add_image_size( 'landscape-med', 300, 300, true );
+	add_image_size( 'landscape-small', 150, 150, true );
+	
 	add_image_size( 'portrait-600', 600, 1000, true );
 	add_image_size( 'portrait-300', 300, 500, true );
 	add_image_size( 'portrait-150', 150, 250, true );
+	
+	add_image_size( 'icon', 72, 72, true );
 /*
 to add more sizes, simply copy a line from above
 and change the dimensions & name. As long as you
@@ -79,11 +81,15 @@ add_filter( 'image_size_names_choose', 'freshops_custom_image_sizes' );
 
 function freshops_custom_image_sizes( $sizes ) {
 	return array_merge( $sizes, array(
-	                   'freshops-thumb-600' => __('600px by 150px'),
-	                   'freshops-thumb-300' => __('300px by 100px'),
-	                   'portrait-600' => __('600px by 1000px'),
-	                   'portrait-300' => __('300px by 500px'),
-	                   'portrait-150' => __('150px by 250px')
+	                   'landscape-large' => __('600px by 150px'),
+	                   'landscape-med' => __('300px by 100px'),
+	                   'landscape-small' => __('150 by 50'),
+	                   
+	                   'portrait-large' => __('600px by 1000px'),
+	                   'portrait-med' => __('300px by 500px'),
+	                   'portrait-small' => __('150px by 250px'),
+	                   
+	                   'icon' => __('72px by 72px'),
 	                   ) );
 }
 
@@ -175,9 +181,6 @@ function freshops_register_sidebars() {
 	the sidebar.php file and rename it to your sidebar's name.
 	So using the above example, it would be:
 	sidebar-sidebar2.php
-
-
-
 	*/
 } // don't remove this bracket!
 
@@ -243,18 +246,12 @@ function print_menu_shortcode($atts, $content = null) {
 //--------------------------------------------------------------------
 
 function freshops_wp_enqueue_rhizome_scripts() {
-
-
+	
 	# See also: `freshops_scripts_and_styles` in `library/freshops.php`.
 
-
 	if ( ! is_admin()) {
-
-
-
+		
 		$script_path = get_template_directory_uri() . '/library/js/rhizome/';
-
-
 
 		wp_register_script('meanmenu',      $script_path . 'jquery.meanmenu.js',          array('jquery'), 1, FALSE);
 		wp_register_script('nutshell',      $script_path . 'jquery.nutshell.js',          array('jquery'), 1, FALSE);
@@ -263,24 +260,16 @@ function freshops_wp_enqueue_rhizome_scripts() {
 		wp_register_script('fastclick',     $script_path . 'fastclick.js',                array('jquery'), 1, FALSE);
 		wp_register_script('rhizome',       $script_path . 'rhizome.js',                  array('jquery'), 1, FALSE);
 
-
-
 		wp_enqueue_script('meanmenu');
 		wp_enqueue_script('nutshell');
 		wp_enqueue_script('cookie');
 		wp_enqueue_script('dcjqaccordion');
 		wp_enqueue_script('fastclick');
 		wp_enqueue_script('rhizome');
-
-
-
 	}
-
-
 }
 
 add_action('wp_enqueue_scripts', 'freshops_wp_enqueue_rhizome_scripts');
-
 
 
 // Remove gold cart css
