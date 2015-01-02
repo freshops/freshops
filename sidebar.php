@@ -7,23 +7,19 @@
 
 		<?php dynamic_sidebar('Blog Sidebar'); ?>
 
-
-
-	<?php else:  # This content shows up if there are no widgets defined in the backend. ?>
-
-
-
+	<?php else: ?>
 		<div class="no-widgets"><p><?=_e('This is a widget ready area that appears on all pages with sidebars. Add some widgets and they will appear here.', 'freshopstheme')?></p></div>
-	<?php endif; ?> 	<!-- end blog sidebar -->
+	<?php endif;
+	//end blog sidebar -->
+?>
 	
+<?php elseif ( is_a_page_containing_products () ) : ?>
+	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Shop Navigation") ) :  ?>
+		<?php dynamic_sidebar('Shop Navigation'); ?>
+	<?php else: ?>
+		<div class="no-widgets"><p><?=_e('This is a widget ready area that appears on all shopping-related pages. Add some widgets and they will appear here.', 'freshopstheme')?></p></div>
+	<?php endif; ?>
 	
-<?php elseif ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Shop Navigation") ) : 
-//if it's not a blog page, show the shopping cart sidebar ?>
-
-	<?php dynamic_sidebar('Shop Navigation'); ?>
-
-<?php else: ?>
-
-	<div class="no-widgets"><p><?=_e('This is a widget ready area that appears on most shopping-related pages. Add some widgets and they will appear here.', 'freshopstheme')?></p></div>
+<?php elseif (is_archive()): ?>
 
 <?php endif; ?>

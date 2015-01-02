@@ -45,12 +45,42 @@ require_once( 'library/admin.php' ); // this comes turned off by default
 */
 // require_once( 'library/translation/translation.php' ); // this comes turned off by default
 
-	/************* THUMBNAIL SIZE OPTIONS *************/
 
-// Thumbnail sizes
-	add_image_size( 'landscape-large', 600, 600, true );
-	add_image_size( 'landscape-med', 300, 300, true );
-	add_image_size( 'landscape-small', 150, 150, true );
+
+/************* Enqueue Scripts and Styles *************/
+
+function freshops_wp_enqueue_rhizome_scripts() {
+	
+	# See also: `freshops_scripts_and_styles` in `library/freshops.php`.
+
+	if ( ! is_admin()) {
+		
+		$script_path = get_template_directory_uri() . '/library/js/rhizome/';
+
+		wp_register_script('meanmenu',      $script_path . 'jquery.meanmenu.js',          array('jquery'), 1, FALSE);
+		wp_register_script('nutshell',      $script_path . 'jquery.nutshell.js',          array('jquery'), 1, FALSE);
+		wp_register_script('cookie',        $script_path . 'jquery.cookie.js',            array('jquery'), 1, FALSE);
+		wp_register_script('dcjqaccordion', $script_path . 'jquery.dcjqaccordion.2.7.js', array('jquery'), 1, FALSE);
+		wp_register_script('fastclick',     $script_path . 'fastclick.js',                array('jquery'), 1, FALSE);
+		wp_register_script('rhizome',       $script_path . 'rhizome.js',                  array('jquery'), 1, FALSE);
+
+		wp_enqueue_script('meanmenu');
+		wp_enqueue_script('nutshell');
+		wp_enqueue_script('cookie');
+		wp_enqueue_script('dcjqaccordion');
+		wp_enqueue_script('fastclick');
+		wp_enqueue_script('rhizome');
+	}
+}
+
+add_action('wp_enqueue_scripts', 'freshops_wp_enqueue_rhizome_scripts');
+
+
+
+	/************* THUMBNAIL SIZE OPTIONS *************/
+	add_image_size( 'landscape-large', 600, 150, true );
+	add_image_size( 'landscape-med', 300, 100, true );
+	add_image_size( 'landscape-small', 150, 50, true );
 	
 	add_image_size( 'portrait-600', 600, 1000, true );
 	add_image_size( 'portrait-300', 300, 500, true );
@@ -67,14 +97,11 @@ auto-cropped.
 To call a different size, simply change the text
 inside the thumbnail function.
 
-For example, to call the 300 x 300 sized image,
+For example, to call the 600 x 150 sized image,
 we would use the function:
-<?php the_post_thumbnail( 'freshops-thumb-300' ); ?>
-for the 600 x 100 image:
-<?php the_post_thumbnail( 'freshops-thumb-600' ); ?>
-
-You can change the names and dimensions to whatever
-you like. Enjoy!
+<?php the_post_thumbnail( 'landscape-large' ); ?>
+for the 72 x 72 image:
+<?php the_post_thumbnail( 'icon' ); ?>
 */
 
 add_filter( 'image_size_names_choose', 'freshops_custom_image_sizes' );
@@ -100,6 +127,9 @@ when you add media to your content blocks. If you add more image sizes,
 duplicate one of the lines in the array and name it according to your
 new image size.
 */
+
+
+
 
 // Register Navigation Menus
 function custom_navigation_menus() {
@@ -243,37 +273,73 @@ function print_menu_shortcode($atts, $content = null) {
 	add_shortcode('menu', 'print_menu_shortcode');
 }
 
+
+
+//--------------------------------------------------------------------
+/*
+WP E-COMMERCE MODIFICATIONS START HERE
+*/
 //--------------------------------------------------------------------
 
-function freshops_wp_enqueue_rhizome_scripts() {
-	
-	# See also: `freshops_scripts_and_styles` in `library/freshops.php`.
-
-	if ( ! is_admin()) {
-		
-		$script_path = get_template_directory_uri() . '/library/js/rhizome/';
-
-		wp_register_script('meanmenu',      $script_path . 'jquery.meanmenu.js',          array('jquery'), 1, FALSE);
-		wp_register_script('nutshell',      $script_path . 'jquery.nutshell.js',          array('jquery'), 1, FALSE);
-		wp_register_script('cookie',        $script_path . 'jquery.cookie.js',            array('jquery'), 1, FALSE);
-		wp_register_script('dcjqaccordion', $script_path . 'jquery.dcjqaccordion.2.7.js', array('jquery'), 1, FALSE);
-		wp_register_script('fastclick',     $script_path . 'fastclick.js',                array('jquery'), 1, FALSE);
-		wp_register_script('rhizome',       $script_path . 'rhizome.js',                  array('jquery'), 1, FALSE);
-
-		wp_enqueue_script('meanmenu');
-		wp_enqueue_script('nutshell');
-		wp_enqueue_script('cookie');
-		wp_enqueue_script('dcjqaccordion');
-		wp_enqueue_script('fastclick');
-		wp_enqueue_script('rhizome');
-	}
-}
-
-add_action('wp_enqueue_scripts', 'freshops_wp_enqueue_rhizome_scripts');
-
-
-// Remove gold cart css
+////////////////////////////////////////////////////
+// REMOVE GOLD CART CSS //
+////////////////////////////////////////////////////
 function childtheme_deregister_styles() {
 	wp_deregister_style('wpsc-gold-cart');
 }
 add_action('wp_print_styles', 'childtheme_deregister_styles', 100);
+
+/*________________________________________________________________________
+| IN-LOOP CHECK TO SEE IF THE CURRENT PAGE IS A PRODUCTS PAGE.
+|  RETURNS TRUE OR FALSE TO <?php IS_A_PAGE_CONTAINING_PRODUCTS() ?>
+________________________________________________________________________*/
+
+function is_a_page_containing_products(){
+
+	global $post;
+
+	$is_a_page_containing_products = false;
+
+	if(get_post_type($post) == ‘wpsc-product’){
+
+		$is_a_page_containing_products = true;
+
+	}
+
+	if ( function_exists( ‘is_products_page’ ) && !$is_a_page_containing_products){
+
+		if(is_products_page()){
+
+			$is_a_page_containing_products = true;
+
+		}
+
+	}
+
+	if(!$is_a_page_containing_products){
+
+		global $wpdb;
+
+		if(!empty($post->ID)){
+
+			$sql = "SELECT * FROM `{$wpdb->posts}` WHERE `post_type` IN(‘page’,’post’) AND `post_content` LIKE ‘%".wpsc_products."%’
+
+			AND `ID` = ".$post->ID;
+
+			$result = $wpdb->get_results($sql);
+
+			if($result){
+
+				$is_a_page_containing_products = true;
+
+//error_log(‘has found shortcode wpsc_products’ );
+
+			}
+
+		}
+
+	}
+
+	return $is_a_page_containing_products;
+
+}
