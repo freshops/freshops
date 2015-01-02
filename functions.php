@@ -161,6 +161,15 @@ function order_nav() {
 
 // Sidebars & Widgetizes Areas
 function freshops_register_sidebars() {
+		register_sidebar(array(
+	                 'id'            => 'main_sidebar',
+	                 'name'          => __( 'Main Sidebar', 'freshopstheme' ),
+	                 'description'   => __( 'The main widget area for all pages with a sidebar.', 'freshopstheme' ),
+	                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	                 'after_widget'  => '</div>',
+	                 'before_title'  => '<h4 class="widgettitle">',
+	                 'after_title'   => '</h4>',
+	                 ));
 	register_sidebar(array(
 	                 'id'            => 'blog_sidebar',
 	                 'name'          => __( 'Blog Sidebar', 'freshopstheme' ),
@@ -294,51 +303,40 @@ add_action('wp_print_styles', 'childtheme_deregister_styles', 100);
 |  RETURNS TRUE OR FALSE TO <?php IS_A_PAGE_CONTAINING_PRODUCTS() ?>
 ________________________________________________________________________*/
 
-function is_a_page_containing_products(){
-
+function is_a_page_containing_products() {
+	
 	global $post;
-
 	$is_a_page_containing_products = false;
-
-	if(get_post_type($post) == ‘wpsc-product’){
-
+	
+	if(get_post_type($post) == ‘wpsc-product’):
+		
 		$is_a_page_containing_products = true;
-
-	}
-
-	if ( function_exists( ‘is_products_page’ ) && !$is_a_page_containing_products){
-
+	endif;
+	
+	if ( function_exists( ‘is_products_page’ ) && !$is_a_page_containing_products):
+		
 		if(is_products_page()){
-
 			$is_a_page_containing_products = true;
-
 		}
-
-	}
-
-	if(!$is_a_page_containing_products){
-
+	endif;
+	
+	if(!$is_a_page_containing_products) :
 		global $wpdb;
-
-		if(!empty($post->ID)){
-
-			$sql = "SELECT * FROM `{$wpdb->posts}` WHERE `post_type` IN(‘page’,’post’) AND `post_content` LIKE ‘%".wpsc_products."%’
-
+		
+		if(!empty($post->ID)):
+			$sql =  "SELECT * FROM `{$wpdb->posts}` WHERE `post_type` IN(‘page’,’post’) AND `post_content` LIKE ‘%".wpsc_products."%’ 
 			AND `ID` = ".$post->ID;
-
+			
 			$result = $wpdb->get_results($sql);
-
-			if($result){
-
+			
+			if($result) :
 				$is_a_page_containing_products = true;
-
-//error_log(‘has found shortcode wpsc_products’ );
-
-			}
-
-		}
-
-	}
+				//error_log(‘has found shortcode wpsc_products’ );
+			endif;
+			
+		endif; //end $post loop
+		
+	endif; // end !$is_a_page_containing_products
 
 	return $is_a_page_containing_products;
 

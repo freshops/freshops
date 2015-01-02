@@ -111,8 +111,6 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 	<?php endif; ?>
 	
 	
-	
-	
 	<?php if(get_field('beta-min')) : //<!-- Show beta range if both min and max have values, otherwise show min. --> ?> 
 		<dl>
 			<dt>Beta Range</dt>
@@ -231,8 +229,8 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 				<ul>
 					<?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
 						<?php setup_postdata($post); ?>
-						<li class="cf">
-							<a href="<?php the_permalink(); ?>"><div class="alignleft"><?php the_post_thumbnail('small' );?></div><?php the_title(); ?></a>
+						<li class="alignleft">
+							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</li>
 					<?php endforeach; ?>
 				</ul>
