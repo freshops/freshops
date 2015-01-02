@@ -26,23 +26,19 @@
 
 <section class="entry-content cf">
 
-
 	<?=the_post_thumbnail( 'portrait-300' )?>
 
 
 	<?=the_excerpt()?>
 
-
 	<footer class="article-footer">
 
-
-
-		<p class="tags"><?=the_tags('<span class="tags-title">' . __('Tags:', 'freshopstheme') . '</span> ', ', ', '')?></p>
-
-
+		<p class="tags"><?php
+echo get_the_tag_list('<p>Tags: ',', ','</p>');
+?>
+		<?=the_tags('<span class="tags-title">' . __('Tags:', 'freshopstheme') . '</span> ', ', ', '')?></p>
 
 	</footer>
-
 
 </section>
 

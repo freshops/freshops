@@ -200,7 +200,6 @@ function freshops_theme_support() {
 			'status',            // a Facebook like status update
 			'video',             // video
 			'audio',             // audio
-			'chat'               // chat transcript
 		)
 	);
 

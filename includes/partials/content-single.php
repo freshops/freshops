@@ -14,7 +14,10 @@
 <?=the_content()?>
 
 <footer class="article-footer">
-
+	<?php if (is_singular('bne_testimonials')): ?>
+		<p class="alignright"><b>~<?php the_title(); ?></b></p>
+	<?php endif;?>
+	
 	<?=the_tags('<p class="tags"><span class="tags-title">' . __('Tags:', 'freshopstheme') . '</span> ', ', ', '</p>')?>
 
 </footer>

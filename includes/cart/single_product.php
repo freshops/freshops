@@ -373,14 +373,14 @@
 		<?php endif; ?>
 		
 		<!--  show product tags as links -->
-		<p class="tagged-with">See Similar Items:
+		<p class="tagged-with">See other products sharing these qualities:
 			<?php $wpsc_product_tags = get_the_product_tags( wpsc_the_product_id() );
 			if ($wpsc_product_tags) {
 				foreach ($wpsc_product_tags as $wpsc_product_tag) {
 					$tagname = $wpsc_product_tag->name;
 					$tagid = $wpsc_product_tag->term_id;
 					$taglink = get_term_link( $wpsc_product_tag->slug, $wpsc_product_tag->taxonomy );
-					echo '<a href="'.$taglink.'">'.$tagname.'</a>, ';
+					echo '• <a href="'.$taglink.'">'.$tagname.'</a> ';
 				}
 			}  ?>
 		</p>
@@ -400,6 +400,7 @@
 		</div> <!-- /#FB_like -->
 
 	<?php endif; ?>
+	
 </div> <!-- /.fix -->
 
 </div> <!-- /#mainbar -->
