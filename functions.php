@@ -164,7 +164,7 @@ function freshops_register_sidebars() {
 		register_sidebar(array(
 	                 'id'            => 'main_sidebar',
 	                 'name'          => __( 'Main Sidebar', 'freshopstheme' ),
-	                 'description'   => __( 'The main widget area for all pages with a sidebar.', 'freshopstheme' ),
+	                 'description'   => __( 'The main widget area for all non-product, non-blog pages with a sidebar.', 'freshopstheme' ),
 	                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	                 'after_widget'  => '</div>',
 	                 'before_title'  => '<h4 class="widgettitle">',
@@ -180,18 +180,9 @@ function freshops_register_sidebars() {
 	                 'after_title'   => '</h4>',
 	                 ));
 	register_sidebar(array(
-	                 'id'            => 'shop_nav',
-	                 'name'          => __( 'Shop Navigation', 'freshopstheme' ),
-	                 'description'   => __( 'A sidebar nav area for shopping cart, account login, and other nav elements, placed near the top on every page.', 'freshopstheme' ),
-	                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
-	                 'after_widget'  => '</div>',
-	                 'before_title'  => '<h4 class="widgettitle">',
-	                 'after_title'   => '</h4>',
-	                 ));
-	register_sidebar(array(
 	                 'id'            => 'shop_sidebar',
 	                 'name'          => __( 'Shop Sidebar', 'freshopstheme' ),
-	                 'description'   => __( 'A sidebar area that replaces the standard sidebar on product, product category, and other product-related pages.', 'freshopstheme' ),
+	                 'description'   => __( 'Replaces the standard sidebar on product, product category, and other product-related pages.', 'freshopstheme' ),
 	                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	                 'after_widget'  => '</div>',
 	                 'before_title'  => '<h4 class="widgettitle">',

@@ -11,7 +11,7 @@
 				'terms' => 'hop'
 			)
 		),
-		'order'                  => 'ASC',
+		'order'                  => 'DESC',
 		'orderby'                => 'title',
 		'posts_per_page'         => '80',
 	);

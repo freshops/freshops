@@ -9,11 +9,12 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 	
 		<h3 class="h4"><?php the_title(); ?> Flavor</h3>
 		
-		<blockquote class="highlight"><?php echo get_field('flavor');?>(<a href="http://en.wikipedia.org/wiki/List_of_hop_varieties">Reference</a>)</blockquote>
+		<blockquote class="highlight"><?php echo get_field('flavor');?>(<a href="http://en.wikipedia.org/wiki/List_of_hop_varieties#<?php echo get_field('wiki_link');?>">Reference</a>)</blockquote>
 	
 <?php endif; ?>
 
 <?php if(get_field('alternate_form')):  //Purchase link for the rhizome version of hops and vice versa ?>
+	
 	<dl>
 		<dt class="aligncenter">
 			<?php
@@ -46,6 +47,7 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 
 <!-- Begin two-column section -->
 <div class="percentage-columns">
+	
 	<?php if(get_field('example')): ?>
 		
 		<dl>
@@ -57,8 +59,7 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 		</dl>
 		
 	<?php endif; ?>
-
-
+	
 	
 	<?php if(get_field('alpha-min')): //Show alpha range if both min and max have values, otherwise show min . ?>
 		<dl>
@@ -85,7 +86,7 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 				?>
 				
 				<?php $alphapct = ( ( (float) $alphavalue) * 0.01); //alphapct= alphavalue converted from a percentage to an integer ?>
-
+				
 				<dd class='meter'>
 					<!-- meter begins here -->
 					<!-- set the low and high values based on values for low-alpha and high-alpha hops. -->
@@ -217,6 +218,7 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 		<dl>
 			<dt>Possible Substitutions</dt>
 			<dd> 
+				<div class="percentage-columns">
 				<?php
 
 				/*
@@ -229,15 +231,14 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 				<ul>
 					<?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
 						<?php setup_postdata($post); ?>
-						<li class="alignleft">
+						<li>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</li>
 					<?php endforeach; ?>
 				</ul>
 				<?php wp_reset_postdata(); // so the rest of the page works correctly ?>
-			<?php endif;
-
-			?>
+				<?php endif; ?>
+			</div>
 		</dl>
 	<?php endif;?>
 	
