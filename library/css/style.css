@@ -1242,6 +1242,9 @@ INPUTS
   background-repeat: no-repeat;
   background-position: 97.5% center; }
 
+input, textarea {
+  width: 100%; }
+
 /*********************
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If

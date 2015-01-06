@@ -47,33 +47,33 @@ require_once( 'library/admin.php' ); // this comes turned off by default
 
 
 
-/************* Enqueue Scripts and Styles *************/
+	/************* Enqueue Scripts and Styles *************/
 
-function freshops_wp_enqueue_rhizome_scripts() {
-	
+	function freshops_wp_enqueue_rhizome_scripts() {
+		
 	# See also: `freshops_scripts_and_styles` in `library/freshops.php`.
 
-	if ( ! is_admin()) {
-		
-		$script_path = get_template_directory_uri() . '/library/js/rhizome/';
+		if ( ! is_admin()) {
+			
+			$script_path = get_template_directory_uri() . '/library/js/rhizome/';
 
-		wp_register_script('meanmenu',      $script_path . 'jquery.meanmenu.js',          array('jquery'), 1, FALSE);
-		wp_register_script('nutshell',      $script_path . 'jquery.nutshell.js',          array('jquery'), 1, FALSE);
-		wp_register_script('cookie',        $script_path . 'jquery.cookie.js',            array('jquery'), 1, FALSE);
-		wp_register_script('dcjqaccordion', $script_path . 'jquery.dcjqaccordion.2.7.js', array('jquery'), 1, FALSE);
-		wp_register_script('fastclick',     $script_path . 'fastclick.js',                array('jquery'), 1, FALSE);
-		wp_register_script('rhizome',       $script_path . 'rhizome.js',                  array('jquery'), 1, FALSE);
+			wp_register_script('meanmenu',      $script_path . 'jquery.meanmenu.js',          array('jquery'), 1, FALSE);
+			wp_register_script('nutshell',      $script_path . 'jquery.nutshell.js',          array('jquery'), 1, FALSE);
+			wp_register_script('cookie',        $script_path . 'jquery.cookie.js',            array('jquery'), 1, FALSE);
+			wp_register_script('dcjqaccordion', $script_path . 'jquery.dcjqaccordion.2.7.js', array('jquery'), 1, FALSE);
+			wp_register_script('fastclick',     $script_path . 'fastclick.js',                array('jquery'), 1, FALSE);
+			wp_register_script('rhizome',       $script_path . 'rhizome.js',                  array('jquery'), 1, FALSE);
 
-		wp_enqueue_script('meanmenu');
-		wp_enqueue_script('nutshell');
-		wp_enqueue_script('cookie');
-		wp_enqueue_script('dcjqaccordion');
-		wp_enqueue_script('fastclick');
-		wp_enqueue_script('rhizome');
+			wp_enqueue_script('meanmenu');
+			wp_enqueue_script('nutshell');
+			wp_enqueue_script('cookie');
+			wp_enqueue_script('dcjqaccordion');
+			wp_enqueue_script('fastclick');
+			wp_enqueue_script('rhizome');
+		}
 	}
-}
 
-add_action('wp_enqueue_scripts', 'freshops_wp_enqueue_rhizome_scripts');
+	add_action('wp_enqueue_scripts', 'freshops_wp_enqueue_rhizome_scripts');
 
 
 
@@ -108,16 +108,16 @@ add_filter( 'image_size_names_choose', 'freshops_custom_image_sizes' );
 
 function freshops_custom_image_sizes( $sizes ) {
 	return array_merge( $sizes, array(
-	                   'landscape-large' => __('600px by 150px'),
-	                   'landscape-med' => __('300px by 100px'),
-	                   'landscape-small' => __('150 by 50'),
-	                   
-	                   'portrait-large' => __('600px by 1000px'),
-	                   'portrait-med' => __('300px by 500px'),
-	                   'portrait-small' => __('150px by 250px'),
-	                   
-	                   'icon' => __('72px by 72px'),
-	                   ) );
+					   'landscape-large' => __('600px by 150px'),
+					   'landscape-med' => __('300px by 100px'),
+					   'landscape-small' => __('150 by 50'),
+					   
+					   'portrait-large' => __('600px by 1000px'),
+					   'portrait-med' => __('300px by 500px'),
+					   'portrait-small' => __('150px by 250px'),
+					   
+					   'icon' => __('72px by 72px'),
+					   ) );
 }
 
 /*
@@ -135,8 +135,8 @@ new image size.
 function custom_navigation_menus() {
 
 	$locations = array(
-	                   'order' => __( 'Order', 'freshopstheme' ),
-	                   );
+					   'order' => __( 'Order', 'freshopstheme' ),
+					   );
 	register_nav_menus( $locations );
 }
 // Hook into the 'init' action
@@ -161,33 +161,43 @@ function order_nav() {
 
 // Sidebars & Widgetizes Areas
 function freshops_register_sidebars() {
-		register_sidebar(array(
-	                 'id'            => 'main_sidebar',
-	                 'name'          => __( 'Main Sidebar', 'freshopstheme' ),
-	                 'description'   => __( 'The main widget area for all non-product, non-blog pages with a sidebar.', 'freshopstheme' ),
-	                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
-	                 'after_widget'  => '</div>',
-	                 'before_title'  => '<h4 class="widgettitle">',
-	                 'after_title'   => '</h4>',
-	                 ));
 	register_sidebar(array(
-	                 'id'            => 'blog_sidebar',
-	                 'name'          => __( 'Blog Sidebar', 'freshopstheme' ),
-	                 'description'   => __( 'The standard blog sidebar.', 'freshopstheme' ),
-	                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
-	                 'after_widget'  => '</div>',
-	                 'before_title'  => '<h4 class="widgettitle">',
-	                 'after_title'   => '</h4>',
-	                 ));
+					 'id'            => 'blog_sidebar',
+					 'name'          => __( 'Blog Sidebar', 'freshopstheme' ),
+					 'description'   => __( 'The standard blog sidebar.', 'freshopstheme' ),
+					 'before_widget' => '<div id="%1$s" class="widget %2$s">',
+					 'after_widget'  => '</div>',
+					 'before_title'  => '<h4 class="widgettitle">',
+					 'after_title'   => '</h4>',
+					 ));
 	register_sidebar(array(
-	                 'id'            => 'shop_sidebar',
-	                 'name'          => __( 'Shop Sidebar', 'freshopstheme' ),
-	                 'description'   => __( 'Replaces the standard sidebar on product, product category, and other product-related pages.', 'freshopstheme' ),
-	                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
-	                 'after_widget'  => '</div>',
-	                 'before_title'  => '<h4 class="widgettitle">',
-	                 'after_title'   => '</h4>',
-	                 ));
+					 'id'            => 'shop_sidebar',
+					 'name'          => __( 'Shop Sidebar', 'freshopstheme' ),
+					 'description'   => __( 'Replaces the standard sidebar on product, product category, and other product-related pages.', 'freshopstheme' ),
+					 'before_widget' => '<div id="%1$s" class="widget %2$s">',
+					 'after_widget'  => '</div>',
+					 'before_title'  => '<h4 class="widgettitle">',
+					 'after_title'   => '</h4>',
+					 ));
+	register_sidebar(array(
+					 'id'            => 'main_sidebar',
+					 'name'          => __( 'Main Sidebar', 'freshopstheme' ),
+					 'description'   => __( 'The main widget area for all non-product, non-blog pages with a sidebar.', 'freshopstheme' ),
+					 'before_widget' => '<div id="%1$s" class="widget %2$s">',
+					 'after_widget'  => '</div>',
+					 'before_title'  => '<h4 class="widgettitle">',
+					 'after_title'   => '</h4>',
+					 ));
+	
+	register_sidebar(array(
+					 'id'            => 'home_sidebar',
+					 'name'          => __( 'Home Sidebar', 'freshopstheme' ),
+					 'description'   => __( 'The main widget area for the front (home) page.', 'freshopstheme' ),
+					 'before_widget' => '<div id="%1$s" class="widget %2$s">',
+					 'after_widget'  => '</div>',
+					 'before_title'  => '<h4 class="widgettitle">',
+					 'after_title'   => '</h4>',
+					 ));
 
 	/*
 	to add more sidebars or widgetized areas, just copy
@@ -309,22 +319,22 @@ function is_a_page_containing_products() {
 		if(is_products_page()){
 			$is_a_page_containing_products = true;
 		}
-	endif;
-	
-	if(!$is_a_page_containing_products) :
-		global $wpdb;
+		endif;
+		
+		if(!$is_a_page_containing_products) :
+			global $wpdb;
 		
 		if(!empty($post->ID)):
 			$sql =  "SELECT * FROM `{$wpdb->posts}` WHERE `post_type` IN(‘page’,’post’) AND `post_content` LIKE ‘%".wpsc_products."%’ 
-			AND `ID` = ".$post->ID;
-			
-			$result = $wpdb->get_results($sql);
-			
-			if($result) :
-				$is_a_page_containing_products = true;
+		AND `ID` = ".$post->ID;
+		
+		$result = $wpdb->get_results($sql);
+		
+		if($result) :
+			$is_a_page_containing_products = true;
 				//error_log(‘has found shortcode wpsc_products’ );
-			endif;
-			
+		endif;
+		
 		endif; //end $post loop
 		
 	endif; // end !$is_a_page_containing_products
