@@ -125,5 +125,11 @@ INPUTS
 
 }
 
-input, textarea { width: 100%; } //make input fields full width
 
+input[type=email], 
+input[type=text],
+textarea
+{
+	max-width: 100%;
+	width: 100%;
+} //make input fields full width
