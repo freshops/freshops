@@ -18,18 +18,18 @@
 					<?php include(locate_template('includes/cart/single_hop_or_rhizome_variety.php')); ?>
 					
 				<?php endif; ?>
+				<?php $wpsc_product_tags = get_the_product_tags( wpsc_the_product_id() );
+				if ($wpsc_product_tags) : ?>
+					<p class="tagged-with">Product Tags:
 				
-				<!--  show product tags as links -->
-				<p class="tagged-with">See other products sharing these qualities:
-					<?php $wpsc_product_tags = get_the_product_tags( wpsc_the_product_id() );
-					if ($wpsc_product_tags) {
-						foreach ($wpsc_product_tags as $wpsc_product_tag) {
-							$tagname = $wpsc_product_tag->name;
-							$tagid = $wpsc_product_tag->term_id;
-							$taglink = get_term_link( $wpsc_product_tag->slug, $wpsc_product_tag->taxonomy );
-							echo '• <a href="'.$taglink.'">'.$tagname.'</a> ';
-						}
-					}  ?>
+					<?php	foreach ($wpsc_product_tags as $wpsc_product_tag) :
+						$tagname = $wpsc_product_tag->name;
+						$tagid = $wpsc_product_tag->term_id;
+						$taglink = get_term_link( $wpsc_product_tag->slug, $wpsc_product_tag->taxonomy );
+						echo '• <a href="'.$taglink.'">'.$tagname.'</a> ';
+					endforeach;
+				endif;
+				?>
 				</p>
 
 			

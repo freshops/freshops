@@ -1603,6 +1603,11 @@ p.demo_store {
   top: 90%;
   right: 10px; }
 
+.product-details {
+  margin-top: 1.5rem;
+  padding: 1rem 0 0 1rem;
+  background: rgba(255, 255, 255, 0.5); }
+
 img.centered {
   display: block;
   margin-left: auto;

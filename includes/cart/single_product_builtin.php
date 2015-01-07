@@ -193,7 +193,7 @@
 
 										<input type="text" id="wpsc_quantity_update_<?php echo wpsc_the_product_id(); ?>" name="wpsc_quantity_update" size="2" value="1">
 									<?php //if it's a hops page, add "oz." after the quantity
-									if ( has_term('hop', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) :
+									if ( has_term('hop', 'wpsc_product_category' )) :
 										echo "oz.";
 									endif;
 									?>
