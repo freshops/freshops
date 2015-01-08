@@ -465,7 +465,7 @@ COMMENT STYLES
 /* end .commentlist .comment_content */
 /* comment reply link */
 .comment-reply-link {
-	@extend .blue-btn;
+	@extend .blue-btn !optional;
 	font-size: 0.9em;
 	float: right;
 	&:hover,
@@ -489,7 +489,7 @@ COMMENT STYLES
 .comment-form-comment { margin: 1.5em 0 0.75em; }
 .form-allowed-tags { padding: 1.5em; background-color: $light-gray; font-size: 0.9em; }
 /* comment submit button */
-#submit { @extend .blue-btn; float: right; font-size: 1em; }
+#submit { @extend .blue-btn !optional; float: right; font-size: 1em; }
 /* comment form title */
 #comment-form-title { margin: 0 0 1.1em; }
 /* cancel comment reply link */

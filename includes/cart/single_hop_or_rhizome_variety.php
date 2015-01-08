@@ -249,11 +249,10 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 	<?php endif; //end rhizome conditional ?>
 	
 	<?php if(get_field('usda_hops_info')): ?>
-		
 		<?php the_title( '<h3 class="h2">USDA ', ' Information</h3>' ); ?>
-		
+		<div class="split">
 		<?php echo get_field('usda_hops_info'); ?>
-
+		</div>
 	<?php endif; ?>
 	
 </div> <!-- end product details, hop details, rhizome details -->

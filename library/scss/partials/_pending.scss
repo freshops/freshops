@@ -138,3 +138,61 @@ dl {
 	margin-top: 5px;
 	font-weight: bold;
 }
+
+.split {
+	
+	-webkit-column-count: 2;
+	   -moz-column-count: 2;
+	    -ms-column-count: 2;
+	     -o-column-count: 2;
+	        column-count: 2;
+	
+	-webkit-column-gap: 20px;
+	   -moz-column-gap: 20px;
+	    -ms-column-gap: 20px;
+	     -o-column-gap: 20px;
+	        column-gap: 20px;
+	
+	// I guess this isn't supported by Firefox?
+	// > h3 {
+	// 	-webkit-column-span: 2;
+	// 	   -moz-column-span: 2;
+	// 	    -ms-column-span: 2;
+	// 	     -o-column-span: 2;
+	// 	        column-span: 2;
+	// }
+	
+}
+
+.product-details {
+	
+	padding: 10px 20px 25px;
+	
+	> h3 {
+		
+		border-bottom: 2px solid;
+		margin: 0 0 25px;
+		padding: 0 0 5px;
+		
+		&:first-child {
+			color: #3a770c;
+			text-transform: uppercase;
+			border-bottom: 0;
+		}
+		
+	}
+	
+	blockquote.highlight {
+		font-size: 18px;
+		color: darken(#feefb3, 60%);
+		background: rgba(#feefb3, .5);
+		margin: 20px 0;
+		padding: 20px;
+		border-radius: 5px;
+	}
+	
+	.percentage-columns {
+		margin-bottom: 25px;
+	}
+	
+}
