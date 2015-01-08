@@ -206,7 +206,7 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 				
 				<dd> <?php echo get_field('farnesene');
 					if (get_field('farnesene-max')) : //hyphen followed by max value
-					?>–<?php echo get_field('farnesene-max');
+						echo '–' . get_field('farnesene-max');
 					endif;
 					?>% of total oils
 				</dd>
@@ -245,6 +245,15 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 	<?php if(has_term('rhizomes', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) : ?>
 		<?php include(locate_template('includes/cart/single_rhizome_variety.php')); ?>
 	<?php else: ?>
-	</div><!-- end two-column percentage section for hops (not rhizomes)-->
-<?php endif; //end rhizome conditional ?>
+		</div><!-- end two-column percentage section for hops (not rhizomes)-->
+	<?php endif; //end rhizome conditional ?>
+	
+	<?php if(get_field('usda_hops_info')): ?>
+		
+		<?php the_title( '<h3 class="h2">USDA ', ' Information</h3>' ); ?>
+		
+		<?php echo get_field('usda_hops_info'); ?>
+
+	<?php endif; ?>
+	
 </div> <!-- end product details, hop details, rhizome details -->
