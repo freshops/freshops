@@ -119,11 +119,11 @@ global $wp_query, $wpdb;
 
 											<?php if(wpsc_product_external_link(wpsc_the_product_id()) != '') : ?>
 											<?php $action = wpsc_product_external_link( wpsc_the_product_id() ); ?>
-											<input class="green-btn" type="button" value="<?php echo wpsc_product_external_link_text( wpsc_the_product_id(), __( 'Buy Now', 'wpsc' ) ); ?>" onclick="return gotoexternallink('<?php echo $action; ?>', '<?php echo wpsc_product_external_link_target( wpsc_the_product_id() ); ?>')">
+											<input class="wpsc_buy_button" type="button" value="<?php echo wpsc_product_external_link_text( wpsc_the_product_id(), __( 'Buy Now', 'wpsc' ) ); ?>" onclick="return gotoexternallink('<?php echo $action; ?>', '<?php echo wpsc_product_external_link_target( wpsc_the_product_id() ); ?>')">
 											<?php elseif ( wpsc_product_has_variations( wpsc_the_product_id() ) ) : ?>
-											<a href="<?php echo esc_url( wpsc_the_product_permalink() ); ?>" class="green-btn"><?php _e( 'View Product', 'wpsc' )?></a>
+											<a href="<?php echo esc_url( wpsc_the_product_permalink() ); ?>" class="wpsc_buy_button"><?php _e( 'View Product', 'wpsc' )?></a>
 											<?php else : ?>
-										<input type="submit" value="<?php _e('Add To Cart', 'wpsc'); ?>" name="Buy" class="green-btn" id="product_<?php echo wpsc_the_product_id(); ?>_submit_button" />
+										<input type="submit" value="<?php _e('Add To Cart', 'wpsc'); ?>" name="Buy" class="wpsc_buy_button" id="product_<?php echo wpsc_the_product_id(); ?>_submit_button" />
 											<?php endif; ?>
 										<div class="wpsc_loading_animation">
 											<img title="<?php esc_attr_e( 'Loading', 'wpsc' ); ?>" alt="<?php esc_attr_e( 'Loading', 'wpsc' ); ?>" src="<?php echo wpsc_loading_animation_url(); ?>" />

@@ -438,7 +438,7 @@ endif;
                <input type='hidden' value='yes' name='agree' />
             <?php endif; ?>
                <input type='hidden' value='submit_checkout' name='wpsc_action' />
-               <input type='submit' value='<?php _e('Purchase', 'wpsc');?>' class='make_purchase green-btn' />
+               <input type='submit' value='<?php _e('Purchase', 'wpsc');?>' class='make_purchase wpsc_buy_button' />
          </span>
       </div>
 
