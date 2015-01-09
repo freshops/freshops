@@ -3,6 +3,9 @@
 Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 */
 ?>
+
+<div class="clear"></div>
+
 <div class="product-details hop-details rhizome-details">
 	<h3 class="h2">Hop Qualities</h3>
 
