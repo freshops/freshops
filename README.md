@@ -123,6 +123,10 @@ Next, check the live site to make sure nothing broke. :laughing:
 
 ## Notes
 
+Things to be aware of …
+
+### Untracked file workflow
+
 There’s an untracked folder here:
 
 ![untracked](https://cloud.githubusercontent.com/assets/218624/5688496/d211d9ee-980c-11e4-9c74-0fc7d4920616.png)
