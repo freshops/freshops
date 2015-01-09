@@ -133,7 +133,9 @@ There’s an untracked folder here:
 
 Currently, as you can see above, there’s a CSS file we use to override WPSC **GOLD** shopping cart styles (the GOLD cart is not able to be tested locally).
 
-The `special.css` file is symlinked to `themes/freshops/library/css/special.css`
+The `special.css` file is symlinked to `themes/freshops/library/css/special.css`.
+
+In WordPress, via [`functions.php`](functions.php), the `special.css` file has been registered and enqueued.
 
 In our [`.gitignore`](.gitignore), there’s an entry for `special.css`; this allows us to have untracked files within the repo and avoid conflicts.
 
