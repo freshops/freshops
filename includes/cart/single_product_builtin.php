@@ -301,7 +301,7 @@
 										<?php $action = wpsc_product_external_link(wpsc_the_product_id()); ?>
 
 										<input
-										class="wpsc_buy_button"
+										class="green-btn"
 										type="submit"
 										value="<?php echo wpsc_product_external_link_text(wpsc_the_product_id(), __('Buy Now', 'wpsc')); ?>"
 										onclick="return gotoexternallink('<?php echo esc_url($action); ?>', '<?php echo wpsc_product_external_link_target(wpsc_the_product_id()); ?>')"
@@ -313,7 +313,7 @@
 										type="submit"
 										value="<?php _e('Add To Cart', 'wpsc'); ?>"
 										name="Buy"
-										class="wpsc_buy_button"
+										class="green-btn"
 										id="product_<?php echo wpsc_the_product_id(); ?>_submit_button"
 										>
 
