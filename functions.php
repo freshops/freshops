@@ -49,11 +49,15 @@ require_once( 'library/admin.php' ); // this comes turned off by default
 
 	/************* Enqueue Scripts and Styles *************/
 
-	function freshops_wp_enqueue_rhizome_scripts() {
+	function freshops_wp_enqueue_rhizome_scripts_styles() {
 		
 	# See also: `freshops_scripts_and_styles` in `library/freshops.php`.
 
 		if ( ! is_admin()) {
+			
+			wp_register_style('special', get_stylesheet_directory_uri() . '/library/css/special.css', array(), '', 'all' );
+			
+			wp_enqueue_style('special');
 			
 			$script_path = get_template_directory_uri() . '/library/js/rhizome/';
 
@@ -73,7 +77,7 @@ require_once( 'library/admin.php' ); // this comes turned off by default
 		}
 	}
 
-	add_action('wp_enqueue_scripts', 'freshops_wp_enqueue_rhizome_scripts');
+	add_action('wp_enqueue_scripts', 'freshops_wp_enqueue_rhizome_scripts_styles');
 
 
 
