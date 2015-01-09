@@ -121,6 +121,20 @@ $ git pull
 
 Next, check the live site to make sure nothing broke. :laughing:
 
+## Notes
+
+There’s an untracked folder here:
+
+![untracked](https://cloud.githubusercontent.com/assets/218624/5688496/d211d9ee-980c-11e4-9c74-0fc7d4920616.png)
+
+Currently, as you can see above, there’s a CSS file we use to override WPSC **GOLD** shopping cart styles (the GOLD cart is not able to be tested locally).
+
+The `special.css` file is symlinked to `themes/freshops/library/css/special.css`
+
+In our [`.gitignore`](.gitignore), there’s an entry for `special.css`; this allows us to have untracked files within the repo and avoid conflicts.
+
+Feel free to use this workflow for other types of untracked files.
+
 ## Tips
 
 Useful bits to know …
