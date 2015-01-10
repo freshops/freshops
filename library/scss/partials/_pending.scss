@@ -191,3 +191,64 @@ dl {
 	}
 	
 }
+
+.bne-testimonial-list-wrapper {
+	
+	.single-bne-testimonial {
+		position: relative;
+		padding: 30px 0 30px;
+		border-width: 1px 0;
+		border-style: solid;
+		border-color: #719b37;
+		margin: -1px 0 0 !important;
+	}
+	
+	.bne-testimonial-heading,
+	.bne-testimonial-details {
+		
+		font-size: 18px;
+		font-family: Georgio, serif;
+		font-weight: normal;
+		letter-spacing: normal;
+		line-height: 18px;
+		position: absolute;
+		right: 0;
+		bottom: 5px;
+		margin: 0;
+		
+		&::before { content: "– "; }
+		
+	}
+	
+	.bne-testimonial-details { display: none; }
+	
+	p {
+		font-size: 18px;
+		font-style: italic;
+	}
+	
+	.bne-testimonial-description {
+		
+		margin-left: 50px;
+		position: relative;
+		
+		> :first-child { margin-top: 0; }
+		> :last-child { margin-bottom: 0; }
+		
+		&::before,
+		&::after {
+			font-size: 125px;
+			color: rgba(#719b37, .25);
+			line-height: 1;
+			position: absolute;
+		}
+		
+		&::before {
+			top: -15px;
+			left: -50px;
+			content: "“";
+		}
+		
+	}
+	
+}

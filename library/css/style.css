@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /******************************************************************
 Site Name: Freshops WP Theme
 Author:
@@ -2281,6 +2282,49 @@ dl > :last-child {
     border-radius: 5px; }
   .product-details .percentage-columns {
     margin-bottom: 25px; }
+
+.bne-testimonial-list-wrapper .single-bne-testimonial {
+  position: relative;
+  padding: 30px 0 30px;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #719b37;
+  margin: -1px 0 0 !important; }
+.bne-testimonial-list-wrapper .bne-testimonial-heading,
+.bne-testimonial-list-wrapper .bne-testimonial-details {
+  font-size: 18px;
+  font-family: Georgio, serif;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 18px;
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+  margin: 0; }
+  .bne-testimonial-list-wrapper .bne-testimonial-heading::before,
+  .bne-testimonial-list-wrapper .bne-testimonial-details::before {
+    content: "– "; }
+.bne-testimonial-list-wrapper .bne-testimonial-details {
+  display: none; }
+.bne-testimonial-list-wrapper p {
+  font-size: 18px;
+  font-style: italic; }
+.bne-testimonial-list-wrapper .bne-testimonial-description {
+  margin-left: 50px;
+  position: relative; }
+  .bne-testimonial-list-wrapper .bne-testimonial-description > :first-child {
+    margin-top: 0; }
+  .bne-testimonial-list-wrapper .bne-testimonial-description > :last-child {
+    margin-bottom: 0; }
+  .bne-testimonial-list-wrapper .bne-testimonial-description::before, .bne-testimonial-list-wrapper .bne-testimonial-description::after {
+    font-size: 125px;
+    color: rgba(113, 155, 55, 0.25);
+    line-height: 1;
+    position: absolute; }
+  .bne-testimonial-list-wrapper .bne-testimonial-description::before {
+    top: -15px;
+    left: -50px;
+    content: "“"; }
 
 /*********************
 RHIZOME SKIN
