@@ -95,7 +95,7 @@ I like to use a setup [similar to this](https://github.com/mhulse/bueller); here
 ### Clone
 $ ssh freshops@web400.webfaction.com
 $ cd webapps/beta2/content/themes/freshops
-
+ 
 ```bash
 $ git clone https://github.com/freshops/freshops.git
 ```
