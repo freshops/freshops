@@ -260,3 +260,14 @@ input[class$="-submit"] {
 }
 
 .group { margin-bottom: 10px; }
+
+.entry-title,
+.entry-meta {
+	margin: 0;
+}
+
+.byline,
+.entry-meta {
+	border-bottom: 1px solid #000;
+	padding-bottom: 5px;
+}
