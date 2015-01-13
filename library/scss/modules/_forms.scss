@@ -185,45 +185,70 @@ textarea {
 #signupform,
 #searchform {
 	
+	position: relative;
+	overflow: hidden;
+	
+	* { vertical-align: top; }
+	
 	label { display: none; }
 	
-	input[type=text] {
+	input[type="text"] {
 		
 		@extend %field;
 		
-		width: 60%;
-		display: inline-block;
+		width: 100%;
+		display: block;
 		
 	}
 	
-	input[type=submit] {
+	input[type="submit"] {
 		
 		@extend .green-btn;
 		
 		padding: 3px 20px;
-		width: 25%;
-		display: inline-block;
-		margin: 0 0 0 10px;
 		
+	}
+	
+}
+
+#searchform {
+	
+	input[type="submit"] {
+		float: right;
+		margin: 5px 0 0;
 	}
 	
 }
 
 #signupform {
 	
-	* {
-		vertical-align: top;
+	p {
+		margin-bottom: 0;
+		overflow: hidden;
+		position: relative;
+	}
+	
+	input[type="submit"] {
+		float: right;
+		margin: 5px 0 0;
 	}
 	
 	.wpcf7-form-control-wrap {
 		
-		display: inline-block;
-		width: 60%;
+		width: 100%;
+		display: block;
 		
-		input {
-			width: 100%;
-		}
+		input { width: 100%; }
 		
+	}
+	
+	.wpcf7-response-output { margin: 0; }
+	
+	.ajax-loader {
+		position: absolute;
+		top: 5px;
+		right: .5em;
+		z-index: 100;
 	}
 	
 }

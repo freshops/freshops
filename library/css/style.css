@@ -904,8 +904,8 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.green-btn, #signupform input[type=submit],
-#searchform input[type=submit], input[class$="-submit"] {
+.green-btn, #signupform input[type="submit"],
+#searchform input[type="submit"], input[class$="-submit"] {
   display: inline-block;
   position: relative;
   font-family: "Georgia", Cambria, Times New Roman, Times, serif;
@@ -922,13 +922,13 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   cursor: pointer;
   -webkit-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out; }
-  .green-btn:hover, #signupform input[type=submit]:hover,
-  #searchform input[type=submit]:hover, input[class$="-submit"]:hover, .green-btn:focus, #signupform input[type=submit]:focus,
-  #searchform input[type=submit]:focus, input[class$="-submit"]:focus {
+  .green-btn:hover, #signupform input[type="submit"]:hover,
+  #searchform input[type="submit"]:hover, input[class$="-submit"]:hover, .green-btn:focus, #signupform input[type="submit"]:focus,
+  #searchform input[type="submit"]:focus, input[class$="-submit"]:focus {
     color: #fff;
     text-decoration: none; }
-  .green-btn:active, #signupform input[type=submit]:active,
-  #searchform input[type=submit]:active, input[class$="-submit"]:active {
+  .green-btn:active, #signupform input[type="submit"]:active,
+  #searchform input[type="submit"]:active, input[class$="-submit"]:active {
     top: 1px; }
 
 /*
@@ -936,8 +936,8 @@ An example button.
 You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
 */
-.green-btn, #signupform input[type=submit],
-#searchform input[type=submit], input[class$="-submit"] {
+.green-btn, #signupform input[type="submit"],
+#searchform input[type="submit"], input[class$="-submit"] {
   background-color: #4E9439;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#134514), to(#4E9439));
   background-image: -webkit-linear-gradient(top, #134514, #4E9439);
@@ -950,17 +950,17 @@ and it will create a button dependant on those variables.
   text-shadow: -1px -2px 5px #bed8b1;
   margin-bottom: 0.5rem;
   font-size: 18px; }
-  .green-btn:hover, #signupform input[type=submit]:hover,
-  #searchform input[type=submit]:hover, input[class$="-submit"]:hover, .green-btn:focus, #signupform input[type=submit]:focus,
-  #searchform input[type=submit]:focus, input[class$="-submit"]:focus {
+  .green-btn:hover, #signupform input[type="submit"]:hover,
+  #searchform input[type="submit"]:hover, input[class$="-submit"]:hover, .green-btn:focus, #signupform input[type="submit"]:focus,
+  #searchform input[type="submit"]:focus, input[class$="-submit"]:focus {
     background-color: #468533;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#0f350f), to(#468533));
     background-image: -webkit-linear-gradient(top, #0f350f, #468533);
     background-image: -moz-linear-gradient(top, #0f350f, #468533);
     background-image: -o-linear-gradient(top, #0f350f, #468533);
     background-image: linear-gradient(to bottom, #0f350f, #468533); }
-  .green-btn:active, #signupform input[type=submit]:active,
-  #searchform input[type=submit]:active, input[class$="-submit"]:active {
+  .green-btn:active, #signupform input[type="submit"]:active,
+  #searchform input[type="submit"]:active, input[class$="-submit"]:active {
     background-color: #448232;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#0d310e), to(#448232));
     background-image: -webkit-linear-gradient(top, #0d310e, #448232);
@@ -1253,8 +1253,8 @@ INPUTS
 
 .wpcf7 input[type=text],
 .wpcf7 input[type=email],
-.wpcf7 textarea, #signupform input[type=text],
-#searchform input[type=text] {
+.wpcf7 textarea, #signupform input[type="text"],
+#searchform input[type="text"] {
   font-size: 16px;
   vertical-align: baseline;
   padding: 10px;
@@ -1294,27 +1294,47 @@ textarea {
   .wpcf7 input[type=email] {
     width: 50%; } }
 
-#signupform label,
-#searchform label {
-  display: none; }
-#signupform input[type=text],
-#searchform input[type=text] {
-  width: 60%;
-  display: inline-block; }
-#signupform input[type=submit],
-#searchform input[type=submit] {
-  padding: 3px 20px;
-  width: 25%;
-  display: inline-block;
-  margin: 0 0 0 10px; }
+#signupform,
+#searchform {
+  position: relative;
+  overflow: hidden; }
+  #signupform *,
+  #searchform * {
+    vertical-align: top; }
+  #signupform label,
+  #searchform label {
+    display: none; }
+  #signupform input[type="text"],
+  #searchform input[type="text"] {
+    width: 100%;
+    display: block; }
+  #signupform input[type="submit"],
+  #searchform input[type="submit"] {
+    padding: 3px 20px; }
 
-#signupform * {
-  vertical-align: top; }
+#searchform input[type="submit"] {
+  float: right;
+  margin: 5px 0 0; }
+
+#signupform p {
+  margin-bottom: 0;
+  overflow: hidden;
+  position: relative; }
+#signupform input[type="submit"] {
+  float: right;
+  margin: 5px 0 0; }
 #signupform .wpcf7-form-control-wrap {
-  display: inline-block;
-  width: 60%; }
+  width: 100%;
+  display: block; }
   #signupform .wpcf7-form-control-wrap input {
     width: 100%; }
+#signupform .wpcf7-response-output {
+  margin: 0; }
+#signupform .ajax-loader {
+  position: absolute;
+  top: 5px;
+  right: .5em;
+  z-index: 100; }
 
 /*********************
 BASE (MOBILE) SIZE
