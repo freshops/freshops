@@ -93,9 +93,9 @@ I like to use a setup [similar to this](https://github.com/mhulse/bueller); here
 ![screen shot 2014-12-04 at 11 50 29 pm](https://cloud.githubusercontent.com/assets/218624/5312526/5dd83be4-7c10-11e4-8f04-4e3135f6fa76.png)
 
 ### Clone
-$ ssh freshops@web400.webfaction.com
-$ cd webapps/beta2/content/themes/freshops
- 
+
+Navigate to the `content/themes/` directory and:
+
 ```bash
 $ git clone https://github.com/freshops/freshops.git
 ```
@@ -109,9 +109,7 @@ The above command will clone the `freshops` repo into a `themes/freshops` direct
 When you’re ready to update the live theme repository, do this:
 
 ```bash
-
-$ ssh freshops@web400.webfaction.com
-$ cd webapps/beta2/content/themes/freshops
+$ cd content/themes/freshops/
 $ git remote update && git status
 ```
 
@@ -147,9 +145,13 @@ Feel free to use this workflow for other types of untracked files.
 
 Useful bits to know …
 
+### Server history
+
+When you are connected to our test or production servers, remember that you can use the up/down arrows to navigate through your history. This is useful when you don’t remember paths; just use up arrow to find last `cd` and you’re golden.
+
 ### Tail the log
 
-To see php errors and warnings, ssh to server and then:
+To see php errors and warnings, `ssh` to server and then:
 
 ```bash
 $ cd path/to/content
@@ -169,15 +171,12 @@ $ find freshops/ -type d -print0 | xargs -0 chmod 755
 
 ### Micky’s workflow
 
-Assuming WordPress is installed, and [Rhizome](https://github.com/freshops/rhizome) is cloned, locally …
+Assuming WordPress is installed, ~~and [Rhizome](https://github.com/freshops/rhizome) is cloned, locally~~ …
 
 1. Start XAMPP.
-1. Open <http://git.local/freshops/rhizome/> ([theme skeleton/kit](https://github.com/freshops/rhizome)) and <http://freshops.local/> (local WordPress install).
-1. Terminal tab: `$ cd rhizome/` and run `$ bundle exec sass --watch assets/scss:assets/css --sourcemap=none --trace` (for more details, see [build instructions here](https://github.com/freshops/rhizome#development-commands)).
-$ ssh freshops@web400.webfaction.com
-$ cd webapps/beta2/content/themes/freshops
-$ git remote update && git status
-1. Next: `$ cd library/scss` and run `$ sass --watch style.scss:../css/style.css --sourcemap=none` …
+1. Open ~~<http://git.local/freshops/rhizome/> ([theme skeleton/kit](https://github.com/freshops/rhizome)) and~~ <http://freshops.local/> (local WordPress install).
+1. ~~Terminal tab: `$ cd rhizome/` and run `$ bundle exec sass --watch assets/scss:assets/css --sourcemap=none --trace` (for more details, see [build instructions here](https://github.com/freshops/rhizome#development-commands)).~~
+1. Next: `$ cd freshops/library/scss` and run `$ sass --watch style.scss:../css/style.css --sourcemap=none` …
 1. Finally, tail error log: `$ cd freshops/content/` and run `$ tail -f debug.log`.
 
 **Tip:** Use <kbd>CMD</kbd> + <kbd>I</kbd> to label your terminal window tabs (helps to keep things organized).
