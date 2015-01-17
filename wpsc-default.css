@@ -1163,9 +1163,7 @@ background-color: #f5f5f5;
 
 .wpsc_categories { overflow: hidden; }
 .wpsc_categories li {
-	float: left;
-	width: 150px;
-	margin-right: 10px;
+	width:100%;
 }
 .wpsc_categories img {
 	display: block;
@@ -1173,7 +1171,7 @@ background-color: #f5f5f5;
 	height: auto !important;
 }
 .wpsc_category_details {
-	width: 150px;
+	width:100%;
 	margin-right: 10px;
 }
 .wpsc_category_details img {
