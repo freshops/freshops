@@ -39,9 +39,7 @@ Author URI: http://instinct.co.nz
 	padding:0;
 	border:1px solid #ccc;
 }
-#list_view_products_page_container img {
-padding: 0 5px 10px 0;
-}
+
 .wpsc_hidden{
 	display:none;
 }
@@ -69,7 +67,7 @@ padding: 0 5px 10px 0;
 }
 
 .wpsc_category_grid_item .item_no_image {
-	color:#000;
+	color:black;
 }
 
 
@@ -1127,8 +1125,6 @@ background-color: #f5f5f5;
 
 
 
-
-
 .productcol {
 	padding: 10px 20px;
 	font-size: 16px;
@@ -1172,15 +1168,18 @@ background-color: #f5f5f5;
 }
 
 .wpsc_category_details {
-	float: left;
-	height: auto !important;
-	margin-left: 2rem;
+	display: block;
 }
+
 .wpsc_category_details img {
 	float:left;
 	display: inline-block;
 	max-width: 60px;
 	height: auto !important;
+}
+
+#list_view_products_page_container img {
+padding: 0 10px 10px 0;  /*add padding after floated category image*/
 }
 
 .list_productdisplay {
