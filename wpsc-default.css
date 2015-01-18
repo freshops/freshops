@@ -1179,7 +1179,7 @@ background-color: #f5f5f5;
 }
 
 #list_view_products_page_container img {
-padding: 0 10px 10px 0;  /*add padding after floated category image*/
+margin: 0 10px 10px 0;  /*add padding after floated category image*/
 }
 
 .list_productdisplay {
