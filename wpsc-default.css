@@ -1122,7 +1122,11 @@ background-color: #f5f5f5;
 }
 
 
-
+/*HIDES THE VIEW SELECTION/SEARCH BAR*/
+div.wpsc_product_search{
+	display: none;
+	visibility: hidden;
+}
 
 
 .productcol {
@@ -1160,8 +1164,10 @@ background-color: #f5f5f5;
 .wpsc-breadcrumbs { margin-bottom: 10px; }
 
 .wpsc_categories { overflow: hidden; }
-.wpsc_categories>li {margin-bottom: 1rem;} /*add vertical padding between top-level categories on the main shop page*/
+.wpsc_categories>li {margin-bottom: 2.5rem;} /*add vertical padding between top-level categories on the main shop page*/
+
 .wpsc_categories li {
+	clear:both;
 	float: left;
 	min-width: 200px;
 	margin-right: 10px;
