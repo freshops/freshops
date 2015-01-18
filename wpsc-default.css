@@ -1170,7 +1170,10 @@ background-color: #f5f5f5;
 .wpsc_category_details {
 	display: block;
 }
-
+.wpsc_categories img {
+	margin-right: 1rem;
+	float: left;
+}
 .wpsc_category_details img {
 	float:left;
 	display: inline-block;
