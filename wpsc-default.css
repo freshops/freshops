@@ -39,7 +39,9 @@ Author URI: http://instinct.co.nz
 	padding:0;
 	border:1px solid #ccc;
 }
-
+#list_view_products_page_container img {
+padding: 0 5px 10px 0;
+}
 .wpsc_hidden{
 	display:none;
 }
