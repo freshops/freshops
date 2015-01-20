@@ -31,7 +31,7 @@
 
 			<?php wpsc_the_product(); ?>
 
-			<?php # include the standard product view elements (@todo: test to see if it's a "hop"). ?>
+			<?php # include the standard product view elements.?>
 			<?php include(locate_template('includes/cart/single_product.php')); ?>
 
 
