@@ -18,9 +18,9 @@ ________________________________________________________________________________
 	<?php else: ?>
 	<?php endif; ?>
 
-<?php elseif ( wpsc_page_is_selected () ) : ?>
-	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Shop Sidebar") ) :  ?>
-		<?php dynamic_sidebar('Shop Sidebar'); ?>
+<?php elseif ( is_a_page_containing_products () ) : ?>
+	<?php if ( ! function_exists('dynamic_sidebar') || ( ! dynamic_sidebar('Shop Sidebar'))): ?>
+				<?=dynamic_sidebar('Shop Sidebar')?>
 	<?php else: ?>
 		<div class="no-widgets"><p><?=_e('This is a widget ready area that appears on all shop-related pages. Add some widgets to Shop Sidebar and they will appear here.', 'freshopstheme')?></p></div>
 	<?php endif; ?>
@@ -37,7 +37,6 @@ ________________________________________________________________________________
 	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Main Sidebar") ) : ?>
 
 		<?php dynamic_sidebar('Main Sidebar'); ?>
-
 	<?php else: ?>
 		<div class="no-widgets"><p><?=_e('This is a widget ready area that appears on all non-blog, non-shop pages. Add some widgets to Main Sidebar and they will appear here.', 'freshopstheme')?></p></div>
 	<?php endif; ?>
