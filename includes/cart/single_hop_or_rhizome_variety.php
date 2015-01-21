@@ -23,7 +23,7 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 			<dt class="aligncenter">
 				<?php
 				$alt_objects = get_field('alternate_form');
-				if( $alt_objects ): 
+				if( $alt_objects ):
 							// override $post
 						$post = $alt_objects;
 					setup_postdata( $post );
@@ -76,7 +76,7 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 					
 					<?php (float) $alphamax = get_field('alpha-max'); ?>
 					
-					<?php (float) $alphavalue = ( ( $alphamax+$alphamin)/2); ?> 
+					<?php (float) $alphavalue = ( ( $alphamax+$alphamin)/2); ?>
 					
 				<?php else: //otherwise alphamin is the alphavalue, so set it accordingly and unset min and max
 				
@@ -116,17 +116,17 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 		<?php endif; ?>
 		
 		
-		<?php if(get_field('beta-min')) : //<!-- Show beta range if both min and max have values, otherwise show min. --> ?> 
+		<?php if(get_field('beta-min')) : //<!-- Show beta range if both min and max have values, otherwise show min. --> ?>
 			<dl>
 				<dt>Beta Range</dt>
 
 				<dd>
-					<?php 
+					<?php
 					echo get_field('beta-min');
 					
 						if (get_field('beta-max')) : //hyphen followed by max value
 						?>–<?php echo get_field('beta-max');
-						endif; 
+						endif;
 						?>%
 					</dd>
 				</dl>
@@ -221,35 +221,36 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 		<?php if(get_field('possible_substitutions')): ?>
 			<dl>
 				<dt>Possible Substitutions</dt>
-				<dd> 
+				<dd>
 						<?php
 
 					/*
-					*  Loop through multi-select field post objects( setup postdata ) 
+					*  Loop through multi-select field post objects( setup postdata )
 					*  */
 
 					$post_objects = get_field('possible_substitutions');
 
 					if( $post_objects ): ?>
 					<ul>
-						<?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+						<?php foreach( $post_objects as $post): # variable must be called $post (IMPORTANT) ?>
 							<?php setup_postdata($post); ?>
 							<li>
 								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 							</li>
 						<?php endforeach; ?>
 					</ul>
-					<?php wp_reset_postdata(); // so the rest of the page works correctly ?>
+					<?php wp_reset_postdata(); # so the rest of the page works correctly ?>
 				<?php endif; ?>
 		</dl>
 	<?php endif;?>
 
-	<?php // If we're on a rhizome product page, then include the rhizome partial ?>
+	<?php #If we're on a rhizome product page, then include the rhizome partial ?>
 	<?php if(has_term('rhizomes', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) : ?>
 		<?php include(locate_template('includes/cart/single_rhizome_variety.php')); ?>
 	<?php else: ?>
-		</div><!-- end two-column percentage section for hops (not rhizomes)-->
-	<?php endif; //end rhizome conditional ?>
+		</div>
+		<?php #end two-column percentage section for hops (not rhizomes) ?>
+	<?php endif; #end rhizome conditional ?>
 	
 	<?php if(get_field('usda_hops_info')): ?>
 		<?php the_title( '<h3 class="h2">USDA ', ' Information</h3>' ); ?>

@@ -1,4 +1,21 @@
 <?php # The content loop for the rhizome information page. ?>
+
+<?php if (have_rows('tab_panels')): ?>
+	<?php while (have_rows('tab_panels')): ?>
+		<?php
+			the_row();
+			$section_title = get_sub_field('section_title');
+			$section_slug = sanitize_title($section_title);
+		?>
+
+		<div id="<?=$section_slug?>">
+			<?=the_sub_field('section_content')?>
+		</div>
+	<?php endwhile; ?>
+<?php endif; ?>
+
+<?=the_content()?>
+
 <?php
 
 	# WP_Query arguments:
@@ -8,7 +25,8 @@
 			array(
 				'taxonomy' => 'wpsc_product_category',
 				'field' => 'slug',
-				'terms' => 'rhizomes'
+				'terms' => 'rhizomes',
+				'public' => true,
 			)
 		),
 		'order'                  => 'ASC',
@@ -25,10 +43,9 @@
 	<table class="table-01">
 		<thead>
 			<tr>
-				<th scope="col">Name</th>
-				<th scope="col">Acid Range (Alpha %)</th>
-				<th scope="col">Flavor Perception</th>
-				<th scope="col">Commercial Example</th>
+				<th scope="col">Variety</th>
+				<th scope="col">Description</th>
+				<th scope="col">Alpha %</th>
 			</tr>
 		</thead>
 		<?php while ($query->have_posts()): ?>
@@ -36,12 +53,17 @@
 			<?php $query->the_post(); ?>
 
 			<tr>
-				
-				<td><a href='<?php the_permalink();?>'><?php the_title(); ?></a></td>
+				<td>
+					<a href='<?php the_permalink();?>'><?php the_title(); ?></a>
+				</td>
+
+				<td>
+					<?php the_content(); ?>
+				</td>
 				
 				<td>
 					
-					<?php 
+					<?php
 					// Begin alpha logic-- output current alpha value, or else min–max.
 						if (get_field('alpha')):
 							echo (get_field('alpha'));
@@ -50,13 +72,9 @@
 							if (get_field('alpha-max')):
 								echo '–' . get_field('alpha-max');
 							endif;
-					echo'%';
-					endif; ?>
+						echo'%';
+						endif; ?>
 				</td>
-				
-				<td><?php if (get_field('flavor')): echo get_field('flavor'); endif; ?></td>
-				
-				<td><?php if (get_field('example')) { echo get_field('example'); } ?></td>
 			</tr>
 
 		<?php endwhile; ?>

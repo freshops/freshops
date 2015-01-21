@@ -1,11 +1,7 @@
 <?php
-
-
 	/**
 	 * Template Name: No Sidebar
 	 */
-
-
 ?>
 <?=get_header()?>
 
