@@ -1168,7 +1168,7 @@ div.wpsc_product_search{
 .wpsc_categories>li {margin-bottom: 2.5rem;} /*add vertical padding between top-level categories on the main shop page*/
 
 .wpsc_categories li {
-	clear:both;
+	clear:none;
 	float: left;
 	min-width: 200px;
 	margin-right: 10px;
