@@ -929,6 +929,7 @@ background-color: #f5f5f5;
 
 #content #checkout_page_container table.productcart {
 	border: none;
+	width: 100%;
 }
 
 #checkout_page_container table.checkout_cart tr.wpsc_coupon_row tr {
@@ -945,6 +946,11 @@ background-color: #f5f5f5;
 	border: none;
 	padding:0px;
 	vertical-align: top;
+	width: 100%;
+}
+
+.wpsc_checkout_table h4 {
+	margin-top: 1.5rem;
 }
 
 #content table.wpsc_checkout_table tr td:first-child  {
@@ -962,6 +968,7 @@ background-color: #f5f5f5;
 
 #checkout_page_container table.checkout_cart {
 	border:none;
+	width: 100%;
 }
 
 #checkout_page_container table.checkout_cart tr, #content #checkout_page_container table.checkout_cart tr {
