@@ -354,5 +354,5 @@ function is_a_page_containing_products() {
 add_filter( ‘wpsc_product_order’ , ‘change_product_order’ );
 
 function change_product_order(){
-	return 'desc';
+	return 'asc';
 }
