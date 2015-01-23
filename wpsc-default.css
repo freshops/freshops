@@ -946,7 +946,7 @@ background-color: #f5f5f5;
 	border: none;
 	padding:0px;
 	vertical-align: top;
-	width: 100%;
+	/*width: 100%;*/
 }
 #content table.wpsc_checkout_table tr td {
 	border: medium none;
