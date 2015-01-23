@@ -882,7 +882,8 @@ span.rating_saved{
 }
 
 #content img#wpsc_checkout_gravatar{
-	float:left;
+	display:none;
+	visibility: false;
 	margin:0px 10px 10px 0px;
 }
 
