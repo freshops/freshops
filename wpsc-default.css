@@ -762,6 +762,13 @@ span.rating_saved{
 	padding: 0px 6px 0px 0px;
 }
 
+.product_row > td>.pricedisplay{
+padding: 0 10px;
+}
+
+.wpsc_product_quantity {max-width: 100px;
+}
+
 .widget_wpsc_shopping_cart .checkout-total, .widget_wpsc_shopping_cart .pluspostagetax {
 	text-align:right;
 	font-weight:bold;
@@ -769,7 +776,7 @@ span.rating_saved{
 
 .shopping-cart-wrapper .shoppingcart table tbody td.product-name{
 	text-align: left;
-	max-width: 90px;
+	/*max-width: 90px;*/
 	word-wrap: break-word;
 	overflow: hidden;
 }
@@ -830,7 +837,13 @@ span.rating_saved{
 	line-height:1.2em;
 	font-size:14px;
 	margin:0;
+	padding: 0 10px;
 }
+
+#checkout_page_container table.checkout_cart tr.header th {
+    text-align: left;
+    padding: 0px 10px;
+    }
 
 #content #checkout_page_container input[type="submit"] {
 	float:right;
@@ -879,6 +892,10 @@ span.rating_saved{
 
 .wpsc_checkout_table input.text{
 	width:255px;
+}
+label.wpsc_email_address {
+	float: left;
+	margin-right: 1rem;
 }
 
 #content img#wpsc_checkout_gravatar{
@@ -1057,6 +1074,7 @@ table.wpsc_checkout_table label {
 	width: auto;
 	max-width: 100%;
 	padding-left: 20px;
+	padding-right: 10px;
 }
 
 .wpsc_registration_form {

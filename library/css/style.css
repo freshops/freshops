@@ -905,7 +905,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
 .green-btn, #signupform input[type="submit"],
-#searchform input[type="submit"], input[class$="-submit"] {
+#searchform input[type="submit"], input[type="submit"], input[class$="-submit"] {
   display: inline-block;
   position: relative;
   font-family: "Georgia", Cambria, Times New Roman, Times, serif;
@@ -923,12 +923,12 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   -webkit-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out; }
   .green-btn:hover, #signupform input[type="submit"]:hover,
-  #searchform input[type="submit"]:hover, input[class$="-submit"]:hover, .green-btn:focus, #signupform input[type="submit"]:focus,
-  #searchform input[type="submit"]:focus, input[class$="-submit"]:focus {
+  #searchform input[type="submit"]:hover, input[type="submit"]:hover, input[class$="-submit"]:hover, .green-btn:focus, #signupform input[type="submit"]:focus,
+  #searchform input[type="submit"]:focus, input[type="submit"]:focus, input[class$="-submit"]:focus {
     color: white;
     text-decoration: none; }
   .green-btn:active, #signupform input[type="submit"]:active,
-  #searchform input[type="submit"]:active, input[class$="-submit"]:active {
+  #searchform input[type="submit"]:active, input[type="submit"]:active, input[class$="-submit"]:active {
     top: 1px; }
 
 /*
@@ -937,7 +937,7 @@ You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
 */
 .green-btn, #signupform input[type="submit"],
-#searchform input[type="submit"], input[class$="-submit"] {
+#searchform input[type="submit"], input[type="submit"], input[class$="-submit"] {
   background-color: #4e9439;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#134514), to(#4e9439));
   background-image: -webkit-linear-gradient(top, #134514, #4e9439);
@@ -951,8 +951,8 @@ and it will create a button dependant on those variables.
   margin-bottom: 0.5rem;
   font-size: 18px; }
   .green-btn:hover, #signupform input[type="submit"]:hover,
-  #searchform input[type="submit"]:hover, input[class$="-submit"]:hover, .green-btn:focus, #signupform input[type="submit"]:focus,
-  #searchform input[type="submit"]:focus, input[class$="-submit"]:focus {
+  #searchform input[type="submit"]:hover, input[type="submit"]:hover, input[class$="-submit"]:hover, .green-btn:focus, #signupform input[type="submit"]:focus,
+  #searchform input[type="submit"]:focus, input[type="submit"]:focus, input[class$="-submit"]:focus {
     background-color: #468533;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#0f350f), to(#468533));
     background-image: -webkit-linear-gradient(top, #0f350f, #468533);
@@ -960,7 +960,7 @@ and it will create a button dependant on those variables.
     background-image: -o-linear-gradient(top, #0f350f, #468533);
     background-image: linear-gradient(to bottom, #0f350f, #468533); }
   .green-btn:active, #signupform input[type="submit"]:active,
-  #searchform input[type="submit"]:active, input[class$="-submit"]:active {
+  #searchform input[type="submit"]:active, input[type="submit"]:active, input[class$="-submit"]:active {
     background-color: #448232;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#0d310e), to(#448232));
     background-image: -webkit-linear-gradient(top, #0d310e, #448232);
@@ -1329,6 +1329,9 @@ INPUTS
   top: 5px;
   right: .5em;
   z-index: 100; }
+
+input[type="submit"] {
+  padding: 3px 20px; }
 
 /*********************
 BASE (MOBILE) SIZE

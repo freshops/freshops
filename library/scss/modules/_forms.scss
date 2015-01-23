@@ -253,4 +253,10 @@ INPUTS
 	
 }
 
-.checkout_cart { @extend list_productdisplay; }
+input[type="submit"] {
+		
+		@extend .green-btn;
+		
+		padding: 3px 20px;
+		
+	}
