@@ -762,11 +762,18 @@ span.rating_saved{
 	padding: 0px 6px 0px 0px;
 }
 
+
+
 .product_row > td>.pricedisplay{
 padding: 0 10px;
 }
+.qty > input:nth-child(1)
+.qty input[type="text"]{
+	width: 3.6rem;
+}
 
-.wpsc_product_quantity {max-width: 100px;
+.wpsc_product_quantity {
+	width: 140px;
 }
 
 .widget_wpsc_shopping_cart .checkout-total, .widget_wpsc_shopping_cart .pluspostagetax {

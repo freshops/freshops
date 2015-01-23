@@ -27,8 +27,9 @@
 
 				Blog page
 
+			<?php elseif (get_query_var( 'taxonomy' ) == 'wpsc_product_category' ): ?>
+				<?=single_cat_title()?>
 			<?php else: ?>
-
 				<?php # Archive stuff: ?>
 
 				<?php if (is_category()): ?>
