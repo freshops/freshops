@@ -1821,12 +1821,14 @@ you can add resource intensive styles.
   .widget {
     padding: 0 10px;
     margin: 0 0; }
-    .widget ul li {
-      margin-bottom: 0;
-      /* deep nesting */ }
-      .widget ul li ul {
-        margin-top: 0em;
-        padding-left: 1em; }
+    .widget ul {
+      margin: 0; }
+      .widget ul li {
+        margin-bottom: 0;
+        /* deep nesting */ }
+        .widget ul li ul {
+          margin-top: 0em;
+          padding-left: 1em; }
 
   /* links widget */
   /* meta widget */

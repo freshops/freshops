@@ -27,12 +27,11 @@
 
 				Blog page
 
-			<?php elseif (get_query_var( 'taxonomy' ) == 'wpsc_product_category' ): ?>
-				<?=single_cat_title()?>
 			<?php else: ?>
 				<?php # Archive stuff: ?>
 
-				<?php if (is_category()): ?>
+				<? #If it's a post category page or a product category page, print the category title ?>
+				<?php if (is_category()  || (get_query_var( 'taxonomy' ) == 'wpsc_product_category' )  ) : ?>
 					<span><?=_e('Posts Categorized:', 'freshopstheme')?></span>
 					<?=single_cat_title()?>
 				<?php elseif (is_tag()): ?>
@@ -58,6 +57,11 @@
 					<span><?=_e('Yearly Archives:', 'freshopstheme')?></span>
 					<?=the_time('Y')?>
 				<?php endif; ?>
+
+			<?php ?>
+
+			<?php #Shop Category Page:?>
+			<?=single_cat_title()?>
 
 			<?php endif; ?>
 		</h1>
