@@ -165,8 +165,12 @@ Author URI: http://instinct.co.nz
 }
 
 .default_product_display .wpsc_variation_forms {
-	padding:2px;
+	padding: 0 2px 0 0;
 	margin-bottom:10px;
+}
+.wpsc_variation_forms {
+top: 0.75rem;
+position: relative;
 }
 
 .wpsc_select_variation{
