@@ -58,19 +58,24 @@ global $wp_query, $wpdb;
 		<?php endif; ?>
 		<table class="list_productdisplay <?php echo wpsc_category_class(); ?>">
 			<?php /** start the product loop here */?>
-			<?php $alt = 0;	?>
+			<?php $alt = 0; ?>
 			<?php while (wpsc_have_products()) :  wpsc_the_product(); ?>
 				<?php
 				$alt++;
 				if ($alt %2 == 1) { $alt_class = 'alt'; } else { $alt_class = ''; }
 				?>
 				<tr class="product_view_<?php echo wpsc_the_product_id(); ?> <?php echo $alt_class;?>">
-					<td width="40%">
+					<td>
 						<h2 class="prodtitle">
 							<?php if(get_option('hide_name_link') == 1) : ?>
 								<?php echo wpsc_the_product_title(); ?>
 							<?php else: ?>
 								<a class="wpsc_product_title" href="<?php echo wpsc_the_product_permalink(); ?>"><?php echo wpsc_the_product_title(); ?></a>
+							<?php endif; ?>
+
+							<?php #Customization: added content after title ?>
+							<?php if(wpsc_the_product_description() != ''): ?>
+								<?php echo wpsc_the_product_description(); ?>
 							<?php endif; ?>
 							<?php echo wpsc_edit_the_product_link(); ?>
 						</h2>
@@ -89,9 +94,12 @@ global $wp_query, $wpdb;
  						<?php do_action('wpsc_product_before_description', wpsc_the_product_id(), $wp_query->post); ?>
 					</td>
 					<td class='wpsc_price_td'>
-						<?php wpsc_the_product_price_display( array( 'output_you_save' => false ) ); ?>
+						<?php echo wpsc_the_product_price(); ?>
 					</td>
 
+					<?php
+
+					?>
 					<td>
 						<?php if(wpsc_product_external_link(wpsc_the_product_id()) != '') : ?>
 							<?php	$action =  wpsc_product_external_link(wpsc_the_product_id()); ?>
@@ -102,13 +110,18 @@ global $wp_query, $wpdb;
 							<?php do_action ( 'wpsc_product_form_fields_begin' ); ?>
 
 							<?php if(wpsc_has_multi_adding()): ?>
-                            <div class="quantity_container">
-								<label class="wpsc_quantity_update" for="wpsc_quantity_update_<?php echo wpsc_the_product_id(); ?>"><?php _e('Quantity:', 'wpsc'); ?></label>
-								<input type="text" id="wpsc_quantity_update_<?php echo wpsc_the_product_id(); ?>" name="wpsc_quantity_update" size="2" value="1" />
-								<input type="hidden" name="key" value="<?php echo wpsc_the_cart_item_key(); ?>"/>
-								<input type="hidden" name="wpsc_update_quantity" value="true" />
-								<input type='hidden' name='wpsc_ajax_action' value='wpsc_update_quantity' />
-							</div><!--close quantity_container-->
+								<div class="quantity_container">
+									<label class="wpsc_quantity_update" for="wpsc_quantity_update_<?php echo wpsc_the_product_id(); ?>"><?php _e('Quantity:', 'wpsc'); ?></label>
+									<input type="text" id="wpsc_quantity_update_<?php echo wpsc_the_product_id(); ?>" name="wpsc_quantity_update" value="2" />
+									<?php
+									//if it's a hop, add OZ. after the input field
+									
+									?>
+
+									<input type="hidden" name="key" value="<?php echo wpsc_the_cart_item_key(); ?>"/>
+									<input type="hidden" name="wpsc_update_quantity" value="true" />
+									<input type='hidden' name='wpsc_ajax_action' value='wpsc_update_quantity' />
+								</div><!--close quantity_container-->
 							<?php endif ;?>
 							<input type="hidden" value="add_to_cart" name="wpsc_ajax_action" />
 							<input type="hidden" value="<?php echo wpsc_the_product_id(); ?>" name="product_id" />

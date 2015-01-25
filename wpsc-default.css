@@ -357,6 +357,11 @@ position: relative;
 	padding:0;
 }
 
+#content #list_view_products_page_container input[type="text"] {
+width: 2rem !important;
+}
+
+
 table.list_productdisplay form.product_form {
 	display:inline;
 }
@@ -397,7 +402,7 @@ table.list_productdisplay .oldprice {
 
 #list_view_products_page_container table.list_productdisplay .wpsc_buy_button, #content #list_view_products_page_container table.list_productdisplay .wpsc_buy_button {
 	padding:5px;
-
+	line-height:1;
 }
 
 table.list_productdisplay h2.prodtitle, #content table.list_productdisplay h2.prodtitle {
@@ -845,10 +850,10 @@ padding: 0 10px;
 #checkout_page_container input,
 #content #checkout_page_container textarea,
 #content #checkout_page_container input {
-	line-height:1.2em;
+/*	line-height:1.2em;
 	font-size:14px;
 	margin:0;
-	padding: 0 10px;
+	padding: 0 10px;*/
 }
 
 #checkout_page_container table.checkout_cart tr.header th {
