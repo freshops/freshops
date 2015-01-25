@@ -50,13 +50,20 @@ global $wp_query, $wpdb;
 				<?php endif; ?>
 			</div><!--close wpsc_category_details-->
 		<?php endif; ?>
-
 		<?php if(wpsc_has_pages_top()) : ?>
 			<div class="wpsc_page_numbers_top">
 				<?php wpsc_pagination(); ?>
 			</div><!--close wpsc_page_numbers_top-->
 		<?php endif; ?>
-		<table class="list_productdisplay <?php echo wpsc_category_class(); ?>">
+		<table class="list_productdisplay table-01 <?php echo wpsc_category_class(); ?>">
+		<th>Name</th>
+		<th>Description</th>
+		<?php if ( ( is_hop( ) ) || (is_rhizome() ) ): ?>
+			<th>Alpha %</th>
+		<?php endif; #end is hop or rhizome ?>
+		<? #@TODO:  Add conditional label for rhizome categories ?>
+		<th>Price/oz.</th>
+		<th>Quantity</th>
 			<?php /** start the product loop here */?>
 			<?php $alt = 0; ?>
 			<?php while (wpsc_have_products()) :  wpsc_the_product(); ?>
@@ -65,6 +72,7 @@ global $wp_query, $wpdb;
 				if ($alt %2 == 1) { $alt_class = 'alt'; } else { $alt_class = ''; }
 				?>
 				<tr class="product_view_<?php echo wpsc_the_product_id(); ?> <?php echo $alt_class;?>">
+
 					<td>
 						<h2 class="prodtitle">
 							<?php if(get_option('hide_name_link') == 1) : ?>
@@ -72,14 +80,15 @@ global $wp_query, $wpdb;
 							<?php else: ?>
 								<a class="wpsc_product_title" href="<?php echo wpsc_the_product_permalink(); ?>"><?php echo wpsc_the_product_title(); ?></a>
 							<?php endif; ?>
-
-							<?php #Customization: added content after title ?>
-							<?php if(wpsc_the_product_description() != ''): ?>
-								<?php echo wpsc_the_product_description(); ?>
-							<?php endif; ?>
 							<?php echo wpsc_edit_the_product_link(); ?>
 						</h2>
 					</td>
+					<td><?php #Customization: added product description ?>
+						<p>
+							<?php if(wpsc_the_product_description() != ''): ?>
+								<?php echo wpsc_the_product_description(); ?>
+							<?php endif; ?>
+						</p>
 					<?php if(wpsc_show_stock_availability()): ?>
 						<td class="stock">
 						<?php if(wpsc_product_has_stock()) : ?>
@@ -90,9 +99,18 @@ global $wp_query, $wpdb;
 						</td>
 					<?php endif; ?>
 
-					<td>
- 						<?php do_action('wpsc_product_before_description', wpsc_the_product_id(), $wp_query->post); ?>
-					</td>
+ 						<?php
+ 						// do_action('wpsc_product_before_description', wpsc_the_product_id(), $wp_query->post);
+ 						?>
+ 						<?php if ( ( is_hop( ) ) || (is_rhizome() ) ): ?>
+ 							<td>
+							<?php if (get_field('alpha-min')):
+								echo get_field('alpha-min');?><?php if (get_field('alpha-max')): 
+									echo '-' . get_field('alpha-max'); 
+								endif; ?>%
+							<?php endif; #end if alpha-min?> 
+							</td>
+						<?php endif; #end is hop or rhizome ?>
 					<td class='wpsc_price_td'>
 						<?php echo wpsc_the_product_price(); ?>
 					</td>

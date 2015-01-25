@@ -347,6 +347,33 @@ function is_a_page_containing_products() {
 
 }
 
+/* product category checks for hops and rhizomes */
+function is_hop() {
+	global $post;
+	$is_hop = false;
+
+	if ( ( has_term('hop', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) || (has_term('hop', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) )  :
+
+		$is_hop = true;
+
+	endif;
+
+	return $is_hop;
+}
+
+function is_rhizome() {
+	global $post;
+	$is_rhizome = false;
+
+	if ( ( has_term('hop', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) || (has_term('rhizomes', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) )  :
+
+		$is_rhizome = true;
+
+	endif;
+
+	return $is_rhizome;
+}
+
 /*=============================================
 = Set WP E-Commerce Sorting to Descending Sort Order=
 =============================================*/
