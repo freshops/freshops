@@ -55,6 +55,7 @@ global $wp_query, $wpdb;
 				<?php wpsc_pagination(); ?>
 			</div><!--close wpsc_page_numbers_top-->
 		<?php endif; ?>
+		<div class="scroll">
 		<table class="list_productdisplay table-01 <?php echo wpsc_category_class(); ?>">
 		<th>Name</th>
 		<th>Description</th>
@@ -172,7 +173,7 @@ global $wp_query, $wpdb;
 			<?php endwhile; ?>
 			<?php /** end the product loop here */?>
 		</table>
-
+		</div>
 
 		<?php if(wpsc_product_count() == 0):?>
 			<p><?php  _e('There are no products in this group.', 'wpsc'); ?></p>
