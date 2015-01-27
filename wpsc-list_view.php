@@ -38,7 +38,13 @@ global $wp_query, $wpdb;
 
 
 
-	<?php if(wpsc_display_products()): ?>
+	<?php if(wpsc_display_products()):
+		if(wpsc_is_in_category()) :
+			if (is_hop_cat()):
+				echo 'HOP CATHOP CATHOP CATHOP CATHOP CATHOP CAT';
+			endif;
+		endif;
+     	?>
 		<?php if(wpsc_is_in_category()) : ?>
 			<div class="wpsc_category_details">
 				<?php if(get_option('show_category_thumbnails') && wpsc_category_image()) : ?>
@@ -59,11 +65,10 @@ global $wp_query, $wpdb;
 		<table class="list_productdisplay table-01 <?php echo wpsc_category_class(); ?>">
 		<th>Name</th>
 		<th>Description</th>
-		<?php if ( ( is_hop( ) ) || (is_rhizome() ) ): ?>
-			<th>Alpha %</th>
-		<?php endif; #end is hop or rhizome ?>
+		<th>Alpha %</th>
 		<? #@TODO:  Add conditional label for rhizome categories ?>
-		<th>Price/oz.</th>
+		<th>Weight</th>
+		<th>Price</th>
 		<th>Quantity</th>
 			<?php /** start the product loop here */?>
 			<?php $alt = 0; ?>
@@ -103,21 +108,35 @@ global $wp_query, $wpdb;
  						<?php
  						// do_action('wpsc_product_before_description', wpsc_the_product_id(), $wp_query->post);
  						?>
- 						<?php if ( ( is_hop( ) ) || (is_rhizome() ) ): ?>
  							<td>
-							<?php if (get_field('alpha-min')):
-								echo get_field('alpha-min');?><?php if (get_field('alpha-max')): 
+							<?php 
+							#USE CURRENT ALPHA VALUE IF SET, ELSE USE MIN-MAX%
+							if (get_field('alpha')):
+
+								echo get_field('alpha');
+
+							elseif (get_field('alpha-min')):
+
+								echo get_field('alpha-min');
+								if (get_field('alpha-max')):
+
 									echo '-' . get_field('alpha-max'); 
-								endif; ?>%
-							<?php endif; #end if alpha-min?> 
+								endif;
+
+							endif; #END ALPHA?>% 
 							</td>
-						<?php endif; #end is hop or rhizome ?>
-					<td class='wpsc_price_td'>
-						<?php echo wpsc_the_product_price(); ?>
+					<td>
+					<?php $product_id=get_the_ID();
+							$metadata=get_product_meta($product_id, 'product_metadata', true);
+							$weight=$metadata['weight'];
+							$weight=$weight * 16; //cart weights are stored as lbs-- convert to oz.
+							//hop-specific 
+							# $weight_unit=$metadata['weight_unit'];
+							echo $weight . " OZ."; ?>
 					</td>
-
+					<td>
 					<?php
-
+						echo wpsc_the_product_price();
 					?>
 					<td>
 						<?php if(wpsc_product_external_link(wpsc_the_product_id()) != '') : ?>
@@ -131,10 +150,10 @@ global $wp_query, $wpdb;
 							<?php if(wpsc_has_multi_adding()): ?>
 								<div class="quantity_container">
 									<label class="wpsc_quantity_update" for="wpsc_quantity_update_<?php echo wpsc_the_product_id(); ?>"><?php _e('Quantity:', 'wpsc'); ?></label>
-									<input type="text" id="wpsc_quantity_update_<?php echo wpsc_the_product_id(); ?>" name="wpsc_quantity_update" value="2" />
+									<input type="text" id="wpsc_quantity_update_<?php echo wpsc_the_product_id(); ?>" name="wpsc_quantity_update" value="<?php 
+									#HOP-SPECIFIC MODIFICATION 
+									?>2" />
 									<?php
-									//if it's a hop, add OZ. after the input field
-									
 									?>
 
 									<input type="hidden" name="key" value="<?php echo wpsc_the_cart_item_key(); ?>"/>

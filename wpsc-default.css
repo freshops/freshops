@@ -665,7 +665,7 @@ span.rating_saved{
 	display: none;
 }
 /*-----FANCY NOTIFICATION STYLING-----*/
-#fancy_notification{
+#fancy_notification {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -675,10 +675,11 @@ span.rating_saved{
 	height: auto;
 	z-index: 9;
 }
-#fancy_notification #loading_animation{
+
+#fancy_notification #loading_animation {
 	display: none;
 }
-#fancy_notification #fancy_notification_content{
+#fancy_notification #fancy_notification_content {
 	display: none;
 	width: 300px;
 	padding: 8px;
@@ -691,7 +692,7 @@ span.rating_saved{
 	display: block;
 	font-weight: normal;
 }
-#fancy_notification #fancy_notification_content a{
+#fancy_notification #fancy_notification_content a {
 	display: block;
 	float: left;
 	margin-right: 6px;
@@ -859,7 +860,7 @@ padding: 0 10px;
 #checkout_page_container table.checkout_cart tr.header th {
     text-align: left;
     padding: 0px 10px;
-    }
+}
 
 #content #checkout_page_container input[type="submit"] {
 	float:right;

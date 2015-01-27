@@ -347,18 +347,19 @@ function is_a_page_containing_products() {
 
 }
 
-/* product category checks for hops and rhizomes */
-function is_hop() {
-	global $post;
-	$is_hop = false;
-
-	if ( ( has_term('hop', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) || (has_term('hop', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) )  :
-
-		$is_hop = true;
-
-	endif;
-
-	return $is_hop;
+/* product category check for hop category */
+function is_hop_cat() {
+		global $post;
+		$is_hop_cat = false;
+ 		if(wpsc_category_id() == 78 || 
+		wpsc_category_id() == 155 || 
+		wpsc_category_id() == 156 || 
+		wpsc_category_id() == 157 ||
+		wpsc_category_id() == 174
+		) {
+		     $is_hop_cat=true;
+	     	}
+	return $is_hop_cat; 
 }
 
 function is_rhizome() {

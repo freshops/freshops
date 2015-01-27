@@ -2882,7 +2882,8 @@ a, a:visited {
     .table-01 tbody tr td {
       font-size: 85%;
       border: 1px solid #f6f9f1;
-      background: #f6f9f1; }
+      background: #f6f9f1;
+      vertical-align: top; }
     .table-01 tbody tr:nth-child(even) {
       border-top: 1px solid #f6f9f1;
       background: #fff; }
