@@ -56,7 +56,9 @@ global $wp_query, $wpdb;
 	<table class="list_productdisplay table-01 <?php echo wpsc_category_class(); ?>">
 	<th>Name</th>
 	<th>Description</th>
-	<th>Alpha %</th>
+	<?php if ( is_hop_cat() || is_rhizome_cat() ): ?>
+		<th>Alpha %</th>
+	<?php endif; ?>
 	<th>Price<?php  if (is_hop_cat()): echo " per Oz."; endif;?>
 	</th>
 	<th>Quantity</th>
