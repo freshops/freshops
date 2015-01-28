@@ -52,16 +52,17 @@ global $wp_query, $wpdb;
 		<?php wpsc_pagination(); ?>
 		</div><!--close wpsc_page_numbers_top-->
 	<?php endif; ?>
+
 	<div class="scroll" style="clear:left;">
-	<table class="list_productdisplay table-01 <?php echo wpsc_category_class(); ?>">
-	<th>Name</th>
-	<th>Description</th>
-	<?php if ( is_hop_cat() || is_rhizome_cat() ): ?>
-		<th class="alpha">Alpha %</th>
-	<?php endif; ?>
-	<th>Price<?php  if (is_hop_cat()): echo " per Oz."; endif;?>
-	</th>
-	<th>Quantity</th>
+		<table class="list_productdisplay table-01 <?php echo wpsc_category_class(); ?>">
+			<th>Name</th>
+			<th>Description</th>
+			<?php if ( is_hop_cat() || is_rhizome_cat() ): ?>
+				<th class="alpha">Alpha</th>
+			<?php endif; ?>
+			<th>Price<?php  if (is_hop_cat()): echo " per Oz."; endif;?>
+			</th>
+			<th>Quantity</th>
 	<?php /** start the product loop here */?>
 	<?php $alt = 0; ?>
 	<?php while (wpsc_have_products()) :  wpsc_the_product(); ?>

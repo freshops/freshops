@@ -354,6 +354,13 @@ position: relative;
 	display:none;
 }
 
+#list_view_products_page_container .alpha{
+ width:50px;
+}
+
+#list_view_products_page_container th{
+	vertical-align: bottom;
+}
 
 #list_view_products_page_container input, #content #list_view_products_page_container input, #list_view_products_page_container textarea, #content #list_view_products_page_container textarea {
 	margin:0;
@@ -1210,7 +1217,6 @@ div.wpsc_product_search{
 .productcol > :last-child { margin-bottom: 0; }
 
 @media all and (min-width: 960px) {
-	
 	.product-secondary {
 		float: left;
 		width: 150px;
@@ -1219,7 +1225,6 @@ div.wpsc_product_search{
 		margin-left: 170px;
 		xmax-width: 500px;
 	}
-	
 }
 
 .wpsc_quantity_update input[type="text"] { width: 5em; }
