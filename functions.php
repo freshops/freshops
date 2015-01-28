@@ -347,19 +347,38 @@ function is_a_page_containing_products() {
 
 }
 
+
+/*=============================================
+=           	PRODUCT CATEGORY CHECKS           	=
+=============================================*/
 /* product category check for hop category */
 function is_hop_cat() {
 		global $post;
 		$is_hop_cat = false;
- 		if(wpsc_category_id() == 78 || 
-		wpsc_category_id() == 155 || 
-		wpsc_category_id() == 156 || 
-		wpsc_category_id() == 157 ||
-		wpsc_category_id() == 174
+ 		if(wpsc_category_id() == 77 ||
+		wpsc_category_id() == 172 ||
+		wpsc_category_id() == 139 ||
+		wpsc_category_id() == 137 ||
+		wpsc_category_id() == 138
 		) {
 		     $is_hop_cat=true;
 	     	}
 	return $is_hop_cat; 
+}
+
+/* product category check for rhizome category */
+function is_rhizome_cat() {
+		global $post;
+		$is_rhizome_cat = false;
+ 		if(wpsc_category_id() == 78 ||
+		wpsc_category_id() == 155 ||
+		wpsc_category_id() == 156 ||
+		wpsc_category_id() == 157 ||
+		wpsc_category_id() == 174
+		) {
+		     $is_rhizome_cat=true;
+	     	}
+	return  $is_rhizome_cat; 
 }
 
 function is_rhizome() {
@@ -374,9 +393,10 @@ function is_rhizome() {
 
 	return $is_rhizome;
 }
+/*-----  END CATEGORY CHECKS  ------*/
 
 /*=============================================
-= Set WP E-Commerce Sorting to Descending Sort Order=
+= Set WP E-Commerce Sorting to Ascending Sort Order	=
 =============================================*/
 
 add_filter( ‘wpsc_product_order’ , ‘change_product_order’ );
