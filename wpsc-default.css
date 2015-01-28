@@ -243,6 +243,9 @@ position: relative;
 .product_grid_display .is_variation {
 	display: none;
 }
+.product_grid_display{
+	clear:left;
+}
 
 .default_product_display .in_stock,
 .single_product_display .in_stock {
