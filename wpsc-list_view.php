@@ -57,7 +57,7 @@ global $wp_query, $wpdb;
 	<th>Name</th>
 	<th>Description</th>
 	<?php if ( is_hop_cat() || is_rhizome_cat() ): ?>
-		<th>Alpha %</th>
+		<th class="alpha">Alpha %</th>
 	<?php endif; ?>
 	<th>Price<?php  if (is_hop_cat()): echo " per Oz."; endif;?>
 	</th>
@@ -100,8 +100,7 @@ global $wp_query, $wpdb;
 
 		<? # do_action('wpsc_product_before_description', wpsc_the_product_id(), $wp_query->post); ?>
 		<?php if ( is_hop_cat() || is_rhizome_cat() ): ?>
-			<td>
-			
+			<td class="alpha">
 
 				<?php  if (get_field('alpha')):  #USE CURRENT ALPHA VALUE IF SET, ELSE USE MIN–MAX%
 
