@@ -17,6 +17,7 @@ ________________________________________________________________________________
 	<?php else: ?>
 	<?php endif; ?>
 <?php endif; ?>
+
 <?php if (is_front_page()) : ?>
 	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Home Sidebar") ) : ?>
 		<?php dynamic_sidebar('Home Sidebar'); ?>
@@ -31,6 +32,4 @@ ________________________________________________________________________________
 	<?php endif; ?>
 <?	elseif ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Main Sidebar") ) : ?>
 	<?php dynamic_sidebar('Main Sidebar'); ?>
-<?php else: ?>
-	<div class="no-widgets"><p><?=_e('This is a widget ready area that appears on all non-front-page, non-shop pages. Add some widgets to Main Sidebar and they will appear here.', 'freshopstheme')?></p></div>
 <?php endif;
