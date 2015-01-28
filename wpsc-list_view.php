@@ -35,9 +35,6 @@ global $wp_query, $wpdb;
 	<?php endif; ?>
 <?php endif; ?>
 
-
-
-
 <?php if(wpsc_display_products()): ?>
 	<?php if(wpsc_is_in_category()) : ?>
 		<div class="wpsc_category_details">
@@ -60,7 +57,8 @@ global $wp_query, $wpdb;
 	<th>Name</th>
 	<th>Description</th>
 	<th>Alpha %</th>
-	<th>Price Per OZ</th>
+	<th>Price<?php  if (is_hop_cat()): echo " per Oz."; endif;?>
+	</th>
 	<th>Quantity</th>
 	<?php /** start the product loop here */?>
 	<?php $alt = 0; ?>
@@ -136,7 +134,7 @@ global $wp_query, $wpdb;
 								<div class="quantity_container">
 								<label class="wpsc_quantity_update" for="wpsc_quantity_update_<?php echo wpsc_the_product_id(); ?>"><?php _e('Quantity:', 'wpsc'); ?></label>
 								<input type="text" id="wpsc_quantity_update_<?php echo wpsc_the_product_id(); ?>" name="wpsc_quantity_update" value="<?php if (is_hop_cat()):
-																				 echo '2';
+																				 echo '2'; #because 2oz is minimum per type
 																				else:
 																				 echo '1';
 																				endif; ?>" />
