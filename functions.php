@@ -47,50 +47,50 @@ require_once( 'library/admin.php' ); // this comes turned off by default
 
 
 
-	/************* Enqueue Scripts and Styles *************/
+/************* Enqueue Scripts and Styles *************/
 
-	function freshops_wp_enqueue_rhizome_scripts_styles() {
+function freshops_wp_enqueue_rhizome_scripts_styles() {
+	
+# See also: `freshops_scripts_and_styles` in `library/freshops.php`.
+
+	if ( ! is_admin()) {
 		
-	# See also: `freshops_scripts_and_styles` in `library/freshops.php`.
+		wp_register_style('special', get_stylesheet_directory_uri() . '/library/css/special.css', array(), '', 'all' );
+		
+		wp_enqueue_style('special');
+		
+		$script_path = get_template_directory_uri() . '/library/js/rhizome/';
 
-		if ( ! is_admin()) {
-			
-			wp_register_style('special', get_stylesheet_directory_uri() . '/library/css/special.css', array(), '', 'all' );
-			
-			wp_enqueue_style('special');
-			
-			$script_path = get_template_directory_uri() . '/library/js/rhizome/';
+		wp_register_script('meanmenu',      $script_path . 'jquery.meanmenu.js',          array('jquery'), 1, FALSE);
+		wp_register_script('nutshell',      $script_path . 'jquery.nutshell.js',          array('jquery'), 1, FALSE);
+		wp_register_script('cookie',        $script_path . 'jquery.cookie.js',            array('jquery'), 1, FALSE);
+		wp_register_script('dcjqaccordion', $script_path . 'jquery.dcjqaccordion.2.7.js', array('jquery'), 1, FALSE);
+		wp_register_script('fastclick',     $script_path . 'fastclick.js',                array('jquery'), 1, FALSE);
+		wp_register_script('rhizome',       $script_path . 'rhizome.js',                  array('jquery'), 1, FALSE);
 
-			wp_register_script('meanmenu',      $script_path . 'jquery.meanmenu.js',          array('jquery'), 1, FALSE);
-			wp_register_script('nutshell',      $script_path . 'jquery.nutshell.js',          array('jquery'), 1, FALSE);
-			wp_register_script('cookie',        $script_path . 'jquery.cookie.js',            array('jquery'), 1, FALSE);
-			wp_register_script('dcjqaccordion', $script_path . 'jquery.dcjqaccordion.2.7.js', array('jquery'), 1, FALSE);
-			wp_register_script('fastclick',     $script_path . 'fastclick.js',                array('jquery'), 1, FALSE);
-			wp_register_script('rhizome',       $script_path . 'rhizome.js',                  array('jquery'), 1, FALSE);
-
-			wp_enqueue_script('meanmenu');
-			wp_enqueue_script('nutshell');
-			wp_enqueue_script('cookie');
-			wp_enqueue_script('dcjqaccordion');
-			wp_enqueue_script('fastclick');
-			wp_enqueue_script('rhizome');
-		}
+		wp_enqueue_script('meanmenu');
+		wp_enqueue_script('nutshell');
+		wp_enqueue_script('cookie');
+		wp_enqueue_script('dcjqaccordion');
+		wp_enqueue_script('fastclick');
+		wp_enqueue_script('rhizome');
 	}
+}
 
-	add_action('wp_enqueue_scripts', 'freshops_wp_enqueue_rhizome_scripts_styles');
+add_action('wp_enqueue_scripts', 'freshops_wp_enqueue_rhizome_scripts_styles');
 
 
 
-	/************* THUMBNAIL SIZE OPTIONS *************/
-	add_image_size( 'landscape-large', 600, 150, true );
-	add_image_size( 'landscape-med', 300, 100, true );
-	add_image_size( 'landscape-small', 150, 50, true );
-	
-	add_image_size( 'portrait-600', 600, 1000, true );
-	add_image_size( 'portrait-300', 300, 500, true );
-	add_image_size( 'portrait-150', 150, 250, true );
-	
-	add_image_size( 'icon', 72, 72, true );
+/************* THUMBNAIL SIZE OPTIONS *************/
+add_image_size( 'landscape-large', 1200, 300, true );
+add_image_size( 'landscape-med', 600, 200, true );
+add_image_size( 'landscape-small', 300, 100, true );
+
+add_image_size( 'portrait-600', 600, 1000, true );
+add_image_size( 'portrait-300', 300, 500, true );
+add_image_size( 'portrait-150', 150, 250, true );
+
+add_image_size( 'icon', 72, 72, true );
 /*
 to add more sizes, simply copy a line from above
 and change the dimensions & name. As long as you
