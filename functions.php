@@ -50,15 +50,15 @@ require_once( 'library/admin.php' ); // this comes turned off by default
 /************* Enqueue Scripts and Styles *************/
 
 function freshops_wp_enqueue_rhizome_scripts_styles() {
-	
+
 # See also: `freshops_scripts_and_styles` in `library/freshops.php`.
 
 	if ( ! is_admin()) {
-		
+
 		wp_register_style('special', get_stylesheet_directory_uri() . '/library/css/special.css', array(), '', 'all' );
-		
+
 		wp_enqueue_style('special');
-		
+
 		$script_path = get_template_directory_uri() . '/library/js/rhizome/';
 
 		wp_register_script('meanmenu',      $script_path . 'jquery.meanmenu.js',          array('jquery'), 1, FALSE);
@@ -115,11 +115,11 @@ function freshops_custom_image_sizes( $sizes ) {
 					   'landscape-large' => __('600px by 150px'),
 					   'landscape-med' => __('300px by 100px'),
 					   'landscape-small' => __('150 by 50'),
-					   
+
 					   'portrait-large' => __('600px by 1000px'),
 					   'portrait-med' => __('300px by 500px'),
 					   'portrait-small' => __('150px by 250px'),
-					   
+
 					   'icon' => __('72px by 72px'),
 					   ) );
 }
@@ -192,7 +192,7 @@ function freshops_register_sidebars() {
 					 'before_title'  => '<h4 class="widgettitle">',
 					 'after_title'   => '</h4>',
 					 ));
-	
+
 	register_sidebar(array(
 					 'id'            => 'home_sidebar',
 					 'name'          => __( 'Home Sidebar', 'freshopstheme' ),
@@ -201,6 +201,15 @@ function freshops_register_sidebars() {
 					 'after_widget'  => '</div>',
 					 'before_title'  => '<h4 class="widgettitle">',
 					 'after_title'   => '</h4>',
+					 ));
+	register_sidebar(array(
+					 'id'            => 'cart_widget',
+					 'name'          => __( 'Cart Widget', 'freshopstheme' ),
+					 'description'   => __( 'The cart widget area at the top right of the page.', 'freshopstheme' ),
+					 'before_widget' => '<div id="%1$s view-cart" class="widget %2$s">',
+					 'after_widget'  => '</div>',
+					 'before_title'  => '<div class="hidden">',
+					 'after_title'   => '</div>',
 					 ));
 
 	/*
@@ -309,38 +318,38 @@ add_action('wp_print_styles', 'childtheme_deregister_styles', 100);
 ________________________________________________________________________*/
 
 function is_a_page_containing_products() {
-	
+
 	global $post;
 	$is_a_page_containing_products = false;
-	
+
 	if(get_post_type($post) == ‘wpsc-product’):
-		
+
 		$is_a_page_containing_products = true;
 	endif;
-	
+
 	if ( function_exists( ‘is_products_page’ ) && !$is_a_page_containing_products):
-		
+
 		if(is_products_page()){
 			$is_a_page_containing_products = true;
 		}
 		endif;
-		
+
 		if(!$is_a_page_containing_products) :
 			global $wpdb;
-		
+
 		if(!empty($post->ID)):
 			$sql =  "SELECT * FROM `{$wpdb->posts}` WHERE `post_type` IN(‘page’,’post’) AND `post_content` LIKE ‘%".wpsc_products."%’
 		AND `ID` = ".$post->ID;
-		
+
 		$result = $wpdb->get_results($sql);
-		
+
 		if($result) :
 			$is_a_page_containing_products = true;
 				//error_log(‘has found shortcode wpsc_products’ );
 		endif;
-		
+
 		endif; //end $post loop
-		
+
 	endif; // end !$is_a_page_containing_products
 
 	return $is_a_page_containing_products;
@@ -363,7 +372,7 @@ function is_hop_cat() {
 		) {
 		     $is_hop_cat=true;
 	     	}
-	return $is_hop_cat; 
+	return $is_hop_cat;
 }
 
 /* product category check for rhizome category */
@@ -378,7 +387,7 @@ function is_rhizome_cat() {
 		) {
 		     $is_rhizome_cat=true;
 	     	}
-	return  $is_rhizome_cat; 
+	return  $is_rhizome_cat;
 }
 
 function is_rhizome() {
@@ -404,3 +413,18 @@ add_filter( ‘wpsc_product_order’ , ‘change_product_order’ );
 function change_product_order(){
 	return 'asc';
 }
+
+/**
+* action hook for wp-e-commerce to provide our own AJAX cart updates
+*/
+function theme_cart_update() {
+    $cart_count = wpsc_cart_item_count();
+    $total = wpsc_cart_total_widget();
+    echo <<<HTML
+jQuery("#theme-checkout-count").html("$cart_count");
+jQuery("#theme-checkout-total").html("$total");
+
+HTML;
+}
+
+add_action('wpsc_alternate_cart_html', 'theme_cart_update');

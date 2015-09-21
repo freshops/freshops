@@ -6,14 +6,12 @@ any custom functions, it's best to put them
 in the functions.php file.
 
 Developed by: Ben Beekman and Michael Hulse
-URL: http://beekmedia.com/
+URL: http://benbeekman.com/
 */
 
 /*********************
 LAUNCH FRESHOPS THEME
-Let's fire off all the functions
-and tools. I put it up here so it's
-right up top and clean.
+Fire off all the functions and tools.
 *********************/
 
 // we're firing all out initial functions at the start

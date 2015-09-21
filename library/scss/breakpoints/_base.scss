@@ -4,16 +4,106 @@ Author:
 
 Stylesheet: Base Mobile Stylesheet
 
-Be light and don't over style since everything here will be
-loaded by mobile devices. You want to keep it as minimal as
-possible. This is called at the top of the main stylsheet
-and will be used across all viewports.
+Everything here will be loaded by mobile devices. You want to keep it as minimal as
+possible. This is called at the top of the main stylesheet and will be used across all viewports.
 
 ******************************************************************/
 
 /*********************
 GENERAL STYLES
 *********************/
+
+.wpsc_empty_the_cart {
+	float: right;
+	margin-left: 0.5rem;
+}
+.widget.widget_wpsc_shopping_cart {
+	padding: 0  !important;
+	margin: 0 !important;
+}
+
+.cart-widget {
+	background-size: 20px !important;
+	background-repeat: no-repeat;
+	background-image: url("../images/cart.gif");
+	padding-left: 22px;
+	margin-top: 8px;
+	margin-right: 1rem;
+}
+
+#sliding_cart {
+	margin: 0 0 0 50px !important;
+	padding: 0  !important;
+}
+.shopping-cart-wrapper {
+	float:right;
+}
+
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+.home .theme-dark.slider-wrapper { //homepage slider background image
+    background-image: url("../images/hop_tile.jpg");
+    background-size: cover;
+    padding: 50px;
+    border: 5px black solid;
+}
+
+#signupform input[type="submit"] { //for the sidebar signup
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	margin: 0px;
+	padding: 1px 0.7rem !important;
+	border-radius: 10px;
+	border: 0px;
+	height: 100%;
+}
+
+#content #checkout_page_container input[type="submit"] { //for the wp e-commerce submit button
+	padding: 0 0.5rem !important;
+	border-radius: 10px;
+	// height: 100%;
+	font-size: 14px;
+	float: none;
+}
+
+.sidebar {
+
+	.wpsc_top_level_categories li {
+		font-weight: bold;
+		font-size: 1.1425rem;
+	}
+
+	.wpsc_second_level_categories li {
+		font-size: 1rem;
+		clear: none;
+		float: left;
+		min-width: 100px;
+		margin: 0 0 0 10px;
+		font-weight: normal;
+
+		a:link, a:visited {
+			color: lighten($link-color, 20%);
+		}
+	}
+}
+
+
+#content #checkout_page_container input[type="text"] {
+	margin: 0 0;
+	padding: 0.5rem;
+}
+
+#content table.wpsc_checkout_table, #content table.wpsc_checkout_table tr td {
+    margin: 10px 0;
+    width: 100%;
+}
+#signupform input[type="email"] {
+	border-radius: 10px;
+	margin-right: 3rem;
+}
 
 body {
 	-webkit-font-smoothing: antialiased;
@@ -141,7 +231,7 @@ POSTS & CONTENT STYLES
 SHOP> SINGLE PRODUCT PAGE
 ******************************************************************/
 dl .percentage-columns {
-	margin: 0; 
+	margin: 0;
 	padding: 0;
 }
 
@@ -519,17 +609,24 @@ SIDEBARS & ASIDES
 		margin-bottom: 1.5em;
 }
 
+
+//shop-related classes
 p.demo_store {
 		top: 90%;
 		right: 10px;
 }
 
+.wpsc_also_bought_item {
+	float: left;
+	margin-right: 1rem;
+}
+
 .product-details {
 	margin-top: 1.5rem;
 	padding: 1rem 0 0 1rem;
-	background: rgba(255, 255, 255, .5);
+	background: white(.5);
 }
-
+//end shop-related classes
 
 
 //ALL THEMES REQUIRED TO HAVE THIS CODE:
@@ -559,4 +656,4 @@ p.demo_store {
     float: left;
     }
 
-  
+

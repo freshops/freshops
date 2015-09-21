@@ -11,16 +11,16 @@ Replaces the standard sidebar on product, product category, and other product-re
 The main widget area for the front (home) page.
 ___________________________________________________________________________________________________*/
 ?>
-<?php if ( is_a_page_containing_products () ) :?>
-	<?php if ( ! function_exists('dynamic_sidebar') || ( ! dynamic_sidebar('Shop Sidebar'))) :?>
-		<?=dynamic_sidebar('Shop Sidebar') ?>
-	<?php else: ?>
+<?php if (is_front_page()) : //if this is the home page, display home widgets first ?>
+	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Home Sidebar") ) : ?>
+		<?php dynamic_sidebar('Home Sidebar'); ?>
 	<?php endif; ?>
 <?php endif; ?>
 
-<?php if (is_front_page()) : ?>
-	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Home Sidebar") ) : ?>
-		<?php dynamic_sidebar('Home Sidebar'); ?>
+<?php if ( is_a_page_containing_products () ) : //then display the shop sidebar if on a shop page ?>
+	<?php if ( ! function_exists('dynamic_sidebar') || ( ! dynamic_sidebar('Shop Sidebar'))) :?>
+		<?=dynamic_sidebar('Shop Sidebar') ?>
+	<?php else: ?>
 	<?php endif; ?>
 <?php elseif ( is_home() || is_archive() || is_singular( 'post' ) || is_tag() || is_tax()) : ?>
 

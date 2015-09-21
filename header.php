@@ -8,7 +8,6 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-
 	<script>/*! no-touch uglified | https://gist.github.com/mhulse/4704893 */!function(o,n,c){("ontouchstart"in o||o.DocumentTouch&&n instanceof DocumentTouch||c.MaxTouchPoints>0||c.msMaxTouchPoints>0)&&(n.documentElement.className=n.documentElement.className.replace(/\bno-touch\b/,"touch"))}(window,document,navigator);</script>
 	<script>/*! no-js uglified | https://gist.github.com/mhulse/4704893 */!function(e){e.documentElement.className=e.documentElement.className.replace(/\bno-js\b/,"js")}(document);</script>
 
@@ -28,7 +27,7 @@
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		
+
 		ga('create', 'UA-57801308-1', 'auto');
  		ga('send', 'pageview');
 	</script>
@@ -66,11 +65,14 @@
 			</aside>
 
 		</div> <!-- /#secondary -->
-		
+
 		<main id="primary" role="main">
 
 			<div id="wrap">
-			
-<a id="view-cart" href="#cart">View cart</a>
+<?php if ( ! function_exists('dynamic_sidebar') || ( ! dynamic_sidebar('Cart Widget'))) :?>
+		<?=dynamic_sidebar('Cart Widget') ?>
+<?php else: ?>
+<?php endif; ?>
+<!-- <a id="view-cart" href="/shop/checkout">View cart</a> -->
 
 				<div id="badge"><div></div></div>
