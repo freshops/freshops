@@ -12,7 +12,19 @@ possible. This is called at the top of the main stylesheet and will be used acro
 /*********************
 GENERAL STYLES
 *********************/
+#checkout_page_container input,
+#content #checkout_page_container input {
+    margin: 12px 0 0 0;
+}
 
+#content table.wpsc_checkout_table tr td {
+	padding: 0 0 0 1rem;
+	margin: 0;
+}
+
+.custom_gateway label {
+	height: 32px;
+}
 .wpsc_empty_the_cart {
 	float: right;
 	margin-left: 0.5rem;

@@ -54,7 +54,7 @@
 
 				</div> <!-- /#order -->
 
-				<nav id="menu" role="navigtion">
+				<nav id="menu" role="navigation">
 
 					<?=freshops_main_nav()?>
 
@@ -69,10 +69,7 @@
 		<main id="primary" role="main">
 
 			<div id="wrap">
-<?php if ( ! function_exists('dynamic_sidebar') || ( ! dynamic_sidebar('Cart Widget'))) :?>
-		<?=dynamic_sidebar('Cart Widget') ?>
-<?php else: ?>
-<?php endif; ?>
-<!-- <a id="view-cart" href="/shop/checkout">View cart</a> -->
-
+				<?php if ( ! function_exists('dynamic_sidebar') || ( ! dynamic_sidebar('Cart Widget'))) :?>
+					<?=dynamic_sidebar('Cart Widget') ?>
+				<?php endif; ?>
 				<div id="badge"><div></div></div>
