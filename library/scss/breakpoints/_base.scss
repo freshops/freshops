@@ -12,6 +12,26 @@ possible. This is called at the top of the main stylesheet and will be used acro
 /*********************
 GENERAL STYLES
 *********************/
+.home .default_product_display .imagecol {
+	float: left;
+}
+
+.home #primary .widget {
+	margin: 0 0 1rem;
+	padding: 0;
+}
+
+wpsc_categorisation_group {}
+#mainbar .wpsc_categories li { //
+	float: none;
+	clear: none;
+}
+
+#mainbar .wpsc_second_level_categories > li {
+	float: left;
+}
+
+
 #checkout_page_container input,
 #content #checkout_page_container input {
     margin: 12px 0 0 0;
@@ -34,13 +54,16 @@ GENERAL STYLES
 	margin: 0 !important;
 }
 
-.cart-widget {
+.shopping-cart-wrapper {
+    float: right;
+    padding-top: 0.5rem;
+}
+
+.cart-icon {
 	background-size: 20px !important;
 	background-repeat: no-repeat;
 	background-image: url("../images/cart.gif");
 	padding-left: 22px;
-	margin-top: 8px;
-	margin-right: 1rem;
 }
 
 #sliding_cart {
@@ -81,24 +104,22 @@ GENERAL STYLES
 	float: none;
 }
 
-.sidebar {
 
-	.wpsc_top_level_categories li {
-		font-weight: bold;
-		font-size: 1.1425rem;
-	}
+.wpsc_top_level_categories li {
+	font-size: 1.1425rem;
+	font-weight: bold;
+}
 
-	.wpsc_second_level_categories li {
-		font-size: 1rem;
-		clear: none;
-		float: left;
-		min-width: 100px;
-		margin: 0 0 0 10px;
-		font-weight: normal;
+.wpsc_second_level_categories li {
+	clear: none;
+	float: left;
+	font-size: 1rem;
+	font-weight: normal;
+	margin: 0 10px;
+	min-width: 50px;
 
-		a:link, a:visited {
-			color: lighten($link-color, 20%);
-		}
+	a:link, a:visited {
+		color: lighten($link-color, 20%);
 	}
 }
 

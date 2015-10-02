@@ -22,6 +22,7 @@
 					<div id="mainbar" class="m-all t-2of3 d-5of7">
 
 						<?=get_template_part('includes/partials/content', 'page')?>
+ 
 
 					</div> <!-- /#mainbar -->
 

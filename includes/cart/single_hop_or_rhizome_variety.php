@@ -17,18 +17,22 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 		
 	<?php endif; ?>
 
-	<?php if(get_field('alternate_form')):  //Purchase link for the rhizome version of hops and vice versa ?>
-		
+	<?php if(get_field('alternate_form')):  //Purchase link for the rhizome version of hops and vice versa 
+	$alt_objects = get_field('alternate_form');
+	?>
 		<dl>
 			<dt class="aligncenter">
 				<?php
-				$alt_objects = get_field('alternate_form');
 				if( $alt_objects ):
-							// override $post
-						$post = $alt_objects;
+					// override $post
+					$post = $alt_objects;
 					setup_postdata( $post );
-					?><a href="<?php the_permalink(); ?>"><div class="green-btn">Order <?php the_title(); ?></div></a>
 					
+					//display the link to the alternate form of the product (hop/rhizome), but only if the alternate form is in stock (to address the seasonality of rhizomes).
+					if(wpsc_product_has_stock()) : ?>
+						<a href="<?php the_permalink(); ?>"><div class="green-btn">Order <?php the_title(); ?></div></a>
+					<?php endif; ?>
+
 					<?php wp_reset_postdata(); //so the rest of the page works correctly ?>
 					
 				<?php endif; ?>

@@ -2,11 +2,12 @@
 
 	<div class="cart-widget">
 
-		<?php printf( _n('%d item', '%d items', wpsc_cart_item_count(), 'wpsc'), wpsc_cart_item_count() ); ?>
-
-		<?php echo wpsc_cart_total_widget(); ?>
-
-		<a target="_parent" href="<?php echo get_option('shopping_cart_url'); ?>" title="Checkout" class="gocheckout"><?php _e('Checkout', 'wpsc'); ?></a>
+		<a target="_parent" href="<?php echo get_option('shopping_cart_url'); ?>" title="Checkout" class="gocheckout"><?php printf( _n('%d', '%d', wpsc_cart_item_count(), 'wpsc'), wpsc_cart_item_count() ); ?></a>
+		<a target="_parent" href="<?php echo get_option('shopping_cart_url'); ?>" title="Checkout" class="gocheckout"><span class="cart-icon"></span></a>
+		<?php $cart_total = wpsc_cart_total_widget( false, false ,false );
+		$explode = explode('.00', $cart_total); //if .00, hide the cents ?>
+		<a target="_parent" href="<?php echo get_option('shopping_cart_url'); ?>" title="Checkout" class="gocheckout"><?php echo $explode[0]; ?></a>
+		
 
 		<form action="" method="post" class="wpsc_empty_the_cart">
 

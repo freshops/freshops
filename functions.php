@@ -211,6 +211,24 @@ function freshops_register_sidebars() {
 					 'before_title'  => '<div class="hidden">',
 					 'after_title'   => '</div>',
 					 ));
+	register_sidebar(array(
+					 'id'            => 'home_above',
+					 'name'          => __( 'Home Above Content', 'freshopstheme' ),
+					 'description'   => __( 'The home page widget area above the content area.', 'freshopstheme' ),
+					 'before_widget' => '<div id="%1$s view-cart" class="widget %2$s">',
+					 'after_widget'  => '</div>',
+					 'before_title'  => '<h4 class="widgettitle">',
+					 'after_title'   => '</h4>',
+					 ));
+	register_sidebar(array(
+					 'id'            => 'home_below',
+					 'name'          => __( 'Home Below Content', 'freshopstheme' ),
+					 'description'   => __( 'The home page widget area below the content area.', 'freshopstheme' ),
+					 'before_widget' => '<div id="%1$s view-cart" class="widget %2$s">',
+					 'after_widget'  => '</div>',
+					 'before_title'  => '<h4 class="widgettitle">',
+					 'after_title'   => '</h4>',
+					 ));
 
 	/*
 	to add more sidebars or widgetized areas, just copy
