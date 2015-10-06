@@ -1359,11 +1359,17 @@ GENERAL STYLES
   margin: 0 0 1rem;
   padding: 0; }
 
-#mainbar .wpsc_categories li {
-  float: none;
-  clear: none; }
+.featured_item_image a img {
+  float: right;
+  width: auto; }
 
-#mainbar .wpsc_second_level_categories > li {
+#primary .wpsc_categories {
+  width: auto; }
+  #primary .wpsc_categories > li {
+    clear: none;
+    float: none; }
+
+#primary .wpsc_second_level_categories > li {
   float: left; }
 
 #checkout_page_container input,

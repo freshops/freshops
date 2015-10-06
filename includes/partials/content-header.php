@@ -48,15 +48,21 @@
 <?php elseif (is_day()): ?>
 	<span><?=_e('Daily Archives:', 'freshopstheme')?></span>
 	<?=the_time('l, F j, Y')?>
+
 <?php elseif (is_month()): ?>
 	<span><?=_e('Monthly Archives:', 'freshopstheme')?></span>
 	<?php the_time('F Y'); ?>
+	
 <?php elseif (is_year()): ?>
 	<span><?=_e('Yearly Archives:', 'freshopstheme')?></span>
 	<?=the_time('Y')?>
+
 <?php elseif (get_query_var( 'taxonomy' ) == 'wpsc_product_category' ) :
-	_e('Shop Category:', 'freshopstheme')?>
+	_e('Shop Category:', 'freshopstheme'); ?>
 	<?=single_cat_title()?>
+
+<?php elseif (get_query_var( 'taxonomy' ) == 'product_tag' ) : ?>
+	<?php single_tag_title('Products Tagged '); ?>
 <?php endif; ?>
 </h1>
 

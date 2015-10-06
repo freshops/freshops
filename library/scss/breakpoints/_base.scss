@@ -21,13 +21,23 @@ GENERAL STYLES
 	padding: 0;
 }
 
-wpsc_categorisation_group {}
-#mainbar .wpsc_categories li { //
-	float: none;
-	clear: none;
+.featured_item_image a img {
+	float:right;
+    width: auto;
 }
 
-#mainbar .wpsc_second_level_categories > li {
+.wpsc_categorisation_group {}
+
+#primary .wpsc_categories {
+	width: auto;
+
+	> li {
+		clear: none;
+		float: none;
+	}
+}
+
+#primary .wpsc_second_level_categories > li {
 	float: left;
 }
 
