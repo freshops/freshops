@@ -192,12 +192,9 @@ function freshops_theme_support() {
 		array(
 			'aside',             // title less blurb
 			'gallery',           // gallery of images
-			'link',              // quick link to other site
 			'image',             // an image
-			'quote',             // a quick quote
 			'status',            // a Facebook like status update
 			'video',             // video
-			'audio',             // audio
 		)
 	);
 
@@ -208,7 +205,8 @@ function freshops_theme_support() {
 	register_nav_menus(
 		array(
 			'main-nav' => __( 'The Main Menu', 'freshopstheme' ),   // main nav in header
-			'footer-links' => __( 'Footer Links', 'freshopstheme' ) // secondary nav in footer
+			'footer-links' => __( 'Footer Links', 'freshopstheme' ), // secondary nav in footer
+			'order' => __( 'Order', 'freshopstheme' ) //the "Order" rollover nav below the header
 		)
 	);
 } /* end bones theme support */
@@ -253,6 +251,22 @@ function freshops_footer_links() {
 		'fallback_cb' => 'freshops_footer_links_fallback'  // fallback function
 	));
 } /* end bones footer link */
+
+function order_nav() {
+	//display the menu for the "Order" popout button in the sidebar navigation
+	wp_nav_menu(array(
+		'container' => '',                           			// remove nav container
+		'container_class' => '',           				// class of container (should you choose to use it)
+		'menu' => __( 'Order', 'freshopstheme' ),  		// nav name
+		'menu_class' => 'order',         				// adding custom nav class
+		'theme_location' => 'before-nav',                		// where it's located in the theme
+		'before' => '', 						// before the menu
+		'after' => '',                              				// after the menu
+		'link_before' => '',					// before each link
+		'link_after' => '',					// after each link
+		'depth' => 0,						// limit the depth of the nav
+		));
+}
 
 // this is the fallback for header menu
 function freshops_main_nav_fallback() {

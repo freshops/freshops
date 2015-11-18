@@ -82,13 +82,13 @@ add_action('wp_enqueue_scripts', 'freshops_wp_enqueue_rhizome_scripts_styles');
 
 
 /************* THUMBNAIL SIZE OPTIONS *************/
-add_image_size( 'landscape-large', 1200, 300, true );
-add_image_size( 'landscape-med', 600, 200, true );
-add_image_size( 'landscape-small', 300, 100, true );
+add_image_size( 'landscape-large', 1200, 800, true );
+add_image_size( 'landscape-med', 600, 400, true );
+add_image_size( 'landscape-small', 200, 135, true );
 
-add_image_size( 'portrait-600', 600, 1000, true );
-add_image_size( 'portrait-300', 300, 500, true );
-add_image_size( 'portrait-150', 150, 250, true );
+add_image_size( 'portrait-large', 800, 1200, true );
+add_image_size( 'portrait-med', 400, 600, true );
+add_image_size( 'portrait-small', 135, 200, true );
 
 add_image_size( 'icon', 72, 72, true );
 /*
@@ -112,54 +112,18 @@ add_filter( 'image_size_names_choose', 'freshops_custom_image_sizes' );
 
 function freshops_custom_image_sizes( $sizes ) {
 	return array_merge( $sizes, array(
-					   'landscape-large' => __('600px by 150px'),
-					   'landscape-med' => __('300px by 100px'),
-					   'landscape-small' => __('150 by 50'),
+					   'landscape-large' => __('1200px by 800px'),
+					   'landscape-med' => __('600px by 400px'),
+					   'landscape-small' => __('200px by 135px'),
 
-					   'portrait-large' => __('600px by 1000px'),
-					   'portrait-med' => __('300px by 500px'),
-					   'portrait-small' => __('150px by 250px'),
+					   'portrait-large' => __('800px by 1200px'),
+					   'portrait-med' => __('400px by 600px'),
+					   'portrait-small' => __('135px by 200px'),
 
 					   'icon' => __('72px by 72px'),
 					   ) );
 }
 
-/*
-The function above adds the ability to use the dropdown menu to select
-the new images sizes you have just created from within the media manager
-when you add media to your content blocks. If you add more image sizes,
-duplicate one of the lines in the array and name it according to your
-new image size.
-*/
-
-
-
-
-// Register Navigation Menus
-function custom_navigation_menus() {
-
-	$locations = array(
-					   'order' => __( 'Order', 'freshopstheme' ),
-					   );
-	register_nav_menus( $locations );
-}
-// Hook into the 'init' action
-add_action( 'init', 'custom_navigation_menus' );
-
-function order_nav() {
-	wp_nav_menu(array(
-		'container' => div,                           // remove nav container
-		'container_class' => 'menu clearfix order-nav',           // class of container (should you choose to use it)
-		'menu' => __( 'Order', 'freshopstheme' ),  // nav name
-		'menu_class' => 'order',         // adding custom nav class
-		'theme_location' => 'before-nav',                 // where it's located in the theme
-		'before' => '',                                 // before the menu
-		'after' => '',                                  // after the menu
-		'link_before' => '',                            // before each link
-		'link_after' => '',                             // after each link
-		'depth' => 2,                                   // limit the depth of the nav
-		));
-}
 
 /************* ACTIVE SIDEBARS ********************/
 

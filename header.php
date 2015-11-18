@@ -44,13 +44,13 @@
 				<div id="order">
 
 					<div id="cta"><a href="/shop/"><span>Place an order</span></a></div>
-
-					<ul>
+						<?=order_nav()?>
+					<!-- <ul>
 						<li><a href="/hops/">Order Whole Hops</a></li>
 						<li><a href="/rhizomes/">Order Hop Rhizomes (plants)</a></li>
 						<li><a href="/merchandise/">Order Merchandise</a></li>
 						<li><a href="/testimonials/">Testimonials</a></li>
-					</ul>
+					</ul> -->
 
 				</div> <!-- /#order -->
 
