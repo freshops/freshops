@@ -92,14 +92,6 @@ Author URI: http://instinct.co.nz
 }
 
 .default_product_display .imagecol {
-
-	text-align: right;
-	display: table-cell;
-	vertical-align: middle;
-	min-height: 50px;
-	height: 100%;
-	overflow: auto;
-
 }
 
 .default_product_display .imagecol img.product_image {
@@ -183,6 +175,19 @@ position: relative;
 	margin:0;
 }
 
+.default_product_display .wpsc_variation_forms table, #content .default_product_display .wpsc_variation_forms table {
+	display: inline-block;
+}
+.default_product_display .wpsc_variation_forms table tr, #content .default_product_display .wpsc_variation_forms table tr {
+	display: inline-block;
+	float:left;
+	margin-right: 1rem;
+}
+
+.default_product_display .additional_description_container {
+    margin: 0;
+}
+
 .default_product_display .wpsc_variation_forms table td.col1, #content .default_product_display .wpsc_variation_forms table tr td.col1 {
 	width:10%;
 	text-align:left;
@@ -231,11 +236,9 @@ position: relative;
 }
 
 .default_product_display .wpsc_product_price {
-	margin-bottom:10px;
 	font-size:16px;
-	padding:5px;
-	display:inline-block;
-	*zoom:1;
+	padding: 0 0.5rem;
+	display: inline-block;
 }
 
 .default_product_display .is_variation,
@@ -289,6 +292,7 @@ position: relative;
 .default_product_display div.wpsc_loading_animation {
 	visibility:hidden;
 	margin-top:5px;
+	position: absolute;
 }
 
 .default_product_display div.wpsc_loading_animation img, #content .default_product_display div.wpsc_loading_animation img {
@@ -328,7 +332,7 @@ position: relative;
 }
 
 .default_product_display .wpsc_buy_button_container{
-	float:right;
+	display: inline-block;
 }
 
 /*-----LIST VIEW PRODUCT DISPLAY-----*/
@@ -591,6 +595,7 @@ table.list_productdisplay p.soldout {
 
 .single_product_display div.wpsc_loading_animation {
 	visibility:hidden;
+	position: absolute;
 }
 
 .single_product_display .wpcart_gallery img, #content .single_product_display .wpcart_gallery img {
@@ -1189,6 +1194,9 @@ table.wpsc_checkout_table label {
     margin-bottom: 10px;
 }
 
+.wpsc_description {
+	display:inline;
+}
 .wpsc_description a{
 	text-decoration: none;
 	font-size: 14px;
@@ -1253,12 +1261,20 @@ div.wpsc_product_search{
 .wpsc_category_details {
 	display: block;
 }
+
+.wpsc_category_details p {
+	display: inline-block;
+	margin-left: 2rem;
+}
+
+.wpsc_category_details::after {
+	clear:both;
+}
 .wpsc_categories img {
 	margin-right: 1rem;
 	float: left;
 }
 .wpsc_category_details img {
-	float:left;
 	display: inline-block;
 	max-width: 60px;
 	height: auto !important;
@@ -1272,6 +1288,7 @@ margin: 0 10px 10px 0;  /*add padding after floated category image*/
 	width: 100%;
 	margin: 20px 0;
 }
+
 .list_productdisplay td {
 	padding: 10px;
 }
@@ -1280,3 +1297,5 @@ margin: 0 10px 10px 0;  /*add padding after floated category image*/
 	font-size: smaller;
 	font-weight: normal;
 }
+
+.widget_wpsc_product_specials > h4 

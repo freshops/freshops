@@ -2,7 +2,7 @@
 <?php
 #Single product template for WP E-Commerce
 ?>
-<article id="post-<?=the_ID()?>" role="article" itemscope itemtype="http://schema.org/Product">
+<article id="post-<?php the_ID(); ?>" role="article" itemscope itemtype="http://schema.org/Product">
 
 	<section itemprop="articleBody">
 
@@ -13,12 +13,12 @@
 	# If we're on a hop or rhizome product page, then include the single hop variety partial
 	# Rhizome conditional is located in the hop partial
 	?>
-	<? if ( ( has_term('hop', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) || (has_term('rhizomes', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) )  : ?>
+	<?php if ( ( has_term('hop', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) || (has_term('rhizomes', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) )  : ?>
 		<?php include(locate_template('includes/cart/single_hop_or_rhizome_variety.php')); ?>
-	<? endif; ?>
-	<? $wpsc_product_tags = get_the_product_tags( wpsc_the_product_id() ); ?>
+	<?php endif; ?>
+	<?php $wpsc_product_tags = wpsc_get_the_product_tags( wpsc_the_product_id() ); ?>
 
-	<? if ($wpsc_product_tags) : ?>
+	<?php if ($wpsc_product_tags) : ?>
 		<p class="tagged-with">Product Tags:
 		<?php	foreach ($wpsc_product_tags as $wpsc_product_tag) :
 			$tagname = $wpsc_product_tag->name;

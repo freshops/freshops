@@ -131,6 +131,38 @@ query for retina AND a certain size if you want. Go Nuts.
 
 } // end of media query
 
+@media only screen and (max-width: 799px) {
+	#list_view_products_page_container th {
+		display: none !important;
+		visibility: hidden !important;
+	}
+
+	.description-kerplop, .price-header-kerplop, .alpha-header-kerplop, .price-kerplop, .alpha-kerplop {
+		display: block !important;
+		visibility: visible;
+	}
+
+	.js .kerplopped, .js .off { 
+		display: none !important;
+		visibility: hidden; 
+	} /* Add this manually or let plugin do it. */
+
+}
+// .js .kerplopped, .js .off { display: block !important; visibility: visible; } /* Add this manually or let plugin do it. */
+
+@media only screen and (min-width: 800px) {
+	.description-kerplop, .price-header-kerplop, .alpha-header-kerplop, .price-kerplop, .alpha-kerplop {
+		display: none;
+		visibility: visible;
+	}
+
+	.js .kerplopped, .js .off {
+		display: table-cell;
+		visibility: visible;
+	}
+
+}
+
 /*********************
 PRINT STYLESHEET
 Feel free to customize this. Remember to add things that won't make

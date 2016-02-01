@@ -11,7 +11,7 @@
 	<script>/*! no-touch uglified | https://gist.github.com/mhulse/4704893 */!function(o,n,c){("ontouchstart"in o||o.DocumentTouch&&n instanceof DocumentTouch||c.MaxTouchPoints>0||c.msMaxTouchPoints>0)&&(n.documentElement.className=n.documentElement.className.replace(/\bno-touch\b/,"touch"))}(window,document,navigator);</script>
 	<script>/*! no-js uglified | https://gist.github.com/mhulse/4704893 */!function(e){e.documentElement.className=e.documentElement.className.replace(/\bno-js\b/,"js")}(document);</script>
 
-	<title><?=wp_title('')?></title>
+	<title><?php wp_title(); ?></title>
 
 	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-touch.png">
 	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
@@ -20,7 +20,7 @@
 
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-	<?=wp_head()?>
+	<?php wp_head();?>
 	<!-- Google analytics code for freshops WP -->
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -32,11 +32,11 @@
  		ga('send', 'pageview');
 	</script>
 </head>
-<body <?=body_class()?>>
+<body <?php body_class(); ?>>
 
 	<div id="container">
 
-		<h6 id="flag"><a href="<?=home_url()?>"><?=bloginfo('name')?></a></h6>
+		<h6 id="flag"><a href="<?php home_url(); ?>"><?php bloginfo('name');?></a></h6>
 		<div id="secondary">
 
 			<aside>
@@ -44,19 +44,13 @@
 				<div id="order">
 
 					<div id="cta"><a href="/shop/"><span>Place an order</span></a></div>
-						<?=order_nav()?>
-					<!-- <ul>
-						<li><a href="/hops/">Order Whole Hops</a></li>
-						<li><a href="/rhizomes/">Order Hop Rhizomes (plants)</a></li>
-						<li><a href="/merchandise/">Order Merchandise</a></li>
-						<li><a href="/testimonials/">Testimonials</a></li>
-					</ul> -->
+					<?php order_nav(); ?>
 
 				</div> <!-- /#order -->
 
 				<nav id="menu" role="navigation">
 
-					<?=freshops_main_nav()?>
+					<?php freshops_main_nav(); ?>
 
 				</nav>
 
@@ -70,6 +64,6 @@
 
 			<div id="wrap">
 				<?php if ( ! function_exists('dynamic_sidebar') || ( ! dynamic_sidebar('Cart Widget'))) :?>
-					<?=dynamic_sidebar('Cart Widget') ?>
+					<?php dynamic_sidebar('Cart Widget'); ?>
 				<?php endif; ?>
 				<div id="badge"><div></div></div>

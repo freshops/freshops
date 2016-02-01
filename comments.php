@@ -57,8 +57,8 @@
 
 
 
-				<div class="comment-nav-prev"><?=previous_comments_link(__('&larr; Previous Comments', 'freshopstheme'))?></div>
-				<div class="comment-nav-next"><?=next_comments_link(__('More Comments &rarr;', 'freshopstheme'))?></div>
+				<div class="comment-nav-prev"><?php previous_comments_link(__('&larr; Previous Comments', 'freshopstheme')); ?></div>
+				<div class="comment-nav-next"><?php next_comments_link(__('More Comments &rarr;', 'freshopstheme')); ?></div>
 
 
 
@@ -84,7 +84,7 @@
 
 
 
-				<?=_e('Comments are closed.', 'freshopstheme')?>
+				<?php _e('Comments are closed.', 'freshopstheme'); ?>
 
 
 
@@ -102,7 +102,7 @@
 	<?php endif; ?>
 
 
-	<?=comment_form()?>
+	<?php comment_form(); ?>
 
 
 <?php endif; ?>

@@ -946,7 +946,7 @@ and it will create a button dependant on those variables.
   background-image: linear-gradient(to bottom, #134514, #4e9439);
   border: 4px solid RGB(218, 224, 210);
   border-radius: 10px;
-  padding: 0.5rem 0.75rem !important;
+  padding: 0.1rem 0.75rem !important;
   text-shadow: -1px -2px 5px #bed8b1;
   margin-bottom: 0.5rem;
   font-size: 18px; }
@@ -1355,6 +1355,9 @@ GENERAL STYLES
 .home .default_product_display .imagecol {
   float: left; }
 
+.wpsc-category .widget_wpsc_product_specials h4 {
+  display: none; }
+
 .widget_wpsc_product_specials h4 {
   font-size: 1.2rem; }
 
@@ -1579,6 +1582,8 @@ dd {
 
 dd.meter {
   width: 100%; }
+  dd.meter meter {
+    width: 98%; }
 
 meter::-webkit-meter-bar {
   background: none;
@@ -1850,19 +1855,9 @@ tweeners.
   upon your base.scss styles.
   
   ******************************************************************/
-  /*
-  IMPORTANT NOTE ABOUT SASS 3.3 & UP
-  You can't use @extend within media queries
-  anymore, so just be aware that if you drop
-  them in here, they won't work.
-  */
-  /*********************
-  NAVIGATION STYLES
-  *********************/
   /*********************
   POSTS & CONTENT STYLES
   *********************/
-  /* entry content */
   /* at this larger size, we can start to align images */
   .alignleft, img.alignleft {
     margin-right: 1.5em;
@@ -1879,16 +1874,7 @@ tweeners.
     margin-left: auto;
     display: block;
     clear: both;
-    text-align: center; }
-
-  /*********************
-  FOOTER STYLES
-  *********************/
-  /*
-  check your menus here. do they look good?
-  do they need tweaking?
-  */
-  /* end .footer-links */ }
+    text-align: center; } }
 /*********************
 TABLET & SMALLER LAPTOPS
 This is the average viewing window. So Desktops, Laptops, and
@@ -2051,6 +2037,28 @@ query for retina AND a certain size if you want. Go Nuts.
   the original dimensions and you are good to go.
   
   */ }
+@media only screen and (max-width: 799px) {
+  #list_view_products_page_container th {
+    display: none !important;
+    visibility: hidden !important; }
+
+  .description-kerplop, .price-header-kerplop, .alpha-header-kerplop, .price-kerplop, .alpha-kerplop {
+    display: block !important;
+    visibility: visible; }
+
+  .js .kerplopped, .js .off {
+    display: none !important;
+    visibility: hidden; }
+
+  /* Add this manually or let plugin do it. */ }
+@media only screen and (min-width: 800px) {
+  .description-kerplop, .price-header-kerplop, .alpha-header-kerplop, .price-kerplop, .alpha-kerplop {
+    display: none;
+    visibility: visible; }
+
+  .js .kerplopped, .js .off {
+    display: table-cell;
+    visibility: visible; } }
 /*********************
 PRINT STYLESHEET
 Feel free to customize this. Remember to add things that won't make
@@ -2369,6 +2377,9 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0; }
   h1 + h1, h2 + h2, h3 + h3, h4 + h4, h5 + h5, h6 + h6 {
     margin-top: -20px; }
+
+.widget h4 + h4 {
+  margin-top: 0; }
 
 .sh1, .sh2, .sh3, .sh4, .sh5, .sh6 {
   font-style: normal; }

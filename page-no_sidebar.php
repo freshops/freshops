@@ -3,25 +3,25 @@
 	 * Template Name: No Sidebar
 	 */
 ?>
-<?=get_header()?>
+<?php get_header(); ?>
 
 <?php if (have_posts()): ?>
 
 	<?php while (have_posts()): ?>
 
-		<?=the_post()?>
+		<?php the_post(); ?>
 
-		<article id="post-<?=the_ID()?>" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+		<article id="post-<?php the_ID(); ?>" role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 			<header>
 
-				<?=get_template_part('includes/partials/content', 'header')?>
+				<?php get_template_part('includes/partials/content', 'header'); ?>
 
 			</header>
 
 			<section id="content" itemprop="articleBody">
 
-				<?=get_template_part('includes/partials/content', 'page')?>
+				<?php get_template_part('includes/partials/content', 'page'); ?>
 
 			</section> <!-- /#content -->
 
@@ -31,8 +31,8 @@
 
 <?php else: ?>
 
-	<?=get_template_part('includes/partials/content', 'none')?>
+	<?php get_template_part('includes/partials/content', 'none'); ?>
 
 <?php endif; ?>
 
-<?=get_footer()?>
+<?php get_footer(); ?>

@@ -2,11 +2,11 @@
 
 <h3 class="entry-title">
 	<a
-		href="<?=the_permalink()?>"
+		href="<?php the_permalink(); ?>"
 		rel="bookmark"
-		title="<?=the_title_attribute()?>"
+		title="<?php the_title_attribute(); ?>"
 	>
-			<?=the_title()?>
+			<?php the_title(); ?>
 	</a>
 </h3>
 
@@ -26,17 +26,17 @@
 
 <section class="entry-content cf">
 
-	<?=the_post_thumbnail( 'portrait-300' )?>
+	<?php the_post_thumbnail( 'portrait-300' ); ?>
 
 
-	<?=the_excerpt()?>
+	<?php the_excerpt(); ?>
 
 	<footer class="article-footer">
 
 		<p class="tags"><?php
 echo get_the_tag_list('<p>Tags: ',', ','</p>');
 ?>
-		<?=the_tags('<span class="tags-title">' . __('Tags:', 'freshopstheme') . '</span> ', ', ', '')?></p>
+		<?php the_tags('<span class="tags-title">' . __('Tags:', 'freshopstheme') . '</span> ', ', ', ''); ?></p>
 
 	</footer>
 
@@ -45,7 +45,7 @@ echo get_the_tag_list('<p>Tags: ',', ','</p>');
 <?php if (function_exists('freshops_page_navi')): ?>
 
 
-	<?=freshops_page_navi()?>
+	<?php freshops_page_navi(); ?>
 
 
 <?php else: ?>
@@ -56,8 +56,8 @@ echo get_the_tag_list('<p>Tags: ',', ','</p>');
 
 
 		<ul class="clearfix">
-			<li class="prev-link"><?=next_posts_link(__('&laquo; Older Entries', 'freshopstheme'))?></li>
-			<li class="next-link"><?=previous_posts_link(__('Newer Entries &raquo;', 'freshopstheme'))?></li>
+			<li class="prev-link"><?php next_posts_link(__('&laquo; Older Entries', 'freshopstheme')); ?></li>
+			<li class="next-link"><?php previous_posts_link(__('Newer Entries &raquo;', 'freshopstheme')); ?></li>
 		</ul>
 
 

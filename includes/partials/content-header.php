@@ -7,7 +7,7 @@
 
 	<?php # Single posts or pages: ?>
 
-	<?=the_title()?>
+	<?php the_title(); ?>
 
 <?php elseif (is_front_page() && is_home()): ?>
 
@@ -27,12 +27,12 @@
 	<? #If it's a post category page or a product category page, print the category title ?>
 
 <?php elseif (is_category()): ?>
-	<span><?=_e('Posts Categorized: ', 'freshopstheme')?></span>
-	<?=single_cat_title()?>
+	<span><?php _e('Posts Categorized: ', 'freshopstheme'); ?></span>
+	<?php the_archive_title(); ?>
 
 <?php elseif (is_tag()): ?>
 	<span><?php _e('Posts Tagged: ', 'freshopstheme'); ?></span>
-	<?php single_tag_title(); ?>
+	<?php the_archive_title(); ?>
 
 <?php elseif (is_author()): ?>
 	<?php
@@ -41,25 +41,25 @@
 	$author_id = $post->post_author;
 
 	?>
-	<span><?=_e('Posts By:', 'freshopstheme')?></span>
-	<?=the_author_meta('display_name', $author_id)?>
+	<span><?php _e('Posts By:', 'freshopstheme'); ?></span>
+	<?php the_author_meta('display_name', $author_id); ?>
 
 <?php elseif (is_day()): ?>
-	<span><?=_e('Daily Archives:', 'freshopstheme')?></span>
-	<?=the_time('l, F j, Y')?>
+	<span><?php _e('Daily Archives:', 'freshopstheme'); ?></span>
+	<?php the_time('l, F j, Y'); ?>
 
 <?php elseif (is_month()): ?>
-	<span><?=_e('Monthly Archives:', 'freshopstheme')?></span>
+	<span><?php _e('Monthly Archives:', 'freshopstheme'); ?></span>
 	<?php the_time('F Y'); ?>
 
 <?php elseif (is_year()): ?>
-	<span><?=_e('Yearly Archives:', 'freshopstheme')?></span>
-	<?=the_time('Y')?>
+	<span><?php _e('Yearly Archives:', 'freshopstheme'); ?></span>
+	<?php the_time('Y'); ?>
 
 <?php //titles for WP E-Commerce category and tag pages ?>
 <?php elseif (get_query_var( 'taxonomy' ) == 'wpsc_product_category' ) :
 	_e('Shop Category:', 'freshopstheme'); ?>
-	<?=single_cat_title()?>
+	<?php the_title(); ?>
 
 <?php elseif (get_query_var( 'taxonomy' ) == 'product_tag' ) : ?>
 	<?php single_tag_title('Products Tagged: '); ?>

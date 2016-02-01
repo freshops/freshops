@@ -8,13 +8,13 @@
 			$section_slug = sanitize_title($section_title);
 		?>
 
-		<div id="<?=$section_slug?>">
-			<?=the_sub_field('section_content')?>
+		<div id="<?php $section_slug?>">
+			<?php the_sub_field('section_content'); ?>
 		</div>
 	<?php endwhile; ?>
 <?php endif; ?>
 
-<?=the_content()?>
+<?php the_content(); ?>
 
 <?php
 

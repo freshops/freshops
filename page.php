@@ -1,16 +1,16 @@
-<?=get_header()?>
+<?php get_header(); ?>
 
 <?php if (have_posts()): ?>
 
 	<?php while (have_posts()): ?>
 
-		<?=the_post()?>
+		<?php the_post(); ?>
 
-		<article id="post-<?=the_ID()?>" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+		<article id="post-<?php the_ID(); ?>" role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 			<header>
 
-				<?=get_template_part('includes/partials/content', 'header')?>
+				<?php get_template_part('includes/partials/content', 'header'); ?>
 
 			</header>
 
@@ -21,14 +21,13 @@
 
 					<div id="mainbar" class="m-all t-2of3 d-5of7">
 
-						<?=get_template_part('includes/partials/content', 'page')?>
- 
+						<?php get_template_part('includes/partials/content', 'page');?>
 
 					</div> <!-- /#mainbar -->
 
 					<div id="sidebar" class="sidebar m-all t-1of3 d-2of7 last-col" role="complementary">
 
-						<?=get_sidebar()?>
+						<?php get_sidebar(); ?>
 
 					</div> <!-- /#sidebar -->
 
@@ -42,9 +41,8 @@
 
 <?php else: ?>
 
-	<?=get_template_part('includes/partials/content', 'none')?>
-
+	<?php get_template_part('includes/partials/content', 'none'); ?>
 
 <?php endif; ?>
 
-<?=get_footer()?>
+<?php get_footer(); ?>

@@ -63,7 +63,7 @@ $image_width = get_option('product_image_width');
 
 		<div class="wpsc_default_product_list">
 		<?php /** start the product loop here */?>
-		<?php while (wpsc_have_products()) :  wpsc_the_product(); ?>
+		<?php while (wpsc_have_products()) : wpsc_the_product(); wpsc_the_product_title();?>
 
 			<div class="default_product_display product_view_<?php echo wpsc_the_product_id(); ?> <?php echo wpsc_category_class(); ?> group">
 				<h2 class="prodtitle entry-title">
@@ -82,9 +82,6 @@ $image_width = get_option('product_image_width');
 
 							</a>
 						<?php else: ?>
-								<a href="<?php echo esc_url( wpsc_the_product_permalink() ); ?>">
-								<img class="no-image" id="product_image_<?php echo wpsc_the_product_id(); ?>" alt="<?php esc_attr_e( 'No Image', 'wpsc' ); ?>" title="<?php echo wpsc_the_product_title(); ?>" src="<?php echo WPSC_CORE_THEME_URL; ?>wpsc-images/noimage.png" width="<?php echo get_option('product_image_width'); ?>" height="<?php echo get_option('product_image_height'); ?>" />
-								</a>
 						<?php endif; ?>
 						<?php
 						if(gold_cart_display_gallery()) :

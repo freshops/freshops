@@ -80,7 +80,7 @@ I reccomend one follows the workflow of:
 
 1. Via the repo’s issue tracker, create an issue for every problem you need to solve.
 1. Locally, make commits and [close said issues via commit messages](https://help.github.com/articles/closing-issues-via-commit-messages/).
-1. When you’re day is done (or it feels right), sync your changes.
+1. When your day is done (or it feels right), sync your changes.
 
 ## Production machine
 
@@ -123,7 +123,7 @@ Next, check the live site to make sure nothing broke. :laughing:
 
 ## Notes
 
-Things to be aware of …
+Things to be aware of:
 
 ### Untracked file workflow
 
@@ -169,7 +169,7 @@ $ find freshops/ -type f -print0 | xargs -0 chmod 644
 $ find freshops/ -type d -print0 | xargs -0 chmod 755
 ```
 
-### Micky’s workflow
+### Recommended workflow
 
 Assuming WordPress is installed, ~~and [Rhizome](https://github.com/freshops/rhizome) is cloned, locally~~ …
 

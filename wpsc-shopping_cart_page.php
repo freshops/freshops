@@ -105,7 +105,7 @@ if(wpsc_uses_coupons()): ?>
 	<td  colspan="4" class="coupon_code">
 		<form  method="post" action="<?php echo esc_url( get_option( 'shopping_cart_url' ) ); ?>">
 			<input type="text" name="coupon_num" id="coupon_num" value="<?php echo $wpsc_cart->coupons_name; ?>" />
-			<input type="submit" value="<?php _e('Update', 'wpsc') ?>" />
+			<input type="submit" value="<?php _e('Update', 'wpsc'); ?>" />
 		</form>
 	</td>
 </tr>

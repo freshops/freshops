@@ -12,12 +12,19 @@ possible. This is called at the top of the main stylesheet and will be used acro
 /*********************
 GENERAL STYLES
 *********************/
+
 .home .default_product_display .imagecol {
 	float: left;
 }
 
-.widget_wpsc_product_specials h4 {
-	font-size: 1.2rem;
+.wpsc-category .widget_wpsc_product_specials h4 {
+	display: none;
+}
+
+.widget_wpsc_product_specials{
+	h4 {
+		font-size: 1.2rem;
+	}
 }
 
 .home #primary .widget {
@@ -27,7 +34,7 @@ GENERAL STYLES
 
 .featured_item_image a img {
 	float:right;
-    width: auto;
+	width: auto;
 }
 
 .wpsc_categorisation_group {}
@@ -307,6 +314,9 @@ dd {
 
 dd.meter {
 	width: 100%;
+	meter {
+		width: 98%;
+	}
 }
 
 meter::-webkit-meter-bar {
@@ -644,8 +654,6 @@ SIDEBARS & ASIDES
 *********************/
 
 .sidebar {}
-
-.widgettitle {}
 
 .no-widgets {
 		background-color: $white;

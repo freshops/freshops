@@ -1,4 +1,4 @@
-<?php if(wpsc_cart_item_count() > 0): ?>
+<?php if(wpsc_cart_item_count() > 0): //cart icon appears only once there are items in it ?>
 
 	<div class="cart-widget">
 

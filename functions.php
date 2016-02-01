@@ -67,13 +67,15 @@ function freshops_wp_enqueue_rhizome_scripts_styles() {
 		wp_register_script('dcjqaccordion', $script_path . 'jquery.dcjqaccordion.2.7.js', array('jquery'), 1, FALSE);
 		wp_register_script('fastclick',     $script_path . 'fastclick.js',                array('jquery'), 1, FALSE);
 		wp_register_script('rhizome',       $script_path . 'rhizome.js',                  array('jquery'), 1, FALSE);
+		wp_register_script('kerplop',       $script_path . 'jquery.kerplop.min.js',                  array('jquery'), 1, FALSE);
 
 		wp_enqueue_script('meanmenu');
 		wp_enqueue_script('nutshell');
 		wp_enqueue_script('cookie');
 		wp_enqueue_script('dcjqaccordion');
-		wp_enqueue_script('fastclick');
+		wp_enqueue_script('fastclick'); 
 		wp_enqueue_script('rhizome');
+		wp_enqueue_script('kerplop');
 	}
 }
 
@@ -109,6 +111,7 @@ for the 72 x 72 image:
 */
 
 add_filter( 'image_size_names_choose', 'freshops_custom_image_sizes' );
+if ( ! isset( $content_width ) ) $content_width = 900;
 
 function freshops_custom_image_sizes( $sizes ) {
 	return array_merge( $sizes, array(
@@ -193,6 +196,15 @@ function freshops_register_sidebars() {
 					 'before_title'  => '<h4 class="widgettitle">',
 					 'after_title'   => '</h4>',
 					 ));
+		register_sidebar(array(
+					 'id'            => 'archive_sidebar',
+					 'name'          => __( 'Archive Sidebar', 'freshopstheme' ),
+					 'description'   => __( 'The sidebar for wp e-commerce tag and cat pages.', 'freshopstheme' ),
+					 'before_widget' => '<div id="%1$s view-cart" class="widget %2$s">',
+					 'after_widget'  => '</div>',
+					 'before_title'  => '<h4 class="widgettitle">',
+					 'after_title'   => '</h4>',
+					 ));
 
 	/*
 	to add more sidebars or widgetized areas, just copy
@@ -240,19 +252,19 @@ function freshops_comments( $comment, $args, $depth ) {
 					?>
 					<img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=32" class="load-gravatar avatar avatar-48 photo" height="32" width="32" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
 					<?php // end custom gravatar call ?>
-					<?php printf(__( '<cite class="fn">%s</cite>', 'freshopstheme' ), get_comment_author_link()) ?>
-					<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'freshopstheme' )); ?> </a></time>
-					<?php edit_comment_link(__( '(Edit)', 'freshopstheme' ),'  ','') ?>
+					<?php printf(__( '<cite class="fn">%s</cite>', 'freshopstheme' ), get_comment_author_link()); ?>
+					<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><?php comment_time(__( 'F jS, Y', 'freshopstheme' )); ?> </a></time>
+					<?php edit_comment_link(__( '(Edit)', 'freshopstheme' ),'  ',''); ?>
 				</header>
 				<?php if ($comment->comment_approved == '0') : ?>
 					<div class="alert alert-info">
-						<p><?php _e( 'Your comment is awaiting moderation.', 'freshopstheme' ) ?></p>
+						<p><?php _e( 'Your comment is awaiting moderation.', 'freshopstheme' ); ?></p>
 					</div>
 				<?php endif; ?>
 				<section class="comment_content clearfix">
-					<?php comment_text() ?>
+					<?php comment_text(); ?>
 				</section>
-				<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+				<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
 			</article>
 			<?php // </li> is added by WordPress automatically ?>
 			<?php
@@ -292,24 +304,19 @@ WP E-COMMERCE MODIFICATIONS START HERE
 function childtheme_deregister_styles() {
 	wp_deregister_style('wpsc-gold-cart');
 }
+
 add_action('wp_print_styles', 'childtheme_deregister_styles', 100);
 
 /*________________________________________________________________________
 | IN-LOOP CHECK TO SEE IF THE CURRENT PAGE IS A PRODUCTS PAGE.
-|  RETURNS TRUE OR FALSE TO <?php IS_A_PAGE_CONTAINING_PRODUCTS() ?>
+|  RETURNS TRUE OR FALSE TO <?php IS_A_PAGE_CONTAINING_PRODUCTS(); ?>
 ________________________________________________________________________*/
 
 function is_a_page_containing_products() {
-
 	global $post;
 	$is_a_page_containing_products = false;
 
-	if(get_post_type($post) == ‘wpsc-product’):
-
-		$is_a_page_containing_products = true;
-	endif;
-
-	if ( function_exists( ‘is_products_page’ ) && !$is_a_page_containing_products):
+	if ( function_exists( 'is_products_page' ) && (!$is_a_page_containing_products)):
 
 		if(is_products_page()){
 			$is_a_page_containing_products = true;
@@ -319,16 +326,15 @@ function is_a_page_containing_products() {
 		if(!$is_a_page_containing_products) :
 			global $wpdb;
 
-		if(!empty($post->ID)):
-			$sql =  "SELECT * FROM `{$wpdb->posts}` WHERE `post_type` IN(‘page’,’post’) AND `post_content` LIKE ‘%".wpsc_products."%’
-		AND `ID` = ".$post->ID;
+			if(!empty($post->ID)):
+				$sql =  "SELECT * FROM `{$wpdb->posts}` WHERE `post_type` IN('page','post') AND `post_content` LIKE '%".wpsc_products."%'
+				AND `ID` = ".$post->ID;
+				$result = $wpdb->get_results($sql);
 
-		$result = $wpdb->get_results($sql);
-
-		if($result) :
-			$is_a_page_containing_products = true;
-				//error_log(‘has found shortcode wpsc_products’ );
-		endif;
+				if($result) :
+					$is_a_page_containing_products = true;
+					//error_log(‘has found shortcode wpsc_products’ );
+				endif;
 
 		endif; //end $post loop
 
@@ -342,6 +348,16 @@ function is_a_page_containing_products() {
 /*=============================================
 =           	PRODUCT CATEGORY CHECKS           	=
 =============================================*/
+function is_hop_product() {
+	$prodID = $wpdb->get_row('SELECT * FROM wp_wpsc_item_category_assoc WHERE product_id = "'.$item['prodid'].'"');
+            if($prodID->category_id == 77 || $prodID->category_id == 172 || $prodID->category_id == 139 || $prodID->category_id == 137 || $prodID->category_id == 138){
+            		$is_hop_product=true;
+            	}
+            return $is_hop_product;
+}
+
+
+
 /* product category check for hop category */
 function is_hop_cat() {
 		global $post;
@@ -372,6 +388,7 @@ function is_rhizome_cat() {
 	return  $is_rhizome_cat;
 }
 
+//Returns true if we are on rhizome or hop single page
 function is_rhizome() {
 	global $post;
 	$is_rhizome = false;
@@ -386,11 +403,12 @@ function is_rhizome() {
 }
 /*-----  END CATEGORY CHECKS  ------*/
 
+
 /*=============================================
 = Set WP E-Commerce Sorting to Ascending Sort Order	=
 =============================================*/
 
-add_filter( ‘wpsc_product_order’ , ‘change_product_order’ );
+add_filter( 'wpsc_product_order' , 'change_product_order' );
 
 function change_product_order(){
 	return 'asc';
@@ -410,3 +428,23 @@ HTML;
 }
 
 add_action('wpsc_alternate_cart_html', 'theme_cart_update');
+
+/**
+ * Changes the breadcrumb options sitewide instead of changing the args on each instance
+ *
+ * @param  array $options req The array of options for the breadcrumbs
+ * @return array $options The array of options with our changes to them
+ *
+ * @since  Theme Name X/Y
+ * @author WP Theme Tutorial, Curtis McHale
+ * @link
+ */
+function wp_theme_t_correct_breadcrumbs( $options ){
+
+    $options['show_products_page'] = false;
+
+    return $options;
+
+}
+
+add_filter( 'wpsc_output_breadcrumbs_options', 'wp_theme_t_correct_breadcrumbs' );
