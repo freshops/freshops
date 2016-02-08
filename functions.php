@@ -12,36 +12,36 @@ sidebars, comments, ect.
 
 /*
 1. library/freshops.php
-	- head cleanup (remove rsd, uri links, junk css, ect)
-	- enqueueing scripts & styles
-	- theme support functions
-	- custom menu output & fallbacks
-	- related post function
-	- page-navi function
-	- removing <p> from around images
-	- customizing the post excerpt
-	- custom google+ integration
-	- adding custom fields to user profiles
+- head cleanup (remove rsd, uri links, junk css, ect)
+- enqueueing scripts & styles
+- theme support functions
+- custom menu output & fallbacks
+- related post function
+- page-navi function
+- removing <p> from around images
+- customizing the post excerpt
+- custom google+ integration
+- adding custom fields to user profiles
 */
 require_once( 'library/freshops.php' ); // if you remove this, freshops will break
 /*
 2. library/custom-post-type.php
-	- an example custom post type
-	- example custom taxonomy (like categories)
-	- example custom taxonomy (like tags)
+- an example custom post type
+- example custom taxonomy (like categories)
+- example custom taxonomy (like tags)
 */
 //require_once( 'library/custom-post-type.php' ); // you can disable this if you like
 /*
 3. library/admin.php
-	- removing some default WordPress dashboard widgets
-	- an example custom dashboard widget
-	- adding custom login css
-	- changing text in footer of admin
+- removing some default WordPress dashboard widgets
+- an example custom dashboard widget
+- adding custom login css
+- changing text in footer of admin
 */
 require_once( 'library/admin.php' ); // this comes turned off by default
 /*
 4. library/translation/translation.php
-	- adding support for other languages
+- adding support for other languages
 */
 // require_once( 'library/translation/translation.php' ); // this comes turned off by default
 
@@ -115,16 +115,16 @@ if ( ! isset( $content_width ) ) $content_width = 900;
 
 function freshops_custom_image_sizes( $sizes ) {
 	return array_merge( $sizes, array(
-					   'landscape-large' => __('1200px by 800px'),
-					   'landscape-med' => __('600px by 400px'),
-					   'landscape-small' => __('200px by 135px'),
+	'landscape-large' => __('1200px by 800px'),
+	'landscape-med' => __('600px by 400px'),
+	'landscape-small' => __('200px by 135px'),
 
-					   'portrait-large' => __('800px by 1200px'),
-					   'portrait-med' => __('400px by 600px'),
-					   'portrait-small' => __('135px by 200px'),
+	'portrait-large' => __('800px by 1200px'),
+	'portrait-med' => __('400px by 600px'),
+	'portrait-small' => __('135px by 200px'),
 
-					   'icon' => __('72px by 72px'),
-					   ) );
+	'icon' => __('72px by 72px'),
+	) );
 }
 
 
@@ -133,102 +133,102 @@ function freshops_custom_image_sizes( $sizes ) {
 // Sidebars & Widgetizes Areas
 function freshops_register_sidebars() {
 	register_sidebar(array(
-					 'id'            => 'blog_sidebar',
-					 'name'          => __( 'Blog Sidebar', 'freshopstheme' ),
-					 'description'   => __( 'The standard blog sidebar.', 'freshopstheme' ),
-					 'before_widget' => '<div id="%1$s" class="widget %2$s">',
-					 'after_widget'  => '</div>',
-					 'before_title'  => '<h4 class="widgettitle">',
-					 'after_title'   => '</h4>',
-					 ));
+	'id'            => 'blog_sidebar',
+	'name'          => __( 'Blog Sidebar', 'freshopstheme' ),
+	'description'   => __( 'The standard blog sidebar.', 'freshopstheme' ),
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</div>',
+	'before_title'  => '<h4 class="widgettitle">',
+	'after_title'   => '</h4>',
+	));
 	register_sidebar(array(
-					 'id'            => 'shop_sidebar',
-					 'name'          => __( 'Shop Sidebar', 'freshopstheme' ),
-					 'description'   => __( 'Replaces the standard sidebar on product, product category, and other product-related pages.', 'freshopstheme' ),
-					 'before_widget' => '<div id="%1$s" class="widget %2$s">',
-					 'after_widget'  => '</div>',
-					 'before_title'  => '<h4 class="widgettitle">',
-					 'after_title'   => '</h4>',
-					 ));
+	'id'            => 'shop_sidebar',
+	'name'          => __( 'Shop Sidebar', 'freshopstheme' ),
+	'description'   => __( 'Replaces the standard sidebar on product, product category, and other product-related pages.', 'freshopstheme' ),
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</div>',
+	'before_title'  => '<h4 class="widgettitle">',
+	'after_title'   => '</h4>',
+	));
 	register_sidebar(array(
-					 'id'            => 'main_sidebar',
-					 'name'          => __( 'Main Sidebar', 'freshopstheme' ),
-					 'description'   => __( 'The main widget area for all non-product, non-blog pages with a sidebar.', 'freshopstheme' ),
-					 'before_widget' => '<div id="%1$s" class="widget %2$s">',
-					 'after_widget'  => '</div>',
-					 'before_title'  => '<h4 class="widgettitle">',
-					 'after_title'   => '</h4>',
-					 ));
-
-	register_sidebar(array(
-					 'id'            => 'home_sidebar',
-					 'name'          => __( 'Home Sidebar', 'freshopstheme' ),
-					 'description'   => __( 'The main widget area for the front (home) page.', 'freshopstheme' ),
-					 'before_widget' => '<div id="%1$s" class="widget %2$s">',
-					 'after_widget'  => '</div>',
-					 'before_title'  => '<h4 class="widgettitle">',
-					 'after_title'   => '</h4>',
-					 ));
-	register_sidebar(array(
-					 'id'            => 'cart_widget',
-					 'name'          => __( 'Cart Widget', 'freshopstheme' ),
-					 'description'   => __( 'The cart widget area at the top right of the page.', 'freshopstheme' ),
-					 'before_widget' => '<div id="%1$s view-cart" class="widget %2$s">',
-					 'after_widget'  => '</div>',
-					 'before_title'  => '<div class="hidden">',
-					 'after_title'   => '</div>',
-					 ));
-	register_sidebar(array(
-					 'id'            => 'home_above',
-					 'name'          => __( 'Home Above Content', 'freshopstheme' ),
-					 'description'   => __( 'The home page widget area above the content area.', 'freshopstheme' ),
-					 'before_widget' => '<div id="%1$s view-cart" class="widget %2$s">',
-					 'after_widget'  => '</div>',
-					 'before_title'  => '<h4 class="widgettitle">',
-					 'after_title'   => '</h4>',
-					 ));
-	register_sidebar(array(
-					 'id'            => 'home_below',
-					 'name'          => __( 'Home Below Content', 'freshopstheme' ),
-					 'description'   => __( 'The home page widget area below the content area.', 'freshopstheme' ),
-					 'before_widget' => '<div id="%1$s view-cart" class="widget %2$s">',
-					 'after_widget'  => '</div>',
-					 'before_title'  => '<h4 class="widgettitle">',
-					 'after_title'   => '</h4>',
-					 ));
-		register_sidebar(array(
-					 'id'            => 'archive_sidebar',
-					 'name'          => __( 'Archive Sidebar', 'freshopstheme' ),
-					 'description'   => __( 'The sidebar for wp e-commerce tag and cat pages.', 'freshopstheme' ),
-					 'before_widget' => '<div id="%1$s view-cart" class="widget %2$s">',
-					 'after_widget'  => '</div>',
-					 'before_title'  => '<h4 class="widgettitle">',
-					 'after_title'   => '</h4>',
-					 ));
-
-	/*
-	to add more sidebars or widgetized areas, just copy
-	and edit the above sidebar code. In order to call
-	your new sidebar just use the following code:
-
-	Just change the name to whatever your new
-	sidebar's id is, for example:
-
-	register_sidebar(array(
-		'id' => 'sidebar2',
-		'name' => __( 'Sidebar 2', 'freshopstheme' ),
-		'description' => __( 'The second (secondary) sidebar.', 'freshopstheme' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
+	'id'            => 'main_sidebar',
+	'name'          => __( 'Main Sidebar', 'freshopstheme' ),
+	'description'   => __( 'The main widget area for all non-product, non-blog pages with a sidebar.', 'freshopstheme' ),
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</div>',
+	'before_title'  => '<h4 class="widgettitle">',
+	'after_title'   => '</h4>',
 	));
 
-	To call the sidebar in your template, you can just copy
-	the sidebar.php file and rename it to your sidebar's name.
-	So using the above example, it would be:
-	sidebar-sidebar2.php
-	*/
+	register_sidebar(array(
+	'id'            => 'home_sidebar',
+	'name'          => __( 'Home Sidebar', 'freshopstheme' ),
+	'description'   => __( 'The main widget area for the front (home) page.', 'freshopstheme' ),
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</div>',
+	'before_title'  => '<h4 class="widgettitle">',
+	'after_title'   => '</h4>',
+	));
+	register_sidebar(array(
+	'id'            => 'cart_widget',
+	'name'          => __( 'Cart Widget', 'freshopstheme' ),
+	'description'   => __( 'The cart widget area at the top right of the page.', 'freshopstheme' ),
+	'before_widget' => '<div id="%1$s view-cart" class="widget %2$s">',
+	'after_widget'  => '</div>',
+	'before_title'  => '<div class="hidden">',
+	'after_title'   => '</div>',
+	));
+	register_sidebar(array(
+	'id'            => 'home_above',
+	'name'          => __( 'Home Above Content', 'freshopstheme' ),
+	'description'   => __( 'The home page widget area above the content area.', 'freshopstheme' ),
+	'before_widget' => '<div id="%1$s view-cart" class="widget %2$s">',
+	'after_widget'  => '</div>',
+	'before_title'  => '<h4 class="widgettitle">',
+	'after_title'   => '</h4>',
+	));
+	register_sidebar(array(
+	'id'            => 'home_below',
+	'name'          => __( 'Home Below Content', 'freshopstheme' ),
+	'description'   => __( 'The home page widget area below the content area.', 'freshopstheme' ),
+	'before_widget' => '<div id="%1$s view-cart" class="widget %2$s">',
+	'after_widget'  => '</div>',
+	'before_title'  => '<h4 class="widgettitle">',
+	'after_title'   => '</h4>',
+	));
+	register_sidebar(array(
+	'id'            => 'archive_sidebar',
+	'name'          => __( 'Archive Sidebar', 'freshopstheme' ),
+	'description'   => __( 'The sidebar for wp e-commerce tag and cat pages.', 'freshopstheme' ),
+	'before_widget' => '<div id="%1$s view-cart" class="widget %2$s">',
+	'after_widget'  => '</div>',
+	'before_title'  => '<h4 class="widgettitle">',
+	'after_title'   => '</h4>',
+	));
+
+/*
+to add more sidebars or widgetized areas, just copy
+and edit the above sidebar code. In order to call
+your new sidebar just use the following code:
+
+Just change the name to whatever your new
+sidebar's id is, for example:
+
+register_sidebar(array(
+'id' => 'sidebar2',
+'name' => __( 'Sidebar 2', 'freshopstheme' ),
+'description' => __( 'The second (secondary) sidebar.', 'freshopstheme' ),
+'before_widget' => '<div id="%1$s" class="widget %2$s">',
+'after_widget' => '</div>',
+'before_title' => '<h4 class="widgettitle">',
+'after_title' => '</h4>',
+));
+
+To call the sidebar in your template, you can just copy
+the sidebar.php file and rename it to your sidebar's name.
+So using the above example, it would be:
+sidebar-sidebar2.php
+*/
 } // don't remove this bracket!
 
 /************* COMMENT LAYOUT *********************/
@@ -240,34 +240,34 @@ function freshops_comments( $comment, $args, $depth ) {
 		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
 			<header class="comment-author vcard">
 				<?php
-				/*
-					this is the new responsive optimized comment image. It used the new HTML5 data-attribute to display comment gravatars on larger screens only. What this means is that on larger posts, mobile sites don't have a ton of requests for comment images. This makes load time incredibly fast! If you'd like to change it back, just replace it with the regular wordpress gravatar call:
-					echo get_avatar($comment,$size='32',$default='<path_to_url>' );
-				*/
-					?>
-					<?php // custom gravatar call ?>
-					<?php
-					// create variable
-					$bgauthemail = get_comment_author_email();
-					?>
-					<img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=32" class="load-gravatar avatar avatar-48 photo" height="32" width="32" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
-					<?php // end custom gravatar call ?>
-					<?php printf(__( '<cite class="fn">%s</cite>', 'freshopstheme' ), get_comment_author_link()); ?>
-					<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><?php comment_time(__( 'F jS, Y', 'freshopstheme' )); ?> </a></time>
-					<?php edit_comment_link(__( '(Edit)', 'freshopstheme' ),'  ',''); ?>
-				</header>
-				<?php if ($comment->comment_approved == '0') : ?>
-					<div class="alert alert-info">
-						<p><?php _e( 'Your comment is awaiting moderation.', 'freshopstheme' ); ?></p>
-					</div>
-				<?php endif; ?>
-				<section class="comment_content clearfix">
-					<?php comment_text(); ?>
-				</section>
-				<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
-			</article>
-			<?php // </li> is added by WordPress automatically ?>
-			<?php
+/*
+this is the new responsive optimized comment image. It used the new HTML5 data-attribute to display comment gravatars on larger screens only. What this means is that on larger posts, mobile sites don't have a ton of requests for comment images. This makes load time incredibly fast! If you'd like to change it back, just replace it with the regular wordpress gravatar call:
+echo get_avatar($comment,$size='32',$default='<path_to_url>' );
+*/
+?>
+<?php // custom gravatar call ?>
+<?php
+// create variable
+$bgauthemail = get_comment_author_email();
+?>
+<img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=32" class="load-gravatar avatar avatar-48 photo" height="32" width="32" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
+<?php // end custom gravatar call ?>
+<?php printf(__( '<cite class="fn">%s</cite>', 'freshopstheme' ), get_comment_author_link()); ?>
+<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><?php comment_time(__( 'F jS, Y', 'freshopstheme' )); ?> </a></time>
+<?php edit_comment_link(__( '(Edit)', 'freshopstheme' ),'  ',''); ?>
+</header>
+<?php if ($comment->comment_approved == '0') : ?>
+	<div class="alert alert-info">
+		<p><?php _e( 'Your comment is awaiting moderation.', 'freshopstheme' ); ?></p>
+	</div>
+<?php endif; ?>
+<section class="comment_content clearfix">
+	<?php comment_text(); ?>
+</section>
+<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+</article>
+<?php // </li> is added by WordPress automatically ?>
+<?php
 } // don't remove this bracket!
 
 /************* SEARCH FORM LAYOUT *****************/
@@ -318,29 +318,29 @@ function is_a_page_containing_products() {
 
 	if ( function_exists( 'is_products_page' ) && (!$is_a_page_containing_products)):
 
-		if(is_products_page()){
-			$is_a_page_containing_products = true;
-		}
-		endif;
+	if(is_products_page()){
+		$is_a_page_containing_products = true;
+	}
+	endif;
 
-		if(!$is_a_page_containing_products) :
-			global $wpdb;
+	if(!$is_a_page_containing_products) :
+	global $wpdb;
 
-			if(!empty($post->ID)):
-				$sql =  "SELECT * FROM `{$wpdb->posts}` WHERE `post_type` IN('page','post') AND `post_content` LIKE '%".wpsc_products."%'
-				AND `ID` = ".$post->ID;
-				$result = $wpdb->get_results($sql);
+if(!empty($post->ID)):
+$sql =  "SELECT * FROM `{$wpdb->posts}` WHERE `post_type` IN('page','post') AND `post_content` LIKE '%".wpsc_products."%'
+AND `ID` = ".$post->ID;
+$result = $wpdb->get_results($sql);
 
-				if($result) :
-					$is_a_page_containing_products = true;
-					//error_log(‘has found shortcode wpsc_products’ );
-				endif;
+if($result) :
+$is_a_page_containing_products = true;
+//error_log(‘has found shortcode wpsc_products’ );
+endif;
 
-		endif; //end $post loop
+endif; //end $post loop
 
-	endif; // end !$is_a_page_containing_products
+endif; // end !$is_a_page_containing_products
 
-	return $is_a_page_containing_products;
+return $is_a_page_containing_products;
 
 }
 
@@ -350,42 +350,42 @@ function is_a_page_containing_products() {
 =============================================*/
 function is_hop_product() {
 	$prodID = $wpdb->get_row('SELECT * FROM wp_wpsc_item_category_assoc WHERE product_id = "'.$item['prodid'].'"');
-            if($prodID->category_id == 77 || $prodID->category_id == 172 || $prodID->category_id == 139 || $prodID->category_id == 137 || $prodID->category_id == 138){
-            		$is_hop_product=true;
-            	}
-            return $is_hop_product;
+	if($prodID->category_id == 77 || $prodID->category_id == 172 || $prodID->category_id == 139 || $prodID->category_id == 137 || $prodID->category_id == 138){
+		$is_hop_product=true;
+	}
+	return $is_hop_product;
 }
 
 
 
 /* product category check for hop category */
 function is_hop_cat() {
-		global $post;
-		$is_hop_cat = false;
- 		if(wpsc_category_id() == 77 ||
-		wpsc_category_id() == 172 ||
-		wpsc_category_id() == 139 ||
-		wpsc_category_id() == 137 ||
-		wpsc_category_id() == 138
-		) {
-		     $is_hop_cat=true;
-	     	}
-	return $is_hop_cat;
+	global $post;
+	$is_hop_cat = false;
+	if(wpsc_category_id() == 77 ||
+	wpsc_category_id() == 172 ||
+	wpsc_category_id() == 139 ||
+	wpsc_category_id() == 137 ||
+	wpsc_category_id() == 138
+	) {
+		$is_hop_cat=true;
+}
+return $is_hop_cat;
 }
 
 /* product category check for rhizome category */
 function is_rhizome_cat() {
-		global $post;
-		$is_rhizome_cat = false;
- 		if(wpsc_category_id() == 78 ||
-		wpsc_category_id() == 155 ||
-		wpsc_category_id() == 156 ||
-		wpsc_category_id() == 157 ||
-		wpsc_category_id() == 174
-		) {
-		     $is_rhizome_cat=true;
-	     	}
-	return  $is_rhizome_cat;
+	global $post;
+	$is_rhizome_cat = false;
+	if(wpsc_category_id() == 78 ||
+	wpsc_category_id() == 155 ||
+	wpsc_category_id() == 156 ||
+	wpsc_category_id() == 157 ||
+	wpsc_category_id() == 174
+	) {
+		$is_rhizome_cat=true;
+}
+return  $is_rhizome_cat;
 }
 
 //Returns true if we are on rhizome or hop single page
@@ -395,11 +395,11 @@ function is_rhizome() {
 
 	if ( ( has_term('hop', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) || (has_term('rhizomes', 'wpsc_product_category' ) && is_singular( 'wpsc-product' )) )  :
 
-		$is_rhizome = true;
+	$is_rhizome = true;
 
-	endif;
+endif;
 
-	return $is_rhizome;
+return $is_rhizome;
 }
 /*-----  END CATEGORY CHECKS  ------*/
 
@@ -415,35 +415,91 @@ function change_product_order(){
 }
 
 /**
-* action hook for wp-e-commerce to provide our own AJAX cart updates
+* add a custom AJAX request handler
 */
-function theme_cart_update() {
-    $cart_count = wpsc_cart_item_count();
-    $total = wpsc_cart_total_widget();
-    echo <<<HTML
-jQuery("#theme-checkout-count").html("$cart_count");
-jQuery("#theme-checkout-total").html("$total");
-
-HTML;
+function theme_wpsc_cart_update() {
+    $data = array(
+        'cart_count' => wpsc_cart_item_count(),
+        'cart_total' => wpsc_cart_total_widget(),
+    );
+    echo json_encode($data);
+    exit;
 }
+add_action('wp_ajax_theme_wpsc_cart_update', 'theme_wpsc_cart_update');
+add_action('wp_ajax_nopriv_theme_wpsc_cart_update', 'theme_wpsc_cart_update');
+ 
+/**
+* add JavaScript event handler to the page footer
+*/
+function theme_wpsc_footer() {
+    if (!is_admin()) {
+    ?>
 
-add_action('wpsc_alternate_cart_html', 'theme_cart_update');
+    <script>
+    jQuery(function($) {
+        /**
+        * catch WP e-Commerce cart update event
+        * @param {jQuery.Event} event
+        */
+        $(document).on("wpsc_fancy_notification", function(event) {
+            updateMinicart();
+        });
+
+        /**
+        * catch AJAX complete events, to catch clear cart
+        * @param {jQuery.Event} event
+        * @param {jqXHR} xhr XmlHttpRequest object
+        * @param {Object} ajaxOpts options for the AJAX request
+        */
+        $(document).ajaxComplete(function(event, xhr, ajaxOpts) {
+            // check for WP e-Commerce "empty_cart" action
+            if ("data" in ajaxOpts && ajaxOpts.data.indexOf("action=empty_cart") != -1) {
+                updateMinicart();
+            }
+        });
+
+        /**
+        * submit AJAX request to update mini-cart
+        */
+        function updateMinicart() {
+            // ask server for updated data
+            $.ajax({
+                url: "<?php echo admin_url('admin-ajax.php'); ?>",
+                cache: false,
+                dataType: "json",
+                data: { action: "theme_wpsc_cart_update" },
+                success: function(data) {
+                    // update our mini-cart elements
+                    $("#theme-checkout-count").html(data.cart_count);
+                    $("#theme-checkout-total").html(data.cart_total);
+                }
+            });
+        }
+    });
+    </script>
+
+    <?php
+    }
+}
+add_action('wp_footer', 'theme_wpsc_footer');
+
+// add_action('wpsc_alternate_cart_html', 'theme_cart_update');
 
 /**
- * Changes the breadcrumb options sitewide instead of changing the args on each instance
- *
- * @param  array $options req The array of options for the breadcrumbs
- * @return array $options The array of options with our changes to them
- *
- * @since  Theme Name X/Y
- * @author WP Theme Tutorial, Curtis McHale
- * @link
- */
+* Changes the breadcrumb options sitewide instead of changing the args on each instance
+*
+* @param  array $options req The array of options for the breadcrumbs
+* @return array $options The array of options with our changes to them
+*
+* @since  Theme Name X/Y
+* @author WP Theme Tutorial, Curtis McHale
+* @link
+*/
 function wp_theme_t_correct_breadcrumbs( $options ){
 
-    $options['show_products_page'] = false;
+	$options['show_products_page'] = false;
 
-    return $options;
+	return $options;
 
 }
 

@@ -23,6 +23,7 @@ jQuery(function($) {
 	$(document).ready(function() {
 		
 		$('.kerplop').kerplop();
+		add_action( 'wp_ajax_add_to_cart'       , 'wpsc_add_to_cart' );
 
 		$('header nav').meanmenu({
 			meanScreenWidth: "768px"

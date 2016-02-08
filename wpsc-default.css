@@ -396,10 +396,9 @@ table.list_productdisplay .wpsc_buy_button_container {
 table.list_productdisplay .wpsc_buy_button_container .wpsc_loading_animation {
 	position:absolute;
 	top:1px;
-	right:-85px;
-	*right:-100px;
+	left:0;
 	font-size:10px;
-	width:100%;
+	width:60%;
 	vertical-align:middle;
 	line-height:1.2em;
 }

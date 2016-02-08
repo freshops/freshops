@@ -1,109 +1,79 @@
 /*
  * Bones Scripts File
  * Author: Ben Beekman and Michael Hulse
- *
- * This file should contain any js scripts you want to add to the site.
- * Instead of calling it in the header or throwing it inside wp_head()
- * this file will be called automatically in the footer so as not to
- * slow the page load.
- *
- * There are a lot of example functions and tools in here. If you don't
- * need any of it, just remove it. They are meant to be helpers and are
- * not required. It's your world baby, you can do whatever you want.
  */
+var $kerplop_active = false;
 
-/*
- * Get Viewport Dimensions
- * returns object with viewport dimensions to match css in width and height properties
- * ( source: http://andylangton.co.uk/blog/development/get-viewport-size-width-and-height-javascript )
- */
-function updateViewportDimensions() {
-	var w = window,
-		d = document,
-		e = d.documentElement,
-		g = d.getElementsByTagName('body')[0],
-		x = w.innerWidth || e.clientWidth || g.clientWidth,
-		y = w.innerHeight || e.clientHeight || g.clientHeight;
-	return {
-		width: x,
-		height: y
-	};
-}
-
-// setting the viewport width
-var viewport = updateViewportDimensions();
-
-
-/*
- * Throttle Resize-triggered Events
- * Wrap your actions in this function to throttle the frequency of firing them off, for better performance, esp. on mobile.
- * ( source: http://stackoverflow.com/questions/2854407/javascript-jquery-window-resize-how-to-fire-after-the-resize-is-completed )
- */
-var waitForFinalEvent = (function() {
-	var timers = {};
-	return function(callback, ms, uniqueId) {
-		if (!uniqueId) {
-			uniqueId = "Don't call this twice without a uniqueId";
-		}
-		if (timers[uniqueId]) {
-			clearTimeout(timers[uniqueId]);
-		}
-		timers[uniqueId] = setTimeout(callback, ms);
-	};
-})();
-
-// how long to wait before deciding the resize has stopped, in ms. Around 50-100 should work ok.
-var timeToWaitForLast = 100;
-
-
-/*
- * Here's an example so you can see how we're using the above function
- *
- * This is commented out so it won't work, but you can copy it and
- * remove the comments.
- *
- *
- *
- * If we want to only do it on a certain page, we can setup checks so we do it
- * as efficient as possible.
- *
- * if( typeof is_home === "undefined" ) var is_home = $('body').hasClass('home');
- *
- * This once checks to see if you're on the home page based on the body class
- * We can then use that check to perform actions on the home page only
- *
- * When the window is resized, we perform this function
- * $(window).resize(function () {
- *
- *    // if we're on the home page, we wait the set amount (in function above) then fire the function
- *    if( is_home ) { waitForFinalEvent( function() {
- *
- *      // if we're above or equal to 768 fire this off
- *      if( viewport.width >= 768 ) {
- *        console.log('On home page and window sized to 768 width or more.');
- *      } else {
- *        // otherwise, let's do this instead
- *        console.log('Not on home page, or window sized to less than 768.');
- *      }
- *
- *    }, timeToWaitForLast, "your-function-identifier-string"); }
- * });
- *
- * Pretty cool huh? You can create functions like this to conditionally load
- * content and other stuff dependent on the viewport.
- * Remember that mobile devices and javascript aren't the best of friends.
- * Keep it light and always make sure the larger viewports are doing the heavy lifting.
- *
- */
 function listKerplop() {
-	var $kerplop_active;
+	'use strict';
 	var $kerplops = jQuery('.description-kerplop, .price-header-kerplop, .alpha-header-kerplop, .price-kerplop, .alpha-kerplop');
 
 	if (jQuery(window).width() < 800) {
-		//for smaller screens, this rearranges list view elements into a table-free, mobile-friendly block.
-		if ($kerplop_active=true) { //if it's not active, activate kerplop
+		//for smaller screens, this rearranges list view elements into a table-free, mobile-friendly inline layout.
+		if ($kerplop_active === false) { //if it's not active, activate kerplop
 			$kerplops.kerplop();
 			$kerplop_active = true;
+
+			// Submit the product form using AJAX
+			jQuery('form.product_form, .wpsc-add-to-cart-button-form').on('submit', function() {
+				// we cannot submit a file through AJAX, so this needs to return true to submit the form normally if a file formfield is present
+				file_upload_elements = jQuery.makeArray(jQuery('input[type="file"]', jQuery(this)));
+				if (file_upload_elements.length > 0) {
+					return true;
+				} else {
+
+					var action_buttons = jQuery('input[name="wpsc_ajax_action"]', jQuery(this));
+
+					var action;
+					if (action_buttons.length > 0) {
+						action = action_buttons.val();
+					} else {
+						action = 'add_to_cart';
+					}
+
+					form_values = jQuery(this).serialize() + '&action=' + action;
+
+					// Sometimes jQuery returns an object instead of null, using length tells us how many elements are in the object, which is more reliable than comparing the object to null
+					if (jQuery('#fancy_notification').length === 0) {
+						jQuery('div.wpsc_loading_animation', this).css('visibility', 'visible');
+					}
+
+					var success = function(response) {
+						if ((response)) {
+							if (response.hasOwnProperty('fancy_notification') && response.fancy_notification) {
+								if (jQuery('#fancy_notification_content')) {
+									jQuery('#fancy_notification_content').html(response.fancy_notification);
+									jQuery('#loading_animation').css('display', 'none');
+									jQuery('#fancy_notification_content').css('display', 'block');
+								}
+							}
+							jQuery('div.shopping-cart-wrapper').html(response.widget_output);
+							jQuery('div.wpsc_loading_animation').css('visibility', 'hidden');
+
+							jQuery('.cart_message').delay(3000).slideUp(500);
+
+							//Until we get to an acceptable level of education on the new custom event - this is probably necessary for plugins.
+							if (response.wpsc_alternate_cart_html) {
+								eval(response.wpsc_alternate_cart_html);
+							}
+
+							jQuery(document).trigger({
+								type: 'wpsc_fancy_notification',
+								response: response
+							});
+						}
+
+						if (jQuery('#fancy_notification').length > 0) {
+							jQuery('#loading_animation').css("display", 'none');
+						}
+					};
+
+					jQuery.post(wpsc_ajax.ajaxurl, form_values, success, 'json');
+
+					wpsc_fancy_notification(this);
+					return false;
+				}
+			});
 		}
 	}
 }
@@ -111,7 +81,6 @@ function listKerplop() {
 /*
  * Put all your regular jQuery in here.
  */
-
 jQuery(document).ready(function() {
 	$kerplop_active = false;
 	listKerplop();
@@ -119,4 +88,13 @@ jQuery(document).ready(function() {
 
 jQuery(window).resize(function() { /* only trigger on resize */
 	listKerplop();
+});
+
+
+/**
+ * catch WP e-Commerce cart update event
+ * @param {jQuery.Event} event
+ */
+jQuery(document).on('wpsc_fancy_notification', function(event) {
+	jQuery('#theme-checkout-total').html(event.response.cart_total);
 });

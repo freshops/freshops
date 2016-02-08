@@ -12,8 +12,12 @@ possible. This is called at the top of the main stylesheet and will be used acro
 /*********************
 GENERAL STYLES
 *********************/
+img.attachment-featured-product-thumbnails {
+	height: auto;
+	max-width: 63%;
+}
 
-.home .default_product_display .imagecol {
+.default_product_display .imagecol {
 	float: left;
 }
 

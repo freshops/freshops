@@ -1352,7 +1352,11 @@ possible. This is called at the top of the main stylesheet and will be used acro
 /*********************
 GENERAL STYLES
 *********************/
-.home .default_product_display .imagecol {
+img.attachment-featured-product-thumbnails {
+  height: auto;
+  max-width: 63%; }
+
+.default_product_display .imagecol {
   float: left; }
 
 .wpsc-category .widget_wpsc_product_specials h4 {
