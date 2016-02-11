@@ -14,13 +14,10 @@ function listKerplop() {
 			$kerplops.kerplop();
 			$kerplop_active = true;
 
+			//The code below is re-triggered after kerplop fires, to attach fancy_notification AJAX action to the newly spawned submit buttons
 			// Submit the product form using AJAX
 			jQuery('form.product_form, .wpsc-add-to-cart-button-form').on('submit', function() {
 				// we cannot submit a file through AJAX, so this needs to return true to submit the form normally if a file formfield is present
-				file_upload_elements = jQuery.makeArray(jQuery('input[type="file"]', jQuery(this)));
-				if (file_upload_elements.length > 0) {
-					return true;
-				} else {
 
 					var action_buttons = jQuery('input[name="wpsc_ajax_action"]', jQuery(this));
 
@@ -52,11 +49,6 @@ function listKerplop() {
 
 							jQuery('.cart_message').delay(3000).slideUp(500);
 
-							//Until we get to an acceptable level of education on the new custom event - this is probably necessary for plugins.
-							if (response.wpsc_alternate_cart_html) {
-								eval(response.wpsc_alternate_cart_html);
-							}
-
 							jQuery(document).trigger({
 								type: 'wpsc_fancy_notification',
 								response: response
@@ -64,15 +56,14 @@ function listKerplop() {
 						}
 
 						if (jQuery('#fancy_notification').length > 0) {
-							jQuery('#loading_animation').css("display", 'none');
+							jQuery('#loading_animation').css('display', 'none');
 						}
 					};
 
 					jQuery.post(wpsc_ajax.ajaxurl, form_values, success, 'json');
 
 					wpsc_fancy_notification(this);
-					return false;
-				}
+					return false; //because there are no downloadables being purchased
 			});
 		}
 	}

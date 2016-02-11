@@ -349,7 +349,7 @@ position: relative;
 }
 
 #list_view_products_page_container p, #content #list_view_products_page_container p {
-	line-height:1.2em;
+	line-height:1.1em;
 	margin:0;
 	padding:0;
 }
@@ -1262,7 +1262,7 @@ div.wpsc_product_search{
 }
 
 .wpsc_category_details p {
-	display: inline-block;
+	display: inline;
 	margin-left: 2rem;
 }
 
