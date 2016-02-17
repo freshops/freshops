@@ -153,6 +153,31 @@ function freshops_scripts_and_styles() {
 		and your site will load faster.
 		*/
 		wp_enqueue_script( 'jquery' );
+
+		if (is_page('label')) { //labeler-specific styles and scripts
+			wp_register_style('label-combo-css', get_stylesheet_directory_uri() . '/library/css/label-combo.css', array(), '2', 'all' );
+			wp_register_style('label-all-css', get_stylesheet_directory_uri() . '/library/css/label-all.css', array(), '2', 'all' );
+			wp_register_style('label-screen-css', get_stylesheet_directory_uri() . '/library/css/label-screen.css', array(), '2', 'screen' );
+			wp_register_style('label-print-css', get_stylesheet_directory_uri() . '/library/css/label-print.css', array(), '2', 'print' );
+			wp_register_style('jquery-ui-css', get_stylesheet_directory_uri() . '/library/css/jquery-ui.css', array(), '2', 'screen' );
+
+			wp_enqueue_style ('label-combo-css');
+			wp_enqueue_style ('label-ui-css');
+			wp_enqueue_style ('label-all-css');
+			wp_enqueue_style ('label-screen-css');
+			wp_enqueue_style ('label-print-css');
+
+			wp_enqueue_script('jquery-ui-core');
+			wp_enqueue_script ( 'jquery-ui-autocomplete' );
+			wp_enqueue_script ( 'jquery-ui-button' );
+			wp_enqueue_script ( 'jquery-ui-menu' );
+			wp_enqueue_script ( 'jquery-ui-mouse' );
+
+			wp_register_script( 'jquery-ui-label', get_stylesheet_directory_uri() . '/library/js/label/label.min.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-autocomplete', 'jquery-ui-button', 'jquery-ui-menu', 'jquery-ui-mouse' ), '2', true );
+			wp_enqueue_script ( 'jquery-ui-label' );
+
+		}
+
 		wp_enqueue_script( 'bones-js' );
 
 	}

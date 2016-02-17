@@ -10,6 +10,7 @@
 		'hops-rhizome-information',
 		'hop-variety-descriptions',
 		'testimonials',
+		'label',
 	);
 ?>
 

@@ -21,18 +21,18 @@
 
 	<?php # Blog page: ?>
 
-	Blog page
+	Blog
 	<?php # Archive stuff: ?>
 
 	<? #If it's a post category page or a product category page, print the category title ?>
 
 <?php elseif (is_category()): ?>
 	<span><?php _e('Posts Categorized: ', 'freshopstheme'); ?></span>
-	<?php the_archive_title(); ?>
+	<?php the_title(); ?>
 
 <?php elseif (is_tag()): ?>
 	<span><?php _e('Posts Tagged: ', 'freshopstheme'); ?></span>
-	<?php the_archive_title(); ?>
+	<?php the_title(); ?>
 
 <?php elseif (is_author()): ?>
 	<?php

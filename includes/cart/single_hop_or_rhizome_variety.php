@@ -84,13 +84,13 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 
 				<?php else: //otherwise alphamin is the alphavalue, so set it accordingly and unset min and max
 
-				$alphavalue = $alphamin;
+					$alphavalue = $alphamin;
 
 					unset ($alphamin);  //set to NULL
 
 					unset ($alphamax);  //set to NULL
 
-					endif;
+				endif;
 					?>
 
 					<?php $alphapct = ( ( (float) $alphavalue) * 0.01); //alphapct= alphavalue converted from a percentage to an integer ?>
@@ -104,18 +104,19 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 						max="0.16"
 						low="0.07"
 						high="0.1"
-						value="<?php $alphapct?>"
+						value="<?php echo $alphapct?>"
 						title="%">
 						<?php  //print the min or only value, then if there's a max set, add an emdash and that.
-						if (isset($alphamin))  : ?><?php $alphamin?><?php else : ?><?php $alphavalue;?><?php endif;
-						if (isset($alphamax)) : ?>–<?php $alphamax?><?php endif; ?>%</meter>
-					</dd><!-- meter ends here -->
+						if (isset($alphamin))  : ?><?php echo $alphamin?><?php else : ?><?php echo $alphavalue;?><?php endif;
+						if (isset($alphamax)) : ?>–<?php echo $alphamax?><?php endif; ?>%</meter>
+					<!-- meter ends here -->
 
 					<!-- Display value starts here -->
 				<?php  //print the min or only value, then if there's a max set, add an emdash and the max value.
-				if (isset($alphamin))  : ?><?php $alphamin?><?php else : ?><?php $alphavalue;?><?php endif;
-				if (isset($alphamax)) : ?>–<?php $alphamax?><?php endif; ?>%
+				if (isset($alphamin))  : ?><?php echo $alphamin?><?php else : ?><?php echo $alphavalue;?><?php endif;
+				if (isset($alphamax)) : ?>–<?php echo $alphamax?><?php endif; ?>%
 				<!-- End Display value -->
+				</dd>
 			</dl>
 		<?php endif; ?>
 
@@ -225,7 +226,7 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 		<?php if(get_field('possible_substitutions')): ?>
 			<dl>
 				<dt>Possible Substitutions</dt>
-				<dd>
+					<dd>
 						<?php
 
 					/*

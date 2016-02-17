@@ -67,19 +67,25 @@ function freshops_wp_enqueue_rhizome_scripts_styles() {
 		wp_register_script('dcjqaccordion', $script_path . 'jquery.dcjqaccordion.2.7.js', array('jquery'), 1, FALSE);
 		wp_register_script('fastclick',     $script_path . 'fastclick.js',                array('jquery'), 1, FALSE);
 		wp_register_script('rhizome',       $script_path . 'rhizome.js',                  array('jquery'), 1, FALSE);
-		wp_register_script('kerplop',       $script_path . 'jquery.kerplop.min.js',                  array('jquery'), 1, FALSE);
+
 
 		wp_enqueue_script('meanmenu');
 		wp_enqueue_script('nutshell');
 		wp_enqueue_script('cookie');
 		wp_enqueue_script('dcjqaccordion');
-		wp_enqueue_script('fastclick'); 
+		wp_enqueue_script('fastclick');
 		wp_enqueue_script('rhizome');
-		wp_enqueue_script('kerplop');
+
+		if (is_a_page_containing_products) {
+			wp_register_script('kerplop',       $script_path . 'jquery.kerplop.min.js',                  array('jquery'), 1, FALSE);
+			wp_enqueue_script('kerplop');
+		}
+
 	}
 }
 
 add_action('wp_enqueue_scripts', 'freshops_wp_enqueue_rhizome_scripts_styles');
+
 
 
 
@@ -205,6 +211,15 @@ function freshops_register_sidebars() {
 	'before_title'  => '<h4 class="widgettitle">',
 	'after_title'   => '</h4>',
 	));
+	register_sidebar(array(
+	'id'            => 'blog_sidebar',
+	'name'          => __( 'Blog Sidebar', 'freshopstheme' ),
+	'description'   => __( 'The sidebar for blog pages.', 'freshopstheme' ),
+	'before_widget' => '<div id="%1$s view-cart" class="widget %2$s">',
+	'after_widget'  => '</div>',
+	'before_title'  => '<h4 class="widgettitle">',
+	'after_title'   => '</h4>',
+	));
 
 /*
 to add more sidebars or widgetized areas, just copy
@@ -323,24 +338,24 @@ function is_a_page_containing_products() {
 	}
 	endif;
 
-	if(!$is_a_page_containing_products) :
-	global $wpdb;
+	if(!$is_a_page_containing_products) : //
+		global $wpdb;
 
-if(!empty($post->ID)):
-$sql =  "SELECT * FROM `{$wpdb->posts}` WHERE `post_type` IN('page','post') AND `post_content` LIKE '%".wpsc_products."%'
-AND `ID` = ".$post->ID;
-$result = $wpdb->get_results($sql);
+		if(!empty($post->ID)):
+			$sql =  "SELECT * FROM `{$wpdb->posts}` WHERE `post_type` IN('page','post') AND `post_content` LIKE '%".wpsc_products."%'
+			AND `ID` = ".$post->ID;
+			$result = $wpdb->get_results($sql);
 
-if($result) :
-$is_a_page_containing_products = true;
-//error_log(‘has found shortcode wpsc_products’ );
-endif;
+				if($result) :
+					$is_a_page_containing_products = true;
+					//error_log(‘has found shortcode wpsc_products’ );
+				endif;
 
-endif; //end $post loop
+		endif; //end $post loop
 
-endif; // end !$is_a_page_containing_products
+	endif; // end !$is_a_page_containing_products
 
-return $is_a_page_containing_products;
+	return $is_a_page_containing_products;
 
 }
 
@@ -427,7 +442,7 @@ function theme_wpsc_cart_update() {
 }
 add_action('wp_ajax_theme_wpsc_cart_update', 'theme_wpsc_cart_update');
 add_action('wp_ajax_nopriv_theme_wpsc_cart_update', 'theme_wpsc_cart_update');
- 
+
 /**
 * add JavaScript event handler to the page footer
 */
@@ -483,24 +498,17 @@ function theme_wpsc_footer() {
 }
 add_action('wp_footer', 'theme_wpsc_footer');
 
-// add_action('wpsc_alternate_cart_html', 'theme_cart_update');
-
 /**
 * Changes the breadcrumb options sitewide instead of changing the args on each instance
 *
 * @param  array $options req The array of options for the breadcrumbs
 * @return array $options The array of options with our changes to them
-*
-* @since  Theme Name X/Y
-* @author WP Theme Tutorial, Curtis McHale
-* @link
 */
+
 function wp_theme_t_correct_breadcrumbs( $options ){
 
 	$options['show_products_page'] = false;
-
 	return $options;
-
 }
 
 add_filter( 'wpsc_output_breadcrumbs_options', 'wp_theme_t_correct_breadcrumbs' );

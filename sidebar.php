@@ -16,23 +16,14 @@ ________________________________________________________________________________
 		<?php dynamic_sidebar('Home Sidebar'); ?>
 	<?php endif; ?>
 <?php endif; ?>
-
-<?php //if ( is_a_page_containing_products () ) : //then display the shop sidebar if on a shop page ?>
-	<?php if ( ! function_exists('dynamic_sidebar') || ( ! dynamic_sidebar('Shop Sidebar'))) :?>
-		<?php if (! is_archive() ): ?>
-			<?php dynamic_sidebar('Shop Sidebar'); ?>
-		<?php else: ?>
+<?php if ( (get_query_var( 'taxonomy' ) == 'wpsc_product_category' ) || (get_query_var( 'taxonomy' ) == 'product_tag' ) ) : ?>
+	<?php if (!function_exists('dynamic_sidebar') || ( ! dynamic_sidebar('Main Sidebar'))) :?>
+			<?php dynamic_sidebar('Main Sidebar'); ?>
 		<?php endif; ?>
-	<?php //else: ?>
-	<?php //endif; ?>
-<?php elseif ( is_home() || is_archive() || is_singular( 'post' ) || is_tag() || is_tax()) : ?>
-
-	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Blog Sidebar") ) : ?>
-
-		<?php dynamic_sidebar('Blog Sidebar'); ?>
-	<?php else: ?>
-		<div class="no-widgets"><p><?php _e('This is a widget ready area that appears on all blog-related pages. Add some widgets to Blog Sidebar and they will appear here.', 'freshopstheme'); ?></p></div>
-	<?php endif; ?>
+<?php elseif ( is_a_page_containing_products () ) : //then display the shop sidebar if on a shop page ?>
+		<?php if (!function_exists('dynamic_sidebar') || ( ! dynamic_sidebar('Shop Sidebar'))) :?>
+			<?php dynamic_sidebar('Shop Sidebar'); ?>
+		<?php endif; ?>
 <?php	elseif ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Main Sidebar") ) : ?>
 	<?php dynamic_sidebar('Main Sidebar'); ?>
 <?php endif;
