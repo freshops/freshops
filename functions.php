@@ -512,3 +512,13 @@ function wp_theme_t_correct_breadcrumbs( $options ){
 }
 
 add_filter( 'wpsc_output_breadcrumbs_options', 'wp_theme_t_correct_breadcrumbs' );
+
+//Page Slug Body Class
+function add_slug_body_class( $classes ) {
+global $post;
+if ( isset( $post ) ) {
+$classes[] = $post->post_type . '-' . $post->post_name;
+}
+return $classes;
+}
+add_filter( 'body_class', 'add_slug_body_class' );

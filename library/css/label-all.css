@@ -1,6 +1,4 @@
-/* CSS Document */
-/* CSS Document */
-.page-id-2190 {
+.page-label {
   /* Classes from Micky */
   /* Hide certain elements for browsers without CSS: */
   /* Hiding of elements for assistive devices (screen readers etc): */
@@ -12,51 +10,96 @@
   /* Clears non-IE. */
   /* Clears IE. */
   /* Clearing div (oldschool): */ }
-  .page-id-2190 #flag,
-  .page-id-2190 #secondary,
-  .page-id-2190 #view_cart,
-  .page-id-2190 footer {
+  .page-label .shopping-cart-wrapper,
+  .page-label div#badge,
+  .page-label header,
+  .page-label #flag,
+  .page-label #secondary,
+  .page-label #view_cart,
+  .page-label footer {
     display: none !important;
     visibility: hidden !important; }
-  .page-id-2190 #primary {
+  .page-label #variety-output {
+    display: block;
+    font-size: 150%;
+    font-weight: bold;
+    line-height: 1em;
+    position: absolute;
+    text-align: center;
+    width: 98%;
+    height: .225in;
+    overflow: hidden; }
+  .page-label #description {
+    display: block;
+    font-size: 8pt;
+    height: 1in;
+    line-height: 1em;
+    overflow: hidden;
+    margin: .25in .1in 0;
+    position: relative;
+    text-align: left;
+    vertical-align: baseline;
+    width: 2.3in; }
+  .page-label #alpha {
+    left: .75in;
+    margin: 0;
+    padding: 0;
+    position: absolute; }
+  .page-label #weight-output {
+    left: 1.725in;
+    margin-right: .05in;
+    position: absolute;
+    text-align: center; }
+  .page-label #weight-output,
+  .page-label #alpha {
+    font-size: 1em;
+    position: absolute;
+    top: 1in; }
+  .page-label #primary {
     margin-left: 0; }
-  .page-id-2190 #wrap,
-  .page-id-2190 #content {
-    background-image: none; }
-  .page-id-2190 #preview-box {
+  .page-label #wrap,
+  .page-label #content {
+    background-image: none;
+    padding: 0;
+    background-color: #FFF; }
+  .page-label #preview-box {
     background: white;
     color: black; }
-  .page-id-2190 html, .page-id-2190 body {
+  .page-label html,
+  .page-label body {
     background: #FFFFFF; }
-  .page-id-2190 .center, .page-id-2190 .center *, .page-id-2190 .ctr {
+  .page-label .center,
+  .page-label .center *,
+  .page-label .ctr {
     text-align: center;
     margin-left: auto;
     margin-right: auto; }
-  .page-id-2190 object.center {
+  .page-label object.center {
     display: block; }
-  .page-id-2190 .hide, .page-id-2190 hr {
+  .page-label .hide,
+  .page-label hr {
     display: none !important; }
-  .page-id-2190 .off {
+  .page-label .off {
     position: absolute;
     left: -999em;
     top: -999em; }
-  .page-id-2190 .c49p {
+  .page-label .c49p {
     width: 49%; }
-  .page-id-2190 .fl {
+  .page-label .fl {
     float: left;
     display: inline; }
-  .page-id-2190 .fr {
+  .page-label .fr {
     float: right;
     display: inline; }
-  .page-id-2190 .clear:after {
+  .page-label .clear:after {
     height: 0;
     display: block;
     clear: both;
     content: '.';
     visibility: hidden; }
-  .page-id-2190 * html .clear {
+  .page-label * html .clear {
     zoom: 1; }
-  .page-id-2190 div.clearer {
+  .page-label div.clearer {
     font-size: 0 !important;
     /* Set the font-size to 0 so it isn't visible */
     line-height: 0 !important;
@@ -75,3 +118,6 @@
     /* Make sure our element is a block-level element */
     clear: both !important;
     /* Make sure it clears on both sides */ }
+  .page-label .ui-helper-hidden-accessible {
+    display: none;
+    visibility: hidden; }

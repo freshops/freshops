@@ -1,9 +1,5 @@
-@charset  'UTF-8';
-
-
-/* CSS Document */
 //labeller-specific css overrides
-.page-id-2190 {
+.page-label {
 	.ui-autocomplete {
 		background-color: white;
 		border: 1px black;
@@ -16,14 +12,13 @@
 	}
 
 	#input-box {
-		-moz-border-radius: 10px;
-		-webkit-border-radius: 10px;
 		background: #c9de96; /* old browsers */
 		background: -moz-linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%); /* firefox */
 		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c9de96), color-stop(44%, #8ab66b), color-stop(100%, #398235)); /* webkit */
 		border-radius: 10px;
 		padding: 10px;
 		text-align: left;
+		margin-left: 2.6in;
 	}
 
 	#variety {
@@ -37,11 +32,6 @@
 	}
 
 	#instructions {
-		-moz-border-radius: 12px; /* Opera 10.5, IE 9, Saf5, Chrome */
-		-moz-box-shadow: 0 0 4px #fff;
-		-ms-filter: 'progid:DXImageTransform.Microsoft.gradient(startColorStr=\'#c9d9af\', EndColorStr=\'#99CC66\')'; /* FF1+ */
-		-webkit-border-radius: 12px; /* FF3.5+ */
-		-webkit-box-shadow: 0 0 4px #fff;
 		background: #b2c3bf; /* Opera 10.5, IE 9 */
 		background-color: #c9d9af;
 		background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #c9d9af), color-stop(1, #9c6)); /* Saf3-4 */
@@ -77,50 +67,27 @@
 		top: 2.1in;
 		width: 2.5in;
 	}
+	
+	// #alpha {
+	// 	left: .75in;
+	// 	margin: 0;
+	// 	padding: 0;
+	// 	position: absolute;
+	// }
 
-	#variety-output {
-		display: block;
-		font-size: 150%;
-		font-weight: bold;
-		line-height: .85em;
-		position: absolute;
-		text-align: center;
-		width: 97%;
-	}
+	// #weight-output {
+	// 	left: 1.725in;
+	// 	margin-right: .05in;
+	// 	position: absolute;
+	// 	text-align: center;
+	// }
 
-	#description {
-		display: block;
-		font-size: 8pt;
-		height: 1.1in;
-		line-height: 1.20em;
-		margin: 0;
-		overflow: hidden;
-		padding: .25in .1in 0 .1in;
-		position: relative;
-		text-align: left;
-		vertical-align: baseline;
-		width: 2.3in;
-	}
-
-	#alpha {
-		left: .75in;
-		margin: 0;
-		padding: 0;
-		position: absolute;
-	}
-
-	#weight-output {
-		left: 1.725in;
-		margin-right: .05in;
-		position: absolute;
-		text-align: center;
-	}
-
-	#weight-output,
-	#alpha {
-		font-size: 1em;
-		top: 1in;
-		position:absolute;
-	}
+	// #weight-output,
+	// #alpha {
+	// 	font-size: 1em;
+	// 	position: absolute;
+	// 	top: 1in;
+	// 	//1 in from top of print area
+	// }
 
 }

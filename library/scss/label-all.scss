@@ -1,14 +1,63 @@
-@charset "UTF-8";
-/* CSS Document */
-/* CSS Document */
 //labeller-specific css overrides
-.page-id-2190 {
+.page-label {
+
+	.shopping-cart-wrapper,
+	div#badge,
+	header,
 	#flag,
 	#secondary,
 	#view_cart,
 	footer {
 		display: none !important;
 		visibility: hidden !important;
+	}
+
+
+#variety-output {
+		display: block;
+		font-size: 150%;
+		font-weight: bold;
+		line-height: 1em;
+		position: absolute;
+		text-align: center;
+		width: 98%;
+		height: .225in;
+		overflow: hidden;
+	}
+
+	#description {
+		display: block;
+		font-size: 8pt;
+		height: 1in;
+		line-height: 1em;
+		overflow: hidden;
+		margin: .25in .1in 0;
+		position: relative;
+		text-align: left;
+		vertical-align: baseline;
+		width: 2.3in;
+	}
+
+	#alpha {
+		left: .75in;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+	}
+
+	#weight-output {
+		left: 1.725in;
+		margin-right: .05in;
+		position: absolute;
+		text-align: center;
+	}
+
+	#weight-output,
+	#alpha {
+		font-size: 1em;
+		position: absolute;
+		top: 1in;
+		//1 in from top of print area
 	}
 
 	#primary {
@@ -18,72 +67,97 @@
 	#wrap,
 	#content {
 		background-image: none;
+		padding: 0;
+		background-color: #FFF;
 	}
 
-#preview-box
-{
-	background: white;
-	color: black;
-}
+	#preview-box {
+		background: white;
+		color: black;
+	}
 
-html, body {
-	background: #FFFFFF;
-}
+	html,
+	body {
+		background: #FFFFFF;
+	}
 
-/* Classes from Micky */
-.center, .center *, .ctr {
- text-align: center;
- margin-left: auto;
- margin-right: auto;
-}
-object.center {
-   display: block;
-}
-/* Hide certain elements for browsers without CSS: */
-.hide, hr {
-   display: none !important;
-}
-/* Hiding of elements for assistive devices (screen readers etc): */
-.off {
-   position: absolute;
-   left: -999em;
-   top: -999em;
-}
-/* For fluid, evenly split, columns: */
-.c49p {
-   width: 49%;
-} /* Just float left/right and you're good. :) */
-/* Left floats: */
-.fl {
-   float: left;
-   display: inline;
-}
-/* Right floats: */
-.fr {
-   float: right;
-   display: inline;
-}
-/* Specify clears: */
-.clear:after {
-   height: 0;
-   display: block;
-   clear: both;
-   content: '.';
-   visibility: hidden;
-} /* Clears non-IE. */
-* html .clear {
-   zoom: 1;
-} /* Clears IE. */
-/* Clearing div (oldschool): */
-div.clearer {
-   font-size: 0 !important;    /* Set the font-size to 0 so it isn't visible */
-   line-height: 0 !important;  /* Set the line-height to 0 so it isn't visible */
-   border: 0 !important;       /* Remove all borders that would make it visible */
-   margin: 0 !important;       /* Remove all margins that would make it visible */
-   padding: 0 !important;      /* Remove all padding that would make it visible */
-   height: 0.1px !important;   /* Mozilla/Firefox require the clearer height to not be 0, but rounding makes it 0 */
-   float: none !important;     /* Remove any inherited floats */
-   display: block !important;  /* Make sure our element is a block-level element */
-   clear: both !important;     /* Make sure it clears on both sides */
-}
+	/* Classes from Micky */
+	.center,
+	.center *,
+	.ctr {
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	object.center {
+		display: block;
+	}
+
+	/* Hide certain elements for browsers without CSS: */
+	.hide,
+	hr {
+		display: none !important;
+	}
+
+	/* Hiding of elements for assistive devices (screen readers etc): */
+	.off {
+		position: absolute;
+		left: -999em;
+		top: -999em;
+	}
+
+	/* For fluid, evenly split, columns: */
+	.c49p {
+		width: 49%;
+	}
+
+	/* Just float left/right and you're good. :) */
+
+	/* Left floats: */
+	.fl {
+		float: left;
+		display: inline;
+	}
+
+	/* Right floats: */
+	.fr {
+		float: right;
+		display: inline;
+	}
+
+	/* Specify clears: */
+	.clear:after {
+		height: 0;
+		display: block;
+		clear: both;
+		content: '.';
+		visibility: hidden;
+	}
+
+	/* Clears non-IE. */
+	* html .clear {
+		zoom: 1;
+	}
+
+	/* Clears IE. */
+
+	/* Clearing div (oldschool): */
+	div.clearer {
+		font-size: 0 !important;    /* Set the font-size to 0 so it isn't visible */
+		line-height: 0 !important;  /* Set the line-height to 0 so it isn't visible */
+		border: 0 !important;       /* Remove all borders that would make it visible */
+		margin: 0 !important;       /* Remove all margins that would make it visible */
+		padding: 0 !important;      /* Remove all padding that would make it visible */
+		height: 0.1px !important;   /* Mozilla/Firefox require the clearer height to not be 0, but rounding makes it 0 */
+		float: none !important;     /* Remove any inherited floats */
+		display: block !important;  /* Make sure our element is a block-level element */
+		clear: both !important;     /* Make sure it clears on both sides */
+	}
+
+		.ui-helper-hidden-accessible {
+		display: none;
+		visibility: hidden;
+	}
+
 }
