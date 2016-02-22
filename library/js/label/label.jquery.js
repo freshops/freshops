@@ -122,6 +122,7 @@ jQuery(function() {
 	'55 lbs.'
 	];
 	jQuery( '#weight' ).autocomplete({
-		source: availableWeights
+		source: availableWeights,
+		autoFocus: true
 	});
 });

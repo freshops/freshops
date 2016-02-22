@@ -12,24 +12,29 @@
     display: none;
     visibility: hidden; }
   .page-label #primary {
-    margin-left: 0; }
+    margin-left: 0; 
+}
   .page-label #wrap,
   .page-label #content {
-    background-image: none; }
+    background-image: none;
+}
   .page-label #instructions,
   .page-label #input-box,
   .page-label input,
   .page-label label {
-    display: none; }
+  	display: none;
+}
   .page-label #preview-box {
     height: 4in;
     left: 0;
     position: absolute;
     top: 0;
-    width: 2.5in; }
+    width: 2.5in;
+}
     .page-label #preview-box .printable-area {
       margin: 0;
       padding: 0 .05in;
       position: absolute;
       top: 2.1in;
-      width: 2.5in; }
+      width: 2.5in;
+  }

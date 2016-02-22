@@ -87,6 +87,7 @@
 
 		jQuery("#variety")
 			.autocomplete({
+				autoFocus: true,
 				minLength: 0,
 				delay: 0,
 				source: hopdata,
