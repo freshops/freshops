@@ -148,8 +148,15 @@ $image_width = get_option('product_image_width');
 								<div class="wpsc_quantity_update">
                                 <?php /*<label for="wpsc_quantity_update_<?php echo wpsc_the_product_id(); ?>"><?php _e('Quantity', 'wpsc'); ?>:</label>*/ ?>
 								<input type="text" id="wpsc_quantity_update_<?php echo wpsc_the_product_id(); ?>" name="wpsc_quantity_update" size="2" value="0" /> <!-- Quantity default 0, not 1 -->
-								<?php $prodid=wpsc_the_product_id(); ?>
-								<?php if( has_term( 'hop', 'wpsc-category',  $prodid) ) {
+
+								<?php $categories = wp_get_object_terms ( $post->ID, 'wpsc_product_category' );
+
+								foreach ( $categories as $category ) {
+									esc_html_e ( $category->'name' );
+									echo " ";
+								}
+
+								if( $is_hop_product()) {
 									echo 'per Oz.';
 								}?>
 								<input type="hidden" name="key" value="<?php echo wpsc_the_cart_item_key(); ?>"/>

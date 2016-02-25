@@ -76,7 +76,7 @@ function freshops_wp_enqueue_rhizome_scripts_styles() {
 		wp_enqueue_script('fastclick');
 		wp_enqueue_script('rhizome');
 
-		if (is_a_page_containing_products) {
+		if (is_a_page_containing_products()) {
 			wp_register_script('kerplop',       $script_path . 'jquery.kerplop.min.js',                  array('jquery'), 1, FALSE);
 			wp_enqueue_script('kerplop');
 		}
@@ -338,11 +338,11 @@ function is_a_page_containing_products() {
 	}
 	endif;
 
-	if(!$is_a_page_containing_products) : //
+	if(! ($is_a_page_containing_products)) : //
 		global $wpdb;
 
 		if(!empty($post->ID)):
-			$sql =  "SELECT * FROM `{$wpdb->posts}` WHERE `post_type` IN('page','post') AND `post_content` LIKE '%".wpsc_products."%'
+			$sql =  "SELECT * FROM `{$wpdb->posts}` WHERE `post_type` IN('page','post') AND `post_content` LIKE '%".'wpsc_products'."%'
 			AND `ID` = ".$post->ID;
 			$result = $wpdb->get_results($sql);
 
@@ -368,6 +368,7 @@ function is_hop_product() {
 	if($prodID->category_id == 77 || $prodID->category_id == 172 || $prodID->category_id == 139 || $prodID->category_id == 137 || $prodID->category_id == 138){
 		$is_hop_product=true;
 	}
+	if ( ( has_term('hop', 'wpsc_product_category' )))
 	return $is_hop_product;
 }
 
@@ -416,7 +417,6 @@ endif;
 
 return $is_rhizome;
 }
-/*-----  END CATEGORY CHECKS  ------*/
 
 
 /*=============================================
