@@ -430,6 +430,7 @@ function change_product_order(){
 }
 
 
+
 /* AJAX support for custom cart widget
 ________________________________________________________________________*/
 /**
