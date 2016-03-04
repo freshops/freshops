@@ -35,6 +35,12 @@
       margin: 0;
       padding: 0 .05in;
       position: absolute;
-      top: 2.1in;
+      top: 1.85in;
       width: 2.5in;
   }
+.page-label #weight-output,
+.page-label #alpha {
+	font-size: 1em;
+	position: absolute;
+	top: 1.25in;
+}

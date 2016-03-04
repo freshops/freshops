@@ -429,6 +429,9 @@ function change_product_order(){
 	return 'asc';
 }
 
+
+/* AJAX support for custom cart widget
+________________________________________________________________________*/
 /**
 * add a custom AJAX request handler
 */
@@ -512,6 +515,7 @@ function wp_theme_t_correct_breadcrumbs( $options ){
 }
 
 add_filter( 'wpsc_output_breadcrumbs_options', 'wp_theme_t_correct_breadcrumbs' );
+
 
 //Page Slug Body Class
 function add_slug_body_class( $classes ) {

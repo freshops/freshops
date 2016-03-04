@@ -1,59 +1,72 @@
 .page-label {
-  /* Output styles */
-  /* Output styles */ }
-  .page-label .ui-autocomplete {
-    background-color: white;
-    border: 1px black;
-    max-width: 800px;
-    padding: 0 1rem; }
-  .page-label .ui-menu .ui-menu-item {
-    list-style: none outside; }
-  .page-label #input-box {
-    background: #c9de96;
-    /* old browsers */
-    background: -moz-linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%);
-    /* firefox */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c9de96), color-stop(44%, #8ab66b), color-stop(100%, #398235));
-    /* webkit */
-    border-radius: 10px;
-    padding: 10px;
-    text-align: left;
-    margin-left: 2.6in; }
-  .page-label #variety {
-    display: inline;
-    text-align: left; }
-  .page-label #weight {
-    display: inline;
-    text-align: left; }
-  .page-label #instructions {
-    background: #b2c3bf;
-    /* Opera 10.5, IE 9 */
-    background-color: #c9d9af;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #c9d9af), color-stop(1, #99cc66));
-    /* Saf3-4 */
-    border-radius: 12px;
-    /* Saf3.0+, Chrome */
-    box-shadow: 0 0 4px #fff;
-    display: block;
-    margin-left: 2.6in;
-    margin-top: 5px;
-    padding: 5px 10px 200px 10px;
-    text-align: left; }
-  .page-label #preview-box {
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    background: white url(../images/labeller-bg.png) scroll top;
-    border: .015in solid #000;
-    border-radius: 8px;
-    display: block;
-    height: 4in;
-    margin-top: 5px;
-    overflow: hidden;
-    position: relative;
-    width: 2.5in; }
-  .page-label #preview-box .printable-area {
-    margin: 0;
-    padding: 0 .05in;
-    position: absolute;
-    top: 2.1in;
-    width: 2.5in; }
+
+	/* Output styles */
+
+	/* Output styles */
+}
+
+.page-label .ui-autocomplete {
+	background-color: white;
+	border: 1px black;
+	max-width: 800px;
+	padding: 0 1rem;
+}
+
+.page-label .ui-menu .ui-menu-item {
+	list-style: none outside;
+}
+
+.page-label #input-box {
+	background: #c9de96;    /* old browsers */
+	background: -moz-linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%);    /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c9de96), color-stop(44%, #8ab66b), color-stop(100%, #398235));    /* webkit */
+	border-radius: 10px;
+	padding: 10px;
+	text-align: left;
+	margin-left: 2.6in;
+}
+
+.page-label #variety {
+	display: inline;
+	text-align: left;
+}
+
+.page-label #weight {
+	display: inline;
+	text-align: left;
+}
+
+.page-label #instructions {
+	background: #b2c3bf;    /* Opera 10.5, IE 9 */
+	background-color: #c9d9af;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #c9d9af), color-stop(1, #99cc66));    /* Saf3-4 */
+	border-radius: 12px;    /* Saf3.0+, Chrome */
+	box-shadow: 0 0 4px #fff;
+	display: block;
+	margin-left: 2.6in;
+	margin-top: 5px;
+	padding: 5px 10px 200px 10px;
+	text-align: left;
+}
+
+.page-label #preview-box {
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	background: white url(../images/labeller-bg.png) scroll top;
+	border: .015in solid #000;
+	border-radius: 8px;
+	display: block;
+	height: 4in;
+	margin-top: 5px;
+	overflow: hidden;
+	position: relative;
+	width: 2.5in;
+}
+
+.page-label #preview-box .printable-area {
+	margin: 0;
+	padding: 0 .05in;
+	position: absolute;
+	top: 1.8in;
+	width: 2.5in;
+}
