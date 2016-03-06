@@ -88,11 +88,14 @@
 		jQuery("#variety")
 			.autocomplete({
 				autoFocus: true,
-				minLength: 0,
+				minLength: 1,
 				delay: 0,
 				source: hopdata,
 				focus: function(event, ui) {
 					jQuery("#variety").val(ui.item.label);
+					jQuery("#variety-id").val(ui.item.value);
+					jQuery("#alpha").html(ui.item.alpha);
+					jQuery("#description").html("<strong>" + ui.item.year + "</strong>&nbsp;" + ui.item.description);
 					return false;
 			},
 			select: function(event, ui) {
