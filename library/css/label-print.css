@@ -27,6 +27,12 @@
     position: absolute;
     top: 0;
     width: 2.5in; }
+    .page-label #preview-box .printable-area {
+      margin: 0;
+      padding: 0 .05in;
+      position: absolute;
+      top: 2.1in;
+      width: 2.5in; }
   .page-label #weight-output,
   .page-label #alpha {
     font-size: 1.3em;

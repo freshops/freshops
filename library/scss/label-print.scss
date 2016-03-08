@@ -38,7 +38,14 @@
 		position: absolute;
 		top: 0;
 		width: 2.5in;
+		.printable-area {
+			margin: 0;
+			padding: 0 .05in;
+			position: absolute;
+			top: 2.1in;
+			width: 2.5in;
 	}
+}
 
 	#weight-output,
 	#alpha {
