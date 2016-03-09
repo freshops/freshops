@@ -527,3 +527,17 @@ $classes[] = $post->post_type . '-' . $post->post_name;
 return $classes;
 }
 add_filter( 'body_class', 'add_slug_body_class' );
+
+
+/* ________________________________________________________________________
+| Suppress "pending" emails from WP E-Commerce
+________________________________________________________________________*/
+add_filter('wpsc_purchase_log_customer_notification_address', 'sb_suppress_pending_email', 2, 200);
+
+function sb_suppress_pending_email($email, $purchase_notification_object) {
+    if ($purchase_notification_object->get_subject() == 'Order Pending: Payment Required') {
+	$email = '';
+    }
+
+    return $email;
+}
