@@ -29,6 +29,7 @@
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 		ga('create', 'UA-57801308-1', 'auto');
+		ga('require', 'linkid');
  		ga('send', 'pageview');
 	</script>
 </head>
