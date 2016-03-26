@@ -7,15 +7,14 @@
 		<?php $cart_total = wpsc_cart_total_widget( false, false ,false );
 		$explode = explode('.00', $cart_total); //if .00, hide the cents ?>
 		<a target="_parent" href="<?php echo get_option('shopping_cart_url'); ?>" title="Checkout" class="gocheckout"><span id="theme-checkout-total"><?php echo $explode[0]; ?></span></a>
-		
 
-		<form action="" method="post" class="wpsc_empty_the_cart">
+		<!-- <form action="" method="post" class="wpsc_empty_the_cart">
 
 			<input type="hidden" name="wpsc_ajax_action" value="empty_cart" />
 
-			<a target="_parent" href="<?php echo htmlentities(add_query_arg('wpsc_ajax_action', 'empty_cart', remove_query_arg('ajax')), ENT_QUOTES); ?>" class="emptycart" title="Empty Your Cart"><?php _e('X', 'wpsc'); ?></a>
+			<a target="_parent" href="<?php //echo htmlentities(add_query_arg('wpsc_ajax_action', 'empty_cart', remove_query_arg('ajax')), ENT_QUOTES); ?>" class="emptycart" title="Empty Your Cart"><?php // _e('X', 'wpsc'); ?></a>
 
-		</form>
+		</form> -->
 
 	</div><!--close shoppingcart-->
 
