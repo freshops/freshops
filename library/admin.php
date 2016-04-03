@@ -7,10 +7,9 @@ It's turned off by default, but you can call it
 via the functions file.
 
 Developed by: Ben Beekman and Michael Hulse
-URL: http://beekmedia.com
+URL: http://benbeekman.com
 
-Special Thanks for code & inspiration to:
-@jackmcconnell - http://www.voltronik.co.uk/
+Useful information about customizing the admin:
 Digging into WP - http://digwp.com/2010/10/customize-wordpress-dashboard/
 
 */
@@ -122,7 +121,7 @@ you like.
 
 // Custom Backend Footer
 function freshops_custom_admin_footer() {
-	_e( '<span id="footer-thankyou">Developed by <a href="http://beekmedia.com" target="_blank">Ben Beekman</a></span>.', 'freshopstheme' );
+	_e( '<span id="footer-thankyou">Developed by <a href="http://benbeekman.com" target="_blank">Ben Beekman</a></span>.', 'freshopstheme' );
 }
 
 // adding it to the admin area

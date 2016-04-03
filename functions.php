@@ -368,7 +368,6 @@ function is_hop_product() {
 	if($prodID->category_id == 77 || $prodID->category_id == 172 || $prodID->category_id == 139 || $prodID->category_id == 137 || $prodID->category_id == 138){
 		$is_hop_product=true;
 	}
-	if ( ( has_term('hop', 'wpsc_product_category' )))
 	return $is_hop_product;
 }
 

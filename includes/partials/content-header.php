@@ -62,8 +62,8 @@
 	<?php the_title(); ?>
 
 <?php elseif (get_query_var( 'taxonomy' ) == 'product_tag' ) : ?>
-	<?php single_tag_title('Products Tagged: '); ?>
-
+	_e('Products Tagged:', 'freshopstheme'); ?>
+	<?php the_title(); ?>
 <?php endif; ?>
 
 </h1>

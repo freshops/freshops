@@ -108,13 +108,13 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 						title="%">
 						<?php  //print the min or only value, then if there's a max set, add an emdash and that.
 						if (isset($alphamin))  : ?><?php echo $alphamin?><?php else : ?><?php echo $alphavalue;?><?php endif;
-						if (isset($alphamax)) : ?>–<?php echo $alphamax?><?php endif; ?>%</meter>
+						if (isset($alphamax)) : ?>&#8211;<?php echo $alphamax?><?php endif; ?>%</meter>
 					<!-- meter ends here -->
 
 					<!-- Display value starts here -->
 				<?php  //print the min or only value, then if there's a max set, add an emdash and the max value.
 				if (isset($alphamin))  : ?><?php echo $alphamin?><?php else : ?><?php echo $alphavalue;?><?php endif;
-				if (isset($alphamax)) : ?>–<?php echo $alphamax?><?php endif; ?>%
+				if (isset($alphamax)) : ?>&#8211;<?php echo $alphamax?><?php endif; ?>%
 				<!-- End Display value -->
 				</dd>
 			</dl>
@@ -130,7 +130,7 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 					echo get_field('beta-min');
 
 						if (get_field('beta-max')) : //hyphen followed by max value
-						?>–<?php echo get_field('beta-max');
+						?>&#8211;<?php echo get_field('beta-max');
 						endif;
 						?>%
 					</dd>
@@ -146,7 +146,7 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 
 					<dd> <?php echo get_field('cohumulone-min');
 					if (get_field('cohumulone-max')) : //hyphen followed by max value
-					?>–<?php echo get_field('cohumulone-max');
+					?>&#8211;<?php echo get_field('cohumulone-max');
 					endif;
 
 					?>% of alpha acids
@@ -162,7 +162,7 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 				<dt>Total Oils</dt>
 				<dd> <?php echo get_field('total_oils-min');
 					if (get_field('total_oils-max')) : //hyphen followed by max value
-					?>–<?php echo get_field('total_oils-max');
+					?>&#8211;<?php echo get_field('total_oils-max');
 					endif;
 					?> Mls. per 100 grams dried hops
 				</dd>
@@ -175,7 +175,7 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 				<dd>
 					<?php echo get_field('myrcene-min');
 					if (get_field('myrcene-max')) : //hyphen followed by max value
-					?>–<?php echo get_field('myrcene-max');
+					?>&#8211;<?php echo get_field('myrcene-max');
 					endif;
 					?>% of total oils
 				</dd>
@@ -187,7 +187,7 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 				<dt>Caryophyllene</dt>
 				<dd> <?php echo get_field('caryophyllene-min');
 					if (get_field('caryophyllene-max')) : //hyphen followed by max value
-					?>–<?php echo get_field('caryophyllene-max');
+					?>&#8211;<?php echo get_field('caryophyllene-max');
 					endif;
 					?>% of total oils
 				</dd>
@@ -199,7 +199,7 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 				<dt>Humulene</dt>
 				<dd> <?php echo get_field('humulene-min');
 					if (get_field('humulene-max')) : //hyphen followed by max value
-					?>–<?php echo get_field('humulene-max');
+					?>&#8211;<?php echo get_field('humulene-max');
 					endif;
 					?>% of total oils
 				</dd>
@@ -214,7 +214,7 @@ Single hop variety partial for use in WP E-commerce single hop and rhizome pages
 
 				<dd> <?php echo get_field('farnesene');
 					if (get_field('farnesene-max')) : //hyphen followed by max value
-						echo '–' . get_field('farnesene-max');
+						?>&#8211;<?php echo get_field('farnesene-max');
 					endif;
 					?>% of total oils
 				</dd>

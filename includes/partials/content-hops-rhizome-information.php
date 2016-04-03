@@ -64,13 +64,13 @@
 				<td>
 					
 					<?php
-					// Begin alpha logic-- output current alpha value, or else min–max.
+					// Begin alpha logic-- output current alpha value, or else min-max.
 						if (get_field('alpha')):
 							echo (get_field('alpha'));
 						elseif (get_field('alpha-min')):
 							echo get_field('alpha-min');
 							if (get_field('alpha-max')):
-								echo '–' . get_field('alpha-max');
+								echo '&#8211;' . get_field('alpha-max');
 							endif;
 						echo'%';
 						endif; ?>

@@ -1300,3 +1300,7 @@ margin: 0 10px 10px 0;  /*add padding after floated category image*/
 }
 
 .widget_wpsc_product_specials > h4 
+
+.product_grid_display .product_grid_item {
+	float:left;
+}

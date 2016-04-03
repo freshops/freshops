@@ -12,7 +12,7 @@
 
 			<input type="hidden" name="wpsc_ajax_action" value="empty_cart" />
 
-			<a target="_parent" href="<?php //echo htmlentities(add_query_arg('wpsc_ajax_action', 'empty_cart', remove_query_arg('ajax')), ENT_QUOTES); ?>" class="emptycart" title="Empty Your Cart"><?php // _e('X', 'wpsc'); ?></a>
+			<a target="_parent" href="<?php //echo htmlentities(add_query_arg('wpsc_ajax_action', 'empty_cart', remove_query_arg('ajax')), ENT_QUOTES); ?>" class="emptycart" title="Empty Your Cart"><?php // _e('X', 'wp-e-commerce'); ?></a>
 
 		</form> -->
 

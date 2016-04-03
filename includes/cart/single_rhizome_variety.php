@@ -13,7 +13,7 @@ Single rhizome variety partial for use in WP E-commerce single hop pages
 			
 			if (get_field('max-storage')) : 
 				//add hyphen followed by max value if exists
-				?>–<?php echo get_field('max-storage');
+				?>&#8211;<?php echo get_field('max-storage');
 				
 			endif; //end max
 			
@@ -30,13 +30,13 @@ Single rhizome variety partial for use in WP E-commerce single hop pages
 		<?php 
 		echo $yield_kilos_min = get_field('yield_kilos_per_hectare');
 			if (get_field('max_yield_kilos_per_hectare')) : //hyphen followed by max value
-					?>–<?php echo $yield_kilos_max = get_field('max_yield_kilos_per_hectare');
+					?>&#8211;<?php echo $yield_kilos_max = get_field('max_yield_kilos_per_hectare');
 					endif; //end max
 					?> kilos per hectare <br>
 		<?php echo $yield_kilos_min * 1.121; //translating kilos per hectare to lbs. per acre
 
 		if (get_field('max_yield_kilos_per_hectare')) : //hyphen followed by max value
-			?>–<?php echo ( $yield_kilos_max * 1.121 ); //translating kilos per hectare to lbs. per acre
+			?>&#8211;<?php echo ( $yield_kilos_max * 1.121 ); //translating kilos per hectare to lbs. per acre
 		endif; //end max
 
 		?> kilos per hectare <br>
