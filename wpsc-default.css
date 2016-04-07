@@ -1304,3 +1304,7 @@ margin: 0 10px 10px 0;  /*add padding after floated category image*/
 .product_grid_display .product_grid_item {
 	float:left;
 }
+
+.wpsc_default_product_list {
+	clear:both; 	//clear the archive header/description
+}

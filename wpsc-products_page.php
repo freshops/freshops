@@ -150,7 +150,7 @@ $image_width = get_option('product_image_width');
 								<input type="text" id="wpsc_quantity_update_<?php echo wpsc_the_product_id(); ?>" name="wpsc_quantity_update" size="2" value="0" /> <!-- Quantity default 0, not 1 -->
 
 
-								if( $is_hop_product()) {
+								<?php if( $is_hop_product()) {
 									echo 'per Oz.';
 								}?>
 								<input type="hidden" name="key" value="<?php echo wpsc_the_cart_item_key(); ?>"/>
