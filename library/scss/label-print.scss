@@ -1,17 +1,18 @@
 //labeller-specific css overrides
+
 .page-label {
+	#badge,
 	#flag,
 	#secondary,
 	#view_cart,
-	#badge,
-	header,
-	footer {
-		display: none !important;
+	footer,
+	header {
+		display   : none !important;
 		visibility: hidden !important;
 	}
 
 	#location h1 {
-		display: none;
+		display   : none;
 		visibility: hidden;
 	}
 
@@ -19,39 +20,38 @@
 		margin-left: 0;
 	}
 
-	#wrap,
-	#content {
+	#content,
+	#wrap {
 		background-image: none;
 	}
 
-	#instructions,
 	#input-box,
+	#instructions,
 	input,
 	label {
 		display: none;
 	}
-
 	/* Output styles */
 	#preview-box {
-		height: 4in;
-		left: 0;
+		height  : 4in;
+		left    : 0;
 		position: absolute;
-		top: 0;
-		width: 2.5in;
+		top     : 0;
+		width   : 2.5in;
+
 		.printable-area {
-			margin: 0;
-			padding: 0 .05in;
+			margin  : 0;
+			padding : 0 .05in;
 			position: absolute;
-			top: 2.1in;
-			width: 2.5in;
-	}
-}
-
-	#weight-output,
-	#alpha {
-			font-size: 1.3em;
-			position: absolute;
-			top: 0.7in;
+			top     : 2.35in; //was 2.1in
+			width   : 2.5in;
+		}
 	}
 
+	#alpha,
+	#weight-output {
+		font-size: 1.3em;
+		position : absolute;
+		top      : .7in;
+	}
 }

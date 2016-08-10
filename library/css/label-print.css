@@ -1,11 +1,11 @@
 .page-label {
   /* Output styles */ }
+  .page-label #badge,
   .page-label #flag,
   .page-label #secondary,
   .page-label #view_cart,
-  .page-label #badge,
-  .page-label header,
-  .page-label footer {
+  .page-label footer,
+  .page-label header {
     display: none !important;
     visibility: hidden !important; }
   .page-label #location h1 {
@@ -13,11 +13,11 @@
     visibility: hidden; }
   .page-label #primary {
     margin-left: 0; }
-  .page-label #wrap,
-  .page-label #content {
+  .page-label #content,
+  .page-label #wrap {
     background-image: none; }
-  .page-label #instructions,
   .page-label #input-box,
+  .page-label #instructions,
   .page-label input,
   .page-label label {
     display: none; }
@@ -31,10 +31,10 @@
       margin: 0;
       padding: 0 .05in;
       position: absolute;
-      top: 2.1in;
+      top: 2.35in;
       width: 2.5in; }
-  .page-label #weight-output,
-  .page-label #alpha {
+  .page-label #alpha,
+  .page-label #weight-output {
     font-size: 1.3em;
     position: absolute;
-    top: 0.7in; }
+    top: .7in; }
