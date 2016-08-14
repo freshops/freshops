@@ -18,7 +18,7 @@
 
 
 
-			<?php comments_number(__('<span>No</span> Comments', 'freshopstheme'), __('<span>One</span> Comment', 'freshopstheme'), __('<span>%</span> Comments', 'freshopstheme'));?>
+			<?php comments_number(__('<span>No</span> Comments', 'freshops_rhizome'), __('<span>One</span> Comment', 'freshops_rhizome'), __('<span>%</span> Comments', 'freshops_rhizome'));?>
 
 
 
@@ -57,8 +57,8 @@
 
 
 
-				<div class="comment-nav-prev"><?php previous_comments_link(__('&larr; Previous Comments', 'freshopstheme')); ?></div>
-				<div class="comment-nav-next"><?php next_comments_link(__('More Comments &rarr;', 'freshopstheme')); ?></div>
+				<div class="comment-nav-prev"><?php previous_comments_link(__('&larr; Previous Comments', 'freshops_rhizome')); ?></div>
+				<div class="comment-nav-next"><?php next_comments_link(__('More Comments &rarr;', 'freshops_rhizome')); ?></div>
 
 
 
@@ -84,7 +84,7 @@
 
 
 
-				<?php _e('Comments are closed.', 'freshopstheme'); ?>
+				<?php _e('Comments are closed.', 'freshops_rhizome'); ?>
 
 
 

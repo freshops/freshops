@@ -213,15 +213,15 @@ function freshops_theme_support() {
 	// to add header image support go here: http://themble.com/support/adding-header-background-image-support/
 
 	// adding post format support
-	add_theme_support( 'post-formats',
-		array(
-			'aside',             // title less blurb
-			'gallery',           // gallery of images
-			'image',             // an image
-			'status',            // a Facebook like status update
-			'video',             // video
-		)
-	);
+	// add_theme_support( 'post-formats',
+	// 	array(
+	// 		'aside',             // title less blurb
+	// 		'gallery',           // gallery of images
+	// 		'image',             // an image
+	// 		'status',            // a Facebook like status update
+	// 		'video',             // video
+	// 	)
+	// );
 
 	// wp menus
 	add_theme_support( 'menus' );
@@ -229,9 +229,9 @@ function freshops_theme_support() {
 	// registering wp3+ menus
 	register_nav_menus(
 		array(
-			'main-nav' => __( 'The Main Menu', 'freshopstheme' ),   // main nav in header
-			'footer-links' => __( 'Footer Links', 'freshopstheme' ), // secondary nav in footer
-			'order' => __( 'Order', 'freshopstheme' ) //the "Order" rollover nav below the header
+			'main-nav' => __( 'The Main Menu', 'freshops_rhizome' ),   // main nav in header
+			'footer-links' => __( 'Footer Links', 'freshops_rhizome' ), // secondary nav in footer
+			'order' => __( 'Order', 'freshops_rhizome' ) //the "Order" rollover nav below the header
 		)
 	);
 } /* end bones theme support */
@@ -247,7 +247,7 @@ function freshops_main_nav() {
 	wp_nav_menu(array(
 		'container' => false,                           // remove nav container
 		'container_class' => 'menu clearfix sf-menu sf-vertical clear',           // class of container (should you choose to use it)
-		'menu' => __( 'The Main Menu', 'freshopstheme' ),  // nav name
+		'menu' => __( 'The Main Menu', 'freshops_rhizome' ),  // nav name
 		'menu_class' => 'nav top-nav clearfix',         // adding custom nav class
 		'theme_location' => 'main-nav',                 // where it's located in the theme
 		'before' => '',                                 // before the menu
@@ -265,7 +265,7 @@ function freshops_footer_links() {
 	wp_nav_menu(array(
 		'container' => '',                              // remove nav container
 		'container_class' => 'footer-links clearfix',   // class of container (should you choose to use it)
-		'menu' => __( 'Footer Links', 'freshopstheme' ),   // nav name
+		'menu' => __( 'Footer Links', 'freshops_rhizome' ),   // nav name
 		'menu_class' => 'nav footer-nav clearfix',      // adding custom nav class
 		'theme_location' => 'footer-links',             // where it's located in the theme
 		'before' => '',                                 // before the menu
@@ -282,7 +282,7 @@ function order_nav() {
 	wp_nav_menu(array(
 		'container' => '',                           			// remove nav container
 		'container_class' => '',           				// class of container (should you choose to use it)
-		'menu' => __( 'Order', 'freshopstheme' ),  		// nav name
+		'menu' => __( 'Order', 'freshops_rhizome' ),  		// nav name
 		'menu_class' => 'order',         				// adding custom nav class
 		'theme_location' => 'before-nav',                		// where it's located in the theme
 		'before' => '', 						// before the menu
@@ -335,7 +335,7 @@ function freshops_related_posts() {
 				<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 			<?php endforeach; }
 		else { ?>
-			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'freshopstheme' ) . '</li>'; ?>
+			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'freshops_rhizome' ) . '</li>'; ?>
 		<?php }
 	}
 	wp_reset_query();
@@ -383,7 +383,7 @@ function freshops_filter_ptags_on_images($content){
 function freshops_excerpt_more($more) {
 	global $post;
 	// edit here if you like
-	return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __( 'Read', 'freshopstheme' ) . get_the_title($post->ID).'">'. __( 'Read more &raquo;', 'freshopstheme' ) .'</a>';
+	return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __( 'Read', 'freshops_rhizome' ) . get_the_title($post->ID).'">'. __( 'Read more &raquo;', 'freshops_rhizome' ) .'</a>';
 }
 
 /*

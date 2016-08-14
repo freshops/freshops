@@ -140,8 +140,8 @@ function freshops_custom_image_sizes( $sizes ) {
 function freshops_register_sidebars() {
 	register_sidebar(array(
 	'id'            => 'blog_sidebar',
-	'name'          => __( 'Blog Sidebar', 'freshopstheme' ),
-	'description'   => __( 'The standard blog sidebar.', 'freshopstheme' ),
+	'name'          => __( 'Blog Sidebar', 'freshops_rhizome' ),
+	'description'   => __( 'The standard blog sidebar.', 'freshops_rhizome' ),
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</div>',
 	'before_title'  => '<h4 class="widgettitle">',
@@ -149,8 +149,8 @@ function freshops_register_sidebars() {
 	));
 	register_sidebar(array(
 	'id'            => 'shop_sidebar',
-	'name'          => __( 'Shop Sidebar', 'freshopstheme' ),
-	'description'   => __( 'Replaces the standard sidebar on product, product category, and other product-related pages.', 'freshopstheme' ),
+	'name'          => __( 'Shop Sidebar', 'freshops_rhizome' ),
+	'description'   => __( 'Replaces the standard sidebar on product, product category, and other product-related pages.', 'freshops_rhizome' ),
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</div>',
 	'before_title'  => '<h4 class="widgettitle">',
@@ -158,8 +158,8 @@ function freshops_register_sidebars() {
 	));
 	register_sidebar(array(
 	'id'            => 'main_sidebar',
-	'name'          => __( 'Main Sidebar', 'freshopstheme' ),
-	'description'   => __( 'The main widget area for all non-product, non-blog pages with a sidebar.', 'freshopstheme' ),
+	'name'          => __( 'Main Sidebar', 'freshops_rhizome' ),
+	'description'   => __( 'The main widget area for all non-product, non-blog pages with a sidebar.', 'freshops_rhizome' ),
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</div>',
 	'before_title'  => '<h4 class="widgettitle">',
@@ -168,8 +168,8 @@ function freshops_register_sidebars() {
 
 	register_sidebar(array(
 	'id'            => 'home_sidebar',
-	'name'          => __( 'Home Sidebar', 'freshopstheme' ),
-	'description'   => __( 'The main widget area for the front (home) page.', 'freshopstheme' ),
+	'name'          => __( 'Home Sidebar', 'freshops_rhizome' ),
+	'description'   => __( 'The main widget area for the front (home) page.', 'freshops_rhizome' ),
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</div>',
 	'before_title'  => '<h4 class="widgettitle">',
@@ -177,8 +177,8 @@ function freshops_register_sidebars() {
 	));
 	register_sidebar(array(
 	'id'            => 'cart_widget',
-	'name'          => __( 'Cart Widget', 'freshopstheme' ),
-	'description'   => __( 'The cart widget area at the top right of the page.', 'freshopstheme' ),
+	'name'          => __( 'Cart Widget', 'freshops_rhizome' ),
+	'description'   => __( 'The cart widget area at the top right of the page.', 'freshops_rhizome' ),
 	'before_widget' => '<div id="%1$s view-cart" class="widget %2$s">',
 	'after_widget'  => '</div>',
 	'before_title'  => '<div class="hidden">',
@@ -186,8 +186,8 @@ function freshops_register_sidebars() {
 	));
 	register_sidebar(array(
 	'id'            => 'home_above',
-	'name'          => __( 'Home Above Content', 'freshopstheme' ),
-	'description'   => __( 'The home page widget area above the content area.', 'freshopstheme' ),
+	'name'          => __( 'Home Above Content', 'freshops_rhizome' ),
+	'description'   => __( 'The home page widget area above the content area.', 'freshops_rhizome' ),
 	'before_widget' => '<div id="%1$s view-cart" class="widget %2$s">',
 	'after_widget'  => '</div>',
 	'before_title'  => '<h4 class="widgettitle">',
@@ -195,8 +195,8 @@ function freshops_register_sidebars() {
 	));
 	register_sidebar(array(
 	'id'            => 'home_below',
-	'name'          => __( 'Home Below Content', 'freshopstheme' ),
-	'description'   => __( 'The home page widget area below the content area.', 'freshopstheme' ),
+	'name'          => __( 'Home Below Content', 'freshops_rhizome' ),
+	'description'   => __( 'The home page widget area below the content area.', 'freshops_rhizome' ),
 	'before_widget' => '<div id="%1$s view-cart" class="widget %2$s">',
 	'after_widget'  => '</div>',
 	'before_title'  => '<h4 class="widgettitle">',
@@ -204,8 +204,8 @@ function freshops_register_sidebars() {
 	));
 	register_sidebar(array(
 	'id'            => 'archive_sidebar',
-	'name'          => __( 'Archive Sidebar', 'freshopstheme' ),
-	'description'   => __( 'The sidebar for wp e-commerce tag and cat pages.', 'freshopstheme' ),
+	'name'          => __( 'Archive Sidebar', 'freshops_rhizome' ),
+	'description'   => __( 'The sidebar for wp e-commerce tag and cat pages.', 'freshops_rhizome' ),
 	'before_widget' => '<div id="%1$s view-cart" class="widget %2$s">',
 	'after_widget'  => '</div>',
 	'before_title'  => '<h4 class="widgettitle">',
@@ -213,8 +213,8 @@ function freshops_register_sidebars() {
 	));
 	register_sidebar(array(
 	'id'            => 'blog_sidebar',
-	'name'          => __( 'Blog Sidebar', 'freshopstheme' ),
-	'description'   => __( 'The sidebar for blog pages.', 'freshopstheme' ),
+	'name'          => __( 'Blog Sidebar', 'freshops_rhizome' ),
+	'description'   => __( 'The sidebar for blog pages.', 'freshops_rhizome' ),
 	'before_widget' => '<div id="%1$s view-cart" class="widget %2$s">',
 	'after_widget'  => '</div>',
 	'before_title'  => '<h4 class="widgettitle">',
@@ -231,8 +231,8 @@ sidebar's id is, for example:
 
 register_sidebar(array(
 'id' => 'sidebar2',
-'name' => __( 'Sidebar 2', 'freshopstheme' ),
-'description' => __( 'The second (secondary) sidebar.', 'freshopstheme' ),
+'name' => __( 'Sidebar 2', 'freshops_rhizome' ),
+'description' => __( 'The second (secondary) sidebar.', 'freshops_rhizome' ),
 'before_widget' => '<div id="%1$s" class="widget %2$s">',
 'after_widget' => '</div>',
 'before_title' => '<h4 class="widgettitle">',
@@ -267,13 +267,13 @@ $bgauthemail = get_comment_author_email();
 ?>
 <img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=32" class="load-gravatar avatar avatar-48 photo" height="32" width="32" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
 <?php // end custom gravatar call ?>
-<?php printf(__( '<cite class="fn">%s</cite>', 'freshopstheme' ), get_comment_author_link()); ?>
-<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><?php comment_time(__( 'F jS, Y', 'freshopstheme' )); ?> </a></time>
-<?php edit_comment_link(__( '(Edit)', 'freshopstheme' ),'  ',''); ?>
+<?php printf(__( '<cite class="fn">%s</cite>', 'freshops_rhizome' ), get_comment_author_link()); ?>
+<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><?php comment_time(__( 'F jS, Y', 'freshops_rhizome' )); ?> </a></time>
+<?php edit_comment_link(__( '(Edit)', 'freshops_rhizome' ),'  ',''); ?>
 </header>
 <?php if ($comment->comment_approved == '0') : ?>
 	<div class="alert alert-info">
-		<p><?php _e( 'Your comment is awaiting moderation.', 'freshopstheme' ); ?></p>
+		<p><?php _e( 'Your comment is awaiting moderation.', 'freshops_rhizome' ); ?></p>
 	</div>
 <?php endif; ?>
 <section class="comment_content clearfix">
@@ -290,8 +290,8 @@ $bgauthemail = get_comment_author_email();
 // Search Form
 function freshops_wpsearch($form) {
 	$form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
-	<label class="screen-reader-text" for="s">' . __( 'Search for:', 'freshopstheme' ) . '</label>
-	<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . esc_attr__( 'Search the Site...', 'freshopstheme' ) . '" />
+	<label class="screen-reader-text" for="s">' . __( 'Search for:', 'freshops_rhizome' ) . '</label>
+	<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . esc_attr__( 'Search the Site...', 'freshops_rhizome' ) . '" />
 	<input type="submit" id="searchsubmit" value="' . esc_attr__( 'Search' ) .'" />
 </form>';
 return $form;

@@ -1,4 +1,5 @@
 .page-label {
+  /* mixin for multiline */
   /* Classes from Micky */
   /* Hide certain elements for browsers without CSS: */
   /* Hiding of elements for assistive devices (screen readers etc): */
@@ -31,15 +32,36 @@
     overflow: hidden; }
   .page-label #description {
     display: block;
-    font-size: 8pt;
+    font: 400 8pt/1.2em sans-serif;
     height: 1in;
-    line-height: 1em;
     overflow: hidden;
     margin: .25in .1in 0;
     position: relative;
     text-align: left;
     vertical-align: baseline;
-    width: 2.3in; }
+    width: 2.3in;
+    background: white; }
+  .page-label .block-with-text {
+    overflow: hidden;
+    position: relative;
+    line-height: 1.2em;
+    max-height: 3.6em;
+    text-align: justify;
+    margin-right: -1em;
+    padding-right: 1em; }
+    .page-label .block-with-text:before {
+      content: '...';
+      position: absolute;
+      right: 0;
+      bottom: 0; }
+    .page-label .block-with-text:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 1em;
+      height: 1em;
+      margin-top: 0.2em;
+      background: white; }
   .page-label #alpha {
     left: .75in;
     margin: 0;

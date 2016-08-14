@@ -280,7 +280,7 @@ if(wpsc_uses_coupons()): ?>
 
       <?php if(wpsc_show_user_login_form()):
       global $current_user;
-      get_currentuserinfo();   ?>
+      wp_get_current_user();   ?>
 
       <div class="wpsc_registration_form">
 

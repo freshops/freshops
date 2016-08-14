@@ -8,5 +8,5 @@ URL: http://beekmedia.com/
 
 
 // Adding Translation Option
-load_theme_textdomain( 'freshopstheme', get_template_directory() .'/library/translation' );
+load_theme_textdomain( 'freshops_rhizome', get_template_directory() .'/library/translation' );
 ?>

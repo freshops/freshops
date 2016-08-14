@@ -26,16 +26,47 @@
 
 	#description {
 		display: block;
-		font-size: 8pt;
+		font: 400 8pt/1.2em sans-serif;
 		height: 1in;
-		line-height: 1em;
 		overflow: hidden;
 		margin: .25in .1in 0;
 		position: relative;
 		text-align: left;
 		vertical-align: baseline;
 		width: 2.3in;
+		background: white;
 	}
+
+//http://hackingui.com/front-end/a-pure-css-solution-for-multiline-text-truncation/
+/* mixin for multiline */
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white){
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount;
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: $bgColor;
+  }
+}
+
+.block-with-text {
+  @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white);
+}
 
 	#alpha {
 		left: .75in;

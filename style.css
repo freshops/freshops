@@ -6,25 +6,12 @@ Author: Ben Beekman and Michael Hulse
 Author URI: http://www.benbeekman.com
 Version: 1.3
 Tags: flexible-width, translation-ready, microformats, rtl-language-support
-
+License URI: https://www.gnu.org/licenses/gpl.html
+Text Domain: freshops-rhizome
 --
 Freshops theme uses SCSS. You must have a preprocessor to compile the SCSS to make permanent changes to the theme.
-
-Here are some excellent introductions to SCSS:
-http://cognition.happycog.com/article/preprocess-this
-http://coding.smashingmagazine.com/2011/09/09/an-introduction-to-less-and-comparison-to-sass/
-
-Here are a few MUST HAVE TOOLS for working with a pre-processor: (You really only need one of them)
-
-CodeKit: (Highly Recommended)
-http://incident57.com/codekit/
-
-Compass App: (Windows / Mac Users)
-http://compass.handlino.com/
-
-These applications compile  Sass into valid CSS. This
-way you can keep your production files easy to read and your
-CSS minified and speedy. Simply set the output to the
-library/css folder and you are all set.
-
 ******************************************************************/
+.sticky {}          /* DO NOT EDIT THIS */
+.gallery-caption {} /* THESE ARE USELESS */
+.bypostauthor {}    /* THEY ARE ONLY TO KEEP THEME CHECK HAPPY */
+.screen-reader-text {}

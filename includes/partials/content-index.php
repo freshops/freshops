@@ -15,7 +15,7 @@
 
 	<?php
 		printf(
-			__('Posted %1$s by %2$s', 'freshopstheme'),
+			__('Posted %1$s by %2$s', 'freshops_rhizome'),
 			'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
 			'<span class="by">by</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link(get_the_author_meta('ID')) . '</span>'
 		);
@@ -36,7 +36,7 @@
 		<p class="tags"><?php
 echo get_the_tag_list('<p>Tags: ',', ','</p>');
 ?>
-		<?php the_tags('<span class="tags-title">' . __('Tags:', 'freshopstheme') . '</span> ', ', ', ''); ?></p>
+		<?php the_tags('<span class="tags-title">' . __('Tags:', 'freshops_rhizome') . '</span> ', ', ', ''); ?></p>
 
 	</footer>
 
@@ -56,8 +56,8 @@ echo get_the_tag_list('<p>Tags: ',', ','</p>');
 
 
 		<ul class="clearfix">
-			<li class="prev-link"><?php next_posts_link(__('&laquo; Older Entries', 'freshopstheme')); ?></li>
-			<li class="next-link"><?php previous_posts_link(__('Newer Entries &raquo;', 'freshopstheme')); ?></li>
+			<li class="prev-link"><?php next_posts_link(__('&laquo; Older Entries', 'freshops_rhizome')); ?></li>
+			<li class="next-link"><?php previous_posts_link(__('Newer Entries &raquo;', 'freshops_rhizome')); ?></li>
 		</ul>
 
 
