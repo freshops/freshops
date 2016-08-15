@@ -9,7 +9,7 @@ Tags: flexible-width, translation-ready, microformats, rtl-language-support
 License URI: https://www.gnu.org/licenses/gpl.html
 Text Domain: freshops-rhizome
 --
-Freshops theme uses SCSS. You must have a preprocessor to compile the SCSS to make permanent changes to the theme.
+Freshops Rhizome theme uses SCSS. You must have a preprocessor to compile the SCSS to make permanent changes to the theme.
 ******************************************************************/
 .sticky {}          /* DO NOT EDIT THIS */
 .gallery-caption {} /* THESE ARE USELESS */

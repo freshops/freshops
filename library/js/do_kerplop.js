@@ -1,7 +1,7 @@
 // var jQuery, form_values, wpsc_ajax, wpsc_fancy_notification
 /*
- * Freshops footer scripts-- called by shop pages using list view, to collapse tables into a mobile-friedly block.
- * Author: Ben Beekman and Michael Hulse
+ * Freshops "Do Kerplop" scripts-- called by shop pages using list view, to collapse tables into a mobile-friendly block.
+ * Author: Ben Beekman
  */
 var $kerplopActive = false
 

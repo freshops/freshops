@@ -64,7 +64,7 @@
 		<main id="primary" role="main">
 
 			<div id="wrap">
-				<?php if ( ! function_exists('dynamic_sidebar') || ( ! dynamic_sidebar('Cart Widget'))) :?>
+				<?php if (!function_exists('dynamic_sidebar') || (!dynamic_sidebar('Cart Widget'))) :?>
 					<?php dynamic_sidebar('Cart Widget'); ?>
 				<?php endif; ?>
 				<div id="badge"><div></div></div>

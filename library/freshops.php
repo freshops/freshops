@@ -39,7 +39,7 @@ function freshops_ahoy() {
 
 	// adding sidebars to Wordpress (these are created in functions.php)
 	add_action( 'widgets_init', 'freshops_register_sidebars' );
-	// adding the bones search form (created in functions.php)
+	// adding the freshops search form (created in functions.php)
 	add_filter( 'get_search_form', 'freshops_wpsearch' );
 
 	// cleaning up random code around images
@@ -47,7 +47,7 @@ function freshops_ahoy() {
 	// cleaning up excerpt
 	add_filter( 'excerpt_more', 'freshops_excerpt_more' );
 
-} /* end bones ahoy */
+} /* end freshops ahoy */
 
 /*********************
 WP_HEAD GOODNESS
@@ -81,7 +81,7 @@ function freshops_head_cleanup() {
 	// remove Wp version from scripts
 	add_filter( 'script_loader_src', 'freshops_remove_wp_ver_css_js', 9999 );
 
-} /* end bones head cleanup */
+} /* end freshops head cleanup */
 
 // remove WP version from RSS
 function freshops_rss_version() { return ''; }
@@ -124,28 +124,25 @@ function freshops_scripts_and_styles() {
 	if (!is_admin()) {
 
 		// modernizr (without media query polyfill)
-		wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
+		wp_register_script( 'freshops-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
 
 		// register main stylesheet
-		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
+		wp_register_style( 'freshops-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
 
 		// ie-only style sheet
-		wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
+		wp_register_style( 'freshops-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
 
 		// comment reply script for threaded comments
 		if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
-		//adding scripts file in the footer
-		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
-
 		// enqueue styles and scripts
-		wp_enqueue_script( 'bones-modernizr' );
-		wp_enqueue_style( 'bones-stylesheet' );
-		wp_enqueue_style( 'bones-ie-only' );
+		wp_enqueue_script( 'freshops-modernizr' );
+		wp_enqueue_style( 'freshops-stylesheet' );
+		wp_enqueue_style( 'freshops-ie-only' );
 
-		$wp_styles->add_data( 'bones-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
+		$wp_styles->add_data( 'freshops-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 
 		/*
 		I recommend using a plugin to call jQuery
@@ -176,10 +173,7 @@ function freshops_scripts_and_styles() {
 			wp_register_script( 'jquery-ui-label', get_stylesheet_directory_uri() . '/library/js/label/label.min.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-autocomplete', 'jquery-ui-button', 'jquery-ui-menu', 'jquery-ui-mouse' ), '2', true );
 			wp_enqueue_script ( 'jquery-ui-label' );
 
-		}
-
-		wp_enqueue_script( 'bones-js' );
-
+		} //end label page includes
 	}
 }
 
@@ -234,7 +228,7 @@ function freshops_theme_support() {
 			'order' => __( 'Order', 'freshops_rhizome' ) //the "Order" rollover nav below the header
 		)
 	);
-} /* end bones theme support */
+} /* end freshops theme support */
 
 
 /*********************
@@ -257,7 +251,7 @@ function freshops_main_nav() {
 		'depth' => 0,                                   // limit the depth of the nav
 		'fallback_cb' => 'freshops_main_nav_fallback'      // fallback function
 	));
-} /* end bones main nav */
+} /* end freshops main nav */
 
 // the footer menu (should you choose to use one)
 function freshops_footer_links() {
@@ -275,7 +269,7 @@ function freshops_footer_links() {
 		'depth' => 0,                                   // limit the depth of the nav
 		'fallback_cb' => 'freshops_footer_links_fallback'  // fallback function
 	));
-} /* end bones footer link */
+} /* end freshops footer link */
 
 function order_nav() {
 	//display the menu for the "Order" popout button in the sidebar navigation
@@ -317,7 +311,7 @@ RELATED POSTS FUNCTION
 
 // Related Posts Function (call using freshops_related_posts(); )
 function freshops_related_posts() {
-	echo '<ul id="bones-related-posts">';
+	echo '<ul id="freshops-related-posts">';
 	global $post;
 	$tags = wp_get_post_tags( $post->ID );
 	if($tags) {
@@ -340,7 +334,7 @@ function freshops_related_posts() {
 	}
 	wp_reset_query();
 	echo '</ul>';
-} /* end bones related posts function */
+} /* end freshops related posts function */
 
 /*********************
 PAGE NAVI

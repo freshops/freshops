@@ -1,0 +1,80 @@
+{
+  "name": "linter",
+  "main": "./lib/index",
+  "author": "steelbrain",
+  "readme": "./README.md",
+  "version": "1.11.4",
+  "description": "A Base Linter with Cow Powers",
+  "repository": "https://github.com/steelbrain/linter",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "apm test"
+  },
+  "engines": {
+    "atom": ">=1.4.0 <2.0.0"
+  },
+  "consumedServices": {
+    "linter": {
+      "versions": {
+        "^1.0.0": "consumeLinter"
+      }
+    },
+    "linter-ui": {
+      "versions": {
+        "^1.0.0": "consumeUI"
+      }
+    }
+  },
+  "providedServices": {
+    "linter-indie": {
+      "versions": {
+        "1.0.0": "provideIndie"
+      }
+    },
+    "linter-plus-self": {
+      "versions": {
+        "0.1.0": "provideLinter"
+      }
+    }
+  },
+  "dependencies": {
+    "atom-package-deps": "^4.0.0",
+    "minimatch": "^3.0.0",
+    "sb-debounce": "^1.0.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.0.0",
+    "eslint": "^2.4.0",
+    "eslint-config-airbnb": "^6.0.2",
+    "eslint-plugin-react": "^4.2.1",
+    "jasmine-fix": "^1.0.0",
+    "coffee-script": "^1.7.0"
+  },
+  "package-deps": [
+    "linter-ui-default"
+  ],
+  "configSchema": {
+    "lintOnFly": {
+      "title": "Lint As You Type",
+      "description": "Lint files while typing, without the need to save",
+      "type": "boolean",
+      "default": true
+    },
+    "lintOnFlyInterval": {
+      "title": "Lint As You Type Interval",
+      "description": "Interval at which providers are triggered as you type (in ms)",
+      "type": "integer",
+      "default": 300
+    },
+    "ignoreGlob": {
+      "title": "Ignore files matching this Glob",
+      "type": "string",
+      "default": "{\\,/}**{\\,/}*.min.{js,css}"
+    },
+    "lintPreviewTabs": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

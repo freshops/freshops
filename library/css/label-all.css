@@ -60,7 +60,7 @@
       right: 0;
       width: 1em;
       height: 1em;
-      margin-top: 0.2em;
+      margin-top: .2em;
       background: white; }
   .page-label #alpha {
     left: .75in;
@@ -76,20 +76,20 @@
   .page-label #alpha {
     font-size: 1.3em;
     position: absolute;
-    top: 0.95in; }
+    top: .95in; }
   .page-label #primary {
     margin-left: 0; }
   .page-label #wrap,
   .page-label #content {
     background-image: none;
     padding: 0;
-    background-color: #FFF; }
+    background-color: #fff; }
   .page-label #preview-box {
     background: white;
     color: black; }
   .page-label html,
   .page-label body {
-    background: #FFFFFF; }
+    background: #fff; }
   .page-label .center,
   .page-label .center *,
   .page-label .ctr {
@@ -132,7 +132,7 @@
     /* Remove all margins that would make it visible */
     padding: 0 !important;
     /* Remove all padding that would make it visible */
-    height: 0.1px !important;
+    height: .1px !important;
     /* Mozilla/Firefox require the clearer height to not be 0, but rounding makes it 0 */
     float: none !important;
     /* Remove any inherited floats */

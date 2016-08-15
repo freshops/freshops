@@ -1,3 +1,4 @@
+// var jQuery
 /*
  **
  ** File: freshops.js
@@ -5,9 +6,9 @@
  ** Site URL: http://www.freshops.com/
  ** Description: Base javascript for website: http://www.freshops.com/
  ** Created: 03/31/08
- ** Modified: 5/14/14 */
+ ** Modified: 8/16/16 */
 
-jQuery(function($) {
+jQuery(function ($) {
 	var tabs = $('.tabs div'); // Tabs.
 	var order = $('#order'); // Order button.
 	var animOptions01 = {
@@ -20,10 +21,10 @@ jQuery(function($) {
 	var relExternal = $('a[rel$="external"]'); // New window links.
 
 
-	$(document).ready(function() {
-		
+	$(document).ready(function () {
+
 		$('.kerplop').kerplop();
-		add_action( 'wp_ajax_add_to_cart'       , 'wpsc_add_to_cart' );
+		add_action('wp_ajax_add_to_cart', 'wpsc_add_to_cart');
 
 		$('header nav').meanmenu({
 			meanScreenWidth: "768px"
@@ -38,11 +39,11 @@ jQuery(function($) {
 		if (order.length > 0) {
 			var order_ul = $('#order ul');
 			order.hoverIntent({
-				over: function() {
+				over: function () {
 					order_ul.animate(animOptions01);
 				},
 				timeout: 250,
-				out: function() {
+				out: function () {
 					order_ul.animate(animOptions01);
 				}
 			});
@@ -55,7 +56,7 @@ jQuery(function($) {
 
 		if (relExternal.length > 0) {
 			/* If you want the link to open in a new window, add attribute "rel="external"". */
-			relExternal.click(function() {
+			relExternal.click(function () {
 				this.target = "_blank";
 			});
 		} // $relExternal
