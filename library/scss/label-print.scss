@@ -7,12 +7,12 @@
 	#view_cart,
 	footer,
 	header {
-		display   : none !important;
+		display: none !important;
 		visibility: hidden !important;
 	}
 
 	#location h1 {
-		display   : none;
+		display: none;
 		visibility: hidden;
 	}
 
@@ -33,25 +33,25 @@
 	}
 	/* Output styles */
 	#preview-box {
-		height  : 4in;
-		left    : 0;
+		height: 4in;
+		left: 0;
 		position: absolute;
-		top     : 0;
-		width   : 2.5in;
+		top: 0;
+		width: 2.5in;
 
 		.printable-area {
-			margin  : 0;
-			padding : 0 .05in;
+			margin: 0;
+			padding: 0 .05in;
 			position: absolute;
-			top     : 2.35in; //was 2.1in
-			width   : 2.5in;
+			top: 2.35in; //was 2.1in
+			width: 2.5in;
 		}
 	}
 
 	#alpha,
 	#weight-output {
 		font-size: 1.3em;
-		position : absolute;
-		top      : .7in;
+		position: absolute;
+		top: .95in;
 	}
 }
