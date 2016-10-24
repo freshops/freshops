@@ -39,13 +39,13 @@
 
 	//http://hackingui.com/front-end/a-pure-css-solution-for-multiline-text-truncation/
 	/* mixin for multiline */
-	@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white) {
+	@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 4, $bgColor: white) {
 		overflow: hidden;
 		position: relative;
 		line-height: $lineHeight;
 		max-height: $lineHeight * $lineCount;
 		text-align: justify;
-		margin-right: -1em;
+		margin-right: -.5em;
 		padding-right: 1em;
 		&:before {
 			content: '...';

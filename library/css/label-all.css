@@ -47,7 +47,7 @@
     line-height: 1.2em;
     max-height: 3.6em;
     text-align: justify;
-    margin-right: -1em;
+    margin-right: -.5em;
     padding-right: 1em; }
     .page-label #description:before {
       content: '...';
