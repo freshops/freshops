@@ -26,11 +26,11 @@
 
 	#description {
 		display: block;
-		font: 400 8pt/1.2em sans-serif;
-		height: 1in;
+		font: 400 9pt sans-serif;
+		height: .75in;
 		overflow: hidden;
 		margin: .25in .1in 0;
-		position: relative;
+		position: absolute;
 		text-align: left;
 		vertical-align: baseline;
 		width: 2.3in;
@@ -64,7 +64,7 @@
 		}
 	}
 
-	.block-with-text {
+	#description {
 		@include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white);
 	}
 

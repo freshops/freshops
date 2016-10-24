@@ -32,16 +32,16 @@
     overflow: hidden; }
   .page-label #description {
     display: block;
-    font: 400 8pt/1.2em sans-serif;
-    height: 1in;
+    font: 400 9pt sans-serif;
+    height: .75in;
     overflow: hidden;
     margin: .25in .1in 0;
-    position: relative;
+    position: absolute;
     text-align: left;
     vertical-align: baseline;
     width: 2.3in;
     background: none; }
-  .page-label .block-with-text {
+  .page-label #description {
     overflow: hidden;
     position: relative;
     line-height: 1.2em;
@@ -49,12 +49,12 @@
     text-align: justify;
     margin-right: -1em;
     padding-right: 1em; }
-    .page-label .block-with-text:before {
+    .page-label #description:before {
       content: '...';
       position: absolute;
       right: 0;
       bottom: 0; }
-    .page-label .block-with-text:after {
+    .page-label #description:after {
       content: '';
       position: absolute;
       right: 0;
