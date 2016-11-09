@@ -1,5 +1,7 @@
+#content {
+  padding: 0; }
+
 .page-label {
-  /* Output styles */
   /* Output styles */ }
   .page-label .ui-autocomplete {
     background-color: white;
@@ -9,12 +11,20 @@
   .page-label .ui-menu .ui-menu-item {
     list-style: none outside; }
   .page-label #input-box {
-    background: #c9de96;
-    /* old browsers */
-    background: -moz-linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%);
-    /* firefox */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c9de96), color-stop(44%, #8ab66b), color-stop(100%, #398235));
+    background: -webkit-linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%);
+    background: -moz-linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%);
+    background: -ms-linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%);
+    background: -o-linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%);
+    background: linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c9de96), color-stop(44%, #8ab66b), color-stop(100%, #398235));
+    /* old browsers */
+    /* firefox */
     /* webkit */
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
     border-radius: 10px;
     padding: 10px;
     text-align: left;
@@ -22,6 +32,8 @@
   .page-label #variety {
     display: inline;
     text-align: left; }
+  .page-label #variety-output {
+    margin: 0 0 1.5rem; }
   .page-label #weight {
     display: inline;
     text-align: left; }
@@ -51,24 +63,41 @@
     overflow: hidden;
     position: relative;
     width: 2.5in; }
-  .page-label #preview-box .printable-area {
+  .page-label #description {
+    position: relative;
+    display: block;
+    font-size: 8pt;
+    line-height: 1.2em;
+    width: 2.3in;
+    height: .7in;
     margin: 0;
-    padding: 0 .05in;
-    position: absolute;
-    top: 2.1in;
-    width: 2.5in; }
-  .page-label #alpha {
-    left: .75in;
-    margin: 0;
-    padding: 0;
-    position: absolute; }
-  .page-label #weight-output {
-    left: 1.725in;
-    margin-right: .05in;
-    position: absolute;
-    text-align: center; }
-  .page-label #weight-output,
-  .page-label #alpha {
-    font-size: 1.3em;
-    position: absolute;
-    top: 0.98in; }
+    padding: .05in .1in 0 .1in;
+    overflow: hidden;
+    text-align: left;
+    vertical-align: baseline; }
+
+/* Output styles */
+#preview-box .printable-area {
+  margin: 0;
+  padding: 0 .05in;
+  position: absolute;
+  top: 2.1in;
+  width: 2.5in; }
+
+#alpha {
+  left: .75in;
+  margin: 0;
+  padding: 0;
+  position: absolute; }
+
+#weight-output {
+  left: 1.725in;
+  margin-right: .05in;
+  position: absolute;
+  text-align: center; }
+
+#weight-output,
+#alpha {
+  font-size: 1.3em;
+  position: absolute;
+  top: .98in; }

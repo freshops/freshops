@@ -31,24 +31,24 @@
     height: .225in;
     overflow: hidden; }
   .page-label #description {
-    display: block;
-    font: 400 9pt sans-serif;
-    height: .75in;
-    overflow: hidden;
-    margin: .25in .1in 0;
-    position: absolute;
-    text-align: left;
-    vertical-align: baseline;
-    width: 2.3in;
-    background: none; }
-  .page-label #description {
     overflow: hidden;
     position: relative;
     line-height: 1.2em;
-    max-height: 3.6em;
-    text-align: justify;
+    max-height: 6em;
+    text-align: left;
     margin-right: -.5em;
-    padding-right: 1em; }
+    padding-right: 1em;
+    position: relative;
+    display: block;
+    font-size: 8pt;
+    line-height: 1.20em;
+    width: 2.3in;
+    height: .7in;
+    margin: 0;
+    padding: .05in .1in 0 .1in;
+    overflow: hidden;
+    text-align: left;
+    vertical-align: baseline; }
     .page-label #description:before {
       content: '...';
       position: absolute;
@@ -81,11 +81,8 @@
     margin-left: 0; }
   .page-label #wrap,
   .page-label #content {
-    background-image: none;
-    padding: 0;
-    background-color: #fff; }
+    background-image: none; }
   .page-label #preview-box {
-    background: white;
     color: black; }
   .page-label html,
   .page-label body {

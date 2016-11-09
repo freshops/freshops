@@ -24,27 +24,16 @@
 		overflow: hidden;
 	}
 
-	#description {
-		display: block;
-		font: 400 9pt sans-serif;
-		height: .75in;
-		overflow: hidden;
-		margin: .25in .1in 0;
-		position: absolute;
-		text-align: left;
-		vertical-align: baseline;
-		width: 2.3in;
-		background: none;
-	}
+
 
 	//http://hackingui.com/front-end/a-pure-css-solution-for-multiline-text-truncation/
 	/* mixin for multiline */
-	@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 4, $bgColor: white) {
+	@mixin multi-line-ellipsis($lineHeight: 1.2em, $lineCount: 5, $bgColor: white) {
 		overflow: hidden;
 		position: relative;
 		line-height: $lineHeight;
 		max-height: $lineHeight * $lineCount;
-		text-align: justify;
+		text-align: left;
 		margin-right: -.5em;
 		padding-right: 1em;
 		&:before {
@@ -65,7 +54,18 @@
 	}
 
 	#description {
-		@include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white);
+		@include multi-line-ellipsis($lineHeight: 1.2em, $lineCount: 5, $bgColor: white);
+		position: relative;
+		display: block;
+		font-size: 8pt;
+		line-height: 1.20em;
+		width: 2.3in;
+		height: .7in;
+		margin: 0;
+		padding: .05in .1in 0 .1in;
+		overflow: hidden;
+		text-align: left;
+		vertical-align: baseline;
 	}
 
 	#alpha {
@@ -96,12 +96,9 @@
 	#wrap,
 	#content {
 		background-image: none;
-		padding: 0;
-		background-color: #fff;
 	}
 
 	#preview-box {
-		background: white;
 		color: black;
 	}
 
