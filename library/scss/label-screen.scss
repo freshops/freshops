@@ -64,11 +64,10 @@
 
 	/* Output styles */
 	#preview-box {
-		   -moz-border-radius: 8px;
-		-webkit-border-radius: 8px;
+		border-radius: 8px;
 		background: #fff url(../images/labeller-bg.png) scroll top;
 		border: .015in solid #000;
-		        border-radius: 8px;
+		border-radius: 8px;
 		display: block;
 		height: 4in;
 		margin-top: 5px;
@@ -84,38 +83,39 @@
 		line-height: 1.2em;
 		width: 2.3in;
 		height: .7in;
-		margin: 0;
-		padding: .05in .1in 0 .1in;
+		margin: 1.5rem 0 0;
+		padding: .05in .1in 0;
 		overflow: hidden;
 		text-align: left;
 		vertical-align: baseline;
 	}
-}
-/* Output styles */
-#preview-box .printable-area {
-	margin: 0;
-	padding: 0 .05in;
-	position: absolute;
-	top: 2.1in;
-	width: 2.5in;
-}
-#alpha {
-	left: .75in;
-	margin: 0;
-	padding: 0;
-	position: absolute;
-}
 
-#weight-output {
-	left: 1.725in;
-	margin-right: .05in;
-	position: absolute;
-	text-align: center;
-}
+	/* Output styles */
+	#preview-box .printable-area {
+		margin: 0;
+		padding: 0 .05in;
+		position: absolute;
+		top: 2.1in;
+		width: 2.5in;
+	}
+	#alpha {
+		left: .75in;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+	}
 
-#weight-output,
-#alpha {
-	font-size: 1.3em;
-	position: absolute;
-	top: .98in; //just under 1 in from top of print area
+	#weight-output {
+		left: 1.725in;
+		margin-right: .05in;
+		position: absolute;
+		text-align: center;
+	}
+
+	#weight-output,
+	#alpha {
+		font-size: 1.3em;
+		position: absolute;
+		top: .98in; //just under 1 in from top of print area
+	}
 }

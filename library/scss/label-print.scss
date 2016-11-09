@@ -1,88 +1,89 @@
 //print-specific css overrides for styles defined in label-all.scss
+.page-label {
+	#badge,
+	#flag,
+	#secondary,
+	#view_cart,
+	footer,
+	header {
+		display: none !important;
+		visibility: hidden !important;
+	}
 
-#badge,
-#flag,
-#secondary,
-#view_cart,
-footer,
-header {
-	display: none !important;
-	visibility: hidden !important;
-}
+	#location h1 {
+		display: none;
+		visibility: hidden;
+	}
 
-#location h1 {
-	display: none;
-	visibility: hidden;
-}
+	#primary {
+		margin-left: 0;
+	}
 
-#primary {
-	margin-left: 0;
-}
+	#content,
+	#wrap {
+		background-image: none;
+	}
 
-#content,
-#wrap {
-	background-image: none;
-}
+	#input-box,
+	#instructions,
+	input,
+	label {
+		display: none;
+	}
+	/* Output styles */
+	#preview-box {
+		height: 4in;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 2.5in;
 
-#input-box,
-#instructions,
-input,
-label {
-	display: none;
-}
-/* Output styles */
-#preview-box {
-	height: 4in;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 2.5in;
+		// .printable-area {
+		// 	margin: 0;
+		// 	padding: 0 .05in;
+		// 	position: absolute;
+		// 	top: 2.35in; //was 2.1in
+		// 	width: 2.5in;
+		// }
+	}
+	#variety-output {
+		position: absolute;
+		top: 2.2in;
+		text-align: center;
+	}
 
-	// .printable-area {
-	// 	margin: 0;
-	// 	padding: 0 .05in;
-	// 	position: absolute;
-	// 	top: 2.35in; //was 2.1in
-	// 	width: 2.5in;
-	// }
-}
-#variety-output {
-	position: absolute;
-	top: 2.2in;
-	text-align: center;
-}
-
-#description {
-	position: absolute;
-	top: 2.5in;
-	left: .1in;
-	font-size: .85em;
-	width: 2.3in;
-	height: .7in;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	text-align: left;
-}
+	#description {
+		position: absolute;
+		top: 2.5in;
+		left: .1in;
+		font-size: .85em;
+		width: 2.3in;
+		height: .7in;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		text-align: left;
+	}
 
 
-#alpha,
-#weight-output {
-	font-size: 1.5em;
-	top: 3.2in;
-	overflow: hidden;
-	height: .4in;
-	text-align: center;
-}
+	#alpha,
+	#weight-output {
+		font-size: 1.5em;
+		top: 3.2in;
+		overflow: hidden;
+		height: .4in;
+		text-align: center;
+	}
 
-#weight-output {
-	position: absolute;
-	left: 1.75in;
-	width: .65in;
-}
+	#weight-output {
+		position: absolute;
+		left: 1.75in;
+		width: .65in;
+	}
 
-#alpha {
-	position: absolute;
-	left: .72in;
-	width: .6in;
+	#alpha {
+		position: absolute;
+		left: .72in;
+		width: .6in;
+	}
 }
