@@ -29,11 +29,11 @@
     width: 2.5in; }
   .page-label #variety-output {
     position: absolute;
-    top: 2.2in;
+    top: 2.4in;
     text-align: center; }
   .page-label #description {
     position: absolute;
-    top: 2.5in;
+    top: 2.7in;
     left: .1in;
     font-size: .85em;
     width: 2.3in;
@@ -45,7 +45,7 @@
   .page-label #alpha,
   .page-label #weight-output {
     font-size: 1.5em;
-    top: 3.2in;
+    top: 3.4in;
     overflow: hidden;
     height: .4in;
     text-align: center; }
