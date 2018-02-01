@@ -4,7 +4,6 @@
 	#flag,
 	#secondary,
 	#view_cart,
-	#sliding_cart,
 	footer,
 	header {
 		display: none !important;
@@ -38,8 +37,15 @@
 		position: absolute;
 		top: 0;
 		width: 2.5in;
-	}
 
+		// .printable-area {
+		// 	margin: 0;
+		// 	padding: 0 .05in;
+		// 	position: absolute;
+		// 	top: 2.35in; //was 2.1in
+		// 	width: 2.5in;
+		// }
+	}
 	#variety-output {
 		position: absolute;
 		top: 2.4in;
@@ -47,23 +53,23 @@
 	}
 
 	#description {
-	position: absolute;
-    top: 2.62in;
-    left: .05in;
-    font-size: .9785em;
-    width: 2.2in;
-    height: .7in;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    text-align: left;
+		position: absolute;
+		top: 2.7in;
+		left: .1in;
+		font-size: .85em;
+		width: 2.3in;
+		height: .7in;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		text-align: left;
 	}
 
 
 	#alpha,
 	#weight-output {
 		font-size: 1.5em;
-		top: 3.4393701in; //down 1 mm from 3.4
+		top: 3.4in;
 		overflow: hidden;
 		height: .4in;
 		text-align: center;
@@ -77,7 +83,7 @@
 
 	#alpha {
 		position: absolute;
-		left: .5in;
+		left: .72in;
 		width: .6in;
 	}
 }

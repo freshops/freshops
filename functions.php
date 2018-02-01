@@ -519,23 +519,3 @@ function do_kerplop() {
 }
 
 if(is_hop_cat()) add_action('wp_enqueue_scripts', 'do_kerplop');
-
-
-# WOOCOMMERCE THEME COMPATIBILITY
-# Unhook the WooCommerce wrappers:
-
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-
-# Then hook in your own functions to display the wrappers your theme requires:
-
-add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
-add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
-
-function my_theme_wrapper_start() {
-  echo '<section id="main">';
-}
-
-function my_theme_wrapper_end() {
-  echo '</section>';
-}

@@ -4,7 +4,6 @@
   .page-label #flag,
   .page-label #secondary,
   .page-label #view_cart,
-  .page-label #sliding_cart,
   .page-label footer,
   .page-label header {
     display: none !important;
@@ -34,10 +33,10 @@
     text-align: center; }
   .page-label #description {
     position: absolute;
-    top: 2.62in;
-    left: .05in;
-    font-size: .9785em;
-    width: 2.2in;
+    top: 2.7in;
+    left: .1in;
+    font-size: .85em;
+    width: 2.3in;
     height: .7in;
     margin: 0;
     padding: 0;
@@ -46,7 +45,7 @@
   .page-label #alpha,
   .page-label #weight-output {
     font-size: 1.5em;
-    top: 3.4393701in;
+    top: 3.4in;
     overflow: hidden;
     height: .4in;
     text-align: center; }
@@ -56,5 +55,5 @@
     width: .65in; }
   .page-label #alpha {
     position: absolute;
-    left: .5in;
+    left: .72in;
     width: .6in; }
