@@ -11,8 +11,8 @@
   /* Clears non-IE. */
   /* Clears IE. */
   /* Clearing div (oldschool): */ }
-  .page-label .shopping-cart-wrapper,
-  .page-label div#badge,
+  .page-label .shopping-cart-wrapper
+  div#badge,
   .page-label header,
   .page-label #flag,
   .page-label #secondary,
@@ -33,16 +33,15 @@
   .page-label #description {
     overflow: hidden;
     position: relative;
-    line-height: 1.2em;
-    max-height: 6em;
+    line-height: 1.1em;
+    max-height: 5.5em;
     text-align: left;
     margin-right: -.5em;
     padding-right: 1em;
     position: relative;
     display: block;
-    font-size: 8pt;
-    line-height: 1.20em;
-    width: 2.3in;
+    font-size: 9pt;
+    width: 2.4in;
     height: .7in;
     padding: .05in .1in 0 .1in;
     overflow: hidden;

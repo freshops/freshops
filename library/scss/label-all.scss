@@ -1,6 +1,6 @@
 //labeller-specific css overrides
 .page-label {
-	.shopping-cart-wrapper,
+	.shopping-cart-wrapper
 	div#badge,
 	header,
 	#flag,
@@ -28,7 +28,7 @@
 
 	//http://hackingui.com/front-end/a-pure-css-solution-for-multiline-text-truncation/
 	/* mixin for multiline */
-	@mixin multi-line-ellipsis($lineHeight: 1.2em, $lineCount: 5, $bgColor: white) {
+	@mixin multi-line-ellipsis($lineHeight: 1.1em, $lineCount: 5, $bgColor: white) {
 		overflow: hidden;
 		position: relative;
 		line-height: $lineHeight;
@@ -54,12 +54,11 @@
 	}
 
 	#description {
-		@include multi-line-ellipsis($lineHeight: 1.2em, $lineCount: 5, $bgColor: white);
+	  	@include multi-line-ellipsis($lineHeight: 1.1em, $lineCount: 5, $bgColor: #FFF);
 		position: relative;
 		display: block;
-		font-size: 8pt;
-		line-height: 1.20em;
-		width: 2.3in;
+		font-size: 9pt;
+		width: 2.4in;
 		height: .7in;
 		padding: .05in .1in 0 .1in;
 		overflow: hidden;

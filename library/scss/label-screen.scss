@@ -17,19 +17,6 @@
 
 	#input-box {
 		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c9de96), color-stop(44%, #8ab66b), color-stop(100%, #398235));
-		background: -webkit-linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%);
-		background:    -moz-linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%);
-		background:     -ms-linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%);
-		background:      -o-linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%);
-		background:         linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%);
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c9de96), color-stop(44%, #8ab66b), color-stop(100%, #398235));
-		/* old browsers */
-		/* firefox */
-		/* webkit */
-		-webkit-border-radius: 10px;
-		   -moz-border-radius: 10px;
-		    -ms-border-radius: 10px;
-		     -o-border-radius: 10px;
 		        border-radius: 10px;
 		padding: 10px;
 		text-align: left;
@@ -58,14 +45,13 @@
 		display: block;
 		margin-left: 2.6in;
 		margin-top: 5px;
-		padding: 5px 10px 200px 10px;
+		padding: 5px 10px 200px;
 		text-align: left;
 	}
 
 	/* Output styles */
 	#preview-box {
-		border-radius: 8px;
-		background: #fff url(../images/labeller-bg.png) scroll top;
+		background: #fff url('../images/labeller-bg.png') scroll top;
 		border: .015in solid #000;
 		border-radius: 8px;
 		display: block;
@@ -79,12 +65,12 @@
 	#description {
 		position: relative;
 		display: block;
-		font-size: 8pt;
-		line-height: 1.2em;
-		width: 2.3in;
-		height: .7in;
-		margin: 1.5rem 0 0;
-		padding: .05in .1in 0;
+		font-size: 9pt;
+		line-height: 1.1em;
+		width: 2.4in;
+		height: .9in;
+		margin: 2em 0 0;
+		padding: 0 .05in;
 		overflow: hidden;
 		text-align: left;
 		vertical-align: baseline;

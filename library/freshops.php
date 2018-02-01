@@ -188,7 +188,10 @@ function freshops_scripts_and_styles()
 /*********************
 THEME SUPPORT
 *********************/
-
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
 // Adding WP 3+ Functions & Theme Support
 function freshops_theme_support()
 {
